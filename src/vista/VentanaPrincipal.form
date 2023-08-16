@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="jMenu1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="File"/>
+          </Properties>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Edit"/>
+          </Properties>
+        </Menu>
+      </SubComponents>
+    </Menu>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel2" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnIngresarCategoriaEmpleado" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnIngresarComuna" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnIngresarEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnIngresarEstadoCivil" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnIngresarPropiedad" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnIngresarPropiedadArrendada" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnIngresarPropietario" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnIngresarTipoPropiedad" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnIngresarCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnEditarTipoPropiedad" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditarPropietario" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditarPropiedadArrendada" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditarPropiedad" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditarEstadoCivil" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditarEmpleado" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditarComuna" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnVerEditarCategortiaEmpleado" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnVerEditarCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnIngresarCategoriaEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnVerEditarCategortiaEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnIngresarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnVerEditarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnIngresarComuna" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEditarComuna" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnIngresarEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEditarEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnIngresarEstadoCivil" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEditarEstadoCivil" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnIngresarPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEditarPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnIngresarPropiedadArrendada" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="btnEditarPropiedadArrendada" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnIngresarPropietario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEditarPropietario" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnIngresarTipoPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEditarTipoPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="52" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="btnIngresarCategoriaEmpleado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingresar Categoria Empleado"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarCategoriaEmpleadoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnVerEditarCategortiaEmpleado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ver / Modificar Categoria Empleado"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerEditarCategortiaEmpleadoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Categoria Empleado"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cliente"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnIngresarCliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingresar Cliente"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarClienteActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnVerEditarCliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ver / Modificar Cliente"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerEditarClienteActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Comuna"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnIngresarComuna">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingresar Comuna"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarComunaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEditarComuna">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ver / Modificar Comuna"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Empleado"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnIngresarEmpleado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingresar Empleado"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarEmpleadoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEditarEmpleado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ver / Modificar Empleado"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Estado Civil"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnIngresarEstadoCivil">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingresar Estado Civil"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarEstadoCivilActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEditarEstadoCivil">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ver / Modiicar Estado Civil"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel6">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Propiedad"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnIngresarPropiedad">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingresar Propiedad"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarPropiedadActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEditarPropiedad">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ver / Modificar Propiedad"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Propiedad Arrendada"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnIngresarPropiedadArrendada">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingresar Propiedad Arrendada"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarPropiedadArrendadaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEditarPropiedadArrendada">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ver / Modificar Propiedad Arrendada"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel8">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Propietario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnIngresarPropietario">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingresar Propietario"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarPropietarioActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEditarPropietario">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ver / Modificar Propietario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel9">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tipo Propiedad"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnIngresarTipoPropiedad">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingresar Tipo Propiedad"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarTipoPropiedadActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEditarTipoPropiedad">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ver / Modificar Tipo Propiedad"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
