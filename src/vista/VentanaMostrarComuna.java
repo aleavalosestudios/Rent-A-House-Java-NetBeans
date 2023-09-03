@@ -40,6 +40,7 @@ public class VentanaMostrarComuna extends javax.swing.JFrame {
         btnMostrarTodasLasComunas = new javax.swing.JButton();
         btnEditarComuna = new javax.swing.JButton();
         btnEliminarComuna = new javax.swing.JButton();
+        btnIngresarNuevaComuna = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,10 +48,7 @@ public class VentanaMostrarComuna extends javax.swing.JFrame {
 
         tablaTodasLasComunas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "id Comuna", "Nombre Comuna"
@@ -88,23 +86,32 @@ public class VentanaMostrarComuna extends javax.swing.JFrame {
             }
         });
 
+        btnIngresarNuevaComuna.setText("Ingresar Nueva Comuna");
+        btnIngresarNuevaComuna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarNuevaComunaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelMostrarComunasLayout = new javax.swing.GroupLayout(panelMostrarComunas);
         panelMostrarComunas.setLayout(panelMostrarComunasLayout);
         panelMostrarComunasLayout.setHorizontalGroup(
             panelMostrarComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMostrarComunasLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
                 .addGroup(panelMostrarComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBuscarComuna)
-                    .addComponent(btnMostrarTodasLasComunas)
-                    .addComponent(btnEditarComuna)
-                    .addComponent(btnEliminarComuna))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panelMostrarComunasLayout.createSequentialGroup()
-                .addGap(164, 164, 164)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelMostrarComunasLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(panelMostrarComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnIngresarNuevaComuna)
+                            .addComponent(btnBuscarComuna)
+                            .addComponent(btnMostrarTodasLasComunas)
+                            .addComponent(btnEditarComuna)
+                            .addComponent(btnEliminarComuna)))
+                    .addGroup(panelMostrarComunasLayout.createSequentialGroup()
+                        .addGap(164, 164, 164)
+                        .addComponent(jLabel1)))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         panelMostrarComunasLayout.setVerticalGroup(
             panelMostrarComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,6 +122,8 @@ public class VentanaMostrarComuna extends javax.swing.JFrame {
                 .addGroup(panelMostrarComunasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelMostrarComunasLayout.createSequentialGroup()
+                        .addComponent(btnIngresarNuevaComuna)
+                        .addGap(18, 18, 18)
                         .addComponent(btnBuscarComuna)
                         .addGap(18, 18, 18)
                         .addComponent(btnMostrarTodasLasComunas)
@@ -230,9 +239,23 @@ public class VentanaMostrarComuna extends javax.swing.JFrame {
             comunaDao.eliminarComuna(comuna);
             
             JOptionPane.showMessageDialog(this,"Comuna Eliminada");
+            
+            btnMostrarTodasLasComunas.doClick();
         }
     }//GEN-LAST:event_btnEliminarComunaActionPerformed
 
+    private void btnIngresarNuevaComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevaComunaActionPerformed
+        VentanaIngresarComuna ventanaIngresarComuna = new VentanaIngresarComuna();
+         abrirVentana(ventanaIngresarComuna,"Ingreso Nueva Comuna");
+    }//GEN-LAST:event_btnIngresarNuevaComunaActionPerformed
+
+    
+    private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
+        Ventana.setVisible(true);
+        Ventana.setLocationRelativeTo(null);
+        Ventana.setTitle(tituloVentana);
+        Ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }
     
     public void limpiarTabla(){
     DefaultTableModel dtm=(DefaultTableModel)tablaTodasLasComunas.getModel();
@@ -282,6 +305,7 @@ public class VentanaMostrarComuna extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscarComuna;
     private javax.swing.JButton btnEditarComuna;
     private javax.swing.JButton btnEliminarComuna;
+    private javax.swing.JButton btnIngresarNuevaComuna;
     private javax.swing.JButton btnMostrarTodasLasComunas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

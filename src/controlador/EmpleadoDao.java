@@ -23,7 +23,7 @@ public class EmpleadoDao {
         
         try{
             Connection conexionBaseDatos = Conexion.getConexion();
-            String query = "insert into empleado (numrut_emp,dvrut_emp,appaterno_emp,apmaterno_emp,nombre_emp,direccion_emp,id_est_civil,fonofijo_emp,celular_emp,fecnac_emp,fecing_emp,sueldo_emp,id_comuna,id_categoria_emp,numrut_supervisor) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "insert into empleado (numrut_emp,dvrut_emp,appaterno_emp,apmaterno_emp,nombre_emp,direccion_emp,id_estcivil,fonofijo_emp,celular_emp,fecnac_emp,fecing_emp,sueldo_emp,id_comuna,id_categoria_emp,numrut_supervisor) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement prepararConsulta = conexionBaseDatos.prepareStatement(query);
             
             prepararConsulta.setInt(1,empleado.getNumrut_emp());
@@ -64,7 +64,7 @@ public class EmpleadoDao {
         boolean resultado = false;
         try{
             Connection conexionBaseDatos = Conexion.getConexion();
-            String query = "update empleado set dvrut_emp = ?,appaterno_emp = ?,apmaterno_emp = ?,nombre_emp = ?,direccion_emp = ?,id_est_civil = ?,fonofijo_emp = ?,celular_emp = ?,fecnac_emp = ?,fecing_emp = ?,sueldo_emp = ?,id_comuna = ?,id_categoria_emp = ?,numrut_supervisor = ? where numrut_emp = ?";
+            String query = "update empleado set dvrut_emp = ?,appaterno_emp = ?,apmaterno_emp = ?,nombre_emp = ?,direccion_emp = ?,id_estcivil = ?,fonofijo_emp = ?,celular_emp = ?,fecnac_emp = ?,fecing_emp = ?,sueldo_emp = ?,id_comuna = ?,id_categoria_emp = ?,numrut_supervisor = ? where numrut_emp = ?";
             PreparedStatement prepararConsulta = conexionBaseDatos.prepareStatement(query);
             
             prepararConsulta.setString(1,String.valueOf(empleado.getDvrut_emp()));
@@ -139,7 +139,7 @@ public class EmpleadoDao {
             
             while(resultado.next()){
                 String dvString = resultado.getString(2);
-                char dv = dvString.charAt(1);
+                char dv = dvString.charAt(0);
                 
                 String fecha_Nacimiento = transformarDeDateAString(resultado.getDate(10));
                 String fecha_ingreso = transformarDeDateAString(resultado.getDate(11));
@@ -181,13 +181,15 @@ public class EmpleadoDao {
             String query = "select * from empleado where numrut_emp = ?";
             PreparedStatement prepararConsulta = conexionBaseDatos.prepareStatement(query);
             
+            prepararConsulta.setInt(1, numrut_emp);
+            
             ResultSet resultado = prepararConsulta.executeQuery();
             
             Empleado empleado;
             
             while(resultado.next()){
                 String dvString = resultado.getString(2);
-                char dv = dvString.charAt(1);
+                char dv = dvString.charAt(0);
                 
                 String fecha_Nacimiento = transformarDeDateAString(resultado.getDate(10));
                 String fecha_ingreso = transformarDeDateAString(resultado.getDate(11));

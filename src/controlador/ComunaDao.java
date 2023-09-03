@@ -47,7 +47,7 @@ public class ComunaDao {
         try{
             
             Connection conexionBaseDatos = Conexion.getConexion();
-            String query = "Update comuna set desc_categoria = ? where id_comuna = ?";
+            String query = "Update comuna set nombre_comuna = ? where id_comuna = ?";
             PreparedStatement prepararConsulta = conexionBaseDatos.prepareStatement(query);
             
             prepararConsulta.setString(1, comuna.getNombre_comuna());
@@ -125,7 +125,7 @@ public class ComunaDao {
         try{
             
             Connection conexionBaseDatos = Conexion.getConexion();
-            String query = "select id_comuna, nombre_comuna from comuna where comuna_nombre = ? ";
+            String query = "select id_comuna, nombre_comuna from comuna where nombre_comuna = ? ";
             PreparedStatement prepararConsulta = conexionBaseDatos.prepareStatement(query);
             
             prepararConsulta.setString(1, nombre_comuna);

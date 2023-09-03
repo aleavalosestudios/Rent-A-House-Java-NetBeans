@@ -52,7 +52,7 @@ public class EstadoCivilDao {
         try{
             
             Connection conexionBaseDatos = Conexion.getConexion();
-            String query = "Update estado_civil set dec_Estcivil = ? where id_estcivil = ?";
+            String query = "Update estado_civil set desc_Estcivil = ? where id_estcivil = ?";
             PreparedStatement prepararConsulta = conexionBaseDatos.prepareStatement(query);
             
             prepararConsulta.setString(1,estadoCivil.getDesc_EstCivil());

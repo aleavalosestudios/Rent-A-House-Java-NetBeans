@@ -58,7 +58,7 @@ public class CategoriaEmpleadoDao {
         try{
             
             Connection conexionBaseDatos = Conexion.getConexion();
-            String query = "update categoria_empleado set desc_categoria_emp = ? where id_caegoria_emp=?";
+            String query = "update categoria_empleado set desc_categoria_emp = ? where id_categoria_emp = ?";
             PreparedStatement prepararConsulta = conexionBaseDatos.prepareStatement(query);
             
             prepararConsulta.setString(1, categoriaEmpleado.getDesc_categoria_emp());

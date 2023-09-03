@@ -213,6 +213,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Ver / Modificar Comuna"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarComunaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
@@ -231,6 +234,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Ver / Modificar Empleado"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarEmpleadoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -249,6 +255,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Ver / Modiicar Estado Civil"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarEstadoCivilActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -267,6 +276,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Ver / Modificar Propiedad"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarPropiedadActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
@@ -285,6 +297,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Ver / Modificar Propiedad Arrendada"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarPropiedadArrendadaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
@@ -303,6 +318,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Ver / Modificar Propietario"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarPropietarioActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
@@ -321,6 +339,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Ver / Modificar Tipo Propiedad"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarTipoPropiedadActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

@@ -59,27 +59,19 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="labelNombreComuna" max="32767" attributes="0"/>
-                          <Component id="labelIdComuna" max="32767" attributes="0"/>
-                      </Group>
-                      <Component id="btnAgregarComuna" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="InputNombre_comuna" min="-2" max="-2" attributes="0"/>
-                              <Component id="inputId_comuna" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="btnAgregarComuna" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="32" max="32767" attributes="0"/>
                           <Component id="btnLimpiarIngresoComuna" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Component id="btnVolverIngresoComuna" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="labelNombreComuna" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="InputNombre_comuna" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -88,12 +80,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="labelIdComuna" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="inputId_comuna" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelNombreComuna" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="InputNombre_comuna" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -110,19 +97,6 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="labelIdComuna">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Id Comuna:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="inputId_comuna">
-          <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="99" red="99" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Ingrese Id Comuna"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="labelNombreComuna">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nombre Comuna:"/>

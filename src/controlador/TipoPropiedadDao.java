@@ -109,7 +109,7 @@ public class TipoPropiedadDao {
             while(resultado.next()){
                 
                 String id_tipo_propiedad = resultado.getString(1);
-                char id = id_tipo_propiedad.charAt(1);
+                char id = id_tipo_propiedad.charAt(0);
                                 
                 tipoPropiedad = new TipoPropiedad(id, resultado.getString(2));
                 
@@ -129,7 +129,7 @@ public class TipoPropiedadDao {
     
     public ArrayList<TipoPropiedad> buscarTipoPropiedadPorDescripcion(String desc_tipoPropiedad){
         
-        ArrayList<TipoPropiedad> listadoTipoPropiedad = new ArrayList<>();
+        ArrayList<TipoPropiedad> listadoTipoPropiedadDescripcion = new ArrayList<>();
         try{
             Connection conexionBaseDatos = Conexion.getConexion();
             String query = "select * from tipo_propiedad where desc_tipo_propiedad = ?";
@@ -145,7 +145,7 @@ public class TipoPropiedadDao {
                 
                 TipoPropiedad tipoPropiedad = new TipoPropiedad(id_tipoPropiedad, nombretipoPropiedad);
                 
-                listadoTipoPropiedad.add(tipoPropiedad);
+                listadoTipoPropiedadDescripcion.add(tipoPropiedad);
             }
             
             prepararConsulta.close();
@@ -156,15 +156,16 @@ public class TipoPropiedadDao {
             Logger.getLogger(TipoPropiedadDao.class.getName()).log(Level.SEVERE,null,ex);
         }
         
-        return listadoTipoPropiedad;
+        return listadoTipoPropiedadDescripcion;
     }
     
     public ArrayList<TipoPropiedad> buscarTipoPropiedadPorId(char id_tipoPropiedad){
         
-        ArrayList<TipoPropiedad> listadoTipoPropiedad = new ArrayList<>();
+        ArrayList<TipoPropiedad> listadoTipoPropiedadID = new ArrayList<>();
         try{
             Connection conexionBaseDatos = Conexion.getConexion();
             String query = "select * from tipo_propiedad where id_tipo_propiedad = ?";
+            
             PreparedStatement prepararConsulta = conexionBaseDatos.prepareStatement(query);
             
             String id_tipoPropiedadString = String.valueOf(id_tipoPropiedad);
@@ -179,7 +180,7 @@ public class TipoPropiedadDao {
                 
                 TipoPropiedad tipoPropiedad = new TipoPropiedad(id_tipoPropiedadChar, nombretipoPropiedad);
                 
-                listadoTipoPropiedad.add(tipoPropiedad);
+                listadoTipoPropiedadID.add(tipoPropiedad);
             }
             
             prepararConsulta.close();
@@ -190,6 +191,6 @@ public class TipoPropiedadDao {
             Logger.getLogger(TipoPropiedadDao.class.getName()).log(Level.SEVERE,null,ex);
         }
         
-        return listadoTipoPropiedad;
+        return listadoTipoPropiedadID;
     }
 }

@@ -44,6 +44,7 @@ public class VentanaMostrarPropietario extends javax.swing.JFrame {
         btnMostrarPropietarios = new javax.swing.JButton();
         btnModificarPropietario = new javax.swing.JButton();
         btnEliminarPropietario = new javax.swing.JButton();
+        btnIngresarNuevoPropietario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,10 +54,7 @@ public class VentanaMostrarPropietario extends javax.swing.JFrame {
 
         tablaEmpleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Rut", "Dv", "Apellido Paterno", "Apellido Materno", "Nombre", "Direccion", "Estado Civil", "Fono Fijo", "Celular", "Comuna"
@@ -92,6 +90,13 @@ public class VentanaMostrarPropietario extends javax.swing.JFrame {
             }
         });
 
+        btnIngresarNuevoPropietario.setText("Ingresar Nuevo Propietario");
+        btnIngresarNuevoPropietario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarNuevoPropietarioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -106,7 +111,8 @@ public class VentanaMostrarPropietario extends javax.swing.JFrame {
                             .addComponent(btnModificarPropietario)
                             .addComponent(btnBuscarPropietario)
                             .addComponent(btnMostrarPropietarios)
-                            .addComponent(btnEliminarPropietario))
+                            .addComponent(btnEliminarPropietario)
+                            .addComponent(btnIngresarNuevoPropietario))
                         .addGap(11, 11, 11))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -121,6 +127,8 @@ public class VentanaMostrarPropietario extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnIngresarNuevoPropietario)
+                        .addGap(18, 18, 18)
                         .addComponent(btnBuscarPropietario)
                         .addGap(18, 18, 18)
                         .addComponent(btnMostrarPropietarios)
@@ -268,6 +276,27 @@ public class VentanaMostrarPropietario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEliminarPropietarioActionPerformed
 
+    private void btnIngresarNuevoPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevoPropietarioActionPerformed
+        VentanaIngresarPropietario ventanaIngresarPropietario = new VentanaIngresarPropietario();
+        abrirVentana(ventanaIngresarPropietario,"Ingreso Nuevo Propietario");
+    }//GEN-LAST:event_btnIngresarNuevoPropietarioActionPerformed
+
+    
+    
+    private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
+        Ventana.setVisible(true);
+        Ventana.setLocationRelativeTo(null);
+        Ventana.setTitle(tituloVentana);
+        Ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }
+    
+    public void limpiarTabla(){
+        DefaultTableModel dtm=(DefaultTableModel)tablaEmpleados.getModel();
+        int n=tablaEmpleados.getRowCount();
+        for (int i = 0; i < n ; i++) {
+            dtm.removeRow(dtm.getRowCount()-1);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -306,6 +335,7 @@ public class VentanaMostrarPropietario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarPropietario;
     private javax.swing.JButton btnEliminarPropietario;
+    private javax.swing.JButton btnIngresarNuevoPropietario;
     private javax.swing.JButton btnModificarPropietario;
     private javax.swing.JButton btnMostrarPropietarios;
     private javax.swing.JLabel jLabel1;

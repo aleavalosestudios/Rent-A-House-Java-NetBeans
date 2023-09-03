@@ -6,6 +6,7 @@ package vista;
 
 import modelo.TipoPropiedad;
 import controlador.TipoPropiedadDao;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 /**
@@ -143,7 +144,11 @@ public class VentanaIngresoTipoPropiedad extends javax.swing.JFrame {
         char id_tipoPropiedad  = inputId_tipo_propiedad.getText().charAt(0);
         String desc_tipoPropiedad = inputDesc_tipo_propiedad.getText();
         
-        if(tipoPropiedadDao.buscarTipoPropiedadPorId(id_tipoPropiedad).isEmpty() || tipoPropiedadDao.buscarTipoPropiedadPorDescripcion(desc_tipoPropiedad).isEmpty()){
+        ArrayList <TipoPropiedad> listadoTipoPropiedadID = tipoPropiedadDao.buscarTipoPropiedadPorId(id_tipoPropiedad);
+        ArrayList <TipoPropiedad> listadoTipoPropiedadDescripcion = tipoPropiedadDao.buscarTipoPropiedadPorDescripcion(desc_tipoPropiedad);
+        
+        if(listadoTipoPropiedadID.isEmpty()){
+            
             TipoPropiedad tipoPropiedad = new TipoPropiedad(id_tipoPropiedad, desc_tipoPropiedad);
             
             tipoPropiedadDao.ingresarTipoPropiedad(tipoPropiedad);

@@ -40,6 +40,7 @@ public class VentanaMostrarEstadoCivil extends javax.swing.JFrame {
         btnMostrarTodosLosEstadosCiviles = new javax.swing.JButton();
         btnActualizarEstadoCivil = new javax.swing.JButton();
         btnEliminarEstadoCivil = new javax.swing.JButton();
+        btnIngresarNuevoEstadoCivil = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,10 +50,7 @@ public class VentanaMostrarEstadoCivil extends javax.swing.JFrame {
 
         tablaTodosLosEstadosCiviles.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Id Estado Civil", "Estado Civil"
@@ -88,6 +86,13 @@ public class VentanaMostrarEstadoCivil extends javax.swing.JFrame {
             }
         });
 
+        btnIngresarNuevoEstadoCivil.setText("Ingresar Nuevo Estado Civil");
+        btnIngresarNuevoEstadoCivil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarNuevoEstadoCivilActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -105,7 +110,8 @@ public class VentanaMostrarEstadoCivil extends javax.swing.JFrame {
                             .addComponent(btnBuscarEstadoCivil)
                             .addComponent(btnMostrarTodosLosEstadosCiviles)
                             .addComponent(btnActualizarEstadoCivil)
-                            .addComponent(btnEliminarEstadoCivil))))
+                            .addComponent(btnEliminarEstadoCivil)
+                            .addComponent(btnIngresarNuevoEstadoCivil))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -117,6 +123,8 @@ public class VentanaMostrarEstadoCivil extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnIngresarNuevoEstadoCivil)
+                        .addGap(18, 18, 18)
                         .addComponent(btnBuscarEstadoCivil)
                         .addGap(18, 18, 18)
                         .addComponent(btnMostrarTodosLosEstadosCiviles)
@@ -155,13 +163,20 @@ public class VentanaMostrarEstadoCivil extends javax.swing.JFrame {
         
         ArrayList<EstadoCivil> listaEstadoCivil = estadoCivilDao.buscarEstadoCivil(desc_estadoCivil);
         
-        String [][] datoslistasEstadoCivil = new String[listaEstadoCivil.size()][2];
+        limpiarTabla();
         
-        for (int i = 0; i < listaEstadoCivil.size(); i++) {
-            datoslistasEstadoCivil[i][0] = String.valueOf(listaEstadoCivil.get(i).getId_EstCivil());
-            datoslistasEstadoCivil[i][1] = String.valueOf(listaEstadoCivil.get(i).getDesc_EstCivil());
-            
-            tabla.addRow(datoslistasEstadoCivil[i]);
+        if (listaEstadoCivil.isEmpty()){
+            JOptionPane.showMessageDialog(this,"Estado Civil No Existe");
+        }else{
+
+            String [][] datoslistasEstadoCivil = new String[listaEstadoCivil.size()][2];
+
+            for (int i = 0; i < listaEstadoCivil.size(); i++) {
+                datoslistasEstadoCivil[i][0] = String.valueOf(listaEstadoCivil.get(i).getId_EstCivil());
+                datoslistasEstadoCivil[i][1] = String.valueOf(listaEstadoCivil.get(i).getDesc_EstCivil());
+
+                tabla.addRow(datoslistasEstadoCivil[i]);
+            }
         }
         
         tablaTodosLosEstadosCiviles.setModel(tabla);
@@ -174,15 +189,21 @@ public class VentanaMostrarEstadoCivil extends javax.swing.JFrame {
         
         ArrayList<EstadoCivil> listaEstadoCivil = estadoCivilDao.todosLosEstadoCivil();
         
-        String [][] datoslistasEstadoCivil = new String[listaEstadoCivil.size()][2];
         
-        for (int i = 0; i < listaEstadoCivil.size(); i++) {
-            datoslistasEstadoCivil[i][0] = String.valueOf(listaEstadoCivil.get(i).getId_EstCivil());
-            datoslistasEstadoCivil[i][1] = String.valueOf(listaEstadoCivil.get(i).getDesc_EstCivil());
-            
-            tabla.addRow(datoslistasEstadoCivil[i]);
+        limpiarTabla();
+        
+        if (listaEstadoCivil.isEmpty()){
+            JOptionPane.showMessageDialog(this,"No Existen Estados Civiles");
+        }else{
+            String [][] datoslistasEstadoCivil = new String[listaEstadoCivil.size()][2];
+
+            for (int i = 0; i < listaEstadoCivil.size(); i++) {
+                datoslistasEstadoCivil[i][0] = String.valueOf(listaEstadoCivil.get(i).getId_EstCivil());
+                datoslistasEstadoCivil[i][1] = String.valueOf(listaEstadoCivil.get(i).getDesc_EstCivil());
+
+                tabla.addRow(datoslistasEstadoCivil[i]);
+            }
         }
-        
         tablaTodosLosEstadosCiviles.setModel(tabla);
     }//GEN-LAST:event_btnMostrarTodosLosEstadosCivilesActionPerformed
 
@@ -221,9 +242,31 @@ public class VentanaMostrarEstadoCivil extends javax.swing.JFrame {
             estadoCivilDao.eliminarEstadoCivil(estadoCivil);
             
             JOptionPane.showMessageDialog(this,"Estado Civil Eliminado");
+            
+            btnMostrarTodosLosEstadosCiviles.doClick();
         }
     }//GEN-LAST:event_btnEliminarEstadoCivilActionPerformed
 
+    private void btnIngresarNuevoEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevoEstadoCivilActionPerformed
+        VentanaIngresarEstadoCivil ventanaIngresarEstadoCivil = new VentanaIngresarEstadoCivil();
+        abrirVentana(ventanaIngresarEstadoCivil,"Ingreso Nuevo Estado Civil");
+    }//GEN-LAST:event_btnIngresarNuevoEstadoCivilActionPerformed
+
+    
+    private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
+        Ventana.setVisible(true);
+        Ventana.setLocationRelativeTo(null);
+        Ventana.setTitle(tituloVentana);
+        Ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }
+    
+    public void limpiarTabla(){
+        DefaultTableModel dtm=(DefaultTableModel)tablaTodosLosEstadosCiviles.getModel();
+        int n=tablaTodosLosEstadosCiviles.getRowCount();
+        for (int i = 0; i < n ; i++) {
+            dtm.removeRow(dtm.getRowCount()-1);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -263,6 +306,7 @@ public class VentanaMostrarEstadoCivil extends javax.swing.JFrame {
     private javax.swing.JButton btnActualizarEstadoCivil;
     private javax.swing.JButton btnBuscarEstadoCivil;
     private javax.swing.JButton btnEliminarEstadoCivil;
+    private javax.swing.JButton btnIngresarNuevoEstadoCivil;
     private javax.swing.JButton btnMostrarTodosLosEstadosCiviles;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

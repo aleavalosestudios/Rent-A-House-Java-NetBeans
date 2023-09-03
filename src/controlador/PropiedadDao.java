@@ -24,20 +24,20 @@ public class PropiedadDao {
         try{
             
             Connection ConexionBaseDatos = Conexion.getConexion();
-            String query = "insert into propiedad(nro_propiedad, direccion_propiedad, superficie, nro_dormitorios, nro_banos, valor_arriendo, valor_gasto_comuna,id_comuna, numrut_prop, numrut_emp) values (?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "insert into propiedad (direccion_propiedad, superficie, nro_dormitorios, nro_banos, valor_arriendo, valor_gasto_comun,id_tipo_propiedad,id_comuna, numrut_prop, numrut_emp) values (?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement prepararConsulta = ConexionBaseDatos.prepareStatement(query);
             
-            prepararConsulta.setInt(1, propiedad.getNro_propiedad());
-            prepararConsulta.setString(2, propiedad.getDireccion_propiedad());
-            prepararConsulta.setFloat(3, propiedad.getSuperficie());
-            prepararConsulta.setInt(4, propiedad.getNro_dormitorios());
-            prepararConsulta.setInt(5, propiedad.getNro_banos());
-            prepararConsulta.setInt(6, propiedad.getValor_arriendo());
-            prepararConsulta.setInt(7, propiedad.getValor_gasto_comun());
-            prepararConsulta.setString(8, String.valueOf(propiedad.getId_tipo_propiedad()));
-            prepararConsulta.setInt(9, propiedad.getId_comuna());
-            prepararConsulta.setInt(10, propiedad.getNumrut_prop());
-            prepararConsulta.setInt(11, propiedad.getNumrut_emp());
+            
+            prepararConsulta.setString(1, propiedad.getDireccion_propiedad());
+            prepararConsulta.setFloat(2, propiedad.getSuperficie());
+            prepararConsulta.setInt(3, propiedad.getNro_dormitorios());
+            prepararConsulta.setInt(4, propiedad.getNro_banos());
+            prepararConsulta.setInt(5, propiedad.getValor_arriendo());
+            prepararConsulta.setInt(6, propiedad.getValor_gasto_comun());
+            prepararConsulta.setString(7, String.valueOf(propiedad.getId_tipo_propiedad()));
+            prepararConsulta.setInt(8, propiedad.getId_comuna());
+            prepararConsulta.setInt(9, propiedad.getNumrut_prop());
+            prepararConsulta.setInt(10, propiedad.getNumrut_emp());
             
             resultado = prepararConsulta.executeUpdate() == 1;
             
@@ -57,7 +57,7 @@ public class PropiedadDao {
         
         try{
             Connection conexionBaseDatos = Conexion.getConexion();
-            String query = "update propiedad set direccion_propiedad = ?, superficie = ?, nro_dormitorios = ?, nro_banos = ?, valor_arriendo = ?, valor_gasto_comuna = ?,id_comuna = ?, numrut_prop = ?, numrut_emp = ? where nro_propiedad = ?";
+            String query = "update propiedad set direccion_propiedad = ?, superficie = ?, nro_dormitorios = ?, nro_banos = ?, valor_arriendo = ?, valor_gasto_comun = ?,id_tipo_propiedad = ?,id_comuna = ?, numrut_prop = ?, numrut_emp = ? where nro_propiedad = ?";
             PreparedStatement prepararConsulta = conexionBaseDatos.prepareStatement(query);
             
             prepararConsulta.setString(1, propiedad.getDireccion_propiedad());

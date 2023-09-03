@@ -40,6 +40,7 @@ public class VentanaMostrarTipoPropiedad extends javax.swing.JFrame {
         btnMostrarTodosLosTiposDePropiedad = new javax.swing.JButton();
         btnEditarTipoPropiedad = new javax.swing.JButton();
         btnEliminarTipoPropiedad = new javax.swing.JButton();
+        btnNuevoIngresoTipoPropiedad = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,13 +50,10 @@ public class VentanaMostrarTipoPropiedad extends javax.swing.JFrame {
 
         tablaTipoPropiedad.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
-                "Id Tipo Propiedad", "Tipo Propiedad"
+                "Id Tipo Propiedad", "TIpo Propiedad"
             }
         ));
         jScrollPane1.setViewportView(tablaTipoPropiedad);
@@ -88,6 +86,13 @@ public class VentanaMostrarTipoPropiedad extends javax.swing.JFrame {
             }
         });
 
+        btnNuevoIngresoTipoPropiedad.setText("Ingresar Nuevo Tipo de Propiedad");
+        btnNuevoIngresoTipoPropiedad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoIngresoTipoPropiedadActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelMostrarTipoPropiedadLayout = new javax.swing.GroupLayout(panelMostrarTipoPropiedad);
         panelMostrarTipoPropiedad.setLayout(panelMostrarTipoPropiedadLayout);
         panelMostrarTipoPropiedadLayout.setHorizontalGroup(
@@ -105,7 +110,8 @@ public class VentanaMostrarTipoPropiedad extends javax.swing.JFrame {
                             .addComponent(btnBuscarTipoPropiedad)
                             .addComponent(btnMostrarTodosLosTiposDePropiedad)
                             .addComponent(btnEditarTipoPropiedad)
-                            .addComponent(btnEliminarTipoPropiedad))))
+                            .addComponent(btnEliminarTipoPropiedad)
+                            .addComponent(btnNuevoIngresoTipoPropiedad))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelMostrarTipoPropiedadLayout.setVerticalGroup(
@@ -117,6 +123,8 @@ public class VentanaMostrarTipoPropiedad extends javax.swing.JFrame {
                 .addGroup(panelMostrarTipoPropiedadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelMostrarTipoPropiedadLayout.createSequentialGroup()
+                        .addComponent(btnNuevoIngresoTipoPropiedad)
+                        .addGap(18, 18, 18)
                         .addComponent(btnBuscarTipoPropiedad)
                         .addGap(18, 18, 18)
                         .addComponent(btnMostrarTodosLosTiposDePropiedad)
@@ -148,15 +156,17 @@ public class VentanaMostrarTipoPropiedad extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarTipoPropiedadActionPerformed
-        String id_tipo_propiedad = JOptionPane.showInputDialog("Ingrese Descripcion Tipo Propiedad");
-        ArrayList<TipoPropiedad> listaBuscarTipoPropiedad = new ArrayList<>();
+                
         DefaultTableModel tabla = (DefaultTableModel)tablaTipoPropiedad.getModel();
+        
+        String desc_tipoPropiedad = JOptionPane.showInputDialog("Ingrese Descripcion Tipo Propiedad");
         
         TipoPropiedadDao tipoPropiedadDao = new TipoPropiedadDao();
         
-        listaBuscarTipoPropiedad = tipoPropiedadDao.buscarTipoPropiedadPorDescripcion(id_tipo_propiedad);
         
-        limpiarTbla();
+        
+        ArrayList<TipoPropiedad> listaBuscarTipoPropiedad = tipoPropiedadDao.buscarTipoPropiedadPorDescripcion(desc_tipoPropiedad);
+        limpiarTabla();
         
         if(listaBuscarTipoPropiedad.isEmpty()){
             JOptionPane.showMessageDialog(this,"Tipo De Propiedad No Existe");
@@ -166,20 +176,22 @@ public class VentanaMostrarTipoPropiedad extends javax.swing.JFrame {
             for (int i = 0; i < listaBuscarTipoPropiedad.size(); i++) {
                 
                 datosListaBuscarTipoPropiedad[i][0] = String.valueOf(listaBuscarTipoPropiedad.get(i).getId_tipo_propiedad());
-                datosListaBuscarTipoPropiedad[i][1] = String.valueOf(listaBuscarTipoPropiedad.get(i).getDesc_tipo_propiedad());
+                datosListaBuscarTipoPropiedad[i][1] = listaBuscarTipoPropiedad.get(i).getDesc_tipo_propiedad();
                 
-                tabla.addRow(datosListaBuscarTipoPropiedad);
+                tabla.addRow(datosListaBuscarTipoPropiedad[i]);
             }
             tablaTipoPropiedad.setModel(tabla);
         }
     }//GEN-LAST:event_btnBuscarTipoPropiedadActionPerformed
 
     private void btnMostrarTodosLosTiposDePropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarTodosLosTiposDePropiedadActionPerformed
-        TipoPropiedadDao tipoPropiedadDao= new TipoPropiedadDao();
-        ArrayList<TipoPropiedad> listaTodosLosTiposDePropiedad = tipoPropiedadDao.todosLosTipoPropiedad();
-        DefaultTableModel tabla = (DefaultTableModel)tablaTipoPropiedad.getModel();
         
-        limpiarTbla();
+        TipoPropiedadDao tipoPropiedadDao= new TipoPropiedadDao();
+        DefaultTableModel tabla = (DefaultTableModel)tablaTipoPropiedad.getModel();
+        ArrayList<TipoPropiedad> listaTodosLosTiposDePropiedad = tipoPropiedadDao.todosLosTipoPropiedad();
+        
+        
+        limpiarTabla();
         
         if(listaTodosLosTiposDePropiedad.isEmpty()){
             JOptionPane.showMessageDialog(this,"No existen Tipos de Propiedad");
@@ -190,7 +202,7 @@ public class VentanaMostrarTipoPropiedad extends javax.swing.JFrame {
                 datosListatodosLosTiposDePropiedad[i][0] = String.valueOf(listaTodosLosTiposDePropiedad.get(i).getId_tipo_propiedad());
                 datosListatodosLosTiposDePropiedad[i][1] = String.valueOf(listaTodosLosTiposDePropiedad.get(i).getDesc_tipo_propiedad());
                 
-                tabla.addRow(datosListatodosLosTiposDePropiedad);
+                tabla.addRow(datosListatodosLosTiposDePropiedad[i]);
             }
             
             tablaTipoPropiedad.setModel(tabla);
@@ -216,8 +228,10 @@ public class VentanaMostrarTipoPropiedad extends javax.swing.JFrame {
             tipoPropiedadDao.actualizarTipPropiedad(tipoPropiedad);
             
             JOptionPane.showMessageDialog(this, "Tipo Propiedad Modificada");
+            
+            btnMostrarTodosLosTiposDePropiedad.doClick();
         }
-        
+            
     }//GEN-LAST:event_btnEditarTipoPropiedadActionPerformed
 
     private void btnEliminarTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarTipoPropiedadActionPerformed
@@ -239,17 +253,29 @@ public class VentanaMostrarTipoPropiedad extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Tipo Propiedad Eliminada");
         }
         
+        btnMostrarTodosLosTiposDePropiedad.doClick();
     }//GEN-LAST:event_btnEliminarTipoPropiedadActionPerformed
+
+    private void btnNuevoIngresoTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoIngresoTipoPropiedadActionPerformed
+         VentanaIngresoTipoPropiedad ventanaIngresoTipoPropiedad = new VentanaIngresoTipoPropiedad();
+        abrirVentana(ventanaIngresoTipoPropiedad,"Ingreso Nuevo Tipo De Propidad");
+    }//GEN-LAST:event_btnNuevoIngresoTipoPropiedadActionPerformed
     
     
-   public void limpiarTbla(){
-       DefaultTableModel tabla = (DefaultTableModel)tablaTipoPropiedad.getModel();
-       
-       for (int i = 0; i < tabla.getRowCount(); i++) {
-           tabla.removeRow(tabla.getRowCount()-1);
-       }
-       
-   }
+    private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
+        Ventana.setVisible(true);
+        Ventana.setLocationRelativeTo(null);
+        Ventana.setTitle(tituloVentana);
+        Ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }
+    
+     public void limpiarTabla(){
+        DefaultTableModel dtm=(DefaultTableModel)tablaTipoPropiedad.getModel();
+        int n=tablaTipoPropiedad.getRowCount();
+        for (int i = 0; i < n ; i++) {
+            dtm.removeRow(dtm.getRowCount()-1);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -291,6 +317,7 @@ public class VentanaMostrarTipoPropiedad extends javax.swing.JFrame {
     private javax.swing.JButton btnEditarTipoPropiedad;
     private javax.swing.JButton btnEliminarTipoPropiedad;
     private javax.swing.JButton btnMostrarTodosLosTiposDePropiedad;
+    private javax.swing.JButton btnNuevoIngresoTipoPropiedad;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panelMostrarTipoPropiedad;

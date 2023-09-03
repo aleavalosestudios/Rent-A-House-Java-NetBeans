@@ -37,8 +37,6 @@ public class VentanaIngresarComuna extends javax.swing.JFrame {
     private void initComponents() {
 
         panelIngresarComuna = new javax.swing.JPanel();
-        labelIdComuna = new javax.swing.JLabel();
-        inputId_comuna = new javax.swing.JTextField();
         labelNombreComuna = new javax.swing.JLabel();
         InputNombre_comuna = new javax.swing.JTextField();
         btnAgregarComuna = new javax.swing.JButton();
@@ -49,11 +47,6 @@ public class VentanaIngresarComuna extends javax.swing.JFrame {
 
         panelIngresarComuna.setBorder(javax.swing.BorderFactory.createTitledBorder("Ingreso Comuna"));
         panelIngresarComuna.setForeground(new java.awt.Color(153, 153, 153));
-
-        labelIdComuna.setText("Id Comuna:");
-
-        inputId_comuna.setForeground(new java.awt.Color(153, 153, 153));
-        inputId_comuna.setText("Ingrese Id Comuna");
 
         labelNombreComuna.setText("Nombre Comuna:");
 
@@ -88,32 +81,23 @@ public class VentanaIngresarComuna extends javax.swing.JFrame {
             .addGroup(panelIngresarComunaLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(panelIngresarComunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelIngresarComunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(labelNombreComuna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(labelIdComuna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(btnAgregarComuna))
-                .addGroup(panelIngresarComunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelIngresarComunaLayout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addGroup(panelIngresarComunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(InputNombre_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputId_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelIngresarComunaLayout.createSequentialGroup()
+                        .addComponent(btnAgregarComuna)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                         .addComponent(btnLimpiarIngresoComuna)
                         .addGap(28, 28, 28)
                         .addComponent(btnVolverIngresoComuna)
-                        .addGap(28, 28, 28))))
+                        .addGap(28, 28, 28))
+                    .addGroup(panelIngresarComunaLayout.createSequentialGroup()
+                        .addComponent(labelNombreComuna)
+                        .addGap(18, 18, 18)
+                        .addComponent(InputNombre_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         panelIngresarComunaLayout.setVerticalGroup(
             panelIngresarComunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelIngresarComunaLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(panelIngresarComunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelIdComuna)
-                    .addComponent(inputId_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(60, 60, 60)
                 .addGroup(panelIngresarComunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNombreComuna)
                     .addComponent(InputNombre_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -172,9 +156,9 @@ public class VentanaIngresarComuna extends javax.swing.JFrame {
         
         if(listadoBuscarComuna.isEmpty()){
             comunaDao.ingresarComuna(comuna);
-            JOptionPane.showInputDialog("Comuna Ingresada Correctamente");
+            JOptionPane.showMessageDialog(this,"Comuna Ingresada Correctamente");
         }else{
-            JOptionPane.showInputDialog("Comuna ya existe");
+            JOptionPane.showMessageDialog(this,"Comuna ya existe");
         }
         
     }//GEN-LAST:event_btnAgregarComunaActionPerformed
@@ -219,8 +203,6 @@ public class VentanaIngresarComuna extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregarComuna;
     private javax.swing.JButton btnLimpiarIngresoComuna;
     private javax.swing.JButton btnVolverIngresoComuna;
-    private javax.swing.JTextField inputId_comuna;
-    private javax.swing.JLabel labelIdComuna;
     private javax.swing.JLabel labelNombreComuna;
     private javax.swing.JPanel panelIngresarComuna;
     // End of variables declaration//GEN-END:variables

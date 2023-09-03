@@ -24,17 +24,22 @@ public class PropiedadArrendadaDao {
         boolean resultado = false;
         try {
             Connection conexionBaseDatos = Conexion.getConexion();
-            String query = "insert into propiead_arrendad (nro_Propiedad,fecini_arriendo,feter_arriendo,numrut_cli) values(?,?,?,?)";
+            String query = "insert into propiedad_arrendada (nro_Propiedad,fecini_arriendo,fecter_arriendo,numrut_cli) values(?,?,?,?)";
             PreparedStatement prepararConsulta = conexionBaseDatos.prepareStatement(query);
             
             //Cambiar fecha de String a Date
             java.sql.Date fechini_arriendoDate = propiedadArrendada.transformarDeStringADate(propiedadArrendada.getFecini_arriendo());
-            java.sql.Date fecter_arriendoDate = propiedadArrendada.transformarDeStringADate(propiedadArrendada.getFecter_arriendo());
             
-            //Ingreso de datos a query
             prepararConsulta.setInt(1, propiedadArrendada.getNro_propiedad());
             prepararConsulta.setDate(2,fechini_arriendoDate);
-            prepararConsulta.setDate(3,fecter_arriendoDate);
+            
+            if(propiedadArrendada.getFecter_arriendo() == ""){
+                prepararConsulta.setNull(3, java.sql.Types.DATE); //Envia un dato NULL a la base de datos
+            } else{
+                java.sql.Date fecter_arriendoDate = propiedadArrendada.transformarDeStringADate(propiedadArrendada.getFecter_arriendo());
+                prepararConsulta.setDate(3,fecter_arriendoDate);
+            }
+                        
             prepararConsulta.setInt(4, propiedadArrendada.getNumrut_cli());
             
             resultado = prepararConsulta.executeUpdate() == 1;
@@ -55,19 +60,24 @@ public class PropiedadArrendadaDao {
 
         try {
             Connection conexionBaseConnection = Conexion.getConexion();
-            String query = "update propiedad_arrendada set fechini_arriendo = ?, fecter_arriendo = ?, nuemrut_cli = ? where Nro_Propiedad = ?";
+            String query = "update propiedad_arrendada set fecter_arriendo = ?, numrut_cli = ? where Nro_Propiedad = ? and fecini_arriendo = ?";
             PreparedStatement prepararConsulta = conexionBaseConnection.prepareStatement(query);
 
-            java.sql.Date fechini_arriendoDate = propiedadArrendada.transformarDeStringADate(propiedadArrendada.getFecini_arriendo());
-            java.sql.Date fecter_arriendoDate = propiedadArrendada.transformarDeStringADate(propiedadArrendada.getFecter_arriendo());
-
+            java.sql.Date fecini_arriendoDate = propiedadArrendada.transformarDeStringADate(propiedadArrendada.getFecini_arriendo());
+            
             //Ingreso de datos a query
 
-            prepararConsulta.setDate(1,fechini_arriendoDate);
-            prepararConsulta.setDate(2,fecter_arriendoDate);
-            prepararConsulta.setInt(3, propiedadArrendada.getNumrut_cli());
-            prepararConsulta.setInt(4, propiedadArrendada.getNro_propiedad());
-
+            
+            if(propiedadArrendada.getFecter_arriendo().isEmpty()){
+                prepararConsulta.setNull(1, java.sql.Types.DATE); //Envia un dato NULL a la base de datos
+            } else{
+                java.sql.Date fecter_arriendoDate = propiedadArrendada.transformarDeStringADate(propiedadArrendada.getFecter_arriendo());
+                prepararConsulta.setDate(1,fecter_arriendoDate);
+            }
+            prepararConsulta.setInt(2, propiedadArrendada.getNumrut_cli());
+            prepararConsulta.setInt(3, propiedadArrendada.getNro_propiedad());
+            prepararConsulta.setDate(4,fecini_arriendoDate);
+            
             resultado = prepararConsulta.executeUpdate() == 1;
 
         prepararConsulta.close();
@@ -87,7 +97,7 @@ public class PropiedadArrendadaDao {
         try{
             
             Connection conexionBaseDatos = Conexion.getConexion();
-            String query = "delete from propiedad_arrendada where nro propiedad = ? and fecini_arriendo = ?";
+            String query = "delete from propiedad_arrendada where nro_propiedad = ? and fecini_arriendo = ?";
             PreparedStatement prepararConsulta = conexionBaseDatos.prepareStatement(query);
             
             java.sql.Date fechini_arriendoDate = propiedadArrendada.transformarDeStringADate(propiedadArrendada.getFecini_arriendo());
@@ -119,8 +129,17 @@ public class PropiedadArrendadaDao {
             ResultSet resultado = prepararConsulta.executeQuery();
             
             while(resultado.next()){
-                String fechaInicioArriendo = transformarDeDateAString(resultado.getDate(2));
-                String fechaTerminoArriendo = transformarDeDateAString(resultado.getDate(3));
+                String fechaInicioArriendo = transformarDeDateAString(resultado.getDate(2));;
+                String fechaTerminoArriendo;
+                
+                resultado.getDate(3);
+                if(resultado.wasNull()){
+                    
+                   fechaTerminoArriendo = "";
+                }else{
+                    
+                    fechaTerminoArriendo = transformarDeDateAString(resultado.getDate(3));
+                }
                 
                 propiedadArrendada = new PropiedadArrendada(resultado.getInt(1), fechaInicioArriendo,fechaTerminoArriendo,resultado.getInt(4));
                 

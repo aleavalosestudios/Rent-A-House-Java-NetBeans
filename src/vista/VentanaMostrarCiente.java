@@ -16,11 +16,10 @@ import javax.swing.table.DefaultTableModel;
  */
 public class VentanaMostrarCiente extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VentanaMostrarCiente
-     */
+    
     public VentanaMostrarCiente() {
         initComponents();
+        
     }
 
     /**
@@ -40,6 +39,7 @@ public class VentanaMostrarCiente extends javax.swing.JFrame {
         btnMostrarTodosLosCliente = new javax.swing.JButton();
         btnModificarCliente = new javax.swing.JButton();
         btnEliminarCliente = new javax.swing.JButton();
+        btnIngresarNuevoCliente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,10 +49,7 @@ public class VentanaMostrarCiente extends javax.swing.JFrame {
 
         tablaTodosLosClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Rut", "dv", "Apellido Paterno", "Apellido Materno", "Nombre", "Direccion", "Estado civil", "Fono Fijo", "Celular", "Renta"
@@ -88,6 +85,13 @@ public class VentanaMostrarCiente extends javax.swing.JFrame {
             }
         });
 
+        btnIngresarNuevoCliente.setText("Ingresar Nuevo Cliente");
+        btnIngresarNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarNuevoClienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -105,7 +109,8 @@ public class VentanaMostrarCiente extends javax.swing.JFrame {
                             .addComponent(btnBuscarCliente)
                             .addComponent(btnMostrarTodosLosCliente)
                             .addComponent(btnModificarCliente)
-                            .addComponent(btnEliminarCliente))))
+                            .addComponent(btnEliminarCliente)
+                            .addComponent(btnIngresarNuevoCliente))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -117,6 +122,8 @@ public class VentanaMostrarCiente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnIngresarNuevoCliente)
+                        .addGap(18, 18, 18)
                         .addComponent(btnBuscarCliente)
                         .addGap(18, 18, 18)
                         .addComponent(btnMostrarTodosLosCliente)
@@ -192,7 +199,7 @@ public class VentanaMostrarCiente extends javax.swing.JFrame {
         limpiarTabla();
         
         if(listaTodosLosClientes.isEmpty()){
-            JOptionPane.showInputDialog(this,"No Existen Clientes");
+            JOptionPane.showMessageDialog(this,"No Existen Clientes");
         }else{
             String [][] datosListaTodosLosClientes = new String[listaTodosLosClientes.size()][10];
             
@@ -272,9 +279,22 @@ public class VentanaMostrarCiente extends javax.swing.JFrame {
             clienteDao.eliminarCliente(cliente); //Para optimizar codigo se deberia solicitar solo el rut de la fila seleccionada
 
             JOptionPane.showMessageDialog(this,"Cliente Eliminado");
+            
+            btnMostrarTodosLosCliente.doClick();
         }
     }//GEN-LAST:event_btnEliminarClienteActionPerformed
 
+    private void btnIngresarNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevoClienteActionPerformed
+         VentanaIngresarCliente ventanaIngresarCliente = new VentanaIngresarCliente();
+         abrirVentana(ventanaIngresarCliente,"Ingreso Nuevo Cliente");
+    }//GEN-LAST:event_btnIngresarNuevoClienteActionPerformed
+    
+    private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
+        Ventana.setVisible(true);
+        Ventana.setLocationRelativeTo(null);
+        Ventana.setTitle(tituloVentana);
+        Ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }
     
     public void limpiarTabla(){
         DefaultTableModel dtm=(DefaultTableModel)tablaTodosLosClientes.getModel();
@@ -323,6 +343,7 @@ public class VentanaMostrarCiente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarCliente;
     private javax.swing.JButton btnEliminarCliente;
+    private javax.swing.JButton btnIngresarNuevoCliente;
     private javax.swing.JButton btnModificarCliente;
     private javax.swing.JButton btnMostrarTodosLosCliente;
     private javax.swing.JLabel jLabel1;

@@ -30,8 +30,8 @@ public class ClienteDao {
             prepararConsulta.setString(5, cliente.getNombre_cli());
             prepararConsulta.setString(6, cliente.getDireccion_cli());
             prepararConsulta.setInt(7,cliente.getId_estcivil());
-            prepararConsulta.setInt(8,cliente.getFonofijo_cli());
-            prepararConsulta.setInt(9,cliente.getCelular_cli());
+            prepararConsulta.setLong(8,cliente.getFonofijo_cli());
+            prepararConsulta.setLong(9,cliente.getCelular_cli());
             prepararConsulta.setInt(10,cliente.getRenta_cli());
             
             respuesta = prepararConsulta.executeUpdate() == 1;
@@ -61,7 +61,7 @@ public class ClienteDao {
                 prepararConsulta.setString(4, cliente.getNombre_cli());
                 prepararConsulta.setString(5, cliente.getDireccion_cli());
                 prepararConsulta.setInt(6,cliente.getId_estcivil());
-                prepararConsulta.setInt(7,cliente.getFonofijo_cli());
+                prepararConsulta.setLong(7,cliente.getFonofijo_cli());
                 prepararConsulta.setInt(8,cliente.getCelular_cli());
                 prepararConsulta.setInt(9,cliente.getRenta_cli());
                 prepararConsulta.setInt(10,cliente.getNumrut_cli());

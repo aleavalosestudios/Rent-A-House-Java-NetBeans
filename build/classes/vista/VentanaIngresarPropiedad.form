@@ -32,10 +32,9 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="panelIngresarPropiedad" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -54,12 +53,18 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="btnIngresoNuevaPropiedad" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="btnLimpiarIngresoNuevaPropiedad" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="btnVolverIngresoNuevaPropiedad" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="labelNro_propiedad" min="-2" max="-2" attributes="0"/>
                                   <Component id="labelDireccion_propiedad" max="32767" attributes="0"/>
                                   <Component id="labelSuperficie" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="labelnro_dormitorios" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -70,26 +75,10 @@
                                   <Component id="labelId_comuna" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="labelNumrut_prop" min="-2" pref="126" max="-2" attributes="0"/>
-                              <Component id="labelNumrut_emp" alignment="0" max="32767" attributes="0"/>
+                              <Component id="labelNumrut_emp" alignment="0" pref="165" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="btnIngresoNuevaPropiedad" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="btnLimpiarIngresoNuevaPropiedad" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="btnVolverIngresoNuevaPropiedad" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="inputNro_propiedad" min="-2" max="-2" attributes="0"/>
                               <Component id="inputDireccion_propiedad" min="-2" max="-2" attributes="0"/>
                               <Component id="inputSuperficie" min="-2" max="-2" attributes="0"/>
                               <Component id="inputNroDormitorios" min="-2" max="-2" attributes="0"/>
@@ -101,21 +90,16 @@
                               <Component id="comboBoxTipoPropiedad" min="-2" max="-2" attributes="0"/>
                               <Component id="comboBoxComuna" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="labelNro_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="inputNro_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelDireccion_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="inputDireccion_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -165,23 +149,18 @@
                       <Component id="labelNumrut_emp" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="inputNumrut_emp" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="56" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnIngresoNuevaPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnLimpiarIngresoNuevaPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnVolverIngresoNuevaPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="labelNro_propiedad">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Nro propiedad"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="labelDireccion_propiedad">
           <Properties>
             <Property name="text" type="java.lang.String" value="Direccion Propiedad"/>
@@ -230,14 +209,6 @@
         <Component class="javax.swing.JLabel" name="labelNumrut_emp">
           <Properties>
             <Property name="text" type="java.lang.String" value="Numero Rut Empleado"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="inputNro_propiedad">
-          <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="99" red="99" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Ingrese Numero Propiedad"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="inputDireccion_propiedad">
@@ -331,12 +302,7 @@
         <Component class="javax.swing.JComboBox" name="comboBoxTipoPropiedad">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -346,12 +312,7 @@
         <Component class="javax.swing.JComboBox" name="comboBoxComuna">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <AuxValues>

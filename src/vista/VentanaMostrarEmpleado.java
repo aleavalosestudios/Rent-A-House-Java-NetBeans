@@ -41,6 +41,7 @@ public class VentanaMostrarEmpleado extends javax.swing.JFrame {
         btnMostrarTodosLosEmpleados = new javax.swing.JButton();
         btnEditarEmpleado = new javax.swing.JButton();
         btnEliminarEmpleado = new javax.swing.JButton();
+        btnIngresarNuevoEmpleado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,10 +51,7 @@ public class VentanaMostrarEmpleado extends javax.swing.JFrame {
 
         tablaTodosLosEmpleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Rut", "Dv", "Apellido Paterno", "Apellido Materno", "Nombre", "Direccion", "Estado Civil", "Fono Fijo", "Celular", "Fecha Nacimiento", "Fecha Ingreso", "Sueldo", "Comuna", "Categoria Empleado", "Rut Supervisor"
@@ -89,6 +87,13 @@ public class VentanaMostrarEmpleado extends javax.swing.JFrame {
             }
         });
 
+        btnIngresarNuevoEmpleado.setText("Ingresar Nuevo Empleado");
+        btnIngresarNuevoEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarNuevoEmpleadoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -106,7 +111,8 @@ public class VentanaMostrarEmpleado extends javax.swing.JFrame {
                             .addComponent(btnBuscarEmpleado)
                             .addComponent(btnMostrarTodosLosEmpleados)
                             .addComponent(btnEditarEmpleado)
-                            .addComponent(btnEliminarEmpleado))))
+                            .addComponent(btnEliminarEmpleado)
+                            .addComponent(btnIngresarNuevoEmpleado))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -118,6 +124,8 @@ public class VentanaMostrarEmpleado extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnIngresarNuevoEmpleado)
+                        .addGap(18, 18, 18)
                         .addComponent(btnBuscarEmpleado)
                         .addGap(18, 18, 18)
                         .addComponent(btnMostrarTodosLosEmpleados)
@@ -156,6 +164,8 @@ public class VentanaMostrarEmpleado extends javax.swing.JFrame {
         
         ArrayList<Empleado> listaempleados = empleadoDao.buscarEmpleado(inputnumrut_emp);
         
+        limpiarTabla();
+        
         if(listaempleados.isEmpty()){
             JOptionPane.showMessageDialog(this,"Empleado No Existe");
         }else{
@@ -190,26 +200,32 @@ public class VentanaMostrarEmpleado extends javax.swing.JFrame {
         EmpleadoDao empleadoDao = new EmpleadoDao();
         ArrayList<Empleado> listaempleados = empleadoDao.todosLosEmpleados();
         
-        String [][] datoslistadoEmpleados = new String[listaempleados.size()][15];
+        limpiarTabla();
         
-        for (int i = 0; i < listaempleados.size(); i++) {
-            datoslistadoEmpleados [i][0] = String.valueOf(listaempleados.get(i).getNumrut_emp());
-            datoslistadoEmpleados [i][1] = String.valueOf(listaempleados.get(i).getDvrut_emp());
-            datoslistadoEmpleados [i][2] = String.valueOf(listaempleados.get(i).getAppaterno_emp());
-            datoslistadoEmpleados [i][3] = String.valueOf(listaempleados.get(i).getApmaterno_emp());
-            datoslistadoEmpleados [i][4] = String.valueOf(listaempleados.get(i).getNombre_emp());
-            datoslistadoEmpleados [i][5] = String.valueOf(listaempleados.get(i).getDireccion_emp());
-            datoslistadoEmpleados [i][6] = String.valueOf(listaempleados.get(i).getId_estcivil());
-            datoslistadoEmpleados [i][7] = String.valueOf(listaempleados.get(i).getFonofijo_emp());
-            datoslistadoEmpleados [i][8] = String.valueOf(listaempleados.get(i).getCelular_emp());
-            datoslistadoEmpleados [i][9] = String.valueOf(listaempleados.get(i).getFecnac_emp());
-            datoslistadoEmpleados [i][10] = String.valueOf(listaempleados.get(i).getFecing_emp());
-            datoslistadoEmpleados [i][11] = String.valueOf(listaempleados.get(i).getSueldo_emp());
-            datoslistadoEmpleados [i][12] = String.valueOf(listaempleados.get(i).getId_comuna());
-            datoslistadoEmpleados [i][13] = String.valueOf(listaempleados.get(i).getId_categoria_emp());
-            datoslistadoEmpleados [i][14] = String.valueOf(listaempleados.get(i).getNumrut_supervisor());
+        if(listaempleados.isEmpty()){
+            JOptionPane.showMessageDialog(this, "No Existen Empleados");
+        }else{
+            String [][] datoslistadoEmpleados = new String[listaempleados.size()][15];
             
-            tabla.addRow(datoslistadoEmpleados[i]);
+            for (int i = 0; i < listaempleados.size(); i++) {
+                datoslistadoEmpleados [i][0] = String.valueOf(listaempleados.get(i).getNumrut_emp());
+                datoslistadoEmpleados [i][1] = String.valueOf(listaempleados.get(i).getDvrut_emp());
+                datoslistadoEmpleados [i][2] = String.valueOf(listaempleados.get(i).getAppaterno_emp());
+                datoslistadoEmpleados [i][3] = String.valueOf(listaempleados.get(i).getApmaterno_emp());
+                datoslistadoEmpleados [i][4] = String.valueOf(listaempleados.get(i).getNombre_emp());
+                datoslistadoEmpleados [i][5] = String.valueOf(listaempleados.get(i).getDireccion_emp());
+                datoslistadoEmpleados [i][6] = String.valueOf(listaempleados.get(i).getId_estcivil());
+                datoslistadoEmpleados [i][7] = String.valueOf(listaempleados.get(i).getFonofijo_emp());
+                datoslistadoEmpleados [i][8] = String.valueOf(listaempleados.get(i).getCelular_emp());
+                datoslistadoEmpleados [i][9] = String.valueOf(listaempleados.get(i).getFecnac_emp());
+                datoslistadoEmpleados [i][10] = String.valueOf(listaempleados.get(i).getFecing_emp());
+                datoslistadoEmpleados [i][11] = String.valueOf(listaempleados.get(i).getSueldo_emp());
+                datoslistadoEmpleados [i][12] = String.valueOf(listaempleados.get(i).getId_comuna());
+                datoslistadoEmpleados [i][13] = String.valueOf(listaempleados.get(i).getId_categoria_emp());
+                datoslistadoEmpleados [i][14] = String.valueOf(listaempleados.get(i).getNumrut_supervisor());
+
+                tabla.addRow(datoslistadoEmpleados[i]);
+            }
         }
         tablaTodosLosEmpleados.setModel(tabla);
     }//GEN-LAST:event_btnMostrarTodosLosEmpleadosActionPerformed
@@ -279,10 +295,31 @@ public class VentanaMostrarEmpleado extends javax.swing.JFrame {
             empleadoDao.eliminarEmpleado(empleado);
             
             JOptionPane.showMessageDialog(this, "Empleado Eliminado");
+            
+            btnMostrarTodosLosEmpleados.doClick();
         }
     }//GEN-LAST:event_btnEliminarEmpleadoActionPerformed
 
+    private void btnIngresarNuevoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevoEmpleadoActionPerformed
+        VentanaIngresarEmpleado ventanaIngresarEmpleado = new VentanaIngresarEmpleado();
+        abrirVentana(ventanaIngresarEmpleado,"Ingreso Nuevo Empleado");
+    }//GEN-LAST:event_btnIngresarNuevoEmpleadoActionPerformed
+
+    private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
+        
+        Ventana.setVisible(true);
+        Ventana.setLocationRelativeTo(null);
+        Ventana.setTitle(tituloVentana);
+        Ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }
     
+    public void limpiarTabla(){
+        DefaultTableModel dtm=(DefaultTableModel)tablaTodosLosEmpleados.getModel();
+        int n=tablaTodosLosEmpleados.getRowCount();
+        for (int i = 0; i < n ; i++) {
+            dtm.removeRow(dtm.getRowCount()-1);
+        }
+    }
     
     /**
      * @param args the command line arguments
@@ -323,6 +360,7 @@ public class VentanaMostrarEmpleado extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscarEmpleado;
     private javax.swing.JButton btnEditarEmpleado;
     private javax.swing.JButton btnEliminarEmpleado;
+    private javax.swing.JButton btnIngresarNuevoEmpleado;
     private javax.swing.JButton btnMostrarTodosLosEmpleados;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

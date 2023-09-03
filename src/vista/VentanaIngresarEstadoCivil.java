@@ -34,9 +34,7 @@ public class VentanaIngresarEstadoCivil extends javax.swing.JFrame {
     private void initComponents() {
 
         panelIngresasrEstadoCivil = new javax.swing.JPanel();
-        labelIdEstadoCivil = new javax.swing.JLabel();
         labelDescripcionEstadoCivil = new javax.swing.JLabel();
-        inputId_estcivil = new javax.swing.JTextField();
         InputDesc_estcivil = new javax.swing.JTextField();
         btnGuardarEstadoCivil = new javax.swing.JButton();
         btnLimpiarEstadoCivil = new javax.swing.JButton();
@@ -46,17 +44,7 @@ public class VentanaIngresarEstadoCivil extends javax.swing.JFrame {
 
         panelIngresasrEstadoCivil.setBorder(javax.swing.BorderFactory.createTitledBorder("Nuevo Estado Civil"));
 
-        labelIdEstadoCivil.setText("Id Estado Civil:");
-
-        labelDescripcionEstadoCivil.setText("Descripcion Estado Civil: ");
-
-        inputId_estcivil.setForeground(new java.awt.Color(153, 153, 153));
-        inputId_estcivil.setText("Ingrese Identificador Estado Civil");
-        inputId_estcivil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputId_estcivilActionPerformed(evt);
-            }
-        });
+        labelDescripcionEstadoCivil.setText("Nombre Estado Civil: ");
 
         InputDesc_estcivil.setForeground(new java.awt.Color(153, 153, 153));
         InputDesc_estcivil.setText("Ingrese Estado Civil");
@@ -89,35 +77,25 @@ public class VentanaIngresarEstadoCivil extends javax.swing.JFrame {
             .addGroup(panelIngresasrEstadoCivilLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(panelIngresasrEstadoCivilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelIdEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelDescripcionEstadoCivil)
                     .addComponent(btnGuardarEstadoCivil))
                 .addGap(18, 18, 18)
                 .addGroup(panelIngresasrEstadoCivilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelIngresasrEstadoCivilLayout.createSequentialGroup()
-                        .addGap(0, 14, Short.MAX_VALUE)
-                        .addGroup(panelIngresasrEstadoCivilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(inputId_estcivil)
-                            .addComponent(InputDesc_estcivil)))
-                    .addGroup(panelIngresasrEstadoCivilLayout.createSequentialGroup()
                         .addComponent(btnLimpiarEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnVolverEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(btnVolverEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(InputDesc_estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         panelIngresasrEstadoCivilLayout.setVerticalGroup(
             panelIngresasrEstadoCivilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelIngresasrEstadoCivilLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(68, 68, 68)
                 .addGroup(panelIngresasrEstadoCivilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelIdEstadoCivil)
-                    .addComponent(inputId_estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(panelIngresasrEstadoCivilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(labelDescripcionEstadoCivil)
                     .addComponent(InputDesc_estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(72, 72, 72)
+                .addGap(69, 69, 69)
                 .addGroup(panelIngresasrEstadoCivilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardarEstadoCivil)
                     .addComponent(btnLimpiarEstadoCivil)
@@ -145,18 +123,13 @@ public class VentanaIngresarEstadoCivil extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputId_estcivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputId_estcivilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputId_estcivilActionPerformed
-
     private void btnGuardarEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarEstadoCivilActionPerformed
-        int id_estadoCivil;
-        String desc_EstCivil;
         
-        id_estadoCivil = Integer.parseInt(inputId_estcivil.getText());
+        String desc_EstCivil;
+       
         desc_EstCivil = InputDesc_estcivil.getText();
         
-        EstadoCivil estadoCivil = new EstadoCivil(id_estadoCivil, desc_EstCivil);
+        EstadoCivil estadoCivil = new EstadoCivil(0, desc_EstCivil);
         
         EstadoCivilDao estadoCivilDao = new EstadoCivilDao();
         
@@ -226,9 +199,7 @@ public class VentanaIngresarEstadoCivil extends javax.swing.JFrame {
     private javax.swing.JButton btnGuardarEstadoCivil;
     private javax.swing.JButton btnLimpiarEstadoCivil;
     private javax.swing.JButton btnVolverEstadoCivil;
-    private javax.swing.JTextField inputId_estcivil;
     private javax.swing.JLabel labelDescripcionEstadoCivil;
-    private javax.swing.JLabel labelIdEstadoCivil;
     private javax.swing.JPanel panelIngresasrEstadoCivil;
     // End of variables declaration//GEN-END:variables
 }

@@ -102,6 +102,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         btnEditarComuna.setText("Ver / Modificar Comuna");
+        btnEditarComuna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarComunaActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Empleado");
 
@@ -113,6 +118,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         btnEditarEmpleado.setText("Ver / Modificar Empleado");
+        btnEditarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarEmpleadoActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Estado Civil");
 
@@ -124,6 +134,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         btnEditarEstadoCivil.setText("Ver / Modiicar Estado Civil");
+        btnEditarEstadoCivil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarEstadoCivilActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Propiedad");
 
@@ -135,6 +150,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         btnEditarPropiedad.setText("Ver / Modificar Propiedad");
+        btnEditarPropiedad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarPropiedadActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Propiedad Arrendada");
 
@@ -146,6 +166,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         btnEditarPropiedadArrendada.setText("Ver / Modificar Propiedad Arrendada");
+        btnEditarPropiedadArrendada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarPropiedadArrendadaActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Propietario");
 
@@ -157,6 +182,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         btnEditarPropietario.setText("Ver / Modificar Propietario");
+        btnEditarPropietario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarPropietarioActionPerformed(evt);
+            }
+        });
 
         jLabel9.setText("Tipo Propiedad");
 
@@ -168,6 +198,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         btnEditarTipoPropiedad.setText("Ver / Modificar Tipo Propiedad");
+        btnEditarTipoPropiedad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarTipoPropiedadActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -347,6 +382,41 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         VentanaIngresoTipoPropiedad ventanaIngresoTipoPropiedad = new VentanaIngresoTipoPropiedad();
         abrirVentana(ventanaIngresoTipoPropiedad,"Ingreso Nuevo Tipo De Propidad");
     }//GEN-LAST:event_btnIngresarTipoPropiedadActionPerformed
+
+    private void btnEditarComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarComunaActionPerformed
+        VentanaMostrarComuna ventanaMostrarComuna = new VentanaMostrarComuna();
+        abrirVentana(ventanaMostrarComuna,"Mostrar Comunas");
+    }//GEN-LAST:event_btnEditarComunaActionPerformed
+
+    private void btnEditarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEmpleadoActionPerformed
+        VentanaMostrarEmpleado ventanaMostrarEmpleado = new VentanaMostrarEmpleado();
+        abrirVentana(ventanaMostrarEmpleado,"Mostrar Empleados");
+    }//GEN-LAST:event_btnEditarEmpleadoActionPerformed
+
+    private void btnEditarEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEstadoCivilActionPerformed
+        VentanaMostrarEstadoCivil ventanaMostrarEstadoCivil = new VentanaMostrarEstadoCivil();
+        abrirVentana(ventanaMostrarEstadoCivil,"Mostrar Registro Civil");
+    }//GEN-LAST:event_btnEditarEstadoCivilActionPerformed
+
+    private void btnEditarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPropiedadActionPerformed
+        VentanaMostrarPropiedad ventanaMostrarPropiedad = new VentanaMostrarPropiedad();
+        abrirVentana(ventanaMostrarPropiedad,"Mostrar Propiedad");
+    }//GEN-LAST:event_btnEditarPropiedadActionPerformed
+
+    private void btnEditarPropiedadArrendadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPropiedadArrendadaActionPerformed
+        VentanaMostrarPropiedadArrendada ventanaMostrarPropiedadArrendada = new VentanaMostrarPropiedadArrendada();
+        abrirVentana(ventanaMostrarPropiedadArrendada,"Mostrar Propiedad");
+    }//GEN-LAST:event_btnEditarPropiedadArrendadaActionPerformed
+
+    private void btnEditarPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPropietarioActionPerformed
+        VentanaMostrarPropietario ventanaMostrarPropietario = new VentanaMostrarPropietario();
+        abrirVentana(ventanaMostrarPropietario,"Mostrar Propietarios");
+    }//GEN-LAST:event_btnEditarPropietarioActionPerformed
+
+    private void btnEditarTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarTipoPropiedadActionPerformed
+        VentanaMostrarTipoPropiedad ventanaMostrarTipoPropiedad = new VentanaMostrarTipoPropiedad();
+        abrirVentana(ventanaMostrarTipoPropiedad,"Mostrar Tipo Propiedad");
+    }//GEN-LAST:event_btnEditarTipoPropiedadActionPerformed
 
     /**
      * @param args the command line arguments

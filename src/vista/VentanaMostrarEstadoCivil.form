@@ -68,6 +68,7 @@
                               <Component id="btnMostrarTodosLosEstadosCiviles" min="-2" max="-2" attributes="0"/>
                               <Component id="btnActualizarEstadoCivil" min="-2" max="-2" attributes="0"/>
                               <Component id="btnEliminarEstadoCivil" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnIngresarNuevoEstadoCivil" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -84,6 +85,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jScrollPane1" min="-2" pref="275" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
+                          <Component id="btnIngresarNuevoEstadoCivil" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnBuscarEstadoCivil" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnMostrarTodosLosEstadosCiviles" min="-2" max="-2" attributes="0"/>
@@ -114,7 +117,7 @@
             <Component class="javax.swing.JTable" name="tablaTodosLosEstadosCiviles">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="2" rowCount="4">
+                  <Table columnCount="2" rowCount="0">
                     <Column editable="true" title="Id Estado Civil" type="java.lang.Object"/>
                     <Column editable="true" title="Estado Civil" type="java.lang.Object"/>
                   </Table>
@@ -170,6 +173,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarEstadoCivilActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnIngresarNuevoEstadoCivil">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ingresar Nuevo Estado Civil"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarNuevoEstadoCivilActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

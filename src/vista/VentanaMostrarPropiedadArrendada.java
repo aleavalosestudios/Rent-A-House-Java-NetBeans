@@ -40,6 +40,7 @@ public class VentanaMostrarPropiedadArrendada extends javax.swing.JFrame {
         btnMostrarPropiedadesArrendadas = new javax.swing.JButton();
         btnActualizarPropiedadArrendada = new javax.swing.JButton();
         btnEliminarPropiedadArrendada = new javax.swing.JButton();
+        btnIngresarNuevaVentana = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,10 +48,7 @@ public class VentanaMostrarPropiedadArrendada extends javax.swing.JFrame {
 
         tablaTodasLasPropiedadesArrendadas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Nro Propiedad", "Inicio Arriendo", "Termino Arriendo", "Rut Cliente"
@@ -88,6 +86,13 @@ public class VentanaMostrarPropiedadArrendada extends javax.swing.JFrame {
             }
         });
 
+        btnIngresarNuevaVentana.setText("Ingresar Nuevo Arriendo");
+        btnIngresarNuevaVentana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarNuevaVentanaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -105,7 +110,8 @@ public class VentanaMostrarPropiedadArrendada extends javax.swing.JFrame {
                             .addComponent(btnBuscarPropiedadesArrendadas)
                             .addComponent(btnMostrarPropiedadesArrendadas)
                             .addComponent(btnActualizarPropiedadArrendada)
-                            .addComponent(btnEliminarPropiedadArrendada))))
+                            .addComponent(btnEliminarPropiedadArrendada)
+                            .addComponent(btnIngresarNuevaVentana))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -115,8 +121,10 @@ public class VentanaMostrarPropiedadArrendada extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnIngresarNuevaVentana)
+                        .addGap(18, 18, 18)
                         .addComponent(btnBuscarPropiedadesArrendadas)
                         .addGap(18, 18, 18)
                         .addComponent(btnMostrarPropiedadesArrendadas)
@@ -124,7 +132,7 @@ public class VentanaMostrarPropiedadArrendada extends javax.swing.JFrame {
                         .addComponent(btnActualizarPropiedadArrendada)
                         .addGap(18, 18, 18)
                         .addComponent(btnEliminarPropiedadArrendada)
-                        .addGap(0, 142, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -180,6 +188,8 @@ public class VentanaMostrarPropiedadArrendada extends javax.swing.JFrame {
         
         ArrayList<PropiedadArrendada> listaPropiedadesArrendadas = propiedadArrendadaDao.todasLasPropiedadesArrendadas();
         
+        limpiarTabla();
+        
         if(listaPropiedadesArrendadas.isEmpty()){
             JOptionPane.showMessageDialog(this," No Existen Propiedades Arrendadas");
         }else{
@@ -217,6 +227,8 @@ public class VentanaMostrarPropiedadArrendada extends javax.swing.JFrame {
             propiedadDao.actualizarPropiedadArrendada(propiedadArrendada);
             
             JOptionPane.showMessageDialog(this,"Propiedad Arrendada Modificada");
+            
+            btnMostrarPropiedadesArrendadas.doClick();
         }
     }//GEN-LAST:event_btnActualizarPropiedadArrendadaActionPerformed
 
@@ -238,9 +250,31 @@ public class VentanaMostrarPropiedadArrendada extends javax.swing.JFrame {
             propiedadDao.eliminarPropiedadArrendada(propiedadArrendada);
             
             JOptionPane.showMessageDialog(this,"Propiedad Arrendada eliminada");
+            
+            btnMostrarPropiedadesArrendadas.doClick();
         }
     }//GEN-LAST:event_btnEliminarPropiedadArrendadaActionPerformed
 
+    private void btnIngresarNuevaVentanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevaVentanaActionPerformed
+       VentanaIngresoPropiedadArrendada ventanaIngresoPropiedadArrendada = new VentanaIngresoPropiedadArrendada();
+        abrirVentana(ventanaIngresoPropiedadArrendada,"Ingreso Nuevo Arriendo De Propiedad");
+    }//GEN-LAST:event_btnIngresarNuevaVentanaActionPerformed
+
+    public void limpiarTabla(){
+        DefaultTableModel dtm=(DefaultTableModel)tablaTodasLasPropiedadesArrendadas.getModel();
+        int n=tablaTodasLasPropiedadesArrendadas.getRowCount();
+        for (int i = 0; i < n ; i++) {
+            dtm.removeRow(dtm.getRowCount()-1);
+        }
+    }
+    
+    //Metodo para abrir cualquier ventana
+    private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
+        Ventana.setVisible(true);
+        Ventana.setLocationRelativeTo(null);
+        Ventana.setTitle(tituloVentana);
+        Ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }
     /**
      * @param args the command line arguments
      */
@@ -280,6 +314,7 @@ public class VentanaMostrarPropiedadArrendada extends javax.swing.JFrame {
     private javax.swing.JButton btnActualizarPropiedadArrendada;
     private javax.swing.JButton btnBuscarPropiedadesArrendadas;
     private javax.swing.JButton btnEliminarPropiedadArrendada;
+    private javax.swing.JButton btnIngresarNuevaVentana;
     private javax.swing.JButton btnMostrarPropiedadesArrendadas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
