@@ -283,7 +283,7 @@ public class VentanaMostrarPropiedad extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarPropiedadActionPerformed
 
     
-     private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
+    private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
         
         Ventana.setVisible(true);
         Ventana.setLocationRelativeTo(null);

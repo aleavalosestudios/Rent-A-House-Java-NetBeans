@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="labelNumrut_cli" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="labelNro_propiedad" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelFecini_arriendo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelFecter_arriendo" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="inputNro_propiedad" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputFecini_arriendo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputFecter_arriendo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputNumrut_cli" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnIngresarPropiedad" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnIngresarCliente" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="btnIngresoArriendoPropiedad" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnLimpiarIngresoArriendoPropiedad" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnVolverIngresoArriendoPropiedad" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelNro_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputNro_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnIngresarPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelFecini_arriendo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputFecini_arriendo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnIngresarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelFecter_arriendo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputFecter_arriendo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelNumrut_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputNumrut_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnIngresoArriendoPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnLimpiarIngresoArriendoPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnVolverIngresoArriendoPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="92" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="btnIngresoArriendoPropiedad">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingreso Arriendo Propiedad"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresoArriendoPropiedadActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnLimpiarIngresoArriendoPropiedad">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Limpiar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpiarIngresoArriendoPropiedadActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnVolverIngresoArriendoPropiedad">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Volver"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVolverIngresoArriendoPropiedadActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelNro_propiedad">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nro Propiedad"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnIngresarPropiedad">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingresar Nueva Propiedad"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarPropiedadActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelFecini_arriendo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fecha Inicio Arriendo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnIngresarCliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingresar Nuevo Cliente"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarClienteActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelFecter_arriendo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fecha Termino Arriendo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelNumrut_cli">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nro Rut Cliente"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inputNro_propiedad">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingrese Numero Propiedad"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inputFecini_arriendo">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingrese Fecha Inicio Arriendo"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputFecini_arriendoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inputFecter_arriendo">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingrese Fecha Termino Arriendo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inputNumrut_cli">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingrese Numero de rut del Cliente"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>

@@ -257,7 +257,7 @@ public class VentanaMostrarTipoPropiedad extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarTipoPropiedadActionPerformed
 
     private void btnNuevoIngresoTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoIngresoTipoPropiedadActionPerformed
-         VentanaIngresoTipoPropiedad ventanaIngresoTipoPropiedad = new VentanaIngresoTipoPropiedad();
+        VentanaIngresoTipoPropiedad ventanaIngresoTipoPropiedad = new VentanaIngresoTipoPropiedad();
         abrirVentana(ventanaIngresoTipoPropiedad,"Ingreso Nuevo Tipo De Propidad");
     }//GEN-LAST:event_btnNuevoIngresoTipoPropiedadActionPerformed
     

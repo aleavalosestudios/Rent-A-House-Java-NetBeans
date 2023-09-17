@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/jano/Reconstruccion%20Programas%20Duoc/Java/RentAHouse/src/controlador/ClienteDao.java</file>
-            <file>file:/D:/jano/Reconstruccion%20Programas%20Duoc/Java/RentAHouse/src/vista/VentanaMostrarEstadoCivil.java</file>
+            <file>file:/D:/jano/Reconstruccion%20Programas%20Duoc/Java/RentAHouse/src/vista/PanelIngresarTipoPropiedad.java</file>
+            <file>file:/D:/jano/Reconstruccion%20Programas%20Duoc/Java/RentAHouse/src/vista/PanelIngresarCliente.java</file>
+            <file>file:/D:/jano/Reconstruccion%20Programas%20Duoc/Java/RentAHouse/src/vista/PanelIngresarComuna.java</file>
             <file>file:/D:/jano/Reconstruccion%20Programas%20Duoc/Java/RentAHouse/src/vista/VentanaPrincipal.java</file>
-            <file>file:/D:/jano/Reconstruccion%20Programas%20Duoc/Java/RentAHouse/src/vista/VentanaMostrarCiente.java</file>
+            <file>file:/D:/jano/Reconstruccion%20Programas%20Duoc/Java/RentAHouse/src/vista/PanelIngresarEstadoCivil.java</file>
+            <file>file:/D:/jano/Reconstruccion%20Programas%20Duoc/Java/RentAHouse/src/vista/VentanaMostrarComuna.java</file>
+            <file>file:/D:/jano/Reconstruccion%20Programas%20Duoc/Java/RentAHouse/src/vista/PanelIngresarEmpleado.java</file>
         </group>
     </open-files>
 </project-private>

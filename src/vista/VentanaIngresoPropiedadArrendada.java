@@ -27,7 +27,7 @@ public class VentanaIngresoPropiedadArrendada extends javax.swing.JFrame {
         initComponents();
     }
     
-     private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
+    private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
         
         Ventana.setVisible(true);
         Ventana.setLocationRelativeTo(null);

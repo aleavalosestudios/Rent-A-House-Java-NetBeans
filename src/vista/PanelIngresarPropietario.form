@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelNumrut_prop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelDvrut_prop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelAppaterno_prop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelApmaterno_prop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelNombre_prop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelDireccion_prop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelId_estcivil" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelFonofijo_prop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelCelular_prop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelId_Comuna" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="inputNumrut_prop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputDvrut_prop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputCelular_prop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputId_comuna" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputAppaterno_prop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputApmaterno_prop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputNombre_prop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputDireccion_prop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputFonofijo_prop" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
+                          <Component id="comboBoxEstadoCivil" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="btnIngresarNuevoPropietario" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnLimpiarIngresoNuevoPropietario" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnVolverIngresoNuevoPropietario" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelNumrut_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputNumrut_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelDvrut_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputDvrut_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelAppaterno_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputAppaterno_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelApmaterno_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputApmaterno_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelNombre_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputNombre_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelDireccion_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputDireccion_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelId_estcivil" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboBoxEstadoCivil" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelFonofijo_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputFonofijo_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelCelular_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputCelular_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelId_Comuna" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputId_comuna" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnIngresarNuevoPropietario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnLimpiarIngresoNuevoPropietario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnVolverIngresoNuevoPropietario" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JTextField" name="inputNombre_prop">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingrese Nombre Propietario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelNombre_prop">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nombre Propietario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inputDireccion_prop">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingrese Direccion Propietario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDireccion_prop">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Direccion Propietario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inputFonofijo_prop">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingrese Fono Fijo Propietario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelId_estcivil">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Id Estado Civil"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inputCelular_prop">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingrese Celular Propietario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelFonofijo_prop">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fono fijo Propietario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inputId_comuna">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingrese Id Comuna"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelCelular_prop">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Celular Propietario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnIngresarNuevoPropietario">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingresar Nuevo Propietario"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarNuevoPropietarioActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelId_Comuna">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Id Comuna"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnLimpiarIngresoNuevoPropietario">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Limpiar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpiarIngresoNuevoPropietarioActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inputNumrut_prop">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingrese Numero Rut Propietario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnVolverIngresoNuevoPropietario">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Volver"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVolverIngresoNuevoPropietarioActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelNumrut_prop">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nro Rut Propietario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inputDvrut_prop">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingrese DV Rut Propietario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="comboBoxEstadoCivil">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Item 1"/>
+            <StringItem index="1" value="Item 2"/>
+            <StringItem index="2" value="Item 3"/>
+            <StringItem index="3" value="Item 4"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDvrut_prop">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="DV Rut Propietario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inputAppaterno_prop">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingrese Apellido Paterno"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelAppaterno_prop">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Apellido Paterno Propietario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inputApmaterno_prop">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingrese Apellido Materno"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelApmaterno_prop">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Apellido Materno Propietario"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
