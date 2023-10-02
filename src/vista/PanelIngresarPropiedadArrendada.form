@@ -50,8 +50,6 @@
                       <Component id="btnIngresoArriendoPropiedad" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnLimpiarIngresoArriendoPropiedad" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnVolverIngresoArriendoPropiedad" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="22" max="32767" attributes="0"/>
@@ -87,7 +85,6 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnIngresoArriendoPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnLimpiarIngresoArriendoPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnVolverIngresoArriendoPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="92" max="32767" attributes="0"/>
           </Group>
@@ -109,14 +106,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpiarIngresoArriendoPropiedadActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnVolverIngresoArriendoPropiedad">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Volver"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVolverIngresoArriendoPropiedadActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="labelNro_propiedad">
@@ -147,7 +136,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="labelFecter_arriendo">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Fecha Termino Arriendo"/>
+        <Property name="text" type="java.lang.String" value="Fecha T&#xe9;rmino Arriendo"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelNumrut_cli">

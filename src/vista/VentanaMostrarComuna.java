@@ -167,17 +167,14 @@ public class VentanaMostrarComuna extends javax.swing.JFrame {
         }else{
             String[][] datosListadoBuscarComuna = new String[listadoBuscarComuna.size()][2];
             
-            for (int i = 0; i < listadoBuscarComuna.size(); i++) {
-                
+            for (int i = 0; i < listadoBuscarComuna.size(); i++) {                
                 datosListadoBuscarComuna[i][0] = String.valueOf(listadoBuscarComuna.get(i).getId_comuna());
                 datosListadoBuscarComuna[i][1] = String.valueOf(listadoBuscarComuna.get(i).getNombre_comuna());
                 
                 tabla.addRow(datosListadoBuscarComuna[i]);
-            }
-            
+            }            
             tablaTodasLasComunas.setModel(tabla);
-        }
-           
+        }           
     }//GEN-LAST:event_btnBuscarComunaActionPerformed
 
     private void btnMostrarTodasLasComunasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarTodasLasComunasActionPerformed
@@ -187,14 +184,12 @@ public class VentanaMostrarComuna extends javax.swing.JFrame {
         
         String[][] datosListaTodasLasComunas = new String[listaTodasLasComunas.size()][2];
         
-        for (int i = 0; i < listaTodasLasComunas.size(); i++) {
-            
+        for (int i = 0; i < listaTodasLasComunas.size(); i++) {            
             datosListaTodasLasComunas[i][0] = String.valueOf(listaTodasLasComunas.get(i).getId_comuna());
             datosListaTodasLasComunas[i][1] = listaTodasLasComunas.get(i).getNombre_comuna();
             
             tabla.addRow(datosListaTodasLasComunas[i]);
-        }
-        
+        }        
         tablaTodasLasComunas.setModel(tabla);
         
     }//GEN-LAST:event_btnMostrarTodasLasComunasActionPerformed
@@ -205,22 +200,16 @@ public class VentanaMostrarComuna extends javax.swing.JFrame {
         
         if(filaSeleccionada == -1){
             JOptionPane.showMessageDialog(this, "Debe Seleccionar Una Fila");
-        }else{
-            
+        }else{            
             int id_comuna = Integer.parseInt(String.valueOf(tablaTodasLasComunas.getValueAt(filaSeleccionada, 0)));
             String nombre_comuna = String.valueOf(tablaTodasLasComunas.getValueAt(filaSeleccionada, 1));
             
-            Comuna comuna = new Comuna(id_comuna, nombre_comuna);
-            
-            ComunaDao comunaDao = new ComunaDao();
-            
+            Comuna comuna = new Comuna(id_comuna, nombre_comuna);           
+            ComunaDao comunaDao = new ComunaDao();            
             comunaDao.actualizarComuna(comuna);
             
-            JOptionPane.showMessageDialog(this,"Comuna Actualizada");
-                    
-        }
-        
-        
+            JOptionPane.showMessageDialog(this,"Comuna Actualizada");            
+        }        
     }//GEN-LAST:event_btnEditarComunaActionPerformed
 
     private void btnEliminarComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarComunaActionPerformed
@@ -232,10 +221,8 @@ public class VentanaMostrarComuna extends javax.swing.JFrame {
             int id_comuna = Integer.parseInt(String.valueOf(tablaTodasLasComunas.getValueAt(filaSeleccionada,0)));
             String nombre_comuna = String.valueOf(tablaTodasLasComunas.getValueAt(filaSeleccionada,1));
             
-            Comuna comuna = new Comuna(id_comuna, nombre_comuna);
-            
-            ComunaDao comunaDao = new ComunaDao();
-            
+            Comuna comuna = new Comuna(id_comuna, nombre_comuna);            
+            ComunaDao comunaDao = new ComunaDao();            
             comunaDao.eliminarComuna(comuna);
             
             JOptionPane.showMessageDialog(this,"Comuna Eliminada");
@@ -258,14 +245,13 @@ public class VentanaMostrarComuna extends javax.swing.JFrame {
     }
     
     public void limpiarTabla(){
-    DefaultTableModel dtm=(DefaultTableModel)tablaTodasLasComunas.getModel();
-    int n=tablaTodasLasComunas.getRowCount();
-    for (int i = 0; i < n ; i++) {
-        dtm.removeRow(dtm.getRowCount()-1);
+        DefaultTableModel dtm=(DefaultTableModel)tablaTodasLasComunas.getModel();
+        int n=tablaTodasLasComunas.getRowCount();
+        for (int i = 0; i < n ; i++) {
+            dtm.removeRow(dtm.getRowCount()-1);
+        }
     }
-}
-    
-    
+        
     /**
      * @param args the command line arguments
      */
@@ -300,7 +286,6 @@ public class VentanaMostrarComuna extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarComuna;
     private javax.swing.JButton btnEditarComuna;

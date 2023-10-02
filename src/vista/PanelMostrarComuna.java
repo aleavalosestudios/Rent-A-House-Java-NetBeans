@@ -5,6 +5,7 @@
 package vista;
 import modelo.Comuna;
 import controlador.ComunaDao;
+import controlador.MisMetodos;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
@@ -15,12 +16,17 @@ import javax.swing.table.DefaultTableModel;
  * @author aleja
  */
 public class PanelMostrarComuna extends javax.swing.JPanel {
-
+    Comuna comuna;
+    ComunaDao comunaDao = new ComunaDao();
+    MisMetodos misMetodos = new MisMetodos();
+    DefaultTableModel tabla;
+            
     /**
      * Creates new form PanelMostrarComuna
      */
     public PanelMostrarComuna() {
         initComponents();
+        btnMostrarTodasLasComunas.doClick();
     }
 
     /**
@@ -100,14 +106,18 @@ public class PanelMostrarComuna extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnIngresarNuevaComuna)
-                            .addComponent(btnBuscarComuna)
-                            .addComponent(btnMostrarTodasLasComunas)
-                            .addComponent(btnEditarComuna)
-                            .addComponent(btnEliminarComuna)))
+                            .addComponent(btnBuscarComuna)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(164, 164, 164)
-                        .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnMostrarTodasLasComunas)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEditarComuna)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEliminarComuna)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,39 +129,32 @@ public class PanelMostrarComuna extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnIngresarNuevaComuna)
                         .addGap(18, 18, 18)
-                        .addComponent(btnBuscarComuna)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnMostrarTodasLasComunas)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEditarComuna)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEliminarComuna))
+                        .addComponent(btnBuscarComuna))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMostrarTodasLasComunas)
+                    .addComponent(btnEditarComuna)
+                    .addComponent(btnEliminarComuna))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEditarComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarComunaActionPerformed
-
         int filaSeleccionada = tablaTodasLasComunas.getSelectedRow();
 
         if(filaSeleccionada == -1){
             JOptionPane.showMessageDialog(this, "Debe Seleccionar Una Fila");
         }else{
-
             int id_comuna = Integer.parseInt(String.valueOf(tablaTodasLasComunas.getValueAt(filaSeleccionada, 0)));
             String nombre_comuna = String.valueOf(tablaTodasLasComunas.getValueAt(filaSeleccionada, 1));
 
-            Comuna comuna = new Comuna(id_comuna, nombre_comuna);
-
-            ComunaDao comunaDao = new ComunaDao();
-
+            comuna = new Comuna(id_comuna, nombre_comuna);
             comunaDao.actualizarComuna(comuna);
 
             JOptionPane.showMessageDialog(this,"Comuna Actualizada");
 
         }
-
     }//GEN-LAST:event_btnEditarComunaActionPerformed
 
     private void btnEliminarComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarComunaActionPerformed
@@ -163,10 +166,7 @@ public class PanelMostrarComuna extends javax.swing.JPanel {
             int id_comuna = Integer.parseInt(String.valueOf(tablaTodasLasComunas.getValueAt(filaSeleccionada,0)));
             String nombre_comuna = String.valueOf(tablaTodasLasComunas.getValueAt(filaSeleccionada,1));
 
-            Comuna comuna = new Comuna(id_comuna, nombre_comuna);
-
-            ComunaDao comunaDao = new ComunaDao();
-
+            comuna = new Comuna(id_comuna, nombre_comuna);
             comunaDao.eliminarComuna(comuna);
 
             JOptionPane.showMessageDialog(this,"Comuna Eliminada");
@@ -177,16 +177,16 @@ public class PanelMostrarComuna extends javax.swing.JPanel {
 
     private void btnIngresarNuevaComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevaComunaActionPerformed
         VentanaIngresarComuna ventanaIngresarComuna = new VentanaIngresarComuna();
-        abrirVentana(ventanaIngresarComuna,"Ingreso Nueva Comuna");
+        misMetodos.abrirVentana(ventanaIngresarComuna,"Ingreso Nueva Comuna");
     }//GEN-LAST:event_btnIngresarNuevaComunaActionPerformed
 
     private void btnBuscarComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarComunaActionPerformed
-        DefaultTableModel tabla = (DefaultTableModel)tablaTodasLasComunas.getModel();
-        ComunaDao comunaDao = new ComunaDao();
+        tabla = (DefaultTableModel)tablaTodasLasComunas.getModel();
+        
         String nombre_comuna = JOptionPane.showInputDialog("Ingrese Nombre Comuna");
         ArrayList<Comuna> listadoBuscarComuna = comunaDao.buscarComuna(nombre_comuna);
 
-        limpiarTabla();
+        misMetodos.tablaLimpiar(tablaTodasLasComunas);
 
         if(listadoBuscarComuna.isEmpty()){
             JOptionPane.showMessageDialog(this,"La comuna no existe");
@@ -200,17 +200,14 @@ public class PanelMostrarComuna extends javax.swing.JPanel {
 
                 tabla.addRow(datosListadoBuscarComuna[i]);
             }
-
             tablaTodasLasComunas.setModel(tabla);
+            misMetodos.tablaCentrarDatos(tablaTodasLasComunas);
         }
-
     }//GEN-LAST:event_btnBuscarComunaActionPerformed
 
     private void btnMostrarTodasLasComunasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarTodasLasComunasActionPerformed
-        DefaultTableModel tabla = (DefaultTableModel)tablaTodasLasComunas.getModel();
-        ComunaDao comunaDao = new ComunaDao();
+        tabla = (DefaultTableModel)tablaTodasLasComunas.getModel();
         ArrayList<Comuna> listaTodasLasComunas = comunaDao.mostrarComunas();
-
         String[][] datosListaTodasLasComunas = new String[listaTodasLasComunas.size()][2];
 
         for (int i = 0; i < listaTodasLasComunas.size(); i++) {
@@ -220,24 +217,11 @@ public class PanelMostrarComuna extends javax.swing.JPanel {
 
             tabla.addRow(datosListaTodasLasComunas[i]);
         }
-
         tablaTodasLasComunas.setModel(tabla);
+        misMetodos.tablaCentrarDatos(tablaTodasLasComunas);
 
     }//GEN-LAST:event_btnMostrarTodasLasComunasActionPerformed
-    private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
-        Ventana.setVisible(true);
-        Ventana.setLocationRelativeTo(null);
-        Ventana.setTitle(tituloVentana);
-        Ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-    }
     
-    public void limpiarTabla(){
-        DefaultTableModel dtm=(DefaultTableModel)tablaTodasLasComunas.getModel();
-        int n=tablaTodasLasComunas.getRowCount();
-        for (int i = 0; i < n ; i++) {
-            dtm.removeRow(dtm.getRowCount()-1);
-        }
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarComuna;
     private javax.swing.JButton btnEditarComuna;

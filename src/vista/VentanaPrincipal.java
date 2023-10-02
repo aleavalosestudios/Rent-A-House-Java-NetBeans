@@ -4,6 +4,7 @@
  */
 package vista;
 
+import controlador.MisMetodos;
 import vista.PanelIngresarCategoriaEmpleado;
 import vista.PanelIngresarCliente;
 import javax.swing.*;
@@ -17,6 +18,7 @@ import java.awt.event.ActionListener;
 public class VentanaPrincipal extends javax.swing.JFrame {
     CardLayout cardLayout = new CardLayout();
     PanelIngresarCategoriaEmpleado panelCategoriaEmpleado;
+    MisMetodos misMetodos = new MisMetodos();
     //JPanel panelVentanas = new JPanel();
     /**
      * Creates new form VentanaPrincipal
@@ -24,10 +26,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         initComponents();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
-        
-        
-        //Inicializar el CardLayout 
+        setPreferredSize(new Dimension(800,800));
+        //setExtendedState(JFrame.MAXIMIZED_BOTH);
+               
+        //Inicializar el CardLayout
+        panelVentanas.setMaximumSize(new Dimension(1200,800));
         panelVentanas.setLayout(cardLayout);
     }
     
@@ -41,6 +44,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ScrollPanelPrincipal = new javax.swing.JScrollPane();
         panelPrincipal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnIngresarPropiedad = new javax.swing.JButton();
@@ -69,12 +73,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         btnEditarPropietario = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        ScrollPanelVentanas = new javax.swing.JScrollPane();
         panelVentanas = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        ScrollPanelPrincipal.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        ScrollPanelPrincipal.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        ScrollPanelPrincipal.setViewportBorder(javax.swing.BorderFactory.createTitledBorder("ScrollPanel"));
 
         panelPrincipal.setBorder(javax.swing.BorderFactory.createTitledBorder("Panel Principal"));
 
@@ -230,97 +239,98 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnIngresarCategoriaEmpleado)
-                            .addComponent(btnIngresarComuna)
-                            .addComponent(btnIngresarEmpleado)
-                            .addComponent(btnIngresarEstadoCivil)
-                            .addComponent(btnIngresarPropiedad)
-                            .addComponent(btnIngresarPropiedadArrendada)
-                            .addComponent(btnIngresarPropietario)
-                            .addComponent(btnIngresarTipoPropiedad)
-                            .addComponent(btnIngresarCliente))
-                        .addGap(32, 32, 32)
-                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnEditarTipoPropiedad)
-                            .addComponent(btnEditarPropietario)
-                            .addComponent(btnEditarPropiedadArrendada)
-                            .addComponent(btnEditarPropiedad)
-                            .addComponent(btnEditarEstadoCivil)
-                            .addComponent(btnEditarEmpleado)
-                            .addComponent(btnEditarComuna)
-                            .addComponent(btnVerEditarCategortiaEmpleado)
-                            .addComponent(btnVerEditarCliente)))
-                    .addComponent(jLabel3)
+                    .addComponent(btnIngresarComuna)
+                    .addComponent(btnIngresarEmpleado)
+                    .addComponent(btnIngresarEstadoCivil)
+                    .addComponent(btnIngresarPropiedad)
+                    .addComponent(btnVerEditarCliente)
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
+                    .addComponent(btnEditarComuna)
+                    .addComponent(btnEditarEstadoCivil)
+                    .addComponent(btnEditarEmpleado)
+                    .addComponent(btnIngresarCliente)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnIngresarCategoriaEmpleado)
+                    .addComponent(btnVerEditarCategortiaEmpleado)
+                    .addComponent(jLabel3)
+                    .addComponent(btnIngresarPropiedadArrendada)
+                    .addComponent(btnIngresarPropietario)
+                    .addComponent(btnIngresarTipoPropiedad)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8)
-                    .addComponent(jLabel9))
-                .addContainerGap())
+                    .addComponent(jLabel9)
+                    .addComponent(btnEditarPropiedad)
+                    .addComponent(btnEditarPropiedadArrendada)
+                    .addComponent(btnEditarPropietario)
+                    .addComponent(btnEditarTipoPropiedad))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnIngresarCategoriaEmpleado)
-                    .addComponent(btnVerEditarCategortiaEmpleado))
+                .addGap(12, 12, 12)
+                .addComponent(btnIngresarCategoriaEmpleado)
+                .addGap(18, 18, 18)
+                .addComponent(btnVerEditarCategortiaEmpleado)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnIngresarCliente)
-                    .addComponent(btnVerEditarCliente))
+                .addComponent(btnIngresarCliente)
+                .addGap(18, 18, 18)
+                .addComponent(btnVerEditarCliente)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnIngresarComuna)
-                    .addComponent(btnEditarComuna))
+                .addComponent(btnIngresarComuna)
+                .addGap(18, 18, 18)
+                .addComponent(btnEditarComuna)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnIngresarEmpleado)
-                    .addComponent(btnEditarEmpleado))
+                .addComponent(btnIngresarEmpleado)
+                .addGap(18, 18, 18)
+                .addComponent(btnEditarEmpleado)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnIngresarEstadoCivil)
-                    .addComponent(btnEditarEstadoCivil))
+                .addComponent(btnIngresarEstadoCivil)
+                .addGap(18, 18, 18)
+                .addComponent(btnEditarEstadoCivil)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnIngresarPropiedad)
-                    .addComponent(btnEditarPropiedad))
+                .addComponent(btnIngresarPropiedad)
+                .addGap(18, 18, 18)
+                .addComponent(btnEditarPropiedad)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnIngresarPropiedadArrendada, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEditarPropiedadArrendada))
+                .addComponent(btnIngresarPropiedadArrendada, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnEditarPropiedadArrendada)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnIngresarPropietario)
-                    .addComponent(btnEditarPropietario))
+                .addComponent(btnIngresarPropietario)
                 .addGap(18, 18, 18)
+                .addComponent(btnEditarPropietario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnIngresarTipoPropiedad)
-                    .addComponent(btnEditarTipoPropiedad))
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addComponent(btnIngresarTipoPropiedad)
+                .addGap(18, 18, 18)
+                .addComponent(btnEditarTipoPropiedad)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
+
+        ScrollPanelPrincipal.setViewportView(panelPrincipal);
+
+        ScrollPanelVentanas.setBorder(javax.swing.BorderFactory.createTitledBorder("ScrollPanelVentanas"));
+        ScrollPanelVentanas.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        ScrollPanelVentanas.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         panelVentanas.setBorder(javax.swing.BorderFactory.createTitledBorder("Panel Ventanas"));
 
@@ -328,12 +338,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         panelVentanas.setLayout(panelVentanasLayout);
         panelVentanasLayout.setHorizontalGroup(
             panelVentanasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 838, Short.MAX_VALUE)
+            .addGap(0, 826, Short.MAX_VALUE)
         );
         panelVentanasLayout.setVerticalGroup(
             panelVentanasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        ScrollPanelVentanas.setViewportView(panelVentanas);
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -349,17 +361,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ScrollPanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelVentanas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(ScrollPanelVentanas, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(panelPrincipal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelVentanas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ScrollPanelVentanas, javax.swing.GroupLayout.PREFERRED_SIZE, 699, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ScrollPanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 699, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -375,11 +389,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
     
     private void btnIngresarCategoriaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarCategoriaEmpleadoActionPerformed
-        
-        
         panelCategoriaEmpleado = new PanelIngresarCategoriaEmpleado();
-        panelVentanas.add(panelCategoriaEmpleado, "PanelIngresarCategoria");
-        cardLayout.show(panelVentanas, "PanelIngresarCategoria");     
+        misMetodos.panelCentrar(panelVentanas, panelCategoriaEmpleado);
+//        panelVentanas.add(panelCategoriaEmpleado, "PanelIngresarCategoria");
+//        cardLayout.show(panelVentanas, "PanelIngresarCategoria");     
 //        VentanaIngresarCategoriaEmpleado ventanaIngresarCategoriaEmpleado = new VentanaIngresarCategoriaEmpleado();
 //        abrirVentana(ventanaIngresarCategoriaEmpleado,"Registro CategoriaEmpleado");
         
@@ -387,9 +400,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnIngresarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarClienteActionPerformed
         PanelIngresarCliente panelIngresarCliente= new PanelIngresarCliente();
-        panelVentanas.add(panelIngresarCliente, "PanelIngresarCliente");
-        cardLayout.show(panelVentanas, "PanelIngresarCliente");
+        misMetodos.panelCentrar(panelVentanas, panelIngresarCliente);
         
+//        panelVentanas.add(panelIngresarCliente, "PanelIngresarCliente");
+//        cardLayout.show(panelVentanas, "PanelIngresarCliente");
+//        
 //        VentanaIngresarCliente  ventanaIngresarCliente = new VentanaIngresarCliente();
 //        abrirVentana(ventanaIngresarCliente, "Registro Cliente");
     
@@ -397,24 +412,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnVerEditarCategortiaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerEditarCategortiaEmpleadoActionPerformed
         PanelMostrarCategoriaEmpleado panelMostrarcategoriaEmpleado = new PanelMostrarCategoriaEmpleado();
-        panelVentanas.add(panelMostrarcategoriaEmpleado, "PanelMostrarCategoriaEmpleado");
-        cardLayout.show(panelVentanas, "PanelMostrarCategoriaEmpleado");
+        misMetodos.panelCentrar(panelVentanas, panelMostrarcategoriaEmpleado);
+//        panelVentanas.add(panelMostrarcategoriaEmpleado, "PanelMostrarCategoriaEmpleado");
+//        cardLayout.show(panelVentanas, "PanelMostrarCategoriaEmpleado");
 //        VentanaMostrarCategoriaEmpleado ventanaMostrarCategoriaEmpleado = new VentanaMostrarCategoriaEmpleado();
 //        abrirVentana(ventanaMostrarCategoriaEmpleado,"Ver Categorias Empleado");
     }//GEN-LAST:event_btnVerEditarCategortiaEmpleadoActionPerformed
 
     private void btnVerEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerEditarClienteActionPerformed
         PanelMostrarCliente panelMostrarCliente = new PanelMostrarCliente();
-        panelVentanas.add(panelMostrarCliente, "PanelMostrarCliente");
-        cardLayout.show(panelVentanas, "PanelMostrarCliente");
+        misMetodos.panelCentrar(panelVentanas,panelMostrarCliente);
+//        panelVentanas.add(panelMostrarCliente, "PanelMostrarCliente");
+//        cardLayout.show(panelVentanas, "PanelMostrarCliente");
 //        VentanaMostrarCiente ventanaMostrarCliente = new VentanaMostrarCiente();
 //        abrirVentana(ventanaMostrarCliente,"Mostrar Clientes");
     }//GEN-LAST:event_btnVerEditarClienteActionPerformed
 
     private void btnIngresarComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarComunaActionPerformed
         PanelIngresarComuna panelIngresarComuna= new PanelIngresarComuna();
-        panelVentanas.add(panelIngresarComuna, "PanelIngresarComuna");
-        cardLayout.show(panelVentanas, "PanelIngresarComuna");
+        misMetodos.panelCentrar(panelVentanas,panelIngresarComuna);
+//        panelVentanas.add(panelIngresarComuna, "PanelIngresarComuna");
+//        cardLayout.show(panelVentanas, "PanelIngresarComuna");
 
 //        VentanaIngresarComuna ventanaIngresarComuna = new VentanaIngresarComuna();
 //        abrirVentana(ventanaIngresarComuna,"Ingreso Nueva Comuna");        // TODO add your handling code here:
@@ -422,32 +440,36 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnIngresarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarEmpleadoActionPerformed
         PanelIngresarEmpleado panelIngresarEmpleado = new PanelIngresarEmpleado();
-        panelVentanas.add(panelIngresarEmpleado, "PanelIngresarEmpleado");
-        cardLayout.show(panelVentanas, "PanelIngresarEmpleado");
+        misMetodos.panelCentrar(panelVentanas, panelIngresarEmpleado);
+//        panelVentanas.add(panelIngresarEmpleado, "PanelIngresarEmpleado");
+//        cardLayout.show(panelVentanas, "PanelIngresarEmpleado");
 //        VentanaIngresarEmpleado ventanaIngresarEmpleado = new VentanaIngresarEmpleado();
 //        abrirVentana(ventanaIngresarEmpleado,"Ingreso Nuevo Empleado");
     }//GEN-LAST:event_btnIngresarEmpleadoActionPerformed
 
     private void btnIngresarEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarEstadoCivilActionPerformed
         PanelIngresarEstadoCivil panelIngresarEstadoCivil = new PanelIngresarEstadoCivil();
-        panelVentanas.add(panelIngresarEstadoCivil, "PanelIngresarEstadoCivil");
-        cardLayout.show(panelVentanas, "PanelIngresarEstadoCivil");
+        misMetodos.panelCentrar(panelVentanas, panelIngresarEstadoCivil);
+//        panelVentanas.add(panelIngresarEstadoCivil, "PanelIngresarEstadoCivil");
+//        cardLayout.show(panelVentanas, "PanelIngresarEstadoCivil");
 //        VentanaIngresarEstadoCivil ventanaIngresarEstadoCivil = new VentanaIngresarEstadoCivil();
 //        abrirVentana(ventanaIngresarEstadoCivil,"Ingreso Nuevo Estado Civil");
     }//GEN-LAST:event_btnIngresarEstadoCivilActionPerformed
 
     private void btnIngresarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarPropiedadActionPerformed
         PanelIngresarPropiedad panelIngresarPropiedad= new PanelIngresarPropiedad();
-        panelVentanas.add(panelIngresarPropiedad, "PanelIngresarPropiedad");
-        cardLayout.show(panelVentanas, "PanelIngresarPropiedad");
+        misMetodos.panelCentrar(panelVentanas, panelIngresarPropiedad);
+//        panelVentanas.add(panelIngresarPropiedad, "PanelIngresarPropiedad");
+//        cardLayout.show(panelVentanas, "PanelIngresarPropiedad");
 //        VentanaIngresarPropiedad ventanaIngresarPropiedad = new VentanaIngresarPropiedad();
 //        abrirVentana(ventanaIngresarPropiedad,"Ingreso Nueva Propiedad");
     }//GEN-LAST:event_btnIngresarPropiedadActionPerformed
 
     private void btnIngresarPropiedadArrendadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarPropiedadArrendadaActionPerformed
         PanelIngresarPropiedadArrendada panelIngresarPropiedadArrendada= new PanelIngresarPropiedadArrendada();
-        panelVentanas.add(panelIngresarPropiedadArrendada, "PanelIngresarPropiedadArrendada");
-        cardLayout.show(panelVentanas, "PanelIngresarPropiedadArrendada");
+        misMetodos.panelCentrar(panelVentanas, panelIngresarPropiedadArrendada);
+//        panelVentanas.add(panelIngresarPropiedadArrendada, "PanelIngresarPropiedadArrendada");
+//        cardLayout.show(panelVentanas, "PanelIngresarPropiedadArrendada");
 
 //        VentanaIngresoPropiedadArrendada ventanaIngresoPropiedadArrendada = new VentanaIngresoPropiedadArrendada();
 //        abrirVentana(ventanaIngresoPropiedadArrendada,"Ingreso Nuevo Arriendo De Propiedad");
@@ -455,8 +477,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnIngresarPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarPropietarioActionPerformed
         PanelIngresarPropietario panelIngresarPropietario= new PanelIngresarPropietario();
-        panelVentanas.add(panelIngresarPropietario, "PanelIngresarPropietario");
-        cardLayout.show(panelVentanas, "PanelIngresarPropietario");
+        misMetodos.panelCentrar(panelVentanas,panelIngresarPropietario);
+//        panelVentanas.add(panelIngresarPropietario, "PanelIngresarPropietario");
+//        cardLayout.show(panelVentanas, "PanelIngresarPropietario");
 
 //        VentanaIngresarPropietario ventanaIngresarPropietario = new VentanaIngresarPropietario();
 //        abrirVentana(ventanaIngresarPropietario,"Ingreso Nuevo Propietario");
@@ -464,8 +487,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnIngresarTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarTipoPropiedadActionPerformed
         PanelIngresarTipoPropiedad panelIngresarTipoPropiedad= new PanelIngresarTipoPropiedad();
-        panelVentanas.add(panelIngresarTipoPropiedad, "PanelIngresarTipoPropiedad");
-        cardLayout.show(panelVentanas, "PanelIngresarTipoPropiedad");
+        misMetodos.panelCentrar(panelVentanas, panelIngresarTipoPropiedad);
+//        panelVentanas.add(panelIngresarTipoPropiedad, "PanelIngresarTipoPropiedad");
+//        cardLayout.show(panelVentanas, "PanelIngresarTipoPropiedad");
 
 //        VentanaIngresoTipoPropiedad ventanaIngresoTipoPropiedad = new VentanaIngresoTipoPropiedad();
 //        abrirVentana(ventanaIngresoTipoPropiedad,"Ingreso Nuevo Tipo De Propidad");
@@ -473,8 +497,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnEditarComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarComunaActionPerformed
         PanelMostrarComuna panelMostrarComuna= new PanelMostrarComuna();
-        panelVentanas.add(panelMostrarComuna, "PanelMostrarComuna");
-        cardLayout.show(panelVentanas, "PanelMostrarComuna");
+        misMetodos.panelCentrar(panelVentanas,panelMostrarComuna);
+//        panelVentanas.add(panelMostrarComuna, "PanelMostrarComuna");
+//        cardLayout.show(panelVentanas, "PanelMostrarComuna");
 
 //        VentanaMostrarComuna ventanaMostrarComuna = new VentanaMostrarComuna();
 //        abrirVentana(ventanaMostrarComuna,"Mostrar Comunas");
@@ -482,8 +507,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnEditarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEmpleadoActionPerformed
         PanelMostrarEmpleado panelMostrarEmpleado = new PanelMostrarEmpleado();
-        panelVentanas.add(panelMostrarEmpleado, "PanelMostrarEmpleado");
-        cardLayout.show(panelVentanas, "PanelMostrarEmpleado");
+        misMetodos.panelCentrar(panelVentanas,panelMostrarEmpleado);
+//        panelVentanas.add(panelMostrarEmpleado, "PanelMostrarEmpleado");
+//        cardLayout.show(panelVentanas, "PanelMostrarEmpleado");
 
 //        VentanaMostrarEmpleado ventanaMostrarEmpleado = new VentanaMostrarEmpleado();
 //        abrirVentana(ventanaMostrarEmpleado,"Mostrar Empleados");
@@ -491,8 +517,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnEditarEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEstadoCivilActionPerformed
         PanelMostarEstadoCivil panelMostarEstadoCivil = new PanelMostarEstadoCivil();
-        panelVentanas.add(panelMostarEstadoCivil, "PanelMostararEstadoCivil");
-        cardLayout.show(panelVentanas, "PanelMostararEstadoCivil");
+        misMetodos.panelCentrar(panelVentanas,panelMostarEstadoCivil);
+
+//        panelVentanas.add(panelMostarEstadoCivil, "PanelMostararEstadoCivil");
+//        cardLayout.show(panelVentanas, "PanelMostararEstadoCivil");
 
 //        VentanaMostrarEstadoCivil ventanaMostrarEstadoCivil = new VentanaMostrarEstadoCivil();
 //        abrirVentana(ventanaMostrarEstadoCivil,"Mostrar Registro Civil");
@@ -500,8 +528,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnEditarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPropiedadActionPerformed
         PanelMostrarPropiedad panelMostrarPropiedad = new PanelMostrarPropiedad();
-        panelVentanas.add(panelMostrarPropiedad, "PanelMostrarPropiedad");
-        cardLayout.show(panelVentanas, "PanelMostrarPropiedad");
+        misMetodos.panelCentrar(panelVentanas, panelMostrarPropiedad);
+//        panelVentanas.add(panelMostrarPropiedad, "PanelMostrarPropiedad");
+//        cardLayout.show(panelVentanas, "PanelMostrarPropiedad");
 
 //        VentanaMostrarPropiedad ventanaMostrarPropiedad = new VentanaMostrarPropiedad();
 //        abrirVentana(ventanaMostrarPropiedad,"Mostrar Propiedad");
@@ -509,25 +538,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnEditarPropiedadArrendadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPropiedadArrendadaActionPerformed
         PanelMostrarPropiedadArrendada panelMostrarPropiedadArrendada = new PanelMostrarPropiedadArrendada();
-        panelVentanas.add(panelMostrarPropiedadArrendada, "PanelMostrarPropiedadArrendada");
-        cardLayout.show(panelVentanas, "PanelMostrarPropiedadArrendada");
+        misMetodos.panelCentrar(panelVentanas, panelMostrarPropiedadArrendada);
+//        panelVentanas.add(panelMostrarPropiedadArrendada, "PanelMostrarPropiedadArrendada");
+//        cardLayout.show(panelVentanas, "PanelMostrarPropiedadArrendada");
 //        VentanaMostrarPropiedadArrendada ventanaMostrarPropiedadArrendada = new VentanaMostrarPropiedadArrendada();
 //        abrirVentana(ventanaMostrarPropiedadArrendada,"Mostrar Propiedad");
     }//GEN-LAST:event_btnEditarPropiedadArrendadaActionPerformed
 
     private void btnEditarPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPropietarioActionPerformed
         PanelMostrarPropietario panelMostrarPropietario= new PanelMostrarPropietario();
-        panelVentanas.add(panelMostrarPropietario, "PanelMostrarPropietario");
-        cardLayout.show(panelVentanas, "PanelMostrarPropietario");
-
+        misMetodos.panelCentrar(panelVentanas, panelMostrarPropietario);
+//
 //        VentanaMostrarPropietario ventanaMostrarPropietario = new VentanaMostrarPropietario();
 //        abrirVentana(ventanaMostrarPropietario,"Mostrar Propietarios");
     }//GEN-LAST:event_btnEditarPropietarioActionPerformed
 
     private void btnEditarTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarTipoPropiedadActionPerformed
         PanelMostrarTipoPropiedad panelMostrarTipoPropiedad = new PanelMostrarTipoPropiedad();
-        panelVentanas.add(panelMostrarTipoPropiedad, "PanelMostrarTipoPropiedad");
-        cardLayout.show(panelVentanas, "PanelMostrarTipoPropiedad");
+        misMetodos.panelCentrar(panelVentanas, panelMostrarTipoPropiedad);
+//        panelVentanas.add(panelMostrarTipoPropiedad, "PanelMostrarTipoPropiedad");
+//        cardLayout.show(panelVentanas, "PanelMostrarTipoPropiedad");
 //        VentanaMostrarTipoPropiedad ventanaMostrarTipoPropiedad = new VentanaMostrarTipoPropiedad();
 //        abrirVentana(ventanaMostrarTipoPropiedad,"Mostrar Tipo Propiedad");
     }//GEN-LAST:event_btnEditarTipoPropiedadActionPerformed
@@ -569,6 +599,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane ScrollPanelPrincipal;
+    private javax.swing.JScrollPane ScrollPanelVentanas;
     private javax.swing.JButton btnEditarComuna;
     private javax.swing.JButton btnEditarEmpleado;
     private javax.swing.JButton btnEditarEstadoCivil;

@@ -33,10 +33,9 @@
                   <Component id="labelSueldoEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="labelIdCategoriaEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="labelRutSupervisor" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnIngresarNuevoEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="labelIdComunaEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="comboBoxComunaEmpleado" min="-2" max="-2" attributes="0"/>
@@ -58,15 +57,17 @@
                           <Component id="inputNumrut_supervisor" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="comboBoxEstadoCivil" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="comboBoxCategoriaEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="btnLimpiarNuevoEmpleado" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="btnVolverNuevoEmpleado" min="-2" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              <Component id="btnIngresarNuevoEmpleado" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+              <Component id="btnLimpiarNuevoEmpleado" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -148,13 +149,12 @@
                   <Component id="labelRutSupervisor" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="inputNumrut_supervisor" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnIngresarNuevoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnLimpiarNuevoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnVolverNuevoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -230,12 +230,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="labelDireccionEmpleado">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Direccion Empleado"/>
+        <Property name="text" type="java.lang.String" value="Direcci&#xf3;n Empleado"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelIdEstadoCivil">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Id Estado Civil"/>
+        <Property name="text" type="java.lang.String" value="Estado Civil"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelCelularEmpleado">
@@ -388,14 +388,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpiarNuevoEmpleadoActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnVolverNuevoEmpleado">
-      <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="33" green="33" red="33" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Volver"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>

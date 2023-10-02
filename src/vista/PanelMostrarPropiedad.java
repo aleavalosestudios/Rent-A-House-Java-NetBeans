@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package vista;
+import controlador.MisMetodos;
 import modelo.Propiedad;
 import controlador.PropiedadDao;
 import java.util.ArrayList;
@@ -14,16 +15,18 @@ import javax.swing.table.DefaultTableModel;
  * @author aleja
  */
 public class PanelMostrarPropiedad extends javax.swing.JPanel {
-
+    Propiedad propiedad;
+    PropiedadDao propiedadDao = new PropiedadDao();
+    MisMetodos misMetodos =new MisMetodos();
+    DefaultTableModel tabla;
     /**
      * Creates new form PanelMostrarPropiedad
      */
     public PanelMostrarPropiedad() {
         initComponents();
+        btnMostrarTodasLasPropiedades.doClick();
     }
     
-    Propiedad propiedad;
-    PropiedadDao propiedadDao = new PropiedadDao();
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,6 +55,11 @@ public class PanelMostrarPropiedad extends javax.swing.JPanel {
             }
         ));
         jScrollPane1.setViewportView(tablaTodasLasPropiedades);
+        if (tablaTodasLasPropiedades.getColumnModel().getColumnCount() > 0) {
+            tablaTodasLasPropiedades.getColumnModel().getColumn(1).setPreferredWidth(200);
+            tablaTodasLasPropiedades.getColumnModel().getColumn(4).setPreferredWidth(50);
+            tablaTodasLasPropiedades.getColumnModel().getColumn(8).setPreferredWidth(50);
+        }
 
         btnIngresarNuevaPropiedad.setText("Ingresar Nueva Propiedad");
         btnIngresarNuevaPropiedad.addActionListener(new java.awt.event.ActionListener() {
@@ -95,30 +103,9 @@ public class PanelMostrarPropiedad extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 980, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnMostrarTodasLasPropiedades)
-                    .addComponent(btnBuscarPropiedad)
-                    .addComponent(btnIngresarNuevaPropiedad)
-                    .addComponent(btnModificarPropiedad)
-                    .addComponent(btnEliminarPropiedad))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(526, 526, 526)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
                         .addComponent(btnIngresarNuevaPropiedad)
                         .addGap(18, 18, 18)
                         .addComponent(btnBuscarPropiedad)
@@ -127,23 +114,43 @@ public class PanelMostrarPropiedad extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(btnModificarPropiedad)
                         .addGap(18, 18, 18)
-                        .addComponent(btnEliminarPropiedad)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                        .addComponent(btnEliminarPropiedad))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1067, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(494, 494, 494)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnIngresarNuevaPropiedad)
+                    .addComponent(btnBuscarPropiedad)
+                    .addComponent(btnMostrarTodasLasPropiedades)
+                    .addComponent(btnModificarPropiedad)
+                    .addComponent(btnEliminarPropiedad))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarNuevaPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevaPropiedadActionPerformed
         VentanaIngresarPropiedad ventanaIngresarPropiedad = new VentanaIngresarPropiedad();
-        abrirVentana(ventanaIngresarPropiedad,"Ingreso Nueva Propiedad");
+        misMetodos.abrirVentana(ventanaIngresarPropiedad,"Ingreso Nueva Propiedad");
     }//GEN-LAST:event_btnIngresarNuevaPropiedadActionPerformed
 
     private void btnBuscarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPropiedadActionPerformed
 
-        DefaultTableModel tabla = (DefaultTableModel)tablaTodasLasPropiedades.getModel();
+        tabla = (DefaultTableModel)tablaTodasLasPropiedades.getModel();
         int nro_propiedad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese Numero propiedad"));
         ArrayList<Propiedad> listaPropiedades = propiedadDao.buscarPropiedad(nro_propiedad);
 
-        limpiarTabla();
+        misMetodos.tablaLimpiar(tablaTodasLasPropiedades);
 
         if (listaPropiedades.isEmpty()){
             JOptionPane.showMessageDialog(this,"No existe Propiedad");
@@ -168,14 +175,15 @@ public class PanelMostrarPropiedad extends javax.swing.JPanel {
             }
 
             tablaTodasLasPropiedades.setModel(tabla);
+            misMetodos.tablaCentrarDatos(tablaTodasLasPropiedades);
         }
     }//GEN-LAST:event_btnBuscarPropiedadActionPerformed
 
     private void btnMostrarTodasLasPropiedadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarTodasLasPropiedadesActionPerformed
-        DefaultTableModel tabla = (DefaultTableModel)tablaTodasLasPropiedades.getModel();
+        tabla = (DefaultTableModel)tablaTodasLasPropiedades.getModel();
         ArrayList<Propiedad> listaPropiedades = propiedadDao.todasLasPropiedades();
 
-        limpiarTabla();
+        misMetodos.tablaLimpiar(tablaTodasLasPropiedades);
 
         if (listaPropiedades.isEmpty()){
             JOptionPane.showMessageDialog(this,"No existen Propiedades");
@@ -200,6 +208,7 @@ public class PanelMostrarPropiedad extends javax.swing.JPanel {
             }
 
             tablaTodasLasPropiedades.setModel(tabla);
+            misMetodos.tablaCentrarDatos(tablaTodasLasPropiedades);
         }
     }//GEN-LAST:event_btnMostrarTodasLasPropiedadesActionPerformed
 
@@ -223,7 +232,6 @@ public class PanelMostrarPropiedad extends javax.swing.JPanel {
             int numrut_emp = Integer.parseInt(String.valueOf(tablaTodasLasPropiedades.getValueAt(filaSeleccionada, 10)));
 
             propiedad = new Propiedad(nro_propiedad, direccion_propiedad, superficie, nro_dormitorios, nro_banos, valor_arriendo, valor_gasto_comun, id_tipo_propiedad, id_comuna, numrut_prop, numrut_emp);
-
             propiedadDao.actualizarPropiedad(propiedad);
 
             JOptionPane.showMessageDialog(this,"Propiedad Modificada");
@@ -249,7 +257,6 @@ public class PanelMostrarPropiedad extends javax.swing.JPanel {
             int numrut_emp = Integer.parseInt(String.valueOf(tablaTodasLasPropiedades.getValueAt(filaSeleccionada, 10)));
 
             propiedad = new Propiedad(nro_propiedad, direccion_propiedad, superficie, nro_dormitorios, nro_banos, valor_arriendo, valor_gasto_comun, id_tipo_propiedad, id_comuna, numrut_prop, numrut_emp);
-
             propiedadDao.eliminarPropiedad(propiedad);
 
             JOptionPane.showMessageDialog(this,"Propiedad Eliminada");
@@ -257,22 +264,6 @@ public class PanelMostrarPropiedad extends javax.swing.JPanel {
             btnMostrarTodasLasPropiedades.doClick();
         }
     }//GEN-LAST:event_btnEliminarPropiedadActionPerformed
-    
-    private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
-        
-        Ventana.setVisible(true);
-        Ventana.setLocationRelativeTo(null);
-        Ventana.setTitle(tituloVentana);
-        Ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-    }
-     
-    public void limpiarTabla(){
-        DefaultTableModel dtm=(DefaultTableModel)tablaTodasLasPropiedades.getModel();
-        int n=tablaTodasLasPropiedades.getRowCount();
-        for (int i = 0; i < n ; i++) {
-            dtm.removeRow(dtm.getRowCount()-1);
-        }
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarPropiedad;

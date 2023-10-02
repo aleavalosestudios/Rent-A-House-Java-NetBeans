@@ -5,6 +5,7 @@
 package vista;
 import modelo.Empleado;
 import controlador.EmpleadoDao;
+import controlador.MisMetodos;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
@@ -15,12 +16,17 @@ import javax.swing.table.DefaultTableModel;
  * @author aleja
  */
 public class PanelMostrarEmpleado extends javax.swing.JPanel {
-
+    Empleado empleado;
+    EmpleadoDao empleadoDao = new EmpleadoDao();
+    MisMetodos misMetodos = new MisMetodos();
+    DefaultTableModel tabla;
+        
     /**
      * Creates new form PanelMostrarEmpleado
      */
     public PanelMostrarEmpleado() {
         initComponents();
+        btnMostrarTodosLosEmpleados.doClick();
     }
 
     /**
@@ -66,6 +72,22 @@ public class PanelMostrarEmpleado extends javax.swing.JPanel {
             }
         ));
         jScrollPane1.setViewportView(tablaTodosLosEmpleados);
+        if (tablaTodosLosEmpleados.getColumnModel().getColumnCount() > 0) {
+            tablaTodosLosEmpleados.getColumnModel().getColumn(0).setPreferredWidth(50);
+            tablaTodosLosEmpleados.getColumnModel().getColumn(1).setPreferredWidth(10);
+            tablaTodosLosEmpleados.getColumnModel().getColumn(5).setPreferredWidth(200);
+            tablaTodosLosEmpleados.getColumnModel().getColumn(6).setPreferredWidth(50);
+            tablaTodosLosEmpleados.getColumnModel().getColumn(7).setPreferredWidth(50);
+            tablaTodosLosEmpleados.getColumnModel().getColumn(8).setPreferredWidth(50);
+            tablaTodosLosEmpleados.getColumnModel().getColumn(9).setPreferredWidth(50);
+            tablaTodosLosEmpleados.getColumnModel().getColumn(10).setPreferredWidth(50);
+            tablaTodosLosEmpleados.getColumnModel().getColumn(11).setPreferredWidth(50);
+            tablaTodosLosEmpleados.getColumnModel().getColumn(12).setPreferredWidth(50);
+            tablaTodosLosEmpleados.getColumnModel().getColumn(13).setResizable(false);
+            tablaTodosLosEmpleados.getColumnModel().getColumn(13).setPreferredWidth(75);
+            tablaTodosLosEmpleados.getColumnModel().getColumn(14).setResizable(false);
+            tablaTodosLosEmpleados.getColumnModel().getColumn(14).setPreferredWidth(50);
+        }
 
         btnBuscarEmpleado.setText("Buscar Empleado");
         btnBuscarEmpleado.addActionListener(new java.awt.event.ActionListener() {
@@ -95,29 +117,13 @@ public class PanelMostrarEmpleado extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1785, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnBuscarEmpleado)
-                            .addComponent(btnMostrarTodosLosEmpleados)
-                            .addComponent(btnEditarEmpleado)
-                            .addComponent(btnEliminarEmpleado)
-                            .addComponent(btnIngresarNuevoEmpleado)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(757, 757, 757)
-                        .addComponent(jLabel1)))
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1785, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(388, 388, 388)
                         .addComponent(btnIngresarNuevoEmpleado)
                         .addGap(18, 18, 18)
                         .addComponent(btnBuscarEmpleado)
@@ -127,6 +133,22 @@ public class PanelMostrarEmpleado extends javax.swing.JPanel {
                         .addComponent(btnEditarEmpleado)
                         .addGap(18, 18, 18)
                         .addComponent(btnEliminarEmpleado)))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnIngresarNuevoEmpleado)
+                    .addComponent(btnBuscarEmpleado)
+                    .addComponent(btnMostrarTodosLosEmpleados)
+                    .addComponent(btnEditarEmpleado)
+                    .addComponent(btnEliminarEmpleado))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -154,10 +176,7 @@ public class PanelMostrarEmpleado extends javax.swing.JPanel {
             int id_categoria_emp = Integer.parseInt(String.valueOf(tablaTodosLosEmpleados.getValueAt(filaSeleccionada, 13)));
             int numrut_supervisor = Integer.parseInt(String.valueOf(tablaTodosLosEmpleados.getValueAt(filaSeleccionada, 14)));
 
-            Empleado empleado = new Empleado(numrut_emp, dvrut_emp, appaterno_emp, apmaterno_emp, nombre_emp, direccion_emp, id_estcivil, fonofijo_emp, celular_emp, fecnac_emp, fecing_emp, sueldo_emp, id_comuna, id_categoria_emp, numrut_supervisor);
-
-            EmpleadoDao empleadoDao = new EmpleadoDao();
-
+            empleado = new Empleado(numrut_emp, dvrut_emp, appaterno_emp, apmaterno_emp, nombre_emp, direccion_emp, id_estcivil, fonofijo_emp, celular_emp, fecnac_emp, fecing_emp, sueldo_emp, id_comuna, id_categoria_emp, numrut_supervisor);
             empleadoDao.eliminarEmpleado(empleado);
 
             JOptionPane.showMessageDialog(this, "Empleado Eliminado");
@@ -168,19 +187,17 @@ public class PanelMostrarEmpleado extends javax.swing.JPanel {
 
     private void btnIngresarNuevoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevoEmpleadoActionPerformed
         VentanaIngresarEmpleado ventanaIngresarEmpleado = new VentanaIngresarEmpleado();
-        abrirVentana(ventanaIngresarEmpleado,"Ingreso Nuevo Empleado");
+        misMetodos.abrirVentana(ventanaIngresarEmpleado,"Ingreso Nuevo Empleado");
     }//GEN-LAST:event_btnIngresarNuevoEmpleadoActionPerformed
 
     private void btnBuscarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEmpleadoActionPerformed
 
-        DefaultTableModel tabla = (DefaultTableModel)tablaTodosLosEmpleados.getModel();
-        EmpleadoDao empleadoDao = new EmpleadoDao();
-
+        tabla= (DefaultTableModel)tablaTodosLosEmpleados.getModel();
+        
         int inputnumrut_emp = Integer.parseInt(JOptionPane.showInputDialog("Ingrese Rut Empleado A Buscar"));
-
         ArrayList<Empleado> listaempleados = empleadoDao.buscarEmpleado(inputnumrut_emp);
 
-        limpiarTabla();
+        misMetodos.tablaLimpiar(tablaTodosLosEmpleados);
 
         if(listaempleados.isEmpty()){
             JOptionPane.showMessageDialog(this,"Empleado No Existe");
@@ -206,17 +223,16 @@ public class PanelMostrarEmpleado extends javax.swing.JPanel {
 
                 tabla.addRow(datoslistadoEmpleados[i]);
             }
-
             tablaTodosLosEmpleados.setModel(tabla);
+            misMetodos.tablaCentrarDatos(tablaTodosLosEmpleados);
         }
     }//GEN-LAST:event_btnBuscarEmpleadoActionPerformed
 
     private void btnMostrarTodosLosEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarTodosLosEmpleadosActionPerformed
-        DefaultTableModel tabla = (DefaultTableModel)tablaTodosLosEmpleados.getModel();
-        EmpleadoDao empleadoDao = new EmpleadoDao();
+        tabla = (DefaultTableModel)tablaTodosLosEmpleados.getModel();
         ArrayList<Empleado> listaempleados = empleadoDao.todosLosEmpleados();
 
-        limpiarTabla();
+        misMetodos.tablaLimpiar(tablaTodosLosEmpleados);
 
         if(listaempleados.isEmpty()){
             JOptionPane.showMessageDialog(this, "No Existen Empleados");
@@ -244,6 +260,7 @@ public class PanelMostrarEmpleado extends javax.swing.JPanel {
             }
         }
         tablaTodosLosEmpleados.setModel(tabla);
+        misMetodos.tablaCentrarDatos(tablaTodosLosEmpleados);
     }//GEN-LAST:event_btnMostrarTodosLosEmpleadosActionPerformed
 
     private void btnEditarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEmpleadoActionPerformed
@@ -270,34 +287,13 @@ public class PanelMostrarEmpleado extends javax.swing.JPanel {
             int id_categoria_emp = Integer.parseInt(String.valueOf(tablaTodosLosEmpleados.getValueAt(filaSeleccionada, 13)));
             int numrut_supervisor = Integer.parseInt(String.valueOf(tablaTodosLosEmpleados.getValueAt(filaSeleccionada, 14)));
 
-            Empleado empleado = new Empleado(numrut_emp, dvrut_emp, appaterno_emp, apmaterno_emp, nombre_emp, direccion_emp, id_estcivil, fonofijo_emp, celular_emp, fecnac_emp, fecing_emp, sueldo_emp, id_comuna, id_categoria_emp, numrut_supervisor);
-
-            EmpleadoDao empleadoDao = new EmpleadoDao();
-
+            empleado = new Empleado(numrut_emp, dvrut_emp, appaterno_emp, apmaterno_emp, nombre_emp, direccion_emp, id_estcivil, fonofijo_emp, celular_emp, fecnac_emp, fecing_emp, sueldo_emp, id_comuna, id_categoria_emp, numrut_supervisor);
             empleadoDao.actualizarEmpleado(empleado);
 
             JOptionPane.showMessageDialog(this, "Empleado Actualizado");
         }
-        
-        
-
     }//GEN-LAST:event_btnEditarEmpleadoActionPerformed
 
-     private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
-        
-        Ventana.setVisible(true);
-        Ventana.setLocationRelativeTo(null);
-        Ventana.setTitle(tituloVentana);
-        Ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-    }
-    
-    public void limpiarTabla(){
-        DefaultTableModel dtm=(DefaultTableModel)tablaTodosLosEmpleados.getModel();
-        int n=tablaTodosLosEmpleados.getRowCount();
-        for (int i = 0; i < n ; i++) {
-            dtm.removeRow(dtm.getRowCount()-1);
-        }
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarEmpleado;

@@ -17,9 +17,9 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="labelId_tipo_propiedad" max="32767" attributes="0"/>
                           <Component id="labelDesc_tipo_propiedad" pref="154" max="32767" attributes="0"/>
@@ -29,17 +29,15 @@
                           <Component id="inputDesc_tipo_propiedad" min="-2" max="-2" attributes="0"/>
                           <Component id="inputId_tipo_propiedad" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                       <Component id="btnIngresoTipoPropiedad" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnLimpiarIngresoTipoPropiedad" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnVolverIngresoTipoPropiedad" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -60,7 +58,6 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnIngresoTipoPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnLimpiarIngresoTipoPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnVolverIngresoTipoPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="151" max="32767" attributes="0"/>
           </Group>
@@ -92,14 +89,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpiarIngresoTipoPropiedadActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnVolverIngresoTipoPropiedad">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Volver"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVolverIngresoTipoPropiedadActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="labelId_tipo_propiedad">
       <Properties>
         <Property name="text" type="java.lang.String" value="Id Tipo Propiedad"/>
@@ -107,7 +96,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="labelDesc_tipo_propiedad">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Descripcion Tipo Propiedad"/>
+        <Property name="text" type="java.lang.String" value="Descripci&#xf3;n Tipo Propiedad"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="inputId_tipo_propiedad">

@@ -4,15 +4,25 @@
  */
 package controlador;
 
+import java.awt.CardLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.lang.reflect.AnnotatedType;
 import java.lang.reflect.Field;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JTextField;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import javax.swing.table.DefaultTableCellRenderer;
 import modelo.Empleado;
+import modelo.EstadoCivil;
+import modelo.Propiedad;
 
 /**
  *
@@ -28,30 +38,115 @@ public class MisMetodos {
         Ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
     
-    public static void limpiarTabla(javax.swing.JTable nombreTabla){
-        DefaultTableModel tabla = (DefaultTableModel)nombreTabla.getModel();
+    public static void panelCentrar(javax.swing.JPanel panelVentanas, javax.swing.JPanel panelACentrar) {
+        panelVentanas.removeAll();
         
-        int filas = nombreTabla.getRowCount();
-        for (int i = 0; i < filas; i++) {
-            tabla.removeRow(tabla.getRowCount()-1);
-        }
+        GridBagConstraints gbc = new GridBagConstraints();
+        panelVentanas.setLayout(new GridBagLayout());
+
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.fill = GridBagConstraints.CENTER;
+
+        panelVentanas.add(panelACentrar, gbc);
+        panelVentanas.revalidate();
+        panelVentanas.repaint();
     }
     
-    public static void limpiarInputs(javax.swing.JPanel nombrePanel){
-        JTextField input;
-        
+    //Este Metodo inicializa todos los labels de los campos vacios, dejandolos no visibles, JTextField.setVisible(false)
+    public void panelCamposErrorInicializador(javax.swing.JPanel nombrePanel){        
         for (int i = 0; i < nombrePanel.getComponentCount(); i++) {
-            if(nombrePanel.getComponent(i).getName().equals("javax.swing.JTextField")){
+                        
+            if (nombrePanel.getComponent(i).getClass().getName().equals("javax.swing.JLabel")&& nombrePanel.getComponent(i).getName() != null && nombrePanel.getComponent(i).getName().contains("Error")) {
+                nombrePanel.getComponent(i).setVisible(false);
+            }            
+        }        
+    }
+    
+    
+    //Metodo que limpia Componentes del panel (inputs, combobox, etc.) cuando hay mas de un panel en el mismo sector
+    //Y si es el mismo panel al que se le quiere limpiar los imputs.
+    //se debe reemplazar nombrePanel por 'this'
+    //se debe establecer el nombre de la variable en las propiedad name
+    public static void panelLimpiarComponentes(javax.swing.JPanel nombrePanel){
+        JTextField input;
+        JComboBox comboBox;
+        for (int i = 0; i < nombrePanel.getComponentCount(); i++) {
+            if(nombrePanel.getComponent(i).getClass().getName().equals("javax.swing.JTextField")){
                 input = (JTextField)nombrePanel.getComponent(i);
                 input.setText("");
-            }            
+            }
+            
+            if(nombrePanel.getComponent(i).getClass().getName().equals("javax.swing.JComboBox")){
+                comboBox = (JComboBox)nombrePanel.getComponent(i);
+                comboBox.setSelectedIndex(0);
+            }        
+        }
+        
+    }
+    
+    //comboboxLLenado(javax.swing.JComboBox<String> nombreCombobox, ArrayList<?> listadoCombobox)
+    //Metodo que recive como parametro un comboBox y una lista de objetos
+    //LLenara un combo box con los valores String de un objeto.
+    //creado para llenar un comboBox desde una base de datos con un ID numerico
+    //y una descripcion de tipo String
+    public void comboboxLLenado(javax.swing.JComboBox<String> nombreCombobox, ArrayList<?> listadoCombobox){        
+        try{
+            nombreCombobox.removeAllItems();
+
+            for(Object object : listadoCombobox){
+                //Obtener la clase del objto dentro de la lista
+                Class<?> clase = object.getClass();
+                //obtener el nombre de los atributos de la clase
+                Field[] atributosClase = clase.getDeclaredFields();
+
+                //Recorrer los atributos
+                for (int i = 0; i < atributosClase.length; i++) {
+                    
+                    //comparar si los atributos pueden ser traspasado a String
+                    if(String.class.isAssignableFrom(atributosClase[i].getType())){
+                        //obtener el nombre del atributo
+                        Field atributo = clase.getDeclaredField(atributosClase[i].getName());
+                        //hacer accesible al atributo
+                        atributo.setAccessible(true);
+                        //Agregar el atributo a un combobox
+                        nombreCombobox.addItem(String.valueOf(atributo.get(object)));
+                    }
+                }
+            }
+        }catch(NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
         }
     }
     
-    public static void limpiarComboBox(javax.swing.JComboBox<String> nombreCombobox){
-        nombreCombobox.setSelectedIndex(0);
-    }
+    //Este metodo cambia la seleccion de la descripcion de un comboCombobo y retorna el id
+    //de la seleccion del combobox. Siempre y cuando el array que ingresa a la funcion contenga
+    //un objeto y el primer atributo de este objeto sea de tipo INT
+    public static int comboBoxBuscarSeleccion(ArrayList<?> listadoBuscarDao) {
+        // Inicializa la variable 'id' con el valor 0.
+        int id = 0;
+        try {
+            // Obtiene el primer objeto de la lista.
+            Object objeto = listadoBuscarDao.get(0);
+            // Obtiene la clase (tipo) del objeto.
+            Class<?> clase = objeto.getClass();
+            // Obtiene un arreglo de campos (atributos) declarados en la clase del objeto.
+            Field[] atributosClase = objeto.getClass().getDeclaredFields();
+            // Obtiene el primer campo (atributo) en la clase del objeto.
+            Field atributo = clase.getDeclaredField(atributosClase[0].getName());
+            // Hace que el campo (atributo) sea accesible, incluso si es privado.
+            atributo.setAccessible(true);
+            // Obtiene el valor del campo (atributo) en el objeto.
+            id = atributo.getInt(objeto);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+            // Manejo de excepciones
+        }
+        // Retorna el valor de 'id', que puede haber cambiado si se encontró un atributo válido.
+        return id;
+    }    
     
+
     public static String transformarDeDateAString(java.sql.Date fecha){
         java.text.SimpleDateFormat formatoFecha = new java.text.SimpleDateFormat("yyyy-MM-dd");
         
@@ -118,39 +213,101 @@ public class MisMetodos {
         resultado = dv == dv2;
         return  resultado;
     }
-    
-    
-    //Metodo que recive como parametro un comboBox y una lista de objetos
-    //LLenara un combo box con los valores String de un objeto.
-    //creado para llenar un comboBox desde una base de datos con un ID numerico
-    //y una descripcion de tipo String
-    public void llenadoComboBox(javax.swing.JComboBox<String> nombreCombobox, ArrayList<?> listadoCombobox){
         
-        try{
-            nombreCombobox.removeAllItems();
+ //Método para contar Atributos de un objeto usando Reflexion.
+    public static int objetoContarAtributos(Object objeto) {
+        // Obtener la clase del objeto
+        Class<?> clase = objeto.getClass();        
+        // Obtener todos los campos (atributos) de la clase
+        Field[] atributos = clase.getDeclaredFields();
+        // Contar la cantidad de campos
+        return atributos.length;
+    }
+    
+    //Método para obtener el tipo de datos de los Atributos de un objeto usando Reflexion
+    public static AnnotatedType objetoTiposdeDatosAtributos(Object objeto) {
+        int cantidadAtributos;
 
-            for(Object object : listadoCombobox){
-                //Obtener la clase del objto dentro de la lista
-                Class<?> clase = object.getClass();
-                //obtener el nombre de los atributos de la clase
-                Field[] atributosClase = clase.getDeclaredFields();
+        // Obtener la clase del objeto
+        Class<?> clase = objeto.getClass();       
+        // Obtener todos los campos (atributos) de la clase
+        Field[] campos = clase.getDeclaredFields();
+        cantidadAtributos = campos.length;
+        //arreglo para almacenar el tipo de dato de cada atributo del objeto
+        AnnotatedType[] tipoAtributos = new AnnotatedType[cantidadAtributos];
+        
+        for (int i = 0; i < cantidadAtributos; i++) {
+            tipoAtributos[i] = campos[i].getAnnotatedType();
+        }
+        // Enviar los tipos de Atributos en un Array de tipo AnnotatedType
+        return tipoAtributos[campos.length];
+    }
+    
+    public static boolean listaVacia(ArrayList<?> listadoObjetos){
+        boolean resultado = true;
+                
+        if(listadoObjetos.isEmpty()){
+            resultado = false;
+        }
+        return resultado;
+    }
+    /////////////////////////////////////////////////////////////////////////////////
+//METODOS PARA TABLAS
 
-                //Recorrer los atributos
-                for (int i = 0; i < atributosClase.length; i++) {
-                    
-                    //comparar si los atributos pueden ser traspasado a String
-                    if(String.class.isAssignableFrom(atributosClase[i].getType())){
-                        //obtener el nombre del atributo
-                        Field atributo = clase.getDeclaredField(atributosClase[i].getName());
-                        //hacer accesible al atributo
-                        atributo.setAccessible(true);
-                        //Agregar el atributo a un combobox
-                        nombreCombobox.addItem(String.valueOf(atributo.get(object)));
-                    }
-                }
-            }
-        }catch(NoSuchFieldException | IllegalAccessException e) {
-            e.printStackTrace();
+    public static void tablaLimpiar(JTable nombreTabla) {
+        // Obtener el modelo de tabla (DefaultTableModel) asociado a la tabla
+        DefaultTableModel dtm = (DefaultTableModel) nombreTabla.getModel();
+        // Obtener el número de filas en la tabla
+        int n = nombreTabla.getRowCount();
+        // Eliminar cada fila de la tabla
+        for (int i = 0; i < n; i++) {
+            // Elimina la última fila en cada iteración
+            dtm.removeRow(dtm.getRowCount() - 1);
         }
     }
-}
+    
+    public static void tablaCentrarDatos(JTable nombreTabla) {
+        // Crear un renderizador de celdas para centrar el contenido
+        DefaultTableCellRenderer centrarTabla = new DefaultTableCellRenderer();
+        centrarTabla.setHorizontalAlignment(JLabel.CENTER);
+
+        // Iterar a través de todas las columnas de la tabla
+        for (int i = 0; i < nombreTabla.getColumnCount(); i++) {
+            // Establecer el renderizador de celdas centradas para cada columna
+            nombreTabla.getColumnModel().getColumn(i).setCellRenderer(centrarTabla);
+        }
+    }
+    
+}    
+    
+//ORIGENES
+//    public static int comboBoxBuscarSeleccion(ArrayList<?> listadoBuscarDao);
+
+//    private int buscarSeleccionComboboxEstadoCivil(String seleccionEstadoCivil){
+//        
+//        EstadoCivilDao estadoCivilDao = new EstadoCivilDao();
+//        ArrayList<EstadoCivil> listadoEstadoCivil = new ArrayList<>();
+//        int id_estcivil = 0;
+//        listadoEstadoCivil = estadoCivilDao.buscarEstadoCivil(seleccionEstadoCivil);
+//        
+//        for (EstadoCivil estadoCivil : listadoEstadoCivil){
+//            
+//            id_estcivil = estadoCivil.getId_EstCivil();
+//        }
+//        
+//        return id_estcivil;
+//    }
+
+//ORIGENES public static boolean listaVacia(ArrayList<?> listadoObjetos);
+//public boolean buscadorPropiedadExiste(int nroPropiedad){
+//        boolean resultado = true;
+//        PropiedadDao propiedadDao = new PropiedadDao();
+//        
+//        ArrayList<Propiedad> listadoPropiedades = propiedadDao.buscarPropiedad(nroPropiedad);
+//        
+//        if(listadoPropiedades.isEmpty()){
+//            resultado = false;
+//        }
+//        
+//        return resultado;
+//    }

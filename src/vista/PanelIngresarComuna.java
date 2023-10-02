@@ -5,6 +5,7 @@
 package vista;
 
 import controlador.ComunaDao;
+import controlador.MisMetodos;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -15,7 +16,7 @@ import modelo.Comuna;
  * @author aleja
  */
 public class PanelIngresarComuna extends javax.swing.JPanel {
-
+    MisMetodos misMetodos = new MisMetodos();
     /**
      * Creates new form PanelIngresarComuna
      */
@@ -36,7 +37,6 @@ public class PanelIngresarComuna extends javax.swing.JPanel {
         InputNombre_comuna = new javax.swing.JTextField();
         btnAgregarComuna = new javax.swing.JButton();
         btnLimpiarIngresoComuna = new javax.swing.JButton();
-        btnVolverIngresoComuna = new javax.swing.JButton();
 
         labelNombreComuna.setText("Nombre Comuna:");
 
@@ -57,31 +57,23 @@ public class PanelIngresarComuna extends javax.swing.JPanel {
             }
         });
 
-        btnVolverIngresoComuna.setText("Volver");
-        btnVolverIngresoComuna.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverIngresoComunaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAgregarComuna)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnLimpiarIngresoComuna)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnVolverIngresoComuna))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
                         .addComponent(labelNombreComuna)
                         .addGap(18, 18, 18)
-                        .addComponent(InputNombre_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(74, Short.MAX_VALUE))
+                        .addComponent(InputNombre_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(btnAgregarComuna)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnLimpiarIngresoComuna)))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,8 +85,7 @@ public class PanelIngresarComuna extends javax.swing.JPanel {
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAgregarComuna)
-                    .addComponent(btnLimpiarIngresoComuna)
-                    .addComponent(btnVolverIngresoComuna))
+                    .addComponent(btnLimpiarIngresoComuna))
                 .addContainerGap(149, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -118,27 +109,14 @@ public class PanelIngresarComuna extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAgregarComunaActionPerformed
 
     private void btnLimpiarIngresoComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarIngresoComunaActionPerformed
-        JTextField input;
-        PanelIngresarComuna panelIngresarComuna = new PanelIngresarComuna();
-        for (int i = 0; i < panelIngresarComuna.getComponentCount(); i++) {
-            if(panelIngresarComuna.getComponent(i).getName().equals("javax.swing.JTextField")){
-                input = (JTextField)panelIngresarComuna.getComponent(i);
-                input.setText("");
-            }
-        }
-
+        misMetodos.panelLimpiarComponentes(this);
     }//GEN-LAST:event_btnLimpiarIngresoComunaActionPerformed
-
-    private void btnVolverIngresoComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverIngresoComunaActionPerformed
-        //dispose();
-    }//GEN-LAST:event_btnVolverIngresoComunaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField InputNombre_comuna;
     private javax.swing.JButton btnAgregarComuna;
     private javax.swing.JButton btnLimpiarIngresoComuna;
-    private javax.swing.JButton btnVolverIngresoComuna;
     private javax.swing.JLabel labelNombreComuna;
     // End of variables declaration//GEN-END:variables
 }

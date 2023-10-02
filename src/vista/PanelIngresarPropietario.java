@@ -5,6 +5,7 @@
 package vista;
 
 import controlador.EstadoCivilDao;
+import controlador.MisMetodos;
 import controlador.PropietarioDao;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -17,13 +18,16 @@ import modelo.Propietario;
  * @author aleja
  */
 public class PanelIngresarPropietario extends javax.swing.JPanel {
-
+    Propietario propietario;
+    PropietarioDao propietarioDao = new PropietarioDao();
+    EstadoCivilDao estadoCivilDao = new EstadoCivilDao();
+    MisMetodos misMetodos = new MisMetodos();
     /**
      * Creates new form PanelIngresarPropietario
      */
     public PanelIngresarPropietario() {
         initComponents();
-        llenadoComboBoxEstadoCivil();
+        misMetodos.comboboxLLenado(comboBoxEstadoCivil, estadoCivilDao.todosLosEstadoCivil());
     }
 
     /**
@@ -49,7 +53,6 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
         labelId_Comuna = new javax.swing.JLabel();
         btnLimpiarIngresoNuevoPropietario = new javax.swing.JButton();
         inputNumrut_prop = new javax.swing.JTextField();
-        btnVolverIngresoNuevoPropietario = new javax.swing.JButton();
         labelNumrut_prop = new javax.swing.JLabel();
         inputDvrut_prop = new javax.swing.JTextField();
         comboBoxEstadoCivil = new javax.swing.JComboBox<>();
@@ -67,7 +70,7 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
         inputDireccion_prop.setForeground(new java.awt.Color(153, 153, 153));
         inputDireccion_prop.setText("Ingrese Direccion Propietario");
 
-        labelDireccion_prop.setText("Direccion Propietario");
+        labelDireccion_prop.setText("Dirección Propietario");
 
         inputFonofijo_prop.setForeground(new java.awt.Color(153, 153, 153));
         inputFonofijo_prop.setText("Ingrese Fono Fijo Propietario");
@@ -103,19 +106,10 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
         inputNumrut_prop.setForeground(new java.awt.Color(153, 153, 153));
         inputNumrut_prop.setText("Ingrese Numero Rut Propietario");
 
-        btnVolverIngresoNuevoPropietario.setText("Volver");
-        btnVolverIngresoNuevoPropietario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverIngresoNuevoPropietarioActionPerformed(evt);
-            }
-        });
-
         labelNumrut_prop.setText("Nro Rut Propietario");
 
         inputDvrut_prop.setForeground(new java.awt.Color(153, 153, 153));
         inputDvrut_prop.setText("Ingrese DV Rut Propietario");
-
-        comboBoxEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         labelDvrut_prop.setText("DV Rut Propietario");
 
@@ -135,7 +129,7 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelNumrut_prop)
@@ -159,16 +153,13 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
                             .addComponent(inputNombre_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(inputDireccion_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(inputFonofijo_prop, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(comboBoxEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(39, 39, 39))
+                            .addComponent(comboBoxEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(btnIngresarNuevoPropietario)
                         .addGap(18, 18, 18)
-                        .addComponent(btnLimpiarIngresoNuevoPropietario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnVolverIngresoNuevoPropietario)
-                        .addGap(19, 19, 19))))
+                        .addComponent(btnLimpiarIngresoNuevoPropietario)))
+                .addGap(39, 39, 39))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,18 +207,18 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresarNuevoPropietario)
-                    .addComponent(btnLimpiarIngresoNuevoPropietario)
-                    .addComponent(btnVolverIngresoNuevoPropietario))
+                    .addComponent(btnLimpiarIngresoNuevoPropietario))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarNuevoPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevoPropietarioActionPerformed
-        PropietarioDao propietarioDao = new PropietarioDao();
-
+        
         int numrut_Prop = Integer.parseInt(String.valueOf(inputNumrut_prop.getText()));
 
         ArrayList<Propietario> listadopropietario = propietarioDao.buscarPropietario(numrut_Prop);
+        ArrayList<EstadoCivil> listadoEstadoCivil = estadoCivilDao.buscarEstadoCivil(String.valueOf(comboBoxEstadoCivil.getSelectedItem()));
+        
 
         if(listadopropietario.isEmpty()){
 
@@ -236,12 +227,15 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
             String apmaterno_prop = String.valueOf(inputApmaterno_prop.getText());
             String nombre_prop = String.valueOf(inputNombre_prop.getText());
             String direccion_prop = String.valueOf(inputDireccion_prop.getText());
-            int id_estcivil = buscarSeleccionComboboxEstadoCivil(String.valueOf(comboBoxEstadoCivil.getSelectedItem()));
-            String fonofijo_prop = String.valueOf(inputFonofijo_prop.getText());;
-            String celular_prop = String.valueOf(inputCelular_prop.getText());;
+            
+            int id_estcivil = misMetodos.comboBoxBuscarSeleccion(listadoEstadoCivil);
+            //int id_estcivil = buscarSeleccionComboboxEstadoCivil(String.valueOf(comboBoxEstadoCivil.getSelectedItem()));
+            
+            String fonofijo_prop = String.valueOf(inputFonofijo_prop.getText());
+            String celular_prop = String.valueOf(inputCelular_prop.getText());
             int id_comuna = Integer.parseInt(String.valueOf(inputId_comuna.getText()));
 
-            Propietario propietario = new Propietario(numrut_Prop, dvrut_prop, appaterno_prop, apmaterno_prop, nombre_prop, direccion_prop, id_estcivil, fonofijo_prop, celular_prop, id_comuna);
+            propietario = new Propietario(numrut_Prop, dvrut_prop, appaterno_prop, apmaterno_prop, nombre_prop, direccion_prop, id_estcivil, fonofijo_prop, celular_prop, id_comuna);
 
             propietarioDao.ingresarPropietario(propietario);
 
@@ -253,56 +247,14 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
     }//GEN-LAST:event_btnIngresarNuevoPropietarioActionPerformed
 
     private void btnLimpiarIngresoNuevoPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarIngresoNuevoPropietarioActionPerformed
-        limpiar();
+        misMetodos.panelLimpiarComponentes(this);
     }//GEN-LAST:event_btnLimpiarIngresoNuevoPropietarioActionPerformed
-
-    private void btnVolverIngresoNuevoPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverIngresoNuevoPropietarioActionPerformed
-        //dispose();
-    }//GEN-LAST:event_btnVolverIngresoNuevoPropietarioActionPerformed
-private void llenadoComboBoxEstadoCivil(){
-        
-        comboBoxEstadoCivil.removeAllItems();
-        EstadoCivilDao estadoCivilDao = new EstadoCivilDao();
-        ArrayList<EstadoCivil> listacomboBoxEstadoCivil = estadoCivilDao.todosLosEstadoCivil();
-
-        for(EstadoCivil estadocivil : listacomboBoxEstadoCivil){
-
-            String desc_EstadoCivil = estadocivil.getDesc_EstCivil();
-            comboBoxEstadoCivil.addItem(desc_EstadoCivil);
-        }
-    }
     
-    private int buscarSeleccionComboboxEstadoCivil(String seleccionEstadoCivil){
-        
-        EstadoCivilDao estadoCivilDao = new EstadoCivilDao();
-        ArrayList<EstadoCivil> listadoEstadoCivil = new ArrayList<>();
-        int id_estcivil = 0;
-        listadoEstadoCivil = estadoCivilDao.buscarEstadoCivil(seleccionEstadoCivil);
-        
-        for (EstadoCivil estadoCivil : listadoEstadoCivil){
-            
-            id_estcivil = estadoCivil.getId_EstCivil();
-        }
-        
-        return id_estcivil;
-    }
     
-    private void limpiar(){
-        JTextField caja;
-        PanelIngresarPropietario panelIngresarPropietario = new PanelIngresarPropietario();
-        comboBoxEstadoCivil.setSelectedIndex(0);
-        for(int i=0;i<panelIngresarPropietario.getComponentCount();i++){
-            if(panelIngresarPropietario.getComponent(i).getClass().getName().equals("javax.swing.JTextField")){
-                caja=(JTextField)panelIngresarPropietario.getComponent(i);
-                caja.setText("");
-            }
-        }
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresarNuevoPropietario;
     private javax.swing.JButton btnLimpiarIngresoNuevoPropietario;
-    private javax.swing.JButton btnVolverIngresoNuevoPropietario;
     private javax.swing.JComboBox<String> comboBoxEstadoCivil;
     private javax.swing.JTextField inputApmaterno_prop;
     private javax.swing.JTextField inputAppaterno_prop;

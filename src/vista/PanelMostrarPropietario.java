@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package vista;
+import controlador.MisMetodos;
 import modelo.Propietario;
 import controlador.PropietarioDao;
 import java.util.ArrayList;
@@ -16,13 +17,16 @@ import javax.swing.table.DefaultTableModel;
  * @author aleja
  */
 public class PanelMostrarPropietario extends javax.swing.JPanel {
-    PropietarioDao propietarioDao = new PropietarioDao();
     Propietario propietario;
+    PropietarioDao propietarioDao = new PropietarioDao();
+    MisMetodos misMetodos = new MisMetodos();
+    DefaultTableModel tabla;
     /**
      * Creates new form PanelMostrarPropietario
      */
     public PanelMostrarPropietario() {
         initComponents();
+        btnMostrarPropietarios.doClick();
     }
 
     /**
@@ -89,28 +93,35 @@ public class PanelMostrarPropietario extends javax.swing.JPanel {
             }
         ));
         jScrollPane1.setViewportView(tablaEmpleados);
+        if (tablaEmpleados.getColumnModel().getColumnCount() > 0) {
+            tablaEmpleados.getColumnModel().getColumn(0).setPreferredWidth(50);
+            tablaEmpleados.getColumnModel().getColumn(1).setPreferredWidth(10);
+            tablaEmpleados.getColumnModel().getColumn(5).setPreferredWidth(200);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(508, 508, 508))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1021, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnModificarPropietario)
-                            .addComponent(btnBuscarPropietario)
-                            .addComponent(btnMostrarPropietarios)
-                            .addComponent(btnEliminarPropietario)
-                            .addComponent(btnIngresarNuevoPropietario))
-                        .addContainerGap(33, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(508, 508, 508))))
+                .addGap(117, 117, 117)
+                .addComponent(btnIngresarNuevoPropietario)
+                .addGap(18, 18, 18)
+                .addComponent(btnBuscarPropietario)
+                .addGap(18, 18, 18)
+                .addComponent(btnMostrarPropietarios)
+                .addGap(18, 18, 18)
+                .addComponent(btnModificarPropietario)
+                .addGap(18, 18, 18)
+                .addComponent(btnEliminarPropietario)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1044, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,19 +129,15 @@ public class PanelMostrarPropietario extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnIngresarNuevoPropietario)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnBuscarPropietario)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnMostrarPropietarios)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnModificarPropietario)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEliminarPropietario)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnIngresarNuevoPropietario)
+                    .addComponent(btnBuscarPropietario)
+                    .addComponent(btnMostrarPropietarios)
+                    .addComponent(btnModificarPropietario)
+                    .addComponent(btnEliminarPropietario))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -138,9 +145,9 @@ public class PanelMostrarPropietario extends javax.swing.JPanel {
 
         int numrut_prop = Integer.parseInt(JOptionPane.showInputDialog("Ingrese Rut Propietario"));
 
-        DefaultTableModel tabla = (DefaultTableModel)tablaEmpleados.getModel();
-
+        tabla = (DefaultTableModel)tablaEmpleados.getModel();
         ArrayList<Propietario> listaPropietario = propietarioDao.buscarPropietario(numrut_prop);
+        misMetodos.tablaLimpiar(tablaEmpleados);
 
         if(listaPropietario.isEmpty()){
             JOptionPane.showInputDialog("Ingrese Rut Propietario");
@@ -162,16 +169,16 @@ public class PanelMostrarPropietario extends javax.swing.JPanel {
 
                 tabla.addRow(datosListaPropietario[i]);
             }
-
             tablaEmpleados.setModel(tabla);
+            misMetodos.tablaCentrarDatos(tablaEmpleados);
         }
     }//GEN-LAST:event_btnBuscarPropietarioActionPerformed
 
     private void btnMostrarPropietariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarPropietariosActionPerformed
 
-        DefaultTableModel tabla = (DefaultTableModel)tablaEmpleados.getModel();
-
+        tabla = (DefaultTableModel)tablaEmpleados.getModel();
         ArrayList<Propietario> listaPropietario = propietarioDao.mostrarTodosLosPropietarios();
+        misMetodos.tablaLimpiar(tablaEmpleados); 
 
         if(listaPropietario.isEmpty()){
             JOptionPane.showInputDialog("No Existen Propietarios");
@@ -193,8 +200,8 @@ public class PanelMostrarPropietario extends javax.swing.JPanel {
 
                 tabla.addRow(datosListaPropietario[i]);
             }
-
             tablaEmpleados.setModel(tabla);
+            misMetodos.tablaCentrarDatos(tablaEmpleados);
         }
     }//GEN-LAST:event_btnMostrarPropietariosActionPerformed
 
@@ -218,7 +225,6 @@ public class PanelMostrarPropietario extends javax.swing.JPanel {
             int id_comuna = Integer.parseInt(String.valueOf(tablaEmpleados.getValueAt(filaSeleccionada,9)));
 
             propietario = new Propietario(numrut_prop, dvrut_prop, appaterno_prop, apmaterno_prop, nombre_prop, direccion_prop, id_estcivil, fonofijo_prop, celular_prop, id_comuna);
-
             propietarioDao.actualizarPropietario(propietario);
 
             JOptionPane.showMessageDialog(this,"Propietario Modificado");
@@ -244,7 +250,6 @@ public class PanelMostrarPropietario extends javax.swing.JPanel {
             int id_comuna = Integer.parseInt(String.valueOf(tablaEmpleados.getValueAt(filaSeleccionada,9)));
 
             propietario = new Propietario(numrut_prop, dvrut_prop, appaterno_prop, apmaterno_prop, nombre_prop, direccion_prop, id_estcivil, fonofijo_prop, celular_prop, id_comuna);
-
             propietarioDao.eliminarPropietario(propietario);
 
             JOptionPane.showMessageDialog(this,"Propietario Eliminado");
@@ -253,23 +258,9 @@ public class PanelMostrarPropietario extends javax.swing.JPanel {
 
     private void btnIngresarNuevoPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevoPropietarioActionPerformed
         VentanaIngresarPropietario ventanaIngresarPropietario = new VentanaIngresarPropietario();
-        abrirVentana(ventanaIngresarPropietario,"Ingreso Nuevo Propietario");
+        misMetodos.abrirVentana(ventanaIngresarPropietario,"Ingreso Nuevo Propietario");
     }//GEN-LAST:event_btnIngresarNuevoPropietarioActionPerformed
 
-     private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
-        Ventana.setVisible(true);
-        Ventana.setLocationRelativeTo(null);
-        Ventana.setTitle(tituloVentana);
-        Ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-    }
-    
-    public void limpiarTabla(){
-        DefaultTableModel dtm=(DefaultTableModel)tablaEmpleados.getModel();
-        int n=tablaEmpleados.getRowCount();
-        for (int i = 0; i < n ; i++) {
-            dtm.removeRow(dtm.getRowCount()-1);
-        }
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarPropietario;

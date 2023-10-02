@@ -5,6 +5,7 @@
 package vista;
 
 import controlador.EstadoCivilDao;
+import controlador.MisMetodos;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import modelo.EstadoCivil;
@@ -14,7 +15,7 @@ import modelo.EstadoCivil;
  * @author aleja
  */
 public class PanelIngresarEstadoCivil extends javax.swing.JPanel {
-
+    MisMetodos misMetodos = new MisMetodos();
     /**
      * Creates new form PanelIngresarEstadoCivil
      */
@@ -118,14 +119,8 @@ public class PanelIngresarEstadoCivil extends javax.swing.JPanel {
     }//GEN-LAST:event_btnGuardarEstadoCivilActionPerformed
 
     private void btnLimpiarEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarEstadoCivilActionPerformed
-        JTextField caja;
-        PanelIngresarEstadoCivil panelIngresasrEstadoCivil = new PanelIngresarEstadoCivil();
-        for (int i = 0; i < panelIngresasrEstadoCivil.getComponentCount(); i++) {
-            if(panelIngresasrEstadoCivil.getComponent(i).getClass().getName().equals("javax.swing.JTextField")){
-                caja = (JTextField)panelIngresasrEstadoCivil.getComponent(i);
-                caja.setText("");
-            }
-        }
+        misMetodos.panelLimpiarComponentes(this);
+        
     }//GEN-LAST:event_btnLimpiarEstadoCivilActionPerformed
 
     private void btnVolverEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverEstadoCivilActionPerformed

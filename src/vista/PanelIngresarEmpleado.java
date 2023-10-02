@@ -8,6 +8,7 @@ import controlador.CategoriaEmpleadoDao;
 import controlador.ComunaDao;
 import controlador.EmpleadoDao;
 import controlador.EstadoCivilDao;
+import controlador.MisMetodos;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import modelo.CategoriaEmpleado;
@@ -20,6 +21,7 @@ import modelo.EstadoCivil;
  * @author aleja
  */
 public class PanelIngresarEmpleado extends javax.swing.JPanel {
+    MisMetodos misMetodos = new MisMetodos();
     Empleado empleado;
     
     EmpleadoDao empleadoDao = new EmpleadoDao();
@@ -31,9 +33,10 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
      */
     public PanelIngresarEmpleado() {
         initComponents();
-        llenadoComboBoxCategoriaEmpleado();
-        llenadoComboBoxComuna();
-        llenadoEstadoCivil();
+        misMetodos.comboboxLLenado(comboBoxCategoriaEmpleado, categoriaEmpleadoDao.todasLasCategoriaEmpleado());
+        misMetodos.comboboxLLenado(comboBoxComunaEmpleado, comunaDao.mostrarComunas());
+        misMetodos.comboboxLLenado(comboBoxEstadoCivil, estadocivilDao.todosLosEstadoCivil());
+        
     }
 
     /**
@@ -77,7 +80,6 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
         labelRutEmpleado = new javax.swing.JLabel();
         btnIngresarNuevoEmpleado = new javax.swing.JButton();
         btnLimpiarNuevoEmpleado = new javax.swing.JButton();
-        btnVolverNuevoEmpleado = new javax.swing.JButton();
 
         inputCelular_emp.setForeground(new java.awt.Color(153, 153, 153));
         inputCelular_emp.setText("Ingrese Celular Empleado");
@@ -105,9 +107,9 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
         inputFonofijo_emp.setForeground(new java.awt.Color(153, 153, 153));
         inputFonofijo_emp.setText("Ingrese Telefono Fijo Empleado");
 
-        labelDireccionEmpleado.setText("Direccion Empleado");
+        labelDireccionEmpleado.setText("Dirección Empleado");
 
-        labelIdEstadoCivil.setText("Id Estado Civil");
+        labelIdEstadoCivil.setText("Estado Civil");
 
         labelCelularEmpleado.setText("Celular Empleado");
 
@@ -180,9 +182,6 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
             }
         });
 
-        btnVolverNuevoEmpleado.setForeground(new java.awt.Color(51, 51, 51));
-        btnVolverNuevoEmpleado.setText("Volver");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -204,9 +203,8 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
                     .addComponent(labelSueldoEmpleado)
                     .addComponent(labelIdCategoriaEmpleado)
                     .addComponent(labelRutSupervisor)
-                    .addComponent(btnIngresarNuevoEmpleado)
                     .addComponent(labelIdComunaEmpleado))
-                .addGap(49, 49, 49)
+                .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(comboBoxComunaEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -226,12 +224,14 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
                             .addComponent(inputSueldo_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(inputNumrut_supervisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboBoxEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(comboBoxCategoriaEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnLimpiarNuevoEmpleado)
-                                .addGap(49, 49, 49)
-                                .addComponent(btnVolverNuevoEmpleado)))
+                            .addComponent(comboBoxCategoriaEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(btnIngresarNuevoEmpleado)
+                .addGap(49, 49, 49)
+                .addComponent(btnLimpiarNuevoEmpleado)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,12 +296,11 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelRutSupervisor)
                     .addComponent(inputNumrut_supervisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresarNuevoEmpleado)
-                    .addComponent(btnLimpiarNuevoEmpleado)
-                    .addComponent(btnVolverNuevoEmpleado))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnLimpiarNuevoEmpleado))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -318,7 +317,11 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
     }//GEN-LAST:event_inputAppaterno_empActionPerformed
 
     private void btnIngresarNuevoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevoEmpleadoActionPerformed
-
+        
+        ArrayList<Comuna> resultadoComuna = comunaDao.buscarComuna((String)comboBoxComunaEmpleado.getSelectedItem());
+        ArrayList<EstadoCivil> resultadoEstadoCivil = estadocivilDao.buscarEstadoCivil((String)comboBoxEstadoCivil.getSelectedItem());
+        ArrayList<CategoriaEmpleado> resultadoCategoriaEmpleado = categoriaEmpleadoDao.buscarCategoriaEmpleado((String)comboBoxCategoriaEmpleado.getSelectedItem());
+        
         String dvrut = inputDvRut_emp.getText();
 
         int numrut_emp = Integer.parseInt(inputNumRut_emp.getText());
@@ -327,14 +330,20 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
         String apmaterno_emp = inputApmaterno_emp.getText();
         String nombre_emp = inputNombre_emp.getText();
         String direccion_emp = inputDireccion_emp.getText();
-        int id_estcivil = seleccionComboBoxEstadoCivil((String)comboBoxEstadoCivil.getSelectedItem());
+        
+        int id_estcivil = misMetodos.comboBoxBuscarSeleccion(resultadoEstadoCivil);
+        //int id_estcivil = seleccionComboBoxEstadoCivil((String)comboBoxEstadoCivil.getSelectedItem());
+        
         String fonofijo_emp = inputFonofijo_emp.getText();
         String celular_emp = inputCelular_emp.getText();
         String fecnac_emp = inputFecnac_emp.getText(); //debe ser formato yyyy-mm-d = ind
         String fecing_emp = inputFecing_emp.getText();
         int sueldo_emp = Integer.parseInt(inputSueldo_emp.getText());
-        int id_comuna = seleccionComboboxComuna((String)comboBoxComunaEmpleado.getSelectedItem());
-        int id_categoria_emp = seleccionComboBoxCategoriaEmpleado((String)comboBoxCategoriaEmpleado.getSelectedItem());
+        
+        int id_comuna = misMetodos.comboBoxBuscarSeleccion(resultadoComuna);;
+        
+        int id_categoria_emp = misMetodos.comboBoxBuscarSeleccion(resultadoCategoriaEmpleado);
+        
         int numrut_supervisor = Integer.parseInt(inputNumrut_supervisor.getText());
 
         ArrayList<Empleado> listaEmpleado = empleadoDao.buscarEmpleado(numrut_emp);
@@ -351,83 +360,17 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
     }//GEN-LAST:event_btnIngresarNuevoEmpleadoActionPerformed
 
     private void btnLimpiarNuevoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarNuevoEmpleadoActionPerformed
-        // TODO add your handling code here:
+        misMetodos.panelLimpiarComponentes(this);
     }//GEN-LAST:event_btnLimpiarNuevoEmpleadoActionPerformed
 
     private void comboBoxEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxEstadoCivilActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comboBoxEstadoCivilActionPerformed
-    public void llenadoEstadoCivil(){
-        comboBoxEstadoCivil.removeAllItems();
-        ArrayList<EstadoCivil> listaEstadoCivil = estadocivilDao.todosLosEstadoCivil();
-        
-        for(EstadoCivil estadoCivil : listaEstadoCivil){
-            
-            String desc_estadoCivil = estadoCivil.getDesc_EstCivil();
-            comboBoxEstadoCivil.addItem(desc_estadoCivil);
-        }
-    }
     
     
-    public void llenadoComboBoxComuna(){
-        comboBoxComunaEmpleado.removeAllItems();
-        ArrayList<Comuna> listadoComuna = comunaDao.mostrarComunas();
-        
-        for(Comuna comuna : listadoComuna){
-            
-            String desc_comuna = comuna.getNombre_comuna();
-            comboBoxComunaEmpleado.addItem(desc_comuna);
-        }
-    }
-    
-    public void llenadoComboBoxCategoriaEmpleado(){
-        comboBoxCategoriaEmpleado.removeAllItems();
-        ArrayList<CategoriaEmpleado> listadoCategoriaEmpleado = categoriaEmpleadoDao.todasLasCategoriaEmpleado();
-        
-        for(CategoriaEmpleado categoriaEmpleado : listadoCategoriaEmpleado){
-            String desc_CategoriaEmpleado = categoriaEmpleado.getDesc_categoria_emp();
-            comboBoxCategoriaEmpleado.addItem(desc_CategoriaEmpleado);
-        }
-    }
-    
-    public int seleccionComboBoxEstadoCivil(String seleccionEstadoCivil){
-        
-        ArrayList<EstadoCivil> listadoEstadoCivil = estadocivilDao.buscarEstadoCivil(seleccionEstadoCivil);
-        int id_estadoCivil = 0;
-        for(EstadoCivil estadoCivil : listadoEstadoCivil){
-            id_estadoCivil = estadoCivil.getId_EstCivil();
-        }
-        
-        return id_estadoCivil; 
-    }
-    
-    public int seleccionComboBoxCategoriaEmpleado(String SeleccionCategoriaEmpleado){
-        
-        ArrayList<CategoriaEmpleado> listadoCategoriaEmpleado = categoriaEmpleadoDao.buscarCategoriaEmpleado(SeleccionCategoriaEmpleado);
-        
-        int id_categoriaEmpleado = 0;
-        
-        for(CategoriaEmpleado categoriaEmpleado : listadoCategoriaEmpleado){
-            id_categoriaEmpleado = categoriaEmpleado.getId_categoria_emp();
-        }
-        
-        return id_categoriaEmpleado;
-    }
-    
-    public int seleccionComboboxComuna(String seleccionComuna){
-        ArrayList<Comuna> listadoComuna = comunaDao.buscarComuna(seleccionComuna);
-        int id_comuna = 0;
-        
-        for(Comuna comuna : listadoComuna){
-            id_comuna = comuna.getId_comuna();
-        }
-        return id_comuna;
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresarNuevoEmpleado;
     private javax.swing.JButton btnLimpiarNuevoEmpleado;
-    private javax.swing.JButton btnVolverNuevoEmpleado;
     private javax.swing.JComboBox<String> comboBoxCategoriaEmpleado;
     private javax.swing.JComboBox<String> comboBoxComunaEmpleado;
     private javax.swing.JComboBox<String> comboBoxEstadoCivil;

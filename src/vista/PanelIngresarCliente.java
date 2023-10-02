@@ -6,6 +6,8 @@ package vista;
 
 import controlador.ClienteDao;
 import controlador.EstadoCivilDao;
+import controlador.MisMetodos;
+import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -17,13 +19,17 @@ import modelo.EstadoCivil;
  * @author aleja
  */
 public class PanelIngresarCliente extends javax.swing.JPanel {
-
+    MisMetodos mismetodos = new MisMetodos();
+    ClienteDao clienteDao = new ClienteDao();
+    EstadoCivilDao estadoCivilDao = new EstadoCivilDao();
     /**
      * Creates new form PanelIngresarCliente
      */
     public PanelIngresarCliente() {
         initComponents();
-        llenadoComboBoxEstadoCivil();
+        //llenadoComboBoxEstadoCivil();
+        mismetodos.comboboxLLenado(comboboxEstadoCivil, estadoCivilDao.todosLosEstadoCivil());
+        mismetodos.panelCamposErrorInicializador(this);
     }
 
     /**
@@ -57,11 +63,20 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
         inputRenta_cli = new javax.swing.JTextField();
         btnGuardarCliente = new javax.swing.JButton();
         btnLimpiarCliente = new javax.swing.JButton();
-        btnVolverCliente = new javax.swing.JButton();
+        labelErrorNumeroRut = new javax.swing.JLabel();
+        labelErrorDigitoVerificador = new javax.swing.JLabel();
+        labelErrorApellidoPaterno = new javax.swing.JLabel();
+        labelErrorApellidoMaterno = new javax.swing.JLabel();
+        labelErrorNombre = new javax.swing.JLabel();
+        labelErrorDireccion = new javax.swing.JLabel();
+        labelErrorEstadoCivil = new javax.swing.JLabel();
+        labelErrorTelefono = new javax.swing.JLabel();
+        labelErrorCelular = new javax.swing.JLabel();
+        labelErrorRenta = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createTitledBorder("Ingreso Clientes"));
 
-        labelNumeroRutCli.setText("Numero de rut");
+        labelNumeroRutCli.setText("Número de rut");
 
         inputNumrut_cli.setForeground(new java.awt.Color(153, 153, 153));
         inputNumrut_cli.setText("Ingrese numero de rut");
@@ -71,7 +86,7 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
             }
         });
 
-        labelDigitoVerificadorCli.setText("Digito Verificador");
+        labelDigitoVerificadorCli.setText("Dígito Verificador");
 
         inputDvrut_cli.setForeground(new java.awt.Color(153, 153, 153));
         inputDvrut_cli.setText("Ingrese digito verificador");
@@ -96,7 +111,7 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
         inputNombre_cli.setForeground(new java.awt.Color(153, 153, 153));
         inputNombre_cli.setText("Ingrese nombre");
 
-        labelDireccionCli.setText("Direcion");
+        labelDireccionCli.setText("Direción");
 
         inputDireccion_cli.setForeground(new java.awt.Color(153, 153, 153));
         inputDireccion_cli.setText("Ingrese direccion");
@@ -138,53 +153,103 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
             }
         });
 
-        btnVolverCliente.setText("Volver");
-        btnVolverCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverClienteActionPerformed(evt);
-            }
-        });
+        labelErrorNumeroRut.setForeground(new java.awt.Color(255, 0, 51));
+        labelErrorNumeroRut.setText("Número de rut obligatorio");
+        labelErrorNumeroRut.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        labelErrorNumeroRut.setName("labelErrorNumeroRut"); // NOI18N
+
+        labelErrorDigitoVerificador.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorDigitoVerificador.setText("Digito Verificador obligatorio");
+        labelErrorDigitoVerificador.setName("labelErrorDigitoVerificador"); // NOI18N
+
+        labelErrorApellidoPaterno.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorApellidoPaterno.setText("Apellido Paterno Obligatorio");
+        labelErrorApellidoPaterno.setName("labelErrorApellidoPaterno"); // NOI18N
+
+        labelErrorApellidoMaterno.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorApellidoMaterno.setText("Apellido Materno Obligatorio");
+        labelErrorApellidoMaterno.setName("labelErrorApellidoMaterno"); // NOI18N
+
+        labelErrorNombre.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorNombre.setText("Nombre Obligatorio");
+        labelErrorNombre.setName("labelErrorNombre"); // NOI18N
+
+        labelErrorDireccion.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorDireccion.setText("Direccion Obligatorio");
+        labelErrorDireccion.setName("labelErrorDireccion"); // NOI18N
+
+        labelErrorEstadoCivil.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorEstadoCivil.setText("Estado Civil Obligatorio");
+        labelErrorEstadoCivil.setName("labelErrorEstadoCivil"); // NOI18N
+
+        labelErrorTelefono.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorTelefono.setText("Telefono Obligatorio");
+        labelErrorTelefono.setName("labelErrorTelefono"); // NOI18N
+
+        labelErrorCelular.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorCelular.setText("Celular Obligatorio");
+        labelErrorCelular.setName("labelErrorCelular"); // NOI18N
+
+        labelErrorRenta.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorRenta.setText("Renta Obligatorio");
+        labelErrorRenta.setName("labelErrorRenta"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(labelCelularCli, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelEstadoCivilCli, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(labelApellidoPaternoCli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(labelApellidoMaternoCli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(labelDigitoVerificadorCli, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
-                                .addComponent(labelNumeroRutCli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(labelNombreCli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(labelDireccionCli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(labelTelefonoFijoCli, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(labelRentaCli, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnGuardarCliente))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(inputDvrut_cli)
-                        .addComponent(inputAppaterno_cli)
-                        .addComponent(inputApmaterno_cli)
-                        .addComponent(inputNombre_cli)
-                        .addComponent(inputDireccion_cli)
-                        .addComponent(inputFonofijo_cli)
-                        .addComponent(comboboxEstadoCivil, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(inputCelular_cli)
-                        .addComponent(inputNumrut_cli)
-                        .addComponent(inputRenta_cli))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(btnLimpiarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnVolverCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                        .addGap(41, 41, 41)
+                        .addComponent(btnGuardarCliente)
+                        .addGap(27, 27, 27)
+                        .addComponent(btnLimpiarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelCelularCli, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(labelEstadoCivilCli, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(labelApellidoPaternoCli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelApellidoMaternoCli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelDigitoVerificadorCli, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                                    .addComponent(labelNumeroRutCli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelNombreCli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelDireccionCli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(labelTelefonoFijoCli, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(labelRentaCli, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(inputDvrut_cli)
+                                    .addComponent(inputAppaterno_cli)
+                                    .addComponent(inputApmaterno_cli)
+                                    .addComponent(inputDireccion_cli)
+                                    .addComponent(inputFonofijo_cli)
+                                    .addComponent(comboboxEstadoCivil, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(inputCelular_cli)
+                                    .addComponent(inputNumrut_cli)
+                                    .addComponent(inputRenta_cli))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelErrorNumeroRut, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelErrorDigitoVerificador)
+                                    .addComponent(labelErrorApellidoPaterno)
+                                    .addComponent(labelErrorApellidoMaterno)
+                                    .addComponent(labelErrorDireccion)
+                                    .addComponent(labelErrorEstadoCivil)
+                                    .addComponent(labelErrorTelefono)
+                                    .addComponent(labelErrorCelular)
+                                    .addComponent(labelErrorRenta)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(inputNombre_cli, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelErrorNombre)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,49 +257,58 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNumeroRutCli)
-                    .addComponent(inputNumrut_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputNumrut_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorNumeroRut))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDigitoVerificadorCli)
-                    .addComponent(inputDvrut_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputDvrut_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorDigitoVerificador))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelApellidoPaternoCli)
-                    .addComponent(inputAppaterno_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
+                    .addComponent(inputAppaterno_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorApellidoPaterno))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelApellidoMaternoCli)
-                    .addComponent(inputApmaterno_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputApmaterno_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorApellidoMaterno))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNombreCli)
-                    .addComponent(inputNombre_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputNombre_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorNombre))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDireccionCli)
-                    .addComponent(inputDireccion_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputDireccion_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorDireccion))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelEstadoCivilCli)
-                    .addComponent(comboboxEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboboxEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorEstadoCivil))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTelefonoFijoCli)
-                    .addComponent(inputFonofijo_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputFonofijo_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorTelefono))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCelularCli, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputCelular_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputCelular_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorCelular))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelRentaCli)
-                    .addComponent(inputRenta_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(inputRenta_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorRenta))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardarCliente)
-                    .addComponent(btnLimpiarCliente)
-                    .addComponent(btnVolverCliente))
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addComponent(btnLimpiarCliente))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -251,9 +325,6 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_comboboxEstadoCivilActionPerformed
 
     private void btnGuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarClienteActionPerformed
-
-        ClienteDao clienteDao = new ClienteDao();
-
         int numrut_cli;
         char dvrut_cli;
         String appaterno_cli;
@@ -264,6 +335,7 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
         int fonofijo_cli;
         int celular_cli;
         int renta_cli;
+        ArrayList resultadoBusqueda = estadoCivilDao.buscarEstadoCivil((String)comboboxEstadoCivil.getSelectedItem());
 
         numrut_cli = Integer.parseInt(inputNumrut_cli.getText());
         dvrut_cli = inputDvrut_cli.getText().charAt(0);
@@ -271,7 +343,10 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
         apmaterno_cli = inputApmaterno_cli.getText();
         nombre_cli = inputNombre_cli.getText();
         direccion_cli = inputDireccion_cli.getText();
-        id_estcivil = buscarSeleccionComboboxEstadoCivil((String)comboboxEstadoCivil.getSelectedItem());
+        
+        
+        id_estcivil = mismetodos.comboBoxBuscarSeleccion(resultadoBusqueda);////buscarSeleccionComboboxEstadoCivil((String)comboboxEstadoCivil.getSelectedItem());
+
         fonofijo_cli = Integer.parseInt(inputFonofijo_cli.getText());
         celular_cli = Integer.parseInt(inputCelular_cli.getText());
         renta_cli = Integer.parseInt(inputRenta_cli.getText());
@@ -286,57 +361,17 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
                 "\nIngresado");
         }else{
             JOptionPane.showMessageDialog(this,"Cliente ya existe");//para enviar mensaje a usuario
-        }
+        }    
     }//GEN-LAST:event_btnGuardarClienteActionPerformed
 
     private void btnLimpiarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarClienteActionPerformed
-        JTextField caja;
-        PanelIngresarCliente panelIngresarCliente = new PanelIngresarCliente();
-        comboboxEstadoCivil.setSelectedIndex(0);
-        for(int i=0;i<panelIngresarCliente.getComponentCount();i++){
-            if(panelIngresarCliente.getComponent(i).getClass().getName().equals("javax.swing.JTextField")){
-                caja=(JTextField)panelIngresarCliente.getComponent(i);
-                caja.setText("");
-            }
-        }
+       mismetodos.panelLimpiarComponentes(this);
     }//GEN-LAST:event_btnLimpiarClienteActionPerformed
-
-    private void btnVolverClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverClienteActionPerformed
-        
-    }//GEN-LAST:event_btnVolverClienteActionPerformed
     
-    private void llenadoComboBoxEstadoCivil(){
-        
-        comboboxEstadoCivil.removeAllItems();
-        EstadoCivilDao estadoCivilDao = new EstadoCivilDao();
-        ArrayList<EstadoCivil> listacomboBoxEstadoCivil = estadoCivilDao.todosLosEstadoCivil();
-
-        for(EstadoCivil estadocivil : listacomboBoxEstadoCivil){
-
-            String desc_EstadoCivil = estadocivil.getDesc_EstCivil();
-            comboboxEstadoCivil.addItem(desc_EstadoCivil);
-        }
-    }
-   
-    private int buscarSeleccionComboboxEstadoCivil(String seleccionEstadoCivil){
-        
-        EstadoCivilDao estadoCivilDao = new EstadoCivilDao();
-        ArrayList<EstadoCivil> listadoEstadoCivil = new ArrayList<>();
-        int id_estcivil = 0;
-        listadoEstadoCivil = estadoCivilDao.buscarEstadoCivil(seleccionEstadoCivil);
-        
-        for (EstadoCivil estadoCivil : listadoEstadoCivil){
-            
-            id_estcivil = estadoCivil.getId_EstCivil();
-        }
-        
-        return id_estcivil;
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardarCliente;
     private javax.swing.JButton btnLimpiarCliente;
-    private javax.swing.JButton btnVolverCliente;
     private javax.swing.JComboBox<String> comboboxEstadoCivil;
     private javax.swing.JTextField inputApmaterno_cli;
     private javax.swing.JTextField inputAppaterno_cli;
@@ -352,6 +387,16 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
     private javax.swing.JLabel labelCelularCli;
     private javax.swing.JLabel labelDigitoVerificadorCli;
     private javax.swing.JLabel labelDireccionCli;
+    private javax.swing.JLabel labelErrorApellidoMaterno;
+    private javax.swing.JLabel labelErrorApellidoPaterno;
+    private javax.swing.JLabel labelErrorCelular;
+    private javax.swing.JLabel labelErrorDigitoVerificador;
+    private javax.swing.JLabel labelErrorDireccion;
+    private javax.swing.JLabel labelErrorEstadoCivil;
+    private javax.swing.JLabel labelErrorNombre;
+    private javax.swing.JLabel labelErrorNumeroRut;
+    private javax.swing.JLabel labelErrorRenta;
+    private javax.swing.JLabel labelErrorTelefono;
     private javax.swing.JLabel labelEstadoCivilCli;
     private javax.swing.JLabel labelNombreCli;
     private javax.swing.JLabel labelNumeroRutCli;

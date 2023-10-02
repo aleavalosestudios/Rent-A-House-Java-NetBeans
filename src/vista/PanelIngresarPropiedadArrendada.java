@@ -8,6 +8,7 @@ import modelo.Propiedad;
 import modelo.Cliente;
 import controlador.PropiedadArrendadaDao;
 import controlador.ClienteDao;
+import controlador.MisMetodos;
 import controlador.PropiedadDao;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -18,7 +19,15 @@ import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
  * @author aleja
  */
 public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
-
+    
+    Cliente cliente;
+    ClienteDao clienteDao = new ClienteDao();
+    PropiedadDao propiedadDao = new PropiedadDao();
+    PropiedadArrendada propiedadArrendada;
+    
+    PropiedadArrendadaDao propiedadArrendadaDao = new PropiedadArrendadaDao();
+    
+    MisMetodos misMetodos = new MisMetodos();
     /**
      * Creates new form PanelIngresarPropiedadArrendada
      */
@@ -37,7 +46,6 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
 
         btnIngresoArriendoPropiedad = new javax.swing.JButton();
         btnLimpiarIngresoArriendoPropiedad = new javax.swing.JButton();
-        btnVolverIngresoArriendoPropiedad = new javax.swing.JButton();
         labelNro_propiedad = new javax.swing.JLabel();
         btnIngresarPropiedad = new javax.swing.JButton();
         labelFecini_arriendo = new javax.swing.JLabel();
@@ -63,13 +71,6 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
             }
         });
 
-        btnVolverIngresoArriendoPropiedad.setText("Volver");
-        btnVolverIngresoArriendoPropiedad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverIngresoArriendoPropiedadActionPerformed(evt);
-            }
-        });
-
         labelNro_propiedad.setText("Nro Propiedad");
 
         btnIngresarPropiedad.setText("Ingresar Nueva Propiedad");
@@ -88,7 +89,7 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
             }
         });
 
-        labelFecter_arriendo.setText("Fecha Termino Arriendo");
+        labelFecter_arriendo.setText("Fecha Término Arriendo");
 
         labelNumrut_cli.setText("Nro Rut Cliente");
 
@@ -139,9 +140,7 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnIngresoArriendoPropiedad)
                         .addGap(18, 18, 18)
-                        .addComponent(btnLimpiarIngresoArriendoPropiedad)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnVolverIngresoArriendoPropiedad)))
+                        .addComponent(btnLimpiarIngresoArriendoPropiedad)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -168,8 +167,7 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresoArriendoPropiedad)
-                    .addComponent(btnLimpiarIngresoArriendoPropiedad)
-                    .addComponent(btnVolverIngresoArriendoPropiedad))
+                    .addComponent(btnLimpiarIngresoArriendoPropiedad))
                 .addContainerGap(92, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -179,8 +177,9 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
         int nroPropiedad = Integer.parseInt(String.valueOf(inputNro_propiedad.getText()));
         int numrut_cli = Integer.parseInt(String.valueOf(inputNumrut_cli.getText()));
 
-        boolean clienteExiste = buscadorClienteExiste(numrut_cli);
-        boolean propiedadexiste = buscadorPropiedadExiste(nroPropiedad);
+        boolean clienteExiste = misMetodos.listaVacia(clienteDao.buscarCliente(numrut_cli));
+                //buscadorClienteExiste(numrut_cli);
+        boolean propiedadexiste = misMetodos.listaVacia(propiedadDao.buscarPropiedad(nroPropiedad));
 
         if(clienteExiste == false || propiedadexiste == false){
             JOptionPane.showMessageDialog(this,"Error en el ingreso de datos");
@@ -189,10 +188,7 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
             String fec_inicio = String.valueOf(inputFecini_arriendo.getText());
             String fec_termino = String.valueOf(inputFecter_arriendo.getText());
 
-            PropiedadArrendada propiedadArrendada= new PropiedadArrendada(nroPropiedad, fec_inicio, fec_termino, numrut_cli);
-
-            PropiedadArrendadaDao propiedadArrendadaDao = new PropiedadArrendadaDao();
-
+            propiedadArrendada= new PropiedadArrendada(nroPropiedad, fec_inicio, fec_termino, numrut_cli);
             propiedadArrendadaDao.agregarPropiedadArrendada(propiedadArrendada);
 
             JOptionPane.showMessageDialog(this,"Arriendo De Propiedad Ingresado Correctamente");
@@ -200,44 +196,24 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnIngresoArriendoPropiedadActionPerformed
 
-    private void btnLimpiarIngresoArriendoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarIngresoArriendoPropiedadActionPerformed
-        limpiar();
-    }//GEN-LAST:event_btnLimpiarIngresoArriendoPropiedadActionPerformed
-
-    private void btnVolverIngresoArriendoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverIngresoArriendoPropiedadActionPerformed
-        //dispose();
-    }//GEN-LAST:event_btnVolverIngresoArriendoPropiedadActionPerformed
-
     private void btnIngresarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarPropiedadActionPerformed
         VentanaIngresarPropiedad ventanaIngresarPropiedad = new VentanaIngresarPropiedad();
-        abrirVentana(ventanaIngresarPropiedad,"Ingreso Nueva Propiedad");
+        misMetodos.abrirVentana(ventanaIngresarPropiedad,"Ingreso Nueva Propiedad");
     }//GEN-LAST:event_btnIngresarPropiedadActionPerformed
 
     private void btnIngresarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarClienteActionPerformed
         VentanaIngresarCliente  ventanaIngresarCliente = new VentanaIngresarCliente();
-        abrirVentana(ventanaIngresarCliente, "Registro Cliente");
+        misMetodos.abrirVentana(ventanaIngresarCliente, "Registro Cliente");
     }//GEN-LAST:event_btnIngresarClienteActionPerformed
 
     private void inputFecini_arriendoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputFecini_arriendoActionPerformed
 
     }//GEN-LAST:event_inputFecini_arriendoActionPerformed
-    private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
-        
-        Ventana.setVisible(true);
-        Ventana.setLocationRelativeTo(null);
-        Ventana.setTitle(tituloVentana);
-        Ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-    }
-    private void limpiar(){
-        JTextField caja;
-        PanelIngresarPropiedadArrendada panelIngresoArriendoPropiedad = new PanelIngresarPropiedadArrendada();
-        for(int i=0;i<panelIngresoArriendoPropiedad.getComponentCount();i++){
-            if(panelIngresoArriendoPropiedad.getComponent(i).getClass().getName().equals("javax.swing.JTextField")){
-                caja=(JTextField)panelIngresoArriendoPropiedad.getComponent(i);
-                caja.setText("");
-            }
-        }
-    }
+
+    private void btnLimpiarIngresoArriendoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarIngresoArriendoPropiedadActionPerformed
+        misMetodos.panelLimpiarComponentes(this);
+    }//GEN-LAST:event_btnLimpiarIngresoArriendoPropiedadActionPerformed
+    
     
     public boolean buscadorPropiedadExiste(int nroPropiedad){
         boolean resultado = true;
@@ -271,7 +247,6 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
     private javax.swing.JButton btnIngresarPropiedad;
     private javax.swing.JButton btnIngresoArriendoPropiedad;
     private javax.swing.JButton btnLimpiarIngresoArriendoPropiedad;
-    private javax.swing.JButton btnVolverIngresoArriendoPropiedad;
     private javax.swing.JTextField inputFecini_arriendo;
     private javax.swing.JTextField inputFecter_arriendo;
     private javax.swing.JTextField inputNro_propiedad;

@@ -5,9 +5,13 @@
 package vista;
 import modelo.Cliente;
 import controlador.ClienteDao;
+import controlador.MisMetodos;
 import java.util.ArrayList;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -15,12 +19,16 @@ import javax.swing.table.DefaultTableModel;
  * @author aleja
  */
 public class PanelMostrarCliente extends javax.swing.JPanel {
-
+    Cliente cliente;
+    ClienteDao clienteDao = new ClienteDao();
+    DefaultTableModel tabla;
+    MisMetodos misMetodos = new MisMetodos();
     /**
      * Creates new form PanelMostrarCliente
      */
     public PanelMostrarCliente() {
         initComponents();
+        btnMostrarTodosLosCliente.doClick();
     }
 
     /**
@@ -80,6 +88,17 @@ public class PanelMostrarCliente extends javax.swing.JPanel {
             }
         ));
         jScrollPane1.setViewportView(tablaTodosLosClientes);
+        if (tablaTodosLosClientes.getColumnModel().getColumnCount() > 0) {
+            tablaTodosLosClientes.getColumnModel().getColumn(0).setPreferredWidth(50);
+            tablaTodosLosClientes.getColumnModel().getColumn(1).setResizable(false);
+            tablaTodosLosClientes.getColumnModel().getColumn(1).setPreferredWidth(10);
+            tablaTodosLosClientes.getColumnModel().getColumn(4).setPreferredWidth(50);
+            tablaTodosLosClientes.getColumnModel().getColumn(5).setPreferredWidth(200);
+            tablaTodosLosClientes.getColumnModel().getColumn(6).setPreferredWidth(50);
+            tablaTodosLosClientes.getColumnModel().getColumn(7).setPreferredWidth(50);
+            tablaTodosLosClientes.getColumnModel().getColumn(8).setPreferredWidth(50);
+            tablaTodosLosClientes.getColumnModel().getColumn(9).setPreferredWidth(50);
+        }
 
         btnBuscarCliente.setText("Buscar Cliente");
         btnBuscarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -98,16 +117,20 @@ public class PanelMostrarCliente extends javax.swing.JPanel {
                         .addGap(484, 484, 484)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(btnIngresarNuevoCliente)
+                        .addGap(33, 33, 33)
+                        .addComponent(btnBuscarCliente)
+                        .addGap(31, 31, 31)
+                        .addComponent(btnMostrarTodosLosCliente)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnBuscarCliente)
-                            .addComponent(btnMostrarTodosLosCliente)
-                            .addComponent(btnModificarCliente)
-                            .addComponent(btnEliminarCliente)
-                            .addComponent(btnIngresarNuevoCliente))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnModificarCliente)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEliminarCliente)))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,28 +138,24 @@ public class PanelMostrarCliente extends javax.swing.JPanel {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnIngresarNuevoCliente)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnBuscarCliente)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnMostrarTodosLosCliente)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnModificarCliente)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEliminarCliente)))
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnIngresarNuevoCliente)
+                    .addComponent(btnBuscarCliente)
+                    .addComponent(btnMostrarTodosLosCliente)
+                    .addComponent(btnModificarCliente)
+                    .addComponent(btnEliminarCliente))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMostrarTodosLosClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarTodosLosClienteActionPerformed
-        ClienteDao clienteDao = new ClienteDao();
-        DefaultTableModel tabla = (DefaultTableModel)tablaTodosLosClientes.getModel();
+        clienteDao = new ClienteDao();
+        tabla = (DefaultTableModel)tablaTodosLosClientes.getModel();
         ArrayList<Cliente> listaTodosLosClientes = clienteDao.TodoslosClientes();
 
-        limpiarTabla();
+        misMetodos.tablaLimpiar(tablaTodosLosClientes);
 
         if(listaTodosLosClientes.isEmpty()){
             JOptionPane.showMessageDialog(this,"No Existen Clientes");
@@ -157,10 +176,9 @@ public class PanelMostrarCliente extends javax.swing.JPanel {
 
                 tabla.addRow(datosListaTodosLosClientes[i]);
             }
-
-            tablaTodosLosClientes.setModel(tabla);
+            tablaTodosLosClientes.setModel(tabla);            
+            misMetodos.tablaCentrarDatos(tablaTodosLosClientes);
         }
-
     }//GEN-LAST:event_btnMostrarTodosLosClienteActionPerformed
 
     private void btnModificarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarClienteActionPerformed
@@ -181,20 +199,14 @@ public class PanelMostrarCliente extends javax.swing.JPanel {
             int celular_cli = Integer.parseInt(String.valueOf(tablaTodosLosClientes.getValueAt(filaSeleccionada,8)));
             int renta_cli = Integer.parseInt(String.valueOf(tablaTodosLosClientes.getValueAt(filaSeleccionada,9)));
 
-            ClienteDao clienteDao = new ClienteDao();
-            Cliente cliente = new Cliente(numrut_cli, dvrut_cli, appaterno_cli, apmaterno_cli, nombre_cli, direccion_cli, id_estcivil, fonofijo_cli, celular_cli, renta_cli);
-
+            cliente = new Cliente(numrut_cli, dvrut_cli, appaterno_cli, apmaterno_cli, nombre_cli, direccion_cli, id_estcivil, fonofijo_cli, celular_cli, renta_cli);
             clienteDao.actualizarCliente(cliente);
 
             JOptionPane.showMessageDialog(this,"Cliente Modificado");
         }
-
     }//GEN-LAST:event_btnModificarClienteActionPerformed
 
     private void btnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarClienteActionPerformed
-
-        ClienteDao clienteDao = new ClienteDao();
-
         int filaSeleccionada = tablaTodosLosClientes.getSelectedRow();
 
         if(filaSeleccionada == -1){
@@ -212,8 +224,7 @@ public class PanelMostrarCliente extends javax.swing.JPanel {
             int celular_cli = Integer.parseInt(String.valueOf(tablaTodosLosClientes.getValueAt(filaSeleccionada,8)));
             int renta_cli = Integer.parseInt(String.valueOf(tablaTodosLosClientes.getValueAt(filaSeleccionada,9)));
 
-            Cliente cliente = new Cliente(numrut_cli, dvrut_cli, appaterno_cli, apmaterno_cli, nombre_cli, direccion_cli, id_estcivil, fonofijo_cli, celular_cli, renta_cli);
-
+            cliente = new Cliente(numrut_cli, dvrut_cli, appaterno_cli, apmaterno_cli, nombre_cli, direccion_cli, id_estcivil, fonofijo_cli, celular_cli, renta_cli);
             clienteDao.eliminarCliente(cliente); //Para optimizar codigo se deberia solicitar solo el rut de la fila seleccionada
 
             JOptionPane.showMessageDialog(this,"Cliente Eliminado");
@@ -224,20 +235,16 @@ public class PanelMostrarCliente extends javax.swing.JPanel {
 
     private void btnIngresarNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevoClienteActionPerformed
         VentanaIngresarCliente ventanaIngresarCliente = new VentanaIngresarCliente();
-        abrirVentana(ventanaIngresarCliente,"Ingreso Nuevo Cliente");
+        misMetodos.abrirVentana(ventanaIngresarCliente,"Ingreso Nuevo Cliente");
     }//GEN-LAST:event_btnIngresarNuevoClienteActionPerformed
 
     private void btnBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClienteActionPerformed
-
-        ClienteDao clienteDao = new ClienteDao();
         String numrut_cliString = JOptionPane.showInputDialog(this,"Ingrese Rut Cliente");
         int numrut_cliInt = Integer.parseInt(numrut_cliString);
 
-        DefaultTableModel tabla = (DefaultTableModel)tablaTodosLosClientes.getModel();
-
+        tabla = (DefaultTableModel)tablaTodosLosClientes.getModel();
         ArrayList<Cliente> listabuscarCliente = clienteDao.buscarCliente(numrut_cliInt);
-
-        limpiarTabla();
+        misMetodos.tablaLimpiar(tablaTodosLosClientes);
 
         if(listabuscarCliente.isEmpty()){
             JOptionPane.showInputDialog(this,"Cliente " + numrut_cliString + " No existe");
@@ -258,28 +265,12 @@ public class PanelMostrarCliente extends javax.swing.JPanel {
 
                 tabla.addRow(datosListaTodosLosClientes[i]);
             }
-
             tablaTodosLosClientes.setModel(tabla);
+            misMetodos.tablaCentrarDatos(tablaTodosLosClientes);
         }
-        
-        
-
     }//GEN-LAST:event_btnBuscarClienteActionPerformed
-    private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
-        Ventana.setVisible(true);
-        Ventana.setLocationRelativeTo(null);
-        Ventana.setTitle(tituloVentana);
-        Ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-    }
     
-    public void limpiarTabla(){
-        DefaultTableModel dtm=(DefaultTableModel)tablaTodosLosClientes.getModel();
-        int n=tablaTodosLosClientes.getRowCount();
-        for (int i = 0; i < n ; i++) {
-            dtm.removeRow(dtm.getRowCount()-1);
-        }
-    }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarCliente;
     private javax.swing.JButton btnEliminarCliente;

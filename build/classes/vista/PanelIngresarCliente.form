@@ -23,49 +23,69 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Component id="labelCelularCli" alignment="1" min="-2" pref="98" max="-2" attributes="0"/>
-                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                          <Component id="labelEstadoCivilCli" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="labelApellidoPaternoCli" alignment="0" max="32767" attributes="0"/>
-                              <Component id="labelApellidoMaternoCli" alignment="0" max="32767" attributes="0"/>
-                              <Component id="labelDigitoVerificadorCli" alignment="0" pref="98" max="32767" attributes="0"/>
-                              <Component id="labelNumeroRutCli" alignment="0" max="32767" attributes="0"/>
-                              <Component id="labelNombreCli" alignment="0" max="32767" attributes="0"/>
-                              <Component id="labelDireccionCli" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="labelTelefonoFijoCli" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="labelRentaCli" alignment="1" min="-2" pref="98" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="btnGuardarCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="inputDvrut_cli" alignment="0" max="32767" attributes="0"/>
-                      <Component id="inputAppaterno_cli" alignment="0" max="32767" attributes="0"/>
-                      <Component id="inputApmaterno_cli" alignment="0" max="32767" attributes="0"/>
-                      <Component id="inputNombre_cli" alignment="0" max="32767" attributes="0"/>
-                      <Component id="inputDireccion_cli" alignment="0" max="32767" attributes="0"/>
-                      <Component id="inputFonofijo_cli" alignment="0" max="32767" attributes="0"/>
-                      <Component id="comboboxEstadoCivil" alignment="0" max="32767" attributes="0"/>
-                      <Component id="inputCelular_cli" alignment="0" max="32767" attributes="0"/>
-                      <Component id="inputNumrut_cli" alignment="0" max="32767" attributes="0"/>
-                      <Component id="inputRenta_cli" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="btnGuardarCliente" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="btnLimpiarCliente" min="-2" pref="75" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                      <Component id="btnLimpiarCliente" min="-2" pref="75" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnVolverCliente" min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="labelCelularCli" alignment="1" min="-2" pref="98" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Component id="labelEstadoCivilCli" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="labelApellidoPaternoCli" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="labelApellidoMaternoCli" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="labelDigitoVerificadorCli" alignment="0" pref="98" max="32767" attributes="0"/>
+                                  <Component id="labelNumeroRutCli" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="labelNombreCli" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="labelDireccionCli" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="labelTelefonoFijoCli" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="labelRentaCli" alignment="1" min="-2" pref="98" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="inputDvrut_cli" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="inputAppaterno_cli" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="inputApmaterno_cli" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="inputDireccion_cli" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="inputFonofijo_cli" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="comboboxEstadoCivil" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="inputCelular_cli" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="inputNumrut_cli" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="inputRenta_cli" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="labelErrorNumeroRut" min="-2" pref="149" max="-2" attributes="0"/>
+                                  <Component id="labelErrorDigitoVerificador" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelErrorApellidoPaterno" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelErrorApellidoMaterno" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelErrorDireccion" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelErrorEstadoCivil" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelErrorTelefono" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelErrorCelular" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelErrorRenta" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="inputNombre_cli" min="-2" pref="149" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="labelErrorNombre" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="58" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -76,59 +96,68 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelNumeroRutCli" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="inputNumrut_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorNumeroRut" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelDigitoVerificadorCli" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="inputDvrut_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorDigitoVerificador" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelApellidoPaternoCli" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="inputAppaterno_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorApellidoPaterno" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelApellidoMaternoCli" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="inputApmaterno_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorApellidoMaterno" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelNombreCli" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="inputNombre_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorNombre" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelDireccionCli" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="inputDireccion_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelEstadoCivilCli" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="comboboxEstadoCivil" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorEstadoCivil" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelTelefonoFijoCli" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="inputFonofijo_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelCelularCli" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
                   <Component id="inputCelular_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorCelular" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelRentaCli" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="inputRenta_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorRenta" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnGuardarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnLimpiarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnVolverCliente" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -136,7 +165,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="labelNumeroRutCli">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Numero de rut"/>
+        <Property name="text" type="java.lang.String" value="N&#xfa;mero de rut"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="inputNumrut_cli">
@@ -152,7 +181,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="labelDigitoVerificadorCli">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Digito Verificador"/>
+        <Property name="text" type="java.lang.String" value="D&#xed;gito Verificador"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="inputDvrut_cli">
@@ -207,7 +236,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="labelDireccionCli">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Direcion"/>
+        <Property name="text" type="java.lang.String" value="Direci&#xf3;n"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="inputDireccion_cli">
@@ -286,13 +315,96 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpiarClienteActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnVolverCliente">
+    <Component class="javax.swing.JLabel" name="labelErrorNumeroRut">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Volver"/>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="N&#xfa;mero de rut obligatorio"/>
+        <Property name="verticalAlignment" type="int" value="1"/>
+        <Property name="name" type="java.lang.String" value="labelErrorNumeroRut" noResource="true"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVolverClienteActionPerformed"/>
-      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorDigitoVerificador">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Digito Verificador obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorDigitoVerificador" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorApellidoPaterno">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Apellido Paterno Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorApellidoPaterno" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorApellidoMaterno">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Apellido Materno Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorApellidoMaterno" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorNombre">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Nombre Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorNombre" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorDireccion">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Direccion Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorDireccion" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorEstadoCivil">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Estado Civil Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorEstadoCivil" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorTelefono">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Telefono Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorTelefono" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorCelular">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Celular Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorCelular" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorRenta">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Renta Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorRenta" noResource="true"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

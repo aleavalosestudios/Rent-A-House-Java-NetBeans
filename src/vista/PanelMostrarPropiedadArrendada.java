@@ -4,21 +4,26 @@
  */
 
 package vista;
+import controlador.MisMetodos;
 import modelo.PropiedadArrendada;
 import controlador.PropiedadArrendadaDao;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author aleja
  */
 public class PanelMostrarPropiedadArrendada extends javax.swing.JPanel {
-
+    PropiedadArrendada propiedadArrendada;
+    PropiedadArrendadaDao propiedadArrendadaDao = new PropiedadArrendadaDao();
+    MisMetodos misMetodos = new MisMetodos();
+    DefaultTableModel tabla;
+    
     /** Creates new form PanelMostrarPropiedadArrendada */
     public PanelMostrarPropiedadArrendada() {
         initComponents();
+        btnMostrarPropiedadesArrendadas.doClick();
     }
 
     /** This method is called from within the constructor to
@@ -101,10 +106,14 @@ public class PanelMostrarPropiedadArrendada extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnBuscarPropiedadesArrendadas)
-                            .addComponent(btnMostrarPropiedadesArrendadas)
-                            .addComponent(btnActualizarPropiedadArrendada)
-                            .addComponent(btnEliminarPropiedadArrendada)
-                            .addComponent(btnIngresarNuevaVentana))))
+                            .addComponent(btnIngresarNuevaVentana)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnMostrarPropiedadesArrendadas)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnActualizarPropiedadArrendada)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEliminarPropiedadArrendada)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -114,25 +123,23 @@ public class PanelMostrarPropiedadArrendada extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnIngresarNuevaVentana)
                         .addGap(18, 18, 18)
-                        .addComponent(btnBuscarPropiedadesArrendadas)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnMostrarPropiedadesArrendadas)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnActualizarPropiedadArrendada)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEliminarPropiedadArrendada)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(btnBuscarPropiedadesArrendadas))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMostrarPropiedadesArrendadas)
+                    .addComponent(btnActualizarPropiedadArrendada)
+                    .addComponent(btnEliminarPropiedadArrendada))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarPropiedadesArrendadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPropiedadesArrendadasActionPerformed
-        DefaultTableModel tabla = (DefaultTableModel)tablaTodasLasPropiedadesArrendadas.getModel();
-        PropiedadArrendadaDao propiedadArrendadaDao = new PropiedadArrendadaDao();
+        tabla = (DefaultTableModel)tablaTodasLasPropiedadesArrendadas.getModel();
+        propiedadArrendadaDao = new PropiedadArrendadaDao();
 
         int nro_propiedad = Integer.parseInt(String.valueOf(JOptionPane.showInputDialog("Ingrese numero de propiedad")));
 
@@ -152,17 +159,17 @@ public class PanelMostrarPropiedadArrendada extends javax.swing.JPanel {
                 tabla.addRow(datoslistaPropiedadesArrendadas[i]);
             }
             tablaTodasLasPropiedadesArrendadas.setModel(tabla);
-
+            misMetodos.tablaCentrarDatos(tablaTodasLasPropiedadesArrendadas);
         }
     }//GEN-LAST:event_btnBuscarPropiedadesArrendadasActionPerformed
 
     private void btnMostrarPropiedadesArrendadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarPropiedadesArrendadasActionPerformed
-        DefaultTableModel tabla = (DefaultTableModel)tablaTodasLasPropiedadesArrendadas.getModel();
-        PropiedadArrendadaDao propiedadArrendadaDao = new PropiedadArrendadaDao();
+        tabla = (DefaultTableModel)tablaTodasLasPropiedadesArrendadas.getModel();
+        propiedadArrendadaDao = new PropiedadArrendadaDao();
 
         ArrayList<PropiedadArrendada> listaPropiedadesArrendadas = propiedadArrendadaDao.todasLasPropiedadesArrendadas();
 
-        limpiarTabla();
+        misMetodos.tablaLimpiar(tablaTodasLasPropiedadesArrendadas);
 
         if(listaPropiedadesArrendadas.isEmpty()){
             JOptionPane.showMessageDialog(this," No Existen Propiedades Arrendadas");
@@ -178,6 +185,7 @@ public class PanelMostrarPropiedadArrendada extends javax.swing.JPanel {
                 tabla.addRow(datoslistaPropiedadesArrendadas[i]);
             }
             tablaTodasLasPropiedadesArrendadas.setModel(tabla);
+            misMetodos.tablaCentrarDatos(tablaTodasLasPropiedadesArrendadas);
 
         }
     }//GEN-LAST:event_btnMostrarPropiedadesArrendadasActionPerformed
@@ -194,11 +202,8 @@ public class PanelMostrarPropiedadArrendada extends javax.swing.JPanel {
             String fecter_arriendo = String.valueOf(tablaTodasLasPropiedadesArrendadas.getValueAt(filaSeleccionada,2));
             int numrut_cli = Integer.parseInt(String.valueOf(tablaTodasLasPropiedadesArrendadas.getValueAt(filaSeleccionada,3)));
 
-            PropiedadArrendada propiedadArrendada = new PropiedadArrendada(nro_propiedad, fecini_arriendo, fecter_arriendo, numrut_cli);
-
-            PropiedadArrendadaDao propiedadDao = new PropiedadArrendadaDao();
-
-            propiedadDao.actualizarPropiedadArrendada(propiedadArrendada);
+            propiedadArrendada = new PropiedadArrendada(nro_propiedad, fecini_arriendo, fecter_arriendo, numrut_cli);
+            propiedadArrendadaDao.actualizarPropiedadArrendada(propiedadArrendada);
 
             JOptionPane.showMessageDialog(this,"Propiedad Arrendada Modificada");
 
@@ -217,11 +222,8 @@ public class PanelMostrarPropiedadArrendada extends javax.swing.JPanel {
             String fecter_arriendo = String.valueOf(tablaTodasLasPropiedadesArrendadas.getValueAt(filaSeleccionada,2));
             int numrut_cli = Integer.parseInt(String.valueOf(tablaTodasLasPropiedadesArrendadas.getValueAt(filaSeleccionada,3)));
 
-            PropiedadArrendada propiedadArrendada = new PropiedadArrendada(nro_propiedad, fecini_arriendo, fecter_arriendo, numrut_cli);
-
-            PropiedadArrendadaDao propiedadDao = new PropiedadArrendadaDao();
-
-            propiedadDao.eliminarPropiedadArrendada(propiedadArrendada);
+            propiedadArrendada = new PropiedadArrendada(nro_propiedad, fecini_arriendo, fecter_arriendo, numrut_cli);
+            propiedadArrendadaDao.eliminarPropiedadArrendada(propiedadArrendada);
 
             JOptionPane.showMessageDialog(this,"Propiedad Arrendada eliminada");
 
@@ -231,24 +233,9 @@ public class PanelMostrarPropiedadArrendada extends javax.swing.JPanel {
 
     private void btnIngresarNuevaVentanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevaVentanaActionPerformed
         VentanaIngresoPropiedadArrendada ventanaIngresoPropiedadArrendada = new VentanaIngresoPropiedadArrendada();
-        abrirVentana(ventanaIngresoPropiedadArrendada,"Ingreso Nuevo Arriendo De Propiedad");
+        misMetodos.abrirVentana(ventanaIngresoPropiedadArrendada,"Ingreso Nuevo Arriendo De Propiedad");
     }//GEN-LAST:event_btnIngresarNuevaVentanaActionPerformed
     
-    public void limpiarTabla(){
-        DefaultTableModel dtm=(DefaultTableModel)tablaTodasLasPropiedadesArrendadas.getModel();
-        int n=tablaTodasLasPropiedadesArrendadas.getRowCount();
-        for (int i = 0; i < n ; i++) {
-            dtm.removeRow(dtm.getRowCount()-1);
-        }
-    }
-    
-    //Metodo para abrir cualquier ventana
-    private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
-        Ventana.setVisible(true);
-        Ventana.setLocationRelativeTo(null);
-        Ventana.setTitle(tituloVentana);
-        Ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizarPropiedadArrendada;

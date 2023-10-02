@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package vista;
+import controlador.MisMetodos;
 import modelo.TipoPropiedad;
 import controlador.TipoPropiedadDao;
 import java.util.ArrayList;
@@ -15,12 +16,16 @@ import javax.swing.table.DefaultTableModel;
  * @author aleja
  */
 public class PanelMostrarTipoPropiedad extends javax.swing.JPanel {
-
+    TipoPropiedad tipoPropiedad;
+    TipoPropiedadDao tipoPropiedadDao = new TipoPropiedadDao();
+    MisMetodos misMetodos = new MisMetodos();
+    DefaultTableModel tabla;
     /**
      * Creates new form PanelMostrarTipoPropiedad
      */
     public PanelMostrarTipoPropiedad() {
         initComponents();
+        btnMostrarTodosLosTiposDePropiedad.doClick();
     }
 
     /**
@@ -103,11 +108,15 @@ public class PanelMostrarTipoPropiedad extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnBuscarTipoPropiedad)
-                            .addComponent(btnMostrarTodosLosTiposDePropiedad)
-                            .addComponent(btnEditarTipoPropiedad)
-                            .addComponent(btnEliminarTipoPropiedad)
-                            .addComponent(btnNuevoIngresoTipoPropiedad))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnNuevoIngresoTipoPropiedad)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnMostrarTodosLosTiposDePropiedad)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEditarTipoPropiedad)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEliminarTipoPropiedad)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,27 +129,24 @@ public class PanelMostrarTipoPropiedad extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnNuevoIngresoTipoPropiedad)
                         .addGap(18, 18, 18)
-                        .addComponent(btnBuscarTipoPropiedad)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnMostrarTodosLosTiposDePropiedad)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEditarTipoPropiedad)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEliminarTipoPropiedad)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnBuscarTipoPropiedad)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMostrarTodosLosTiposDePropiedad)
+                    .addComponent(btnEditarTipoPropiedad)
+                    .addComponent(btnEliminarTipoPropiedad))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarTipoPropiedadActionPerformed
 
-        DefaultTableModel tabla = (DefaultTableModel)tablaTipoPropiedad.getModel();
+        tabla = (DefaultTableModel)tablaTipoPropiedad.getModel();
 
         String desc_tipoPropiedad = JOptionPane.showInputDialog("Ingrese Descripcion Tipo Propiedad");
-
-        TipoPropiedadDao tipoPropiedadDao = new TipoPropiedadDao();
-
         ArrayList<TipoPropiedad> listaBuscarTipoPropiedad = tipoPropiedadDao.buscarTipoPropiedadPorDescripcion(desc_tipoPropiedad);
-        limpiarTabla();
+
+        misMetodos.tablaLimpiar(tablaTipoPropiedad);
 
         if(listaBuscarTipoPropiedad.isEmpty()){
             JOptionPane.showMessageDialog(this,"Tipo De Propiedad No Existe");
@@ -155,16 +161,16 @@ public class PanelMostrarTipoPropiedad extends javax.swing.JPanel {
                 tabla.addRow(datosListaBuscarTipoPropiedad[i]);
             }
             tablaTipoPropiedad.setModel(tabla);
+            misMetodos.tablaCentrarDatos(tablaTipoPropiedad);
         }
     }//GEN-LAST:event_btnBuscarTipoPropiedadActionPerformed
 
     private void btnMostrarTodosLosTiposDePropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarTodosLosTiposDePropiedadActionPerformed
 
-        TipoPropiedadDao tipoPropiedadDao= new TipoPropiedadDao();
-        DefaultTableModel tabla = (DefaultTableModel)tablaTipoPropiedad.getModel();
+        tabla = (DefaultTableModel)tablaTipoPropiedad.getModel();
         ArrayList<TipoPropiedad> listaTodosLosTiposDePropiedad = tipoPropiedadDao.todosLosTipoPropiedad();
 
-        limpiarTabla();
+        misMetodos.tablaLimpiar(tablaTipoPropiedad);
 
         if(listaTodosLosTiposDePropiedad.isEmpty()){
             JOptionPane.showMessageDialog(this,"No existen Tipos de Propiedad");
@@ -179,6 +185,7 @@ public class PanelMostrarTipoPropiedad extends javax.swing.JPanel {
             }
 
             tablaTipoPropiedad.setModel(tabla);
+            misMetodos.tablaCentrarDatos(tablaTipoPropiedad);
         }
     }//GEN-LAST:event_btnMostrarTodosLosTiposDePropiedadActionPerformed
 
@@ -194,17 +201,13 @@ public class PanelMostrarTipoPropiedad extends javax.swing.JPanel {
             char id_tipoPropiedadChar = id_tipoPropiedadString.charAt(0);
             String desc_tipoPropiedad = String.valueOf(tablaTipoPropiedad.getValueAt(filaSelecionada, 1));
 
-            TipoPropiedad tipoPropiedad = new TipoPropiedad(id_tipoPropiedadChar, desc_tipoPropiedad);
-
-            TipoPropiedadDao tipoPropiedadDao = new TipoPropiedadDao();
-
+            tipoPropiedad = new TipoPropiedad(id_tipoPropiedadChar, desc_tipoPropiedad);
             tipoPropiedadDao.actualizarTipPropiedad(tipoPropiedad);
 
             JOptionPane.showMessageDialog(this, "Tipo Propiedad Modificada");
 
             btnMostrarTodosLosTiposDePropiedad.doClick();
         }
-
     }//GEN-LAST:event_btnEditarTipoPropiedadActionPerformed
 
     private void btnEliminarTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarTipoPropiedadActionPerformed
@@ -217,37 +220,19 @@ public class PanelMostrarTipoPropiedad extends javax.swing.JPanel {
             char id_tipoPropiedadChar = id_tipoPropiedadString.charAt(0);
             String des_tipoPropiedadString = String.valueOf(tablaTipoPropiedad.getValueAt(filaSelecionada,1));
 
-            TipoPropiedad tipoPropiedad = new TipoPropiedad(id_tipoPropiedadChar, des_tipoPropiedadString);
-
-            TipoPropiedadDao tipoPropiedadDao = new TipoPropiedadDao();
-
+            tipoPropiedad = new TipoPropiedad(id_tipoPropiedadChar, des_tipoPropiedadString);
             tipoPropiedadDao.eliminarTipoPropiedad(tipoPropiedad);
 
             JOptionPane.showMessageDialog(this,"Tipo Propiedad Eliminada");
         }
-
         btnMostrarTodosLosTiposDePropiedad.doClick();
     }//GEN-LAST:event_btnEliminarTipoPropiedadActionPerformed
 
     private void btnNuevoIngresoTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoIngresoTipoPropiedadActionPerformed
         VentanaIngresoTipoPropiedad ventanaIngresoTipoPropiedad = new VentanaIngresoTipoPropiedad();
-        abrirVentana(ventanaIngresoTipoPropiedad,"Ingreso Nuevo Tipo De Propidad");
+        misMetodos.abrirVentana(ventanaIngresoTipoPropiedad,"Ingreso Nuevo Tipo De Propidad");
     }//GEN-LAST:event_btnNuevoIngresoTipoPropiedadActionPerformed
 
-     private void abrirVentana(javax.swing.JFrame Ventana, String tituloVentana){
-        Ventana.setVisible(true);
-        Ventana.setLocationRelativeTo(null);
-        Ventana.setTitle(tituloVentana);
-        Ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-    }
-    
-     public void limpiarTabla(){
-        DefaultTableModel dtm=(DefaultTableModel)tablaTipoPropiedad.getModel();
-        int n=tablaTipoPropiedad.getRowCount();
-        for (int i = 0; i < n ; i++) {
-            dtm.removeRow(dtm.getRowCount()-1);
-        }
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarTipoPropiedad;
