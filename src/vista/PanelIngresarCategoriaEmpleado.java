@@ -6,6 +6,8 @@ package vista;
 
 import controlador.CategoriaEmpleadoDao;
 import controlador.MisMetodos;
+import java.awt.Component;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import modelo.CategoriaEmpleado;
@@ -16,16 +18,21 @@ import modelo.CategoriaEmpleado;
  */
 public class PanelIngresarCategoriaEmpleado extends javax.swing.JPanel {
     
-    MisMetodos misMetodos = new MisMetodos();
     CategoriaEmpleadoDao categoriaEmpleadoDao= new CategoriaEmpleadoDao();
+    ArrayList<Component> listadoInpusNoVacios = new ArrayList<>();
+    ArrayList<Component> listadoLabelErrorNoVacios = new ArrayList<>();
     
     /**
      * Creates new form PanelIngresarCategoria
      */
     public PanelIngresarCategoriaEmpleado() {
         initComponents();
-//        labelErrorNombreCategoria.setVisible(false);
-        misMetodos.panelCamposErrorInicializador(this);    
+        MisMetodos.panelCamposErrorInicializador(this);
+        //LLenar Listado Inputs no vacios
+        listadoInpusNoVacios.add(inputdesc_categoria_emp);
+        //LLenar Listado LabelError
+        listadoLabelErrorNoVacios.add(labelErrordesc_categoria_emp);
+        
     }
     
     
@@ -40,20 +47,22 @@ public class PanelIngresarCategoriaEmpleado extends javax.swing.JPanel {
     private void initComponents() {
 
         labelNombreCategoriaEmpleado = new javax.swing.JLabel();
-        inputDescCategoriaEmp = new javax.swing.JTextField();
+        inputdesc_categoria_emp = new javax.swing.JTextField();
         btnIngresarCategoria = new javax.swing.JButton();
         btnLimpiarIngresocategoriaEmpleado = new javax.swing.JButton();
-        labelErrorNombreCategoria = new javax.swing.JLabel();
+        labelErrordesc_categoria_emp = new javax.swing.JLabel();
+        panelTituloPanelIngresoCategoria = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createTitledBorder("Panel Ingreso Categoria"));
 
-        labelNombreCategoriaEmpleado.setText("Nombre categoria Empleado:");
+        labelNombreCategoriaEmpleado.setText("Nombre categoría Empleado:");
 
-        inputDescCategoriaEmp.setForeground(new java.awt.Color(153, 153, 153));
-        inputDescCategoriaEmp.setText("Ingrese Categoria Empleado");
-        inputDescCategoriaEmp.addActionListener(new java.awt.event.ActionListener() {
+        inputdesc_categoria_emp.setForeground(new java.awt.Color(153, 153, 153));
+        inputdesc_categoria_emp.setText("Ingrese Categoria Empleado");
+        inputdesc_categoria_emp.setName("inputdesc_categoria_emp"); // NOI18N
+        inputdesc_categoria_emp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputDescCategoriaEmpActionPerformed(evt);
+                inputdesc_categoria_empActionPerformed(evt);
             }
         });
 
@@ -71,9 +80,13 @@ public class PanelIngresarCategoriaEmpleado extends javax.swing.JPanel {
             }
         });
 
-        labelErrorNombreCategoria.setForeground(new java.awt.Color(255, 0, 51));
-        labelErrorNombreCategoria.setText("Error Nombre Categoria Es Obligatorio");
-        labelErrorNombreCategoria.setName("labelErrorNombreCategoria"); // NOI18N
+        labelErrordesc_categoria_emp.setForeground(new java.awt.Color(255, 0, 51));
+        labelErrordesc_categoria_emp.setText("Algun Texto");
+        labelErrordesc_categoria_emp.setName("labelErrordesc_categoria_emp"); // NOI18N
+
+        panelTituloPanelIngresoCategoria.setFont(new java.awt.Font("Segoe UI Semibold", 3, 18)); // NOI18N
+        panelTituloPanelIngresoCategoria.setText("Ingreso Nueva Categoría Empleado");
+        panelTituloPanelIngresoCategoria.setName("panelTituloPanelIngresoCategoria"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -90,66 +103,76 @@ public class PanelIngresarCategoriaEmpleado extends javax.swing.JPanel {
                         .addGap(23, 23, 23)
                         .addComponent(labelNombreCategoriaEmpleado)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(inputDescCategoriaEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelErrordesc_categoria_emp)
+                            .addComponent(inputdesc_categoria_emp, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(34, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(labelErrorNombreCategoria)
-                .addGap(39, 39, 39))
+                .addComponent(panelTituloPanelIngresoCategoria)
+                .addGap(64, 64, 64))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addGap(19, 19, 19)
+                .addComponent(panelTituloPanelIngresoCategoria)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelNombreCategoriaEmpleado)
-                    .addComponent(inputDescCategoriaEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputdesc_categoria_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelErrorNombreCategoria)
+                .addComponent(labelErrordesc_categoria_emp)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresarCategoria)
                     .addComponent(btnLimpiarIngresocategoriaEmpleado))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputDescCategoriaEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDescCategoriaEmpActionPerformed
+    private void inputdesc_categoria_empActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputdesc_categoria_empActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputDescCategoriaEmpActionPerformed
+    }//GEN-LAST:event_inputdesc_categoria_empActionPerformed
 
     private void btnIngresarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarCategoriaActionPerformed
-        labelErrorNombreCategoria.setVisible(false);
-        String desc_categoria_emp;
-        desc_categoria_emp = inputDescCategoriaEmp.getText();
-        CategoriaEmpleado categoriaEmpleado = new CategoriaEmpleado(0, desc_categoria_emp);
-        if(inputDescCategoriaEmp.getText().isEmpty()){
-            labelErrorNombreCategoria.setVisible(true);
-        }else{
-            if(categoriaEmpleadoDao.buscarCategoriaEmpleado(desc_categoria_emp).isEmpty()){
-
-                categoriaEmpleadoDao.IngresarCategoriaEmpleado(categoriaEmpleado);
-                JOptionPane.showMessageDialog(this,"Categoria Empleado: "+
-                    categoriaEmpleado.getDesc_categoria_emp() +
-                    " Ingresada");
+        if(MisMetodos.InputExisteVacio(listadoInpusNoVacios)){
+            MisMetodos.inputsNoPuedenEstarVacios(listadoLabelErrorNoVacios, listadoInpusNoVacios);
+        }else{        
+            String desc_categoria_emp;
+            desc_categoria_emp = inputdesc_categoria_emp.getText();
+            CategoriaEmpleado categoriaEmpleado = new CategoriaEmpleado(0, desc_categoria_emp);
+            
+            if(inputdesc_categoria_emp.getText().isEmpty()){
+                MisMetodos.labelMensajeValidacion(labelErrordesc_categoria_emp, "Campo Obligatorio","error");
             }else{
-                JOptionPane.showMessageDialog(this,"ERROR Categoria Empleado: "+
-                    categoriaEmpleado.getDesc_categoria_emp() +
-                    " Ya Existe");
+                if(categoriaEmpleadoDao.buscarCategoriaEmpleado(desc_categoria_emp).isEmpty()){
+
+                    categoriaEmpleadoDao.IngresarCategoriaEmpleado(categoriaEmpleado);
+                    JOptionPane.showMessageDialog(this,"Categoria Empleado: "+
+                        categoriaEmpleado.getDesc_categoria_emp() +
+                        " Ingresada");
+                }else{
+                    JOptionPane.showMessageDialog(this,"ERROR Categoria Empleado: "+
+                        categoriaEmpleado.getDesc_categoria_emp() +
+                        " Ya Existe");
+                }
             }
         }
     }//GEN-LAST:event_btnIngresarCategoriaActionPerformed
 
     private void btnLimpiarIngresocategoriaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarIngresocategoriaEmpleadoActionPerformed
-        misMetodos.panelLimpiarComponentes(this);
+        MisMetodos.panelLimpiarComponentes(this);
+        MisMetodos.panelLimpiarComponentes(this);
     }//GEN-LAST:event_btnLimpiarIngresocategoriaEmpleadoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresarCategoria;
     private javax.swing.JButton btnLimpiarIngresocategoriaEmpleado;
-    private javax.swing.JTextField inputDescCategoriaEmp;
-    private javax.swing.JLabel labelErrorNombreCategoria;
+    private javax.swing.JTextField inputdesc_categoria_emp;
+    private javax.swing.JLabel labelErrordesc_categoria_emp;
     private javax.swing.JLabel labelNombreCategoriaEmpleado;
+    private javax.swing.JLabel panelTituloPanelIngresoCategoria;
     // End of variables declaration//GEN-END:variables
 }

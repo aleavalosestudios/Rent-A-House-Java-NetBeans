@@ -16,10 +16,10 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace min="15" pref="15" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="labelnro_dormitorios" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -36,95 +36,152 @@
                               <Component id="labelId_comuna" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="comboBoxTipoPropiedad" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="comboBoxComuna" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="inputNroDormitorios" max="32767" attributes="0"/>
-                              <Component id="inputNro_banos" min="-2" max="-2" attributes="0"/>
-                              <Component id="inputSuperficie" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="inputDireccion_propiedad" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="inputValor_arriendo" min="-2" max="-2" attributes="0"/>
-                              <Component id="inputValor_gasto_comun" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="inputNumrut_prop" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="inputnumrut_emp" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="labelErrornumrut_emp" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="comboBoxid_tipo_propiedad" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="labelErrorid_tipo_propiedad" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="comboBoxid_comuna" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="labelErrorid_comuna" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="inputnumrut_prop" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="labelErrornumrut_prop" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="inputdireccion_propiedad" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="labelErrordireccion_propiedad" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="inputsuperficie" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="labelErrorsuperficie" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="inputnro_banos" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="laberlErrornro_banos" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="inputvalor_arriendo" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="labelErrorvalor_arriendo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="inputvalor_gasto_comun" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="labelErrorvalor_gasto_comun" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="inputnro_dormitorios" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="labelErrornro_dormitorios" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
-                          <Component id="inputNumrut_emp" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="btnIngresoNuevaPropiedad" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="btnLimpiarIngresoNuevaPropiedad" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                      <Component id="btnIngresoNuevaPropiedad" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="btnLimpiarIngresoNuevaPropiedad" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+                      <Component id="labelTituloPanelIngresarPropiedad" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="25" max="32767" attributes="0"/>
+              <EmptySpace pref="21" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <Component id="labelTituloPanelIngresarPropiedad" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="inputDireccion_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputdireccion_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="labelDireccion_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelErrordireccion_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="inputSuperficie" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="inputsuperficie" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelErrorsuperficie" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <Component id="labelSuperficie" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="inputNroDormitorios" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputnro_dormitorios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelnro_dormitorios" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrornro_dormitorios" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="inputNro_banos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputnro_banos" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelNro_banos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="laberlErrornro_banos" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="inputValor_arriendo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputvalor_arriendo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelValor_arriendo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorvalor_arriendo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="inputValor_gasto_comun" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputvalor_gasto_comun" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelValor_gasto_comun" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorvalor_gasto_comun" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="comboBoxTipoPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboBoxid_tipo_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelid_tipo_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorid_tipo_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="comboBoxComuna" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboBoxid_comuna" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelId_comuna" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorid_comuna" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="inputNumrut_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputnumrut_prop" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelNumrut_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrornumrut_prop" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="inputNumrut_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputnumrut_emp" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelNumrut_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrornumrut_emp" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnIngresoNuevaPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnLimpiarIngresoNuevaPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="56" max="32767" attributes="0"/>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -143,19 +200,21 @@
         <Property name="text" type="java.lang.String" value="Numero Rut Empleado"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputDireccion_propiedad">
+    <Component class="javax.swing.JTextField" name="inputdireccion_propiedad">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Direccion Propiedad"/>
+        <Property name="name" type="java.lang.String" value="inputdireccion_propiedad" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="comboBoxTipoPropiedad">
+    <Component class="javax.swing.JComboBox" name="comboBoxid_tipo_propiedad">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
         </Property>
+        <Property name="name" type="java.lang.String" value="comboBoxid_tipo_propiedad" noResource="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -166,19 +225,21 @@
         <Property name="text" type="java.lang.String" value="Direcci&#xf3;n Propiedad"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputSuperficie">
+    <Component class="javax.swing.JTextField" name="inputsuperficie">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Superficie Propiedad"/>
+        <Property name="name" type="java.lang.String" value="inputsuperficie" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="comboBoxComuna">
+    <Component class="javax.swing.JComboBox" name="comboBoxid_comuna">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
         </Property>
+        <Property name="name" type="java.lang.String" value="comboBoxid_comuna" noResource="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -189,12 +250,13 @@
         <Property name="text" type="java.lang.String" value="Superficie"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputNroDormitorios">
+    <Component class="javax.swing.JTextField" name="inputnro_dormitorios">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese numero de Dormitorios"/>
+        <Property name="name" type="java.lang.String" value="inputnro_dormitorios" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelnro_dormitorios">
@@ -202,12 +264,13 @@
         <Property name="text" type="java.lang.String" value="Nro Dormitorios"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputNro_banos">
+    <Component class="javax.swing.JTextField" name="inputnro_banos">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Cantidad de Ba&#xf1;os"/>
+        <Property name="name" type="java.lang.String" value="inputnro_banos" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelNro_banos">
@@ -215,12 +278,13 @@
         <Property name="text" type="java.lang.String" value="Nro ba&#xf1;os"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputValor_arriendo">
+    <Component class="javax.swing.JTextField" name="inputvalor_arriendo">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese valor Arriendo"/>
+        <Property name="name" type="java.lang.String" value="inputvalor_arriendo" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelValor_arriendo">
@@ -228,12 +292,13 @@
         <Property name="text" type="java.lang.String" value="Valor Arriendo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputValor_gasto_comun">
+    <Component class="javax.swing.JTextField" name="inputvalor_gasto_comun">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Valor Gastos Comunes"/>
+        <Property name="name" type="java.lang.String" value="inputvalor_gasto_comun" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelValor_gasto_comun">
@@ -241,12 +306,13 @@
         <Property name="text" type="java.lang.String" value="Valor Gasto Com&#xfa;n"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputNumrut_prop">
+    <Component class="javax.swing.JTextField" name="inputnumrut_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese numero de rut propietario"/>
+        <Property name="name" type="java.lang.String" value="inputnumrut_prop" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelid_tipo_propiedad">
@@ -254,12 +320,13 @@
         <Property name="text" type="java.lang.String" value="Id tipo propiedad"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputNumrut_emp">
+    <Component class="javax.swing.JTextField" name="inputnumrut_emp">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Rut Empleado"/>
+        <Property name="name" type="java.lang.String" value="inputnumrut_emp" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelId_comuna">
@@ -278,6 +345,105 @@
     <Component class="javax.swing.JLabel" name="labelNumrut_prop">
       <Properties>
         <Property name="text" type="java.lang.String" value="Numero Rut Propietario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrordireccion_propiedad">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrordireccion_propiedad" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorsuperficie">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorsuperficie" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrornro_dormitorios">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrornro_dormitorios" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="laberlErrornro_banos">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="laberlErrornro_banos" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorvalor_arriendo">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorvalor_arriendo" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorvalor_gasto_comun">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorvalor_gasto_comun" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorid_tipo_propiedad">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorid_tipo_propiedad" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorid_comuna">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorid_comuna" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrornumrut_prop">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrornumrut_prop" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrornumrut_emp">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrornumrut_emp" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTituloPanelIngresarPropiedad">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingreso Nueva Propiedad"/>
+        <Property name="name" type="java.lang.String" value="labelTituloPanelIngresarPropiedad" noResource="true"/>
       </Properties>
     </Component>
   </SubComponents>

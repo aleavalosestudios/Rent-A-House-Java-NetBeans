@@ -35,34 +35,39 @@
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="labelNombreCategoriaEmpleado" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="inputDescCategoriaEmp" min="-2" pref="207" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelErrordesc_categoria_emp" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputdesc_categoria_emp" min="-2" pref="207" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="34" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="labelErrorNombreCategoria" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <Component id="panelTituloPanelIngresoCategoria" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <Component id="panelTituloPanelIngresoCategoria" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="labelNombreCategoriaEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputDescCategoriaEmp" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputdesc_categoria_emp" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="labelErrorNombreCategoria" min="-2" max="-2" attributes="0"/>
+              <Component id="labelErrordesc_categoria_emp" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnIngresarCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnLimpiarIngresocategoriaEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="139" max="32767" attributes="0"/>
+              <EmptySpace pref="130" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -70,18 +75,19 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="labelNombreCategoriaEmpleado">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre categoria Empleado:"/>
+        <Property name="text" type="java.lang.String" value="Nombre categor&#xed;a Empleado:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputDescCategoriaEmp">
+    <Component class="javax.swing.JTextField" name="inputdesc_categoria_emp">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Categoria Empleado"/>
+        <Property name="name" type="java.lang.String" value="inputdesc_categoria_emp" noResource="true"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputDescCategoriaEmpActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputdesc_categoria_empActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="VentanaIngresarCategoriaEmpleado_inputDescCategoriaEmp"/>
@@ -103,13 +109,22 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpiarIngresocategoriaEmpleadoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorNombreCategoria">
+    <Component class="javax.swing.JLabel" name="labelErrordesc_categoria_emp">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Error Nombre Categoria Es Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorNombreCategoria" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrordesc_categoria_emp" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="panelTituloPanelIngresoCategoria">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI Semibold" size="18" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingreso Nueva Categor&#xed;a Empleado"/>
+        <Property name="name" type="java.lang.String" value="panelTituloPanelIngresoCategoria" noResource="true"/>
       </Properties>
     </Component>
   </SubComponents>

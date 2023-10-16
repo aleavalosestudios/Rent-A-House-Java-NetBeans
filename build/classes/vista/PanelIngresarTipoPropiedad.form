@@ -17,60 +17,75 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="labelId_tipo_propiedad" max="32767" attributes="0"/>
-                          <Component id="labelDesc_tipo_propiedad" pref="154" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="labelId_tipo_propiedad" max="32767" attributes="0"/>
+                              <Component id="labelDesc_tipo_propiedad" min="-2" pref="154" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="inputdesc_tipo_propiedad" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputid_tipo_propiedad" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelErrorid_tipo_propiedad" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelErrordesc_tipo_propiedad" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="inputDesc_tipo_propiedad" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputId_tipo_propiedad" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="21" max="-2" attributes="0"/>
+                          <Component id="labelTituloPanelIngresoTipoPropiedad" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Component id="btnIngresoTipoPropiedad" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnLimpiarIngresoTipoPropiedad" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="54" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelId_tipo_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputId_tipo_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Component id="labelTituloPanelIngresoTipoPropiedad" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelDesc_tipo_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputDesc_tipo_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelId_tipo_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputid_tipo_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="labelErrorid_tipo_propiedad" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelDesc_tipo_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputdesc_tipo_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="labelErrordesc_tipo_propiedad" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnIngresoTipoPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnLimpiarIngresoTipoPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="151" max="32767" attributes="0"/>
+              <EmptySpace pref="97" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="inputDesc_tipo_propiedad">
+    <Component class="javax.swing.JTextField" name="inputdesc_tipo_propiedad">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Descripcion Tipo Propiedad"/>
+        <Property name="name" type="java.lang.String" value="inputdesc_tipo_propiedad" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnIngresoTipoPropiedad">
@@ -99,12 +114,40 @@
         <Property name="text" type="java.lang.String" value="Descripci&#xf3;n Tipo Propiedad"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputId_tipo_propiedad">
+    <Component class="javax.swing.JTextField" name="inputid_tipo_propiedad">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Id Tipo Propiedad"/>
+        <Property name="name" type="java.lang.String" value="inputid_tipo_propiedad" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorid_tipo_propiedad">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Id Tipo Propiedad Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorid_tipo_propiedad" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrordesc_tipo_propiedad">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Descripci&#xf3;n Tipo Propiedad Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrordesc_tipo_propiedad" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTituloPanelIngresoTipoPropiedad">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingreso Nuevo Tipo Propiedad"/>
+        <Property name="name" type="java.lang.String" value="labelTituloPanelIngresoTipoPropiedad" noResource="true"/>
       </Properties>
     </Component>
   </SubComponents>

@@ -16,40 +16,53 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="labelDescripcionEstadoCivil" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnGuardarEstadoCivil" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="btnLimpiarEstadoCivil" min="-2" pref="81" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnVolverEstadoCivil" min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelDescripcionEstadoCivil" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnGuardarEstadoCivil" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelErrordesc_Estcivil" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btnLimpiarEstadoCivil" min="-2" pref="81" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btnVolverEstadoCivil" min="-2" pref="75" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="Inputdesc_Estcivil" min="-2" pref="189" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Component id="InputDesc_estcivil" min="-2" pref="189" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                      <Component id="labelTituloPanelIngresarEstadoCivil" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="27" max="32767" attributes="0"/>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="labelTituloPanelIngresarEstadoCivil" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelDescripcionEstadoCivil" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="InputDesc_estcivil" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Inputdesc_Estcivil" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="labelErrordesc_Estcivil" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnGuardarEstadoCivil" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnLimpiarEstadoCivil" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnVolverEstadoCivil" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="118" max="32767" attributes="0"/>
+              <EmptySpace pref="109" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -60,12 +73,13 @@
         <Property name="text" type="java.lang.String" value="Nombre Estado Civil: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="InputDesc_estcivil">
+    <Component class="javax.swing.JTextField" name="Inputdesc_Estcivil">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Estado Civil"/>
+        <Property name="name" type="java.lang.String" value="Inputdesc_Estcivil" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnGuardarEstadoCivil">
@@ -91,6 +105,24 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVolverEstadoCivilActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrordesc_Estcivil">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrordesc_Estcivil" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTituloPanelIngresarEstadoCivil">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingreso Nuevo Estado Civil"/>
+        <Property name="name" type="java.lang.String" value="labelTituloPanelIngresarEstadoCivil" noResource="true"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

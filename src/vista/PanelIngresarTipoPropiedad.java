@@ -14,13 +14,14 @@ import javax.swing.JTextField;
  * @author aleja
  */
 public class PanelIngresarTipoPropiedad extends javax.swing.JPanel {
-    MisMetodos misMetodos = new MisMetodos();
+    
     TipoPropiedad tipoPropiedad;
     /**
      * Creates new form PanelIngresarTipoPropiedad
      */
     public PanelIngresarTipoPropiedad() {
         initComponents();
+        MisMetodos.panelCamposErrorInicializador(this);
     }
 
     /**
@@ -32,15 +33,19 @@ public class PanelIngresarTipoPropiedad extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        inputDesc_tipo_propiedad = new javax.swing.JTextField();
+        inputdesc_tipo_propiedad = new javax.swing.JTextField();
         btnIngresoTipoPropiedad = new javax.swing.JButton();
         btnLimpiarIngresoTipoPropiedad = new javax.swing.JButton();
         labelId_tipo_propiedad = new javax.swing.JLabel();
         labelDesc_tipo_propiedad = new javax.swing.JLabel();
-        inputId_tipo_propiedad = new javax.swing.JTextField();
+        inputid_tipo_propiedad = new javax.swing.JTextField();
+        labelErrorid_tipo_propiedad = new javax.swing.JLabel();
+        labelErrordesc_tipo_propiedad = new javax.swing.JLabel();
+        labelTituloPanelIngresoTipoPropiedad = new javax.swing.JLabel();
 
-        inputDesc_tipo_propiedad.setForeground(new java.awt.Color(153, 153, 153));
-        inputDesc_tipo_propiedad.setText("Ingrese Descripcion Tipo Propiedad");
+        inputdesc_tipo_propiedad.setForeground(new java.awt.Color(153, 153, 153));
+        inputdesc_tipo_propiedad.setText("Ingrese Descripcion Tipo Propiedad");
+        inputdesc_tipo_propiedad.setName("inputdesc_tipo_propiedad"); // NOI18N
 
         btnIngresoTipoPropiedad.setText("Ingreso Tipo Propiedad");
         btnIngresoTipoPropiedad.addActionListener(new java.awt.event.ActionListener() {
@@ -60,47 +65,72 @@ public class PanelIngresarTipoPropiedad extends javax.swing.JPanel {
 
         labelDesc_tipo_propiedad.setText("Descripción Tipo Propiedad");
 
-        inputId_tipo_propiedad.setForeground(new java.awt.Color(153, 153, 153));
-        inputId_tipo_propiedad.setText("Ingrese Id Tipo Propiedad");
+        inputid_tipo_propiedad.setForeground(new java.awt.Color(153, 153, 153));
+        inputid_tipo_propiedad.setText("Ingrese Id Tipo Propiedad");
+        inputid_tipo_propiedad.setName("inputid_tipo_propiedad"); // NOI18N
+
+        labelErrorid_tipo_propiedad.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorid_tipo_propiedad.setText("Id Tipo Propiedad Obligatorio");
+        labelErrorid_tipo_propiedad.setName("labelErrorid_tipo_propiedad"); // NOI18N
+
+        labelErrordesc_tipo_propiedad.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrordesc_tipo_propiedad.setText("Descripción Tipo Propiedad Obligatorio");
+        labelErrordesc_tipo_propiedad.setName("labelErrordesc_tipo_propiedad"); // NOI18N
+
+        labelTituloPanelIngresoTipoPropiedad.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        labelTituloPanelIngresoTipoPropiedad.setText("Ingreso Nuevo Tipo Propiedad");
+        labelTituloPanelIngresoTipoPropiedad.setName("labelTituloPanelIngresoTipoPropiedad"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(67, 67, 67)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(labelId_tipo_propiedad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(labelDesc_tipo_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(inputdesc_tipo_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(inputid_tipo_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(labelErrorid_tipo_propiedad)
+                                .addComponent(labelErrordesc_tipo_propiedad)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelTituloPanelIngresoTipoPropiedad)
+                            .addGap(90, 90, 90)))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(labelId_tipo_propiedad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(labelDesc_tipo_propiedad, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inputDesc_tipo_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputId_tipo_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
                         .addComponent(btnIngresoTipoPropiedad)
                         .addGap(18, 18, 18)
                         .addComponent(btnLimpiarIngresoTipoPropiedad)))
-                .addGap(0, 23, Short.MAX_VALUE))
+                .addGap(0, 54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelId_tipo_propiedad)
-                    .addComponent(inputId_tipo_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(labelTituloPanelIngresoTipoPropiedad)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelId_tipo_propiedad)
+                    .addComponent(inputid_tipo_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelErrorid_tipo_propiedad)
+                .addGap(4, 4, 4)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDesc_tipo_propiedad)
-                    .addComponent(inputDesc_tipo_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
+                    .addComponent(inputdesc_tipo_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelErrordesc_tipo_propiedad)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresoTipoPropiedad)
                     .addComponent(btnLimpiarIngresoTipoPropiedad))
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -108,15 +138,15 @@ public class PanelIngresarTipoPropiedad extends javax.swing.JPanel {
 
         TipoPropiedadDao tipoPropiedadDao = new TipoPropiedadDao();
 
-        char id_tipoPropiedad  = inputId_tipo_propiedad.getText().charAt(0);
-        String desc_tipoPropiedad = inputDesc_tipo_propiedad.getText();
+        char id_tipoPropiedad  = inputid_tipo_propiedad.getText().charAt(0);
+        String desc_tipoPropiedad = inputdesc_tipo_propiedad.getText();
 
         ArrayList <TipoPropiedad> listadoTipoPropiedadID = tipoPropiedadDao.buscarTipoPropiedadPorId(id_tipoPropiedad);
         ArrayList <TipoPropiedad> listadoTipoPropiedadDescripcion = tipoPropiedadDao.buscarTipoPropiedadPorDescripcion(desc_tipoPropiedad);
 
         if(listadoTipoPropiedadID.isEmpty()){
 
-            TipoPropiedad tipoPropiedad = new TipoPropiedad(id_tipoPropiedad, desc_tipoPropiedad);
+            tipoPropiedad = new TipoPropiedad(id_tipoPropiedad, desc_tipoPropiedad);
 
             tipoPropiedadDao.ingresarTipoPropiedad(tipoPropiedad);
 
@@ -129,16 +159,19 @@ public class PanelIngresarTipoPropiedad extends javax.swing.JPanel {
     }//GEN-LAST:event_btnIngresoTipoPropiedadActionPerformed
 
     private void btnLimpiarIngresoTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarIngresoTipoPropiedadActionPerformed
-        misMetodos.panelLimpiarComponentes(this);
+        MisMetodos.panelLimpiarComponentes(this);
     }//GEN-LAST:event_btnLimpiarIngresoTipoPropiedadActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresoTipoPropiedad;
     private javax.swing.JButton btnLimpiarIngresoTipoPropiedad;
-    private javax.swing.JTextField inputDesc_tipo_propiedad;
-    private javax.swing.JTextField inputId_tipo_propiedad;
+    private javax.swing.JTextField inputdesc_tipo_propiedad;
+    private javax.swing.JTextField inputid_tipo_propiedad;
     private javax.swing.JLabel labelDesc_tipo_propiedad;
+    private javax.swing.JLabel labelErrordesc_tipo_propiedad;
+    private javax.swing.JLabel labelErrorid_tipo_propiedad;
     private javax.swing.JLabel labelId_tipo_propiedad;
+    private javax.swing.JLabel labelTituloPanelIngresoTipoPropiedad;
     // End of variables declaration//GEN-END:variables
 }

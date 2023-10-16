@@ -16,12 +16,13 @@ import modelo.Comuna;
  * @author aleja
  */
 public class PanelIngresarComuna extends javax.swing.JPanel {
-    MisMetodos misMetodos = new MisMetodos();
+    
     /**
      * Creates new form PanelIngresarComuna
      */
     public PanelIngresarComuna() {
         initComponents();
+        MisMetodos.panelCamposErrorInicializador(this);
     }
 
     /**
@@ -34,14 +35,22 @@ public class PanelIngresarComuna extends javax.swing.JPanel {
     private void initComponents() {
 
         labelNombreComuna = new javax.swing.JLabel();
-        InputNombre_comuna = new javax.swing.JTextField();
+        Inputnombre_comuna = new javax.swing.JTextField();
         btnAgregarComuna = new javax.swing.JButton();
         btnLimpiarIngresoComuna = new javax.swing.JButton();
+        labelErrornombre_comuna = new javax.swing.JLabel();
+        labelTituloPanelIngresarComuna = new javax.swing.JLabel();
 
         labelNombreComuna.setText("Nombre Comuna:");
 
-        InputNombre_comuna.setForeground(new java.awt.Color(153, 153, 153));
-        InputNombre_comuna.setText("Ingrese Nombre Comuna");
+        Inputnombre_comuna.setForeground(new java.awt.Color(153, 153, 153));
+        Inputnombre_comuna.setText("Ingrese Nombre Comuna");
+        Inputnombre_comuna.setName("Inputnombre_comuna"); // NOI18N
+        Inputnombre_comuna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Inputnombre_comunaActionPerformed(evt);
+            }
+        });
 
         btnAgregarComuna.setText("Agregar Comuna");
         btnAgregarComuna.addActionListener(new java.awt.event.ActionListener() {
@@ -57,6 +66,14 @@ public class PanelIngresarComuna extends javax.swing.JPanel {
             }
         });
 
+        labelErrornombre_comuna.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrornombre_comuna.setText("Algun Texto");
+        labelErrornombre_comuna.setName("labelErrornombre_comuna"); // NOI18N
+
+        labelTituloPanelIngresarComuna.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        labelTituloPanelIngresarComuna.setText("Ingreso Nueva Comuna");
+        labelTituloPanelIngresarComuna.setName("labelTituloPanelIngresarComuna"); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -64,59 +81,77 @@ public class PanelIngresarComuna extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(labelNombreComuna)
-                        .addGap(18, 18, 18)
-                        .addComponent(InputNombre_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addComponent(btnAgregarComuna)
                         .addGap(18, 18, 18)
-                        .addComponent(btnLimpiarIngresoComuna)))
-                .addContainerGap(114, Short.MAX_VALUE))
+                        .addComponent(btnLimpiarIngresoComuna))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(labelNombreComuna)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(labelErrornombre_comuna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Inputnombre_comuna)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(labelTituloPanelIngresarComuna)))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addGap(26, 26, 26)
+                .addComponent(labelTituloPanelIngresarComuna)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNombreComuna)
-                    .addComponent(InputNombre_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
+                    .addComponent(Inputnombre_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelErrornombre_comuna)
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAgregarComuna)
                     .addComponent(btnLimpiarIngresoComuna))
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComunaActionPerformed
-        String nombre_comuna = InputNombre_comuna.getText();
-        ArrayList<Comuna> listadoBuscarComuna = new ArrayList<>();
+        String nombre_comuna = Inputnombre_comuna.getText();
+        if(nombre_comuna.isEmpty()){
+            MisMetodos.labelMensajeValidacion(labelErrornombre_comuna, "Campo Obligatorio", "error");
+        }    
+        else{    
+            ComunaDao comunaDao = new ComunaDao();
+            Comuna comuna = new Comuna(0, nombre_comuna);
 
-        ComunaDao comunaDao = new ComunaDao();
-        Comuna comuna = new Comuna(0, nombre_comuna);
+            ArrayList<Comuna> listadoBuscarComuna = comunaDao.buscarComuna(nombre_comuna);
 
-        listadoBuscarComuna = comunaDao.buscarComuna(nombre_comuna);
-
-        if(listadoBuscarComuna.isEmpty()){
-            comunaDao.ingresarComuna(comuna);
-            JOptionPane.showMessageDialog(this,"Comuna Ingresada Correctamente");
-        }else{
-            JOptionPane.showMessageDialog(this,"Comuna ya existe");
+            if(listadoBuscarComuna.isEmpty()){
+                comunaDao.ingresarComuna(comuna);
+                JOptionPane.showMessageDialog(this,"Comuna Ingresada Correctamente");
+            }else{
+                JOptionPane.showMessageDialog(this,"Comuna ya existe");
+            }
         }
 
     }//GEN-LAST:event_btnAgregarComunaActionPerformed
 
     private void btnLimpiarIngresoComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarIngresoComunaActionPerformed
-        misMetodos.panelLimpiarComponentes(this);
+        MisMetodos.panelLimpiarComponentes(this);
     }//GEN-LAST:event_btnLimpiarIngresoComunaActionPerformed
+
+    private void Inputnombre_comunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inputnombre_comunaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Inputnombre_comunaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField InputNombre_comuna;
+    private javax.swing.JTextField Inputnombre_comuna;
     private javax.swing.JButton btnAgregarComuna;
     private javax.swing.JButton btnLimpiarIngresoComuna;
+    private javax.swing.JLabel labelErrornombre_comuna;
     private javax.swing.JLabel labelNombreComuna;
+    private javax.swing.JLabel labelTituloPanelIngresarComuna;
     // End of variables declaration//GEN-END:variables
 }

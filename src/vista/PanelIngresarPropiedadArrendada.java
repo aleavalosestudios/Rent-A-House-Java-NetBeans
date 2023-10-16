@@ -20,19 +20,17 @@ import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
  */
 public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
     
-    Cliente cliente;
     ClienteDao clienteDao = new ClienteDao();
     PropiedadDao propiedadDao = new PropiedadDao();
     PropiedadArrendada propiedadArrendada;
     
     PropiedadArrendadaDao propiedadArrendadaDao = new PropiedadArrendadaDao();
-    
-    MisMetodos misMetodos = new MisMetodos();
     /**
      * Creates new form PanelIngresarPropiedadArrendada
      */
     public PanelIngresarPropiedadArrendada() {
         initComponents();
+        MisMetodos.panelCamposErrorInicializador(this);
     }
 
     /**
@@ -52,10 +50,15 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
         btnIngresarCliente = new javax.swing.JButton();
         labelFecter_arriendo = new javax.swing.JLabel();
         labelNumrut_cli = new javax.swing.JLabel();
-        inputNro_propiedad = new javax.swing.JTextField();
-        inputFecini_arriendo = new javax.swing.JTextField();
-        inputFecter_arriendo = new javax.swing.JTextField();
-        inputNumrut_cli = new javax.swing.JTextField();
+        inputnro_propiedad = new javax.swing.JTextField();
+        inputfecini_arriendo = new javax.swing.JTextField();
+        inputfecter_arriendo = new javax.swing.JTextField();
+        inputnumrut_cli = new javax.swing.JTextField();
+        labelErrornro_propiedad = new javax.swing.JLabel();
+        labelErrorfecini_arriendo = new javax.swing.JLabel();
+        labelErrorfecter_arriendo = new javax.swing.JLabel();
+        labelErrornumrut_cli = new javax.swing.JLabel();
+        labelTituloPanelIngresarPropiedadArrendada = new javax.swing.JLabel();
 
         btnIngresoArriendoPropiedad.setText("Ingreso Arriendo Propiedad");
         btnIngresoArriendoPropiedad.addActionListener(new java.awt.event.ActionListener() {
@@ -93,100 +96,145 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
 
         labelNumrut_cli.setText("Nro Rut Cliente");
 
-        inputNro_propiedad.setForeground(new java.awt.Color(153, 153, 153));
-        inputNro_propiedad.setText("Ingrese Numero Propiedad");
+        inputnro_propiedad.setForeground(new java.awt.Color(153, 153, 153));
+        inputnro_propiedad.setText("Ingrese Numero Propiedad");
+        inputnro_propiedad.setName("inputnro_propiedad"); // NOI18N
 
-        inputFecini_arriendo.setForeground(new java.awt.Color(153, 153, 153));
-        inputFecini_arriendo.setText("Ingrese Fecha Inicio Arriendo");
-        inputFecini_arriendo.addActionListener(new java.awt.event.ActionListener() {
+        inputfecini_arriendo.setForeground(new java.awt.Color(153, 153, 153));
+        inputfecini_arriendo.setText("Ingrese Fecha Inicio Arriendo");
+        inputfecini_arriendo.setName("inputfecini_arriendo"); // NOI18N
+        inputfecini_arriendo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputFecini_arriendoActionPerformed(evt);
+                inputfecini_arriendoActionPerformed(evt);
             }
         });
 
-        inputFecter_arriendo.setForeground(new java.awt.Color(153, 153, 153));
-        inputFecter_arriendo.setText("Ingrese Fecha Termino Arriendo");
+        inputfecter_arriendo.setForeground(new java.awt.Color(153, 153, 153));
+        inputfecter_arriendo.setText("Ingrese Fecha Termino Arriendo");
+        inputfecter_arriendo.setName("inputfecter_arriendo"); // NOI18N
 
-        inputNumrut_cli.setForeground(new java.awt.Color(153, 153, 153));
-        inputNumrut_cli.setText("Ingrese Numero de rut del Cliente");
+        inputnumrut_cli.setForeground(new java.awt.Color(153, 153, 153));
+        inputnumrut_cli.setText("Ingrese Numero de rut del Cliente");
+        inputnumrut_cli.setName("inputnumrut_cli"); // NOI18N
+
+        labelErrornro_propiedad.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrornro_propiedad.setText("Nro Propiedad Obligatorio");
+        labelErrornro_propiedad.setName("labelErrornro_propiedad"); // NOI18N
+
+        labelErrorfecini_arriendo.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorfecini_arriendo.setText("Fecha Inicio Arriendo Obligatorio");
+        labelErrorfecini_arriendo.setName("labelErrorfecini_arriendo"); // NOI18N
+
+        labelErrorfecter_arriendo.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorfecter_arriendo.setText("FechaTermino Arriendo Obligatorio");
+        labelErrorfecter_arriendo.setName("labelErrorfecter_arriendo"); // NOI18N
+
+        labelErrornumrut_cli.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrornumrut_cli.setText("Nro Rut Cliente Obligatorio");
+        labelErrornumrut_cli.setName("labelErrornumrut_cli"); // NOI18N
+
+        labelTituloPanelIngresarPropiedadArrendada.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        labelTituloPanelIngresarPropiedadArrendada.setText("Ingreso Nueva Propiedad Arrendada");
+        labelTituloPanelIngresarPropiedadArrendada.setName("labelTituloPanelIngresarPropiedadArrendada"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(labelNumrut_cli)
-                                .addGap(95, 95, 95))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelNro_propiedad)
-                                    .addComponent(labelFecini_arriendo)
-                                    .addComponent(labelFecter_arriendo))
-                                .addGap(49, 49, 49)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inputNro_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputFecini_arriendo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputFecter_arriendo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputNumrut_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnIngresarPropiedad)
-                            .addComponent(btnIngresarCliente)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(labelNumrut_cli)
+                                        .addGap(95, 95, 95))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(labelNro_propiedad)
+                                            .addComponent(labelFecini_arriendo)
+                                            .addComponent(labelFecter_arriendo))
+                                        .addGap(49, 49, 49)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(inputnro_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(inputfecini_arriendo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(inputfecter_arriendo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(labelErrornro_propiedad)
+                                            .addComponent(labelErrorfecini_arriendo))
+                                        .addGap(59, 59, 59)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnIngresarPropiedad)
+                                            .addComponent(btnIngresarCliente)))
+                                    .addComponent(labelErrorfecter_arriendo)
+                                    .addComponent(inputnumrut_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelErrornumrut_cli)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnIngresoArriendoPropiedad)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnLimpiarIngresoArriendoPropiedad))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnIngresoArriendoPropiedad)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnLimpiarIngresoArriendoPropiedad)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                        .addGap(134, 134, 134)
+                        .addComponent(labelTituloPanelIngresarPropiedadArrendada)))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(28, 28, 28)
+                .addComponent(labelTituloPanelIngresarPropiedadArrendada)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNro_propiedad)
-                    .addComponent(inputNro_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputnro_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnIngresarPropiedad))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelErrornro_propiedad)
+                .addGap(2, 2, 2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelFecini_arriendo)
-                    .addComponent(inputFecini_arriendo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputfecini_arriendo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnIngresarCliente))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelErrorfecini_arriendo)
+                .addGap(2, 2, 2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelFecter_arriendo)
-                    .addComponent(inputFecter_arriendo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(inputfecter_arriendo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelErrorfecter_arriendo)
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNumrut_cli)
-                    .addComponent(inputNumrut_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                    .addComponent(inputnumrut_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(2, 2, 2)
+                .addComponent(labelErrornumrut_cli)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresoArriendoPropiedad)
                     .addComponent(btnLimpiarIngresoArriendoPropiedad))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresoArriendoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresoArriendoPropiedadActionPerformed
 
-        int nroPropiedad = Integer.parseInt(String.valueOf(inputNro_propiedad.getText()));
-        int numrut_cli = Integer.parseInt(String.valueOf(inputNumrut_cli.getText()));
+        int nroPropiedad = Integer.parseInt(String.valueOf(inputnro_propiedad.getText()));
+        int numrut_cli = Integer.parseInt(String.valueOf(inputnumrut_cli.getText()));
 
-        boolean clienteExiste = misMetodos.listaVacia(clienteDao.buscarCliente(numrut_cli));
+        boolean clienteExiste = MisMetodos.listaVacia(clienteDao.buscarCliente(numrut_cli));
                 //buscadorClienteExiste(numrut_cli);
-        boolean propiedadexiste = misMetodos.listaVacia(propiedadDao.buscarPropiedad(nroPropiedad));
+        boolean propiedadexiste = MisMetodos.listaVacia(propiedadDao.buscarPropiedad(nroPropiedad));
 
         if(clienteExiste == false || propiedadexiste == false){
             JOptionPane.showMessageDialog(this,"Error en el ingreso de datos");
         }else{
 
-            String fec_inicio = String.valueOf(inputFecini_arriendo.getText());
-            String fec_termino = String.valueOf(inputFecter_arriendo.getText());
+            String fec_inicio = String.valueOf(inputfecini_arriendo.getText());
+            String fec_termino = String.valueOf(inputfecter_arriendo.getText());
 
             propiedadArrendada= new PropiedadArrendada(nroPropiedad, fec_inicio, fec_termino, numrut_cli);
             propiedadArrendadaDao.agregarPropiedadArrendada(propiedadArrendada);
@@ -198,27 +246,25 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
 
     private void btnIngresarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarPropiedadActionPerformed
         VentanaIngresarPropiedad ventanaIngresarPropiedad = new VentanaIngresarPropiedad();
-        misMetodos.abrirVentana(ventanaIngresarPropiedad,"Ingreso Nueva Propiedad");
+        MisMetodos.abrirVentana(ventanaIngresarPropiedad,"Ingreso Nueva Propiedad");
     }//GEN-LAST:event_btnIngresarPropiedadActionPerformed
 
     private void btnIngresarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarClienteActionPerformed
         VentanaIngresarCliente  ventanaIngresarCliente = new VentanaIngresarCliente();
-        misMetodos.abrirVentana(ventanaIngresarCliente, "Registro Cliente");
+        MisMetodos.abrirVentana(ventanaIngresarCliente, "Registro Cliente");
     }//GEN-LAST:event_btnIngresarClienteActionPerformed
 
-    private void inputFecini_arriendoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputFecini_arriendoActionPerformed
+    private void inputfecini_arriendoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputfecini_arriendoActionPerformed
 
-    }//GEN-LAST:event_inputFecini_arriendoActionPerformed
+    }//GEN-LAST:event_inputfecini_arriendoActionPerformed
 
     private void btnLimpiarIngresoArriendoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarIngresoArriendoPropiedadActionPerformed
-        misMetodos.panelLimpiarComponentes(this);
+        MisMetodos.panelLimpiarComponentes(this);
     }//GEN-LAST:event_btnLimpiarIngresoArriendoPropiedadActionPerformed
     
     
     public boolean buscadorPropiedadExiste(int nroPropiedad){
         boolean resultado = true;
-        PropiedadDao propiedadDao = new PropiedadDao();
-        
         ArrayList<Propiedad> listadoPropiedades = propiedadDao.buscarPropiedad(nroPropiedad);
         
         if(listadoPropiedades.isEmpty()){
@@ -229,9 +275,7 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
     }
     
     public boolean buscadorClienteExiste(int numrut_cli){
-        boolean resultado = true;
-        ClienteDao clienteDao = new ClienteDao();
-        
+        boolean resultado = true;        
         ArrayList<Cliente> listadoclientes = clienteDao.buscarCliente(numrut_cli);
         
         if(listadoclientes.isEmpty()){
@@ -247,13 +291,18 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
     private javax.swing.JButton btnIngresarPropiedad;
     private javax.swing.JButton btnIngresoArriendoPropiedad;
     private javax.swing.JButton btnLimpiarIngresoArriendoPropiedad;
-    private javax.swing.JTextField inputFecini_arriendo;
-    private javax.swing.JTextField inputFecter_arriendo;
-    private javax.swing.JTextField inputNro_propiedad;
-    private javax.swing.JTextField inputNumrut_cli;
+    private javax.swing.JTextField inputfecini_arriendo;
+    private javax.swing.JTextField inputfecter_arriendo;
+    private javax.swing.JTextField inputnro_propiedad;
+    private javax.swing.JTextField inputnumrut_cli;
+    private javax.swing.JLabel labelErrorfecini_arriendo;
+    private javax.swing.JLabel labelErrorfecter_arriendo;
+    private javax.swing.JLabel labelErrornro_propiedad;
+    private javax.swing.JLabel labelErrornumrut_cli;
     private javax.swing.JLabel labelFecini_arriendo;
     private javax.swing.JLabel labelFecter_arriendo;
     private javax.swing.JLabel labelNro_propiedad;
     private javax.swing.JLabel labelNumrut_cli;
+    private javax.swing.JLabel labelTituloPanelIngresarPropiedadArrendada;
     // End of variables declaration//GEN-END:variables
 }

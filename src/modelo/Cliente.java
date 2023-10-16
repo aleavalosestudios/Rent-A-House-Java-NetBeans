@@ -1,5 +1,9 @@
 package modelo;
 
+import java.awt.Component;
+import java.util.ArrayList;
+import vista.PanelIngresarCliente;
+
 public class Cliente {
     private int numrut_cli;
     private char dvrut_cli;

@@ -15,12 +15,13 @@ import modelo.EstadoCivil;
  * @author aleja
  */
 public class PanelIngresarEstadoCivil extends javax.swing.JPanel {
-    MisMetodos misMetodos = new MisMetodos();
+    
     /**
      * Creates new form PanelIngresarEstadoCivil
      */
     public PanelIngresarEstadoCivil() {
         initComponents();
+        MisMetodos.panelCamposErrorInicializador(this);
     }
 
     /**
@@ -33,15 +34,18 @@ public class PanelIngresarEstadoCivil extends javax.swing.JPanel {
     private void initComponents() {
 
         labelDescripcionEstadoCivil = new javax.swing.JLabel();
-        InputDesc_estcivil = new javax.swing.JTextField();
+        Inputdesc_Estcivil = new javax.swing.JTextField();
         btnGuardarEstadoCivil = new javax.swing.JButton();
         btnLimpiarEstadoCivil = new javax.swing.JButton();
         btnVolverEstadoCivil = new javax.swing.JButton();
+        labelErrordesc_Estcivil = new javax.swing.JLabel();
+        labelTituloPanelIngresarEstadoCivil = new javax.swing.JLabel();
 
         labelDescripcionEstadoCivil.setText("Nombre Estado Civil: ");
 
-        InputDesc_estcivil.setForeground(new java.awt.Color(153, 153, 153));
-        InputDesc_estcivil.setText("Ingrese Estado Civil");
+        Inputdesc_Estcivil.setForeground(new java.awt.Color(153, 153, 153));
+        Inputdesc_Estcivil.setText("Ingrese Estado Civil");
+        Inputdesc_Estcivil.setName("Inputdesc_Estcivil"); // NOI18N
 
         btnGuardarEstadoCivil.setText("Guardar Estado Civil");
         btnGuardarEstadoCivil.addActionListener(new java.awt.event.ActionListener() {
@@ -64,37 +68,55 @@ public class PanelIngresarEstadoCivil extends javax.swing.JPanel {
             }
         });
 
+        labelErrordesc_Estcivil.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrordesc_Estcivil.setText("Algun Texto");
+        labelErrordesc_Estcivil.setName("labelErrordesc_Estcivil"); // NOI18N
+
+        labelTituloPanelIngresarEstadoCivil.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        labelTituloPanelIngresarEstadoCivil.setText("Ingreso Nuevo Estado Civil");
+        labelTituloPanelIngresarEstadoCivil.setName("labelTituloPanelIngresarEstadoCivil"); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelDescripcionEstadoCivil)
-                    .addComponent(btnGuardarEstadoCivil))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnLimpiarEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnVolverEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(InputDesc_estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelDescripcionEstadoCivil)
+                            .addComponent(btnGuardarEstadoCivil))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelErrordesc_Estcivil)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnLimpiarEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnVolverEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Inputdesc_Estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(labelTituloPanelIngresarEstadoCivil)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(34, 34, 34)
+                .addComponent(labelTituloPanelIngresarEstadoCivil)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDescripcionEstadoCivil)
-                    .addComponent(InputDesc_estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(69, 69, 69)
+                    .addComponent(Inputdesc_Estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelErrordesc_Estcivil)
+                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardarEstadoCivil)
                     .addComponent(btnLimpiarEstadoCivil)
                     .addComponent(btnVolverEstadoCivil))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -102,7 +124,7 @@ public class PanelIngresarEstadoCivil extends javax.swing.JPanel {
 
         String desc_EstCivil;
 
-        desc_EstCivil = InputDesc_estcivil.getText();
+        desc_EstCivil = Inputdesc_Estcivil.getText();
 
         EstadoCivil estadoCivil = new EstadoCivil(0, desc_EstCivil);
 
@@ -119,7 +141,7 @@ public class PanelIngresarEstadoCivil extends javax.swing.JPanel {
     }//GEN-LAST:event_btnGuardarEstadoCivilActionPerformed
 
     private void btnLimpiarEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarEstadoCivilActionPerformed
-        misMetodos.panelLimpiarComponentes(this);
+        MisMetodos.panelLimpiarComponentes(this);
         
     }//GEN-LAST:event_btnLimpiarEstadoCivilActionPerformed
 
@@ -129,10 +151,12 @@ public class PanelIngresarEstadoCivil extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField InputDesc_estcivil;
+    private javax.swing.JTextField Inputdesc_Estcivil;
     private javax.swing.JButton btnGuardarEstadoCivil;
     private javax.swing.JButton btnLimpiarEstadoCivil;
     private javax.swing.JButton btnVolverEstadoCivil;
     private javax.swing.JLabel labelDescripcionEstadoCivil;
+    private javax.swing.JLabel labelErrordesc_Estcivil;
+    private javax.swing.JLabel labelTituloPanelIngresarEstadoCivil;
     // End of variables declaration//GEN-END:variables
 }

@@ -35,38 +35,104 @@
                   <Component id="labelRutSupervisor" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="labelIdComunaEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="comboBoxComunaEmpleado" min="-2" max="-2" attributes="0"/>
+                      <Component id="comboBoxid_comuna" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="labelErrorid_comuna" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="inputNumRut_emp" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputDvRut_emp" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputAppaterno_emp" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputApmaterno_emp" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputNombre_emp" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputDireccion_emp" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputFonofijo_emp" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputCelular_emp" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputFecing_emp" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputFecnac_emp" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputSueldo_emp" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputNumrut_supervisor" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="comboBoxEstadoCivil" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="comboBoxCategoriaEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputnumrut_emp" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrornumrut_emp" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputdvrut_emp" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrordvrut_emp" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputappaterno_emp" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrorappaterno_emp" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputapmaterno_emp" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrorapmaterno_emp" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputnombre_emp" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrornombre_emp" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputdireccion_emp" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrordireccion_emp" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputfonofijo_emp" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrorfonofijo_emp" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputcelular_emp" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrorcelular_emp" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputfecing_emp" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrorfecing_emp" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputfecnac_emp" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrorfecnac_emp" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputsueldo_emp" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrorsueldo_emp" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputnumrut_supervisor" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrornumrut_supervisor" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="comboBoxid_estcivil" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrorid_estcivil" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="comboBoxid_categoria_emp" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrorid_categoria_emp" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-              <Component id="btnIngresarNuevoEmpleado" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              <Component id="btnLimpiarNuevoEmpleado" min="-2" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                      <Component id="btnIngresarNuevoEmpleado" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="btnLimpiarNuevoEmpleado" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                      <Component id="labelTituloPanelIngresarEmpleado" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -74,106 +140,125 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <Component id="labelTituloPanelIngresarEmpleado" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelRutEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputNumRut_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputnumrut_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrornumrut_emp" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelDVRutEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputDvRut_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputdvrut_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrordvrut_emp" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelApellidoPaternoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputAppaterno_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputappaterno_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorappaterno_emp" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelApellidoMaternoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputApmaterno_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputapmaterno_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorapmaterno_emp" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelNombreEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputNombre_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputnombre_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrornombre_emp" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelDireccionEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputDireccion_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputdireccion_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrordireccion_emp" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelIdEstadoCivil" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="comboBoxEstadoCivil" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboBoxid_estcivil" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorid_estcivil" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelFonoFijoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputFonofijo_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputfonofijo_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorfonofijo_emp" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelCelularEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputCelular_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputcelular_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorcelular_emp" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelFechaNacimientoEmpleado" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="inputFecnac_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputfecnac_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorfecnac_emp" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelFechaIngresoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputFecing_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputfecing_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorfecing_emp" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelSueldoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputSueldo_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputsueldo_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorsueldo_emp" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelIdComunaEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="comboBoxComunaEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboBoxid_comuna" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorid_comuna" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelIdCategoriaEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="comboBoxCategoriaEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboBoxid_categoria_emp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorid_categoria_emp" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelRutSupervisor" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputNumrut_supervisor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputnumrut_supervisor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrornumrut_supervisor" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnIngresarNuevoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnLimpiarNuevoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="inputCelular_emp">
+    <Component class="javax.swing.JTextField" name="inputcelular_emp">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Celular Empleado"/>
+        <Property name="name" type="java.lang.String" value="inputcelular_emp" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputFecnac_emp">
+    <Component class="javax.swing.JTextField" name="inputfecnac_emp">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Fecha Nacimiento Empleado"/>
+        <Property name="name" type="java.lang.String" value="inputfecnac_emp" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelDVRutEmpleado">
@@ -181,12 +266,13 @@
         <Property name="text" type="java.lang.String" value="DV Rut Empleado"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputFecing_emp">
+    <Component class="javax.swing.JTextField" name="inputfecing_emp">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Fecha Ingreso Empleado"/>
+        <Property name="name" type="java.lang.String" value="inputfecing_emp" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelApellidoPaternoEmpleado">
@@ -194,12 +280,13 @@
         <Property name="text" type="java.lang.String" value="Apellido Paterno empleado"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputSueldo_emp">
+    <Component class="javax.swing.JTextField" name="inputsueldo_emp">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Sueldo Empleado"/>
+        <Property name="name" type="java.lang.String" value="inputsueldo_emp" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelApellidoMaternoEmpleado">
@@ -207,12 +294,13 @@
         <Property name="text" type="java.lang.String" value="Apellido Materno Empleado"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputNumrut_supervisor">
+    <Component class="javax.swing.JTextField" name="inputnumrut_supervisor">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Rut Supervisor Empleado"/>
+        <Property name="name" type="java.lang.String" value="inputnumrut_supervisor" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelNombreEmpleado">
@@ -220,12 +308,13 @@
         <Property name="text" type="java.lang.String" value="Nombre Empleado"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputFonofijo_emp">
+    <Component class="javax.swing.JTextField" name="inputfonofijo_emp">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Telefono Fijo Empleado"/>
+        <Property name="name" type="java.lang.String" value="inputfonofijo_emp" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelDireccionEmpleado">
@@ -248,14 +337,15 @@
         <Property name="text" type="java.lang.String" value="Fecha Nacimiento Empleado"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="comboBoxEstadoCivil">
+    <Component class="javax.swing.JComboBox" name="comboBoxid_estcivil">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
         </Property>
+        <Property name="name" type="java.lang.String" value="comboBoxid_estcivil" noResource="true"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxEstadoCivilActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxid_estcivilActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -286,15 +376,16 @@
         <Property name="text" type="java.lang.String" value="rut Supervisor"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputNumRut_emp">
+    <Component class="javax.swing.JTextField" name="inputnumrut_emp">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Rut Empleado"/>
+        <Property name="name" type="java.lang.String" value="inputnumrut_emp" noResource="true"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputNumRut_empActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputnumrut_empActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="labelFonoFijoEmpleado">
@@ -302,67 +393,74 @@
         <Property name="text" type="java.lang.String" value="Fono fijo Empleado"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputDvRut_emp">
+    <Component class="javax.swing.JTextField" name="inputdvrut_emp">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese DV Rut Empleado"/>
+        <Property name="name" type="java.lang.String" value="inputdvrut_emp" noResource="true"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputDvRut_empActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputdvrut_empActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputAppaterno_emp">
+    <Component class="javax.swing.JTextField" name="inputappaterno_emp">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Apellido Paterno Empleado"/>
+        <Property name="name" type="java.lang.String" value="inputappaterno_emp" noResource="true"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputAppaterno_empActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputappaterno_empActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputApmaterno_emp">
+    <Component class="javax.swing.JTextField" name="inputapmaterno_emp">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Apellido Materno Empleado"/>
+        <Property name="name" type="java.lang.String" value="inputapmaterno_emp" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputNombre_emp">
+    <Component class="javax.swing.JTextField" name="inputnombre_emp">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Nombre Empleado"/>
+        <Property name="name" type="java.lang.String" value="inputnombre_emp" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputDireccion_emp">
+    <Component class="javax.swing.JTextField" name="inputdireccion_emp">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Direccion Empleado"/>
+        <Property name="name" type="java.lang.String" value="inputdireccion_emp" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="comboBoxComunaEmpleado">
+    <Component class="javax.swing.JComboBox" name="comboBoxid_comuna">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
         </Property>
+        <Property name="name" type="java.lang.String" value="comboBoxid_comuna" noResource="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="comboBoxCategoriaEmpleado">
+    <Component class="javax.swing.JComboBox" name="comboBoxid_categoria_emp">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
         </Property>
+        <Property name="name" type="java.lang.String" value="comboBoxid_categoria_emp" noResource="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -388,6 +486,150 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpiarNuevoEmpleadoActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrornumrut_emp">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Rut Empleado Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrornumrut_emp" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrordvrut_emp">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="DV Rut Empleado Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrordvrut_emp" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorappaterno_emp">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Apellido Paterno Empleado Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorappaterno_emp" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorapmaterno_emp">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Apellido Materno Empleado Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorapmaterno_emp" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrornombre_emp">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Nombre Empleado Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrornombre_emp" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorid_estcivil">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Estado Civil Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorid_estcivil" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorfonofijo_emp">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Fono fijo obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorfonofijo_emp" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorcelular_emp">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Celular Empleado Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorcelular_emp" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorfecnac_emp">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Fecha Nacimiento Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorfecnac_emp" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorfecing_emp">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Fecha Ingreso Empleado Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorfecing_emp" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorsueldo_emp">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Sueldo empleado Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorsueldo_emp" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorid_comuna">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Comuna Empleado Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorid_comuna" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrorid_categoria_emp">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Categoria Empleado Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrorid_categoria_emp" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrornumrut_supervisor">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Rut Supervisor Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrornumrut_supervisor" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelErrordireccion_emp">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Direccion Empleado Obligatorio"/>
+        <Property name="name" type="java.lang.String" value="labelErrordireccion_emp" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTituloPanelIngresarEmpleado">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingreso Nuevo Empleado"/>
+        <Property name="name" type="java.lang.String" value="labelTituloPanelIngresarEmpleado" noResource="true"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

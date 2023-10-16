@@ -21,7 +21,6 @@ import modelo.EstadoCivil;
  * @author aleja
  */
 public class PanelIngresarEmpleado extends javax.swing.JPanel {
-    MisMetodos misMetodos = new MisMetodos();
     Empleado empleado;
     
     EmpleadoDao empleadoDao = new EmpleadoDao();
@@ -33,10 +32,10 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
      */
     public PanelIngresarEmpleado() {
         initComponents();
-        misMetodos.comboboxLLenado(comboBoxCategoriaEmpleado, categoriaEmpleadoDao.todasLasCategoriaEmpleado());
-        misMetodos.comboboxLLenado(comboBoxComunaEmpleado, comunaDao.mostrarComunas());
-        misMetodos.comboboxLLenado(comboBoxEstadoCivil, estadocivilDao.todosLosEstadoCivil());
-        
+        MisMetodos.comboboxLLenado(comboBoxid_categoria_emp, categoriaEmpleadoDao.todasLasCategoriaEmpleado());
+        MisMetodos.comboboxLLenado(comboBoxid_comuna, comunaDao.mostrarComunas());
+        MisMetodos.comboboxLLenado(comboBoxid_estcivil, estadocivilDao.todosLosEstadoCivil());
+        MisMetodos.panelCamposErrorInicializador(this);
     }
 
     /**
@@ -48,64 +47,86 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        inputCelular_emp = new javax.swing.JTextField();
-        inputFecnac_emp = new javax.swing.JTextField();
+        inputcelular_emp = new javax.swing.JTextField();
+        inputfecnac_emp = new javax.swing.JTextField();
         labelDVRutEmpleado = new javax.swing.JLabel();
-        inputFecing_emp = new javax.swing.JTextField();
+        inputfecing_emp = new javax.swing.JTextField();
         labelApellidoPaternoEmpleado = new javax.swing.JLabel();
-        inputSueldo_emp = new javax.swing.JTextField();
+        inputsueldo_emp = new javax.swing.JTextField();
         labelApellidoMaternoEmpleado = new javax.swing.JLabel();
-        inputNumrut_supervisor = new javax.swing.JTextField();
+        inputnumrut_supervisor = new javax.swing.JTextField();
         labelNombreEmpleado = new javax.swing.JLabel();
-        inputFonofijo_emp = new javax.swing.JTextField();
+        inputfonofijo_emp = new javax.swing.JTextField();
         labelDireccionEmpleado = new javax.swing.JLabel();
         labelIdEstadoCivil = new javax.swing.JLabel();
         labelCelularEmpleado = new javax.swing.JLabel();
         labelFechaNacimientoEmpleado = new javax.swing.JLabel();
-        comboBoxEstadoCivil = new javax.swing.JComboBox<>();
+        comboBoxid_estcivil = new javax.swing.JComboBox<>();
         labelFechaIngresoEmpleado = new javax.swing.JLabel();
         labelSueldoEmpleado = new javax.swing.JLabel();
         labelIdComunaEmpleado = new javax.swing.JLabel();
         labelIdCategoriaEmpleado = new javax.swing.JLabel();
         labelRutSupervisor = new javax.swing.JLabel();
-        inputNumRut_emp = new javax.swing.JTextField();
+        inputnumrut_emp = new javax.swing.JTextField();
         labelFonoFijoEmpleado = new javax.swing.JLabel();
-        inputDvRut_emp = new javax.swing.JTextField();
-        inputAppaterno_emp = new javax.swing.JTextField();
-        inputApmaterno_emp = new javax.swing.JTextField();
-        inputNombre_emp = new javax.swing.JTextField();
-        inputDireccion_emp = new javax.swing.JTextField();
-        comboBoxComunaEmpleado = new javax.swing.JComboBox<>();
-        comboBoxCategoriaEmpleado = new javax.swing.JComboBox<>();
+        inputdvrut_emp = new javax.swing.JTextField();
+        inputappaterno_emp = new javax.swing.JTextField();
+        inputapmaterno_emp = new javax.swing.JTextField();
+        inputnombre_emp = new javax.swing.JTextField();
+        inputdireccion_emp = new javax.swing.JTextField();
+        comboBoxid_comuna = new javax.swing.JComboBox<>();
+        comboBoxid_categoria_emp = new javax.swing.JComboBox<>();
         labelRutEmpleado = new javax.swing.JLabel();
         btnIngresarNuevoEmpleado = new javax.swing.JButton();
         btnLimpiarNuevoEmpleado = new javax.swing.JButton();
+        labelErrornumrut_emp = new javax.swing.JLabel();
+        labelErrordvrut_emp = new javax.swing.JLabel();
+        labelErrorappaterno_emp = new javax.swing.JLabel();
+        labelErrorapmaterno_emp = new javax.swing.JLabel();
+        labelErrornombre_emp = new javax.swing.JLabel();
+        labelErrorid_estcivil = new javax.swing.JLabel();
+        labelErrorfonofijo_emp = new javax.swing.JLabel();
+        labelErrorcelular_emp = new javax.swing.JLabel();
+        labelErrorfecnac_emp = new javax.swing.JLabel();
+        labelErrorfecing_emp = new javax.swing.JLabel();
+        labelErrorsueldo_emp = new javax.swing.JLabel();
+        labelErrorid_comuna = new javax.swing.JLabel();
+        labelErrorid_categoria_emp = new javax.swing.JLabel();
+        labelErrornumrut_supervisor = new javax.swing.JLabel();
+        labelErrordireccion_emp = new javax.swing.JLabel();
+        labelTituloPanelIngresarEmpleado = new javax.swing.JLabel();
 
-        inputCelular_emp.setForeground(new java.awt.Color(153, 153, 153));
-        inputCelular_emp.setText("Ingrese Celular Empleado");
+        inputcelular_emp.setForeground(new java.awt.Color(153, 153, 153));
+        inputcelular_emp.setText("Ingrese Celular Empleado");
+        inputcelular_emp.setName("inputcelular_emp"); // NOI18N
 
-        inputFecnac_emp.setForeground(new java.awt.Color(153, 153, 153));
-        inputFecnac_emp.setText("Ingrese Fecha Nacimiento Empleado");
+        inputfecnac_emp.setForeground(new java.awt.Color(153, 153, 153));
+        inputfecnac_emp.setText("Ingrese Fecha Nacimiento Empleado");
+        inputfecnac_emp.setName("inputfecnac_emp"); // NOI18N
 
         labelDVRutEmpleado.setText("DV Rut Empleado");
 
-        inputFecing_emp.setForeground(new java.awt.Color(153, 153, 153));
-        inputFecing_emp.setText("Ingrese Fecha Ingreso Empleado");
+        inputfecing_emp.setForeground(new java.awt.Color(153, 153, 153));
+        inputfecing_emp.setText("Ingrese Fecha Ingreso Empleado");
+        inputfecing_emp.setName("inputfecing_emp"); // NOI18N
 
         labelApellidoPaternoEmpleado.setText("Apellido Paterno empleado");
 
-        inputSueldo_emp.setForeground(new java.awt.Color(153, 153, 153));
-        inputSueldo_emp.setText("Ingrese Sueldo Empleado");
+        inputsueldo_emp.setForeground(new java.awt.Color(153, 153, 153));
+        inputsueldo_emp.setText("Ingrese Sueldo Empleado");
+        inputsueldo_emp.setName("inputsueldo_emp"); // NOI18N
 
         labelApellidoMaternoEmpleado.setText("Apellido Materno Empleado");
 
-        inputNumrut_supervisor.setForeground(new java.awt.Color(153, 153, 153));
-        inputNumrut_supervisor.setText("Ingrese Rut Supervisor Empleado");
+        inputnumrut_supervisor.setForeground(new java.awt.Color(153, 153, 153));
+        inputnumrut_supervisor.setText("Ingrese Rut Supervisor Empleado");
+        inputnumrut_supervisor.setName("inputnumrut_supervisor"); // NOI18N
 
         labelNombreEmpleado.setText("Nombre Empleado");
 
-        inputFonofijo_emp.setForeground(new java.awt.Color(153, 153, 153));
-        inputFonofijo_emp.setText("Ingrese Telefono Fijo Empleado");
+        inputfonofijo_emp.setForeground(new java.awt.Color(153, 153, 153));
+        inputfonofijo_emp.setText("Ingrese Telefono Fijo Empleado");
+        inputfonofijo_emp.setName("inputfonofijo_emp"); // NOI18N
 
         labelDireccionEmpleado.setText("Dirección Empleado");
 
@@ -115,9 +136,10 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
 
         labelFechaNacimientoEmpleado.setText("Fecha Nacimiento Empleado");
 
-        comboBoxEstadoCivil.addActionListener(new java.awt.event.ActionListener() {
+        comboBoxid_estcivil.setName("comboBoxid_estcivil"); // NOI18N
+        comboBoxid_estcivil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxEstadoCivilActionPerformed(evt);
+                comboBoxid_estcivilActionPerformed(evt);
             }
         });
 
@@ -131,40 +153,50 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
 
         labelRutSupervisor.setText("rut Supervisor");
 
-        inputNumRut_emp.setForeground(new java.awt.Color(153, 153, 153));
-        inputNumRut_emp.setText("Ingrese Rut Empleado");
-        inputNumRut_emp.addActionListener(new java.awt.event.ActionListener() {
+        inputnumrut_emp.setForeground(new java.awt.Color(153, 153, 153));
+        inputnumrut_emp.setText("Ingrese Rut Empleado");
+        inputnumrut_emp.setName("inputnumrut_emp"); // NOI18N
+        inputnumrut_emp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNumRut_empActionPerformed(evt);
+                inputnumrut_empActionPerformed(evt);
             }
         });
 
         labelFonoFijoEmpleado.setText("Fono fijo Empleado");
 
-        inputDvRut_emp.setForeground(new java.awt.Color(153, 153, 153));
-        inputDvRut_emp.setText("Ingrese DV Rut Empleado");
-        inputDvRut_emp.addActionListener(new java.awt.event.ActionListener() {
+        inputdvrut_emp.setForeground(new java.awt.Color(153, 153, 153));
+        inputdvrut_emp.setText("Ingrese DV Rut Empleado");
+        inputdvrut_emp.setName("inputdvrut_emp"); // NOI18N
+        inputdvrut_emp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputDvRut_empActionPerformed(evt);
+                inputdvrut_empActionPerformed(evt);
             }
         });
 
-        inputAppaterno_emp.setForeground(new java.awt.Color(153, 153, 153));
-        inputAppaterno_emp.setText("Ingrese Apellido Paterno Empleado");
-        inputAppaterno_emp.addActionListener(new java.awt.event.ActionListener() {
+        inputappaterno_emp.setForeground(new java.awt.Color(153, 153, 153));
+        inputappaterno_emp.setText("Ingrese Apellido Paterno Empleado");
+        inputappaterno_emp.setName("inputappaterno_emp"); // NOI18N
+        inputappaterno_emp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputAppaterno_empActionPerformed(evt);
+                inputappaterno_empActionPerformed(evt);
             }
         });
 
-        inputApmaterno_emp.setForeground(new java.awt.Color(153, 153, 153));
-        inputApmaterno_emp.setText("Ingrese Apellido Materno Empleado");
+        inputapmaterno_emp.setForeground(new java.awt.Color(153, 153, 153));
+        inputapmaterno_emp.setText("Ingrese Apellido Materno Empleado");
+        inputapmaterno_emp.setName("inputapmaterno_emp"); // NOI18N
 
-        inputNombre_emp.setForeground(new java.awt.Color(153, 153, 153));
-        inputNombre_emp.setText("Ingrese Nombre Empleado");
+        inputnombre_emp.setForeground(new java.awt.Color(153, 153, 153));
+        inputnombre_emp.setText("Ingrese Nombre Empleado");
+        inputnombre_emp.setName("inputnombre_emp"); // NOI18N
 
-        inputDireccion_emp.setForeground(new java.awt.Color(153, 153, 153));
-        inputDireccion_emp.setText("Ingrese Direccion Empleado");
+        inputdireccion_emp.setForeground(new java.awt.Color(153, 153, 153));
+        inputdireccion_emp.setText("Ingrese Direccion Empleado");
+        inputdireccion_emp.setName("inputdireccion_emp"); // NOI18N
+
+        comboBoxid_comuna.setName("comboBoxid_comuna"); // NOI18N
+
+        comboBoxid_categoria_emp.setName("comboBoxid_categoria_emp"); // NOI18N
 
         labelRutEmpleado.setText("Rut Empleado");
 
@@ -181,6 +213,70 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
                 btnLimpiarNuevoEmpleadoActionPerformed(evt);
             }
         });
+
+        labelErrornumrut_emp.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrornumrut_emp.setText("Rut Empleado Obligatorio");
+        labelErrornumrut_emp.setName("labelErrornumrut_emp"); // NOI18N
+
+        labelErrordvrut_emp.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrordvrut_emp.setText("DV Rut Empleado Obligatorio");
+        labelErrordvrut_emp.setName("labelErrordvrut_emp"); // NOI18N
+
+        labelErrorappaterno_emp.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorappaterno_emp.setText("Apellido Paterno Empleado Obligatorio");
+        labelErrorappaterno_emp.setName("labelErrorappaterno_emp"); // NOI18N
+
+        labelErrorapmaterno_emp.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorapmaterno_emp.setText("Apellido Materno Empleado Obligatorio");
+        labelErrorapmaterno_emp.setName("labelErrorapmaterno_emp"); // NOI18N
+
+        labelErrornombre_emp.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrornombre_emp.setText("Nombre Empleado Obligatorio");
+        labelErrornombre_emp.setName("labelErrornombre_emp"); // NOI18N
+
+        labelErrorid_estcivil.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorid_estcivil.setText("Estado Civil Obligatorio");
+        labelErrorid_estcivil.setName("labelErrorid_estcivil"); // NOI18N
+
+        labelErrorfonofijo_emp.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorfonofijo_emp.setText("Fono fijo obligatorio");
+        labelErrorfonofijo_emp.setName("labelErrorfonofijo_emp"); // NOI18N
+
+        labelErrorcelular_emp.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorcelular_emp.setText("Celular Empleado Obligatorio");
+        labelErrorcelular_emp.setName("labelErrorcelular_emp"); // NOI18N
+
+        labelErrorfecnac_emp.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorfecnac_emp.setText("Fecha Nacimiento Obligatorio");
+        labelErrorfecnac_emp.setName("labelErrorfecnac_emp"); // NOI18N
+
+        labelErrorfecing_emp.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorfecing_emp.setText("Fecha Ingreso Empleado Obligatorio");
+        labelErrorfecing_emp.setName("labelErrorfecing_emp"); // NOI18N
+
+        labelErrorsueldo_emp.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorsueldo_emp.setText("Sueldo empleado Obligatorio");
+        labelErrorsueldo_emp.setName("labelErrorsueldo_emp"); // NOI18N
+
+        labelErrorid_comuna.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorid_comuna.setText("Comuna Empleado Obligatorio");
+        labelErrorid_comuna.setName("labelErrorid_comuna"); // NOI18N
+
+        labelErrorid_categoria_emp.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorid_categoria_emp.setText("Categoria Empleado Obligatorio");
+        labelErrorid_categoria_emp.setName("labelErrorid_categoria_emp"); // NOI18N
+
+        labelErrornumrut_supervisor.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrornumrut_supervisor.setText("Rut Supervisor Obligatorio");
+        labelErrornumrut_supervisor.setName("labelErrornumrut_supervisor"); // NOI18N
+
+        labelErrordireccion_emp.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrordireccion_emp.setText("Direccion Empleado Obligatorio");
+        labelErrordireccion_emp.setName("labelErrordireccion_emp"); // NOI18N
+
+        labelTituloPanelIngresarEmpleado.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        labelTituloPanelIngresarEmpleado.setText("Ingreso Nuevo Empleado");
+        labelTituloPanelIngresarEmpleado.setName("labelTituloPanelIngresarEmpleado"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -204,147 +300,213 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
                     .addComponent(labelIdCategoriaEmpleado)
                     .addComponent(labelRutSupervisor)
                     .addComponent(labelIdComunaEmpleado))
-                .addGap(64, 64, 64)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(comboBoxComunaEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(comboBoxid_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelErrorid_comuna)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inputNumRut_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputDvRut_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputAppaterno_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputApmaterno_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputNombre_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputDireccion_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputFonofijo_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputCelular_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputFecing_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputFecnac_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputSueldo_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputNumrut_supervisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(comboBoxEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(comboBoxCategoriaEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(inputnumrut_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelErrornumrut_emp))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(inputdvrut_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelErrordvrut_emp))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(inputappaterno_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelErrorappaterno_emp))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(inputapmaterno_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelErrorapmaterno_emp))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(inputnombre_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelErrornombre_emp))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(inputdireccion_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelErrordireccion_emp))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(inputfonofijo_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelErrorfonofijo_emp))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(inputcelular_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelErrorcelular_emp))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(inputfecing_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelErrorfecing_emp))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(inputfecnac_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelErrorfecnac_emp))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(inputsueldo_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelErrorsueldo_emp))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(inputnumrut_supervisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelErrornumrut_supervisor))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(comboBoxid_estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelErrorid_estcivil))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(comboBoxid_categoria_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelErrorid_categoria_emp)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(btnIngresarNuevoEmpleado)
-                .addGap(49, 49, 49)
-                .addComponent(btnLimpiarNuevoEmpleado)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(btnIngresarNuevoEmpleado)
+                        .addGap(49, 49, 49)
+                        .addComponent(btnLimpiarNuevoEmpleado))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(labelTituloPanelIngresarEmpleado)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(24, 24, 24)
+                .addComponent(labelTituloPanelIngresarEmpleado)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelRutEmpleado)
-                    .addComponent(inputNumRut_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputnumrut_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrornumrut_emp))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDVRutEmpleado)
-                    .addComponent(inputDvRut_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputdvrut_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrordvrut_emp))
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelApellidoPaternoEmpleado)
-                    .addComponent(inputAppaterno_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputappaterno_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorappaterno_emp))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelApellidoMaternoEmpleado)
-                    .addComponent(inputApmaterno_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputapmaterno_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorapmaterno_emp))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNombreEmpleado)
-                    .addComponent(inputNombre_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputnombre_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrornombre_emp))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDireccionEmpleado)
-                    .addComponent(inputDireccion_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputdireccion_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrordireccion_emp))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelIdEstadoCivil)
-                    .addComponent(comboBoxEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboBoxid_estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorid_estcivil))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelFonoFijoEmpleado)
-                    .addComponent(inputFonofijo_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputfonofijo_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorfonofijo_emp))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCelularEmpleado)
-                    .addComponent(inputCelular_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputcelular_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorcelular_emp))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelFechaNacimientoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputFecnac_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputfecnac_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorfecnac_emp))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelFechaIngresoEmpleado)
-                    .addComponent(inputFecing_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputfecing_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorfecing_emp))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelSueldoEmpleado)
-                    .addComponent(inputSueldo_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputsueldo_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorsueldo_emp))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelIdComunaEmpleado)
-                    .addComponent(comboBoxComunaEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboBoxid_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorid_comuna))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelIdCategoriaEmpleado)
-                    .addComponent(comboBoxCategoriaEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboBoxid_categoria_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorid_categoria_emp))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelRutSupervisor)
-                    .addComponent(inputNumrut_supervisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputnumrut_supervisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrornumrut_supervisor))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresarNuevoEmpleado)
                     .addComponent(btnLimpiarNuevoEmpleado))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputNumRut_empActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNumRut_empActionPerformed
+    private void inputnumrut_empActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputnumrut_empActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputNumRut_empActionPerformed
+    }//GEN-LAST:event_inputnumrut_empActionPerformed
 
-    private void inputDvRut_empActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDvRut_empActionPerformed
+    private void inputdvrut_empActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputdvrut_empActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputDvRut_empActionPerformed
+    }//GEN-LAST:event_inputdvrut_empActionPerformed
 
-    private void inputAppaterno_empActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputAppaterno_empActionPerformed
+    private void inputappaterno_empActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputappaterno_empActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputAppaterno_empActionPerformed
+    }//GEN-LAST:event_inputappaterno_empActionPerformed
 
     private void btnIngresarNuevoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevoEmpleadoActionPerformed
         
-        ArrayList<Comuna> resultadoComuna = comunaDao.buscarComuna((String)comboBoxComunaEmpleado.getSelectedItem());
-        ArrayList<EstadoCivil> resultadoEstadoCivil = estadocivilDao.buscarEstadoCivil((String)comboBoxEstadoCivil.getSelectedItem());
-        ArrayList<CategoriaEmpleado> resultadoCategoriaEmpleado = categoriaEmpleadoDao.buscarCategoriaEmpleado((String)comboBoxCategoriaEmpleado.getSelectedItem());
+        ArrayList<Comuna> resultadoComuna = comunaDao.buscarComuna((String)comboBoxid_comuna.getSelectedItem());
+        ArrayList<EstadoCivil> resultadoEstadoCivil = estadocivilDao.buscarEstadoCivil((String)comboBoxid_estcivil.getSelectedItem());
+        ArrayList<CategoriaEmpleado> resultadoCategoriaEmpleado = categoriaEmpleadoDao.buscarCategoriaEmpleado((String)comboBoxid_categoria_emp.getSelectedItem());
         
-        String dvrut = inputDvRut_emp.getText();
+        String dvrut = inputdvrut_emp.getText();
 
-        int numrut_emp = Integer.parseInt(inputNumRut_emp.getText());
+        int numrut_emp = Integer.parseInt(inputnumrut_emp.getText());
         char dvrut_emp = dvrut.charAt(0);
-        String appaterno_emp = inputAppaterno_emp.getText();
-        String apmaterno_emp = inputApmaterno_emp.getText();
-        String nombre_emp = inputNombre_emp.getText();
-        String direccion_emp = inputDireccion_emp.getText();
+        String appaterno_emp = inputappaterno_emp.getText();
+        String apmaterno_emp = inputapmaterno_emp.getText();
+        String nombre_emp = inputnombre_emp.getText();
+        String direccion_emp = inputdireccion_emp.getText();
         
-        int id_estcivil = misMetodos.comboBoxBuscarSeleccion(resultadoEstadoCivil);
+        int id_estcivil = MisMetodos.comboBoxBuscarSeleccion(resultadoEstadoCivil);
         //int id_estcivil = seleccionComboBoxEstadoCivil((String)comboBoxEstadoCivil.getSelectedItem());
         
-        String fonofijo_emp = inputFonofijo_emp.getText();
-        String celular_emp = inputCelular_emp.getText();
-        String fecnac_emp = inputFecnac_emp.getText(); //debe ser formato yyyy-mm-d = ind
-        String fecing_emp = inputFecing_emp.getText();
-        int sueldo_emp = Integer.parseInt(inputSueldo_emp.getText());
+        String fonofijo_emp = inputfonofijo_emp.getText();
+        String celular_emp = inputcelular_emp.getText();
+        String fecnac_emp = inputfecnac_emp.getText(); //debe ser formato yyyy-mm-d = ind
+        String fecing_emp = inputfecing_emp.getText();
+        int sueldo_emp = Integer.parseInt(inputsueldo_emp.getText());
         
-        int id_comuna = misMetodos.comboBoxBuscarSeleccion(resultadoComuna);;
+        int id_comuna = MisMetodos.comboBoxBuscarSeleccion(resultadoComuna);
         
-        int id_categoria_emp = misMetodos.comboBoxBuscarSeleccion(resultadoCategoriaEmpleado);
+        int id_categoria_emp = MisMetodos.comboBoxBuscarSeleccion(resultadoCategoriaEmpleado);
         
-        int numrut_supervisor = Integer.parseInt(inputNumrut_supervisor.getText());
+        int numrut_supervisor = Integer.parseInt(inputnumrut_supervisor.getText());
 
         ArrayList<Empleado> listaEmpleado = empleadoDao.buscarEmpleado(numrut_emp);
 
@@ -360,37 +522,52 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
     }//GEN-LAST:event_btnIngresarNuevoEmpleadoActionPerformed
 
     private void btnLimpiarNuevoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarNuevoEmpleadoActionPerformed
-        misMetodos.panelLimpiarComponentes(this);
+        MisMetodos.panelLimpiarComponentes(this);
     }//GEN-LAST:event_btnLimpiarNuevoEmpleadoActionPerformed
 
-    private void comboBoxEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxEstadoCivilActionPerformed
+    private void comboBoxid_estcivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxid_estcivilActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxEstadoCivilActionPerformed
+    }//GEN-LAST:event_comboBoxid_estcivilActionPerformed
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresarNuevoEmpleado;
     private javax.swing.JButton btnLimpiarNuevoEmpleado;
-    private javax.swing.JComboBox<String> comboBoxCategoriaEmpleado;
-    private javax.swing.JComboBox<String> comboBoxComunaEmpleado;
-    private javax.swing.JComboBox<String> comboBoxEstadoCivil;
-    private javax.swing.JTextField inputApmaterno_emp;
-    private javax.swing.JTextField inputAppaterno_emp;
-    private javax.swing.JTextField inputCelular_emp;
-    private javax.swing.JTextField inputDireccion_emp;
-    private javax.swing.JTextField inputDvRut_emp;
-    private javax.swing.JTextField inputFecing_emp;
-    private javax.swing.JTextField inputFecnac_emp;
-    private javax.swing.JTextField inputFonofijo_emp;
-    private javax.swing.JTextField inputNombre_emp;
-    private javax.swing.JTextField inputNumRut_emp;
-    private javax.swing.JTextField inputNumrut_supervisor;
-    private javax.swing.JTextField inputSueldo_emp;
+    private javax.swing.JComboBox<String> comboBoxid_categoria_emp;
+    private javax.swing.JComboBox<String> comboBoxid_comuna;
+    private javax.swing.JComboBox<String> comboBoxid_estcivil;
+    private javax.swing.JTextField inputapmaterno_emp;
+    private javax.swing.JTextField inputappaterno_emp;
+    private javax.swing.JTextField inputcelular_emp;
+    private javax.swing.JTextField inputdireccion_emp;
+    private javax.swing.JTextField inputdvrut_emp;
+    private javax.swing.JTextField inputfecing_emp;
+    private javax.swing.JTextField inputfecnac_emp;
+    private javax.swing.JTextField inputfonofijo_emp;
+    private javax.swing.JTextField inputnombre_emp;
+    private javax.swing.JTextField inputnumrut_emp;
+    private javax.swing.JTextField inputnumrut_supervisor;
+    private javax.swing.JTextField inputsueldo_emp;
     private javax.swing.JLabel labelApellidoMaternoEmpleado;
     private javax.swing.JLabel labelApellidoPaternoEmpleado;
     private javax.swing.JLabel labelCelularEmpleado;
     private javax.swing.JLabel labelDVRutEmpleado;
     private javax.swing.JLabel labelDireccionEmpleado;
+    private javax.swing.JLabel labelErrorapmaterno_emp;
+    private javax.swing.JLabel labelErrorappaterno_emp;
+    private javax.swing.JLabel labelErrorcelular_emp;
+    private javax.swing.JLabel labelErrordireccion_emp;
+    private javax.swing.JLabel labelErrordvrut_emp;
+    private javax.swing.JLabel labelErrorfecing_emp;
+    private javax.swing.JLabel labelErrorfecnac_emp;
+    private javax.swing.JLabel labelErrorfonofijo_emp;
+    private javax.swing.JLabel labelErrorid_categoria_emp;
+    private javax.swing.JLabel labelErrorid_comuna;
+    private javax.swing.JLabel labelErrorid_estcivil;
+    private javax.swing.JLabel labelErrornombre_emp;
+    private javax.swing.JLabel labelErrornumrut_emp;
+    private javax.swing.JLabel labelErrornumrut_supervisor;
+    private javax.swing.JLabel labelErrorsueldo_emp;
     private javax.swing.JLabel labelFechaIngresoEmpleado;
     private javax.swing.JLabel labelFechaNacimientoEmpleado;
     private javax.swing.JLabel labelFonoFijoEmpleado;
@@ -401,5 +578,6 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
     private javax.swing.JLabel labelRutEmpleado;
     private javax.swing.JLabel labelRutSupervisor;
     private javax.swing.JLabel labelSueldoEmpleado;
+    private javax.swing.JLabel labelTituloPanelIngresarEmpleado;
     // End of variables declaration//GEN-END:variables
 }

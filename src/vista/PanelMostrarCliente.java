@@ -244,7 +244,7 @@ public class PanelMostrarCliente extends javax.swing.JPanel {
 
         tabla = (DefaultTableModel)tablaTodosLosClientes.getModel();
         ArrayList<Cliente> listabuscarCliente = clienteDao.buscarCliente(numrut_cliInt);
-        misMetodos.tablaLimpiar(tablaTodosLosClientes);
+        MisMetodos.tablaLimpiar(tablaTodosLosClientes);
 
         if(listabuscarCliente.isEmpty()){
             JOptionPane.showInputDialog(this,"Cliente " + numrut_cliString + " No existe");

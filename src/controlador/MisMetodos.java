@@ -5,6 +5,8 @@
 package controlador;
 
 import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.lang.reflect.AnnotatedType;
@@ -54,7 +56,7 @@ public class MisMetodos {
     }
     
     //Este Metodo inicializa todos los labels de los campos vacios, dejandolos no visibles, JTextField.setVisible(false)
-    public void panelCamposErrorInicializador(javax.swing.JPanel nombrePanel){        
+    public static void panelCamposErrorInicializador(javax.swing.JPanel nombrePanel){        
         for (int i = 0; i < nombrePanel.getComponentCount(); i++) {
                         
             if (nombrePanel.getComponent(i).getClass().getName().equals("javax.swing.JLabel")&& nombrePanel.getComponent(i).getName() != null && nombrePanel.getComponent(i).getName().contains("Error")) {
@@ -90,7 +92,7 @@ public class MisMetodos {
     //LLenara un combo box con los valores String de un objeto.
     //creado para llenar un comboBox desde una base de datos con un ID numerico
     //y una descripcion de tipo String
-    public void comboboxLLenado(javax.swing.JComboBox<String> nombreCombobox, ArrayList<?> listadoCombobox){        
+    public static void comboboxLLenado(javax.swing.JComboBox<String> nombreCombobox, ArrayList<?> listadoCombobox){        
         try{
             nombreCombobox.removeAllItems();
 
@@ -278,7 +280,207 @@ public class MisMetodos {
         }
     }
     
-}    
+    
+    public static int contarAtributosObjeto(Object objeto) {
+        // Obtener la clase del objeto
+        Class<?> clase = objeto.getClass();        
+        // Obtener todos los campos (atributos) de la clase
+        Field[] atributos = clase.getDeclaredFields();
+        // Contar la cantidad de campos
+        return atributos.length;
+    }
+    
+    //Método para obtener el tipo de datos de los Atributos de un objeto usando Reflexion
+    public static AnnotatedType tiposdeDatosAtributosObjeto(Object objeto) {
+        int cantidadAtributos;
+
+        // Obtener la clase del objeto
+        Class<?> clase = objeto.getClass();       
+        // Obtener todos los campos (atributos) de la clase
+        Field[] campos = clase.getDeclaredFields();
+        cantidadAtributos = campos.length;
+        //arreglo para almacenar el tipo de dato de cada atributo del objeto
+        AnnotatedType[] tipoAtributos = new AnnotatedType[cantidadAtributos];
+        
+        for (int i = 0; i < cantidadAtributos; i++) {
+            tipoAtributos[i] = campos[i].getAnnotatedType();
+        }
+        // Enviar los tipos de Atributos en un Array de tipo AnnotatedType
+        return tipoAtributos[campos.length-1];
+    }
+    
+    /////////////////////////////////////////////////////////////////////////////////
+//METODOS PARA TABLAS
+
+    
+    public static void labelMensajeValidacion(javax.swing.JLabel nombreLabel, String MensajeLabel, String tipo){
+        if (tipo.equals("error")){
+            nombreLabel.setVisible(true);
+            nombreLabel.setText("Campo Obligatorio");
+            nombreLabel.setForeground(Color.red);
+        }else{
+            nombreLabel.setVisible(true);
+            nombreLabel.setText("OK");
+            nombreLabel.setForeground(Color.green);
+        }
+    } 
+    
+    public static ArrayList<Component> panelLabelErrorListado(javax.swing.JPanel nombrePanel){
+        
+        ArrayList<Component> listaLabels = new ArrayList();
+        
+        for (int i = 0; i < nombrePanel.getComponentCount(); i++) {
+            if(nombrePanel.getComponent(i).getName() != null && nombrePanel.getComponent(i).getName().contains("Error")){
+                listaLabels.add(nombrePanel.getComponent(i));
+            }
+        }
+        return listaLabels;
+        
+    }
+    
+    public static ArrayList<Component> panelInputsErrorListado(javax.swing.JPanel nombrePanel){
+        
+        ArrayList<Component> listaInputs = new ArrayList();
+        
+        for (int i = 0; i < nombrePanel.getComponentCount(); i++) {
+            if(nombrePanel.getComponent(i).getClass().getName().equals("javax.swing.JTextField")){
+                listaInputs.add(nombrePanel.getComponent(i));
+            }
+        }
+        return listaInputs;
+        
+    }
+    
+    
+    //####################Validadores de datos;
+    
+    public static boolean InputExisteVacio(ArrayList<Component> listaInputs){
+        boolean resultado = true;
+        JTextField field;
+        for (int i = 0; i < listaInputs.size(); i++) {            
+            field = (JTextField)listaInputs.get(i);
+            
+            if(field.getText().isEmpty()){
+                resultado = false;
+            }
+        }
+        return resultado;
+    }
+    
+    public static void inputsNoPuedenEstarVacios(ArrayList<Component> listaLabelError,ArrayList<Component> listaInputs){        
+        Component label;
+        Component input;
+        String nombreLabel;
+        String nombreInput;
+        JTextField field;
+
+        for (int i = 0; i < listaInputs.size(); i++) {            
+            field = (JTextField)listaInputs.get(i);
+
+            if(field.getText().isEmpty()){
+                input = listaInputs.get(i);
+                nombreInput = input.getName().substring(input.getName().length()-5);
+                
+                for(int j = 0; j < listaLabelError.size(); j++){
+                    label = listaLabelError.get(j);
+                    nombreLabel = label.getName();
+                    if(nombreLabel.contains(nombreInput)){
+                        labelMensajeValidacion((javax.swing.JLabel)label, "Campo no puede ser vacio", "error");
+                        listaLabelError.remove(j);
+                    }
+                }             
+            }else{
+                input = listaInputs.get(i);
+                nombreInput = input.getName().substring(input.getName().length()-5);
+                        
+                for(int g = 0; g < listaLabelError.size(); g++){
+                    label = listaLabelError.get(g);
+                    nombreLabel = label.getName();
+
+                    if(nombreLabel.contains(nombreInput)){
+                        labelMensajeValidacion((javax.swing.JLabel)label, "Ok", "ok");
+                    }
+                }//Fin for
+            }//fin Else
+        }//Fin for
+    }
+    
+    public static boolean inputNumeroEntero(JTextField input){
+
+        try{
+            int numero = Integer.parseInt(input.getText());
+            
+            return true;
+
+        }catch(NumberFormatException e){
+            return false;
+        }
+    }
+    
+    public static boolean inputNumeroFlotante(JTextField input){
+        
+        try{
+            float numero = Float.parseFloat(input.getText());               
+            return true;
+        }catch(NumberFormatException e){
+            return false;
+        }
+    }
+    
+    public static boolean inputListadoEsNumero(ArrayList<Component> listadoInputsNumeros){
+        boolean resultado = true;
+        
+            for (int i = 0; i < listadoInputsNumeros.size(); i++) {
+                JTextField input = (JTextField)listadoInputsNumeros.get(i);
+                if(inputNumeroEntero(input) || inputNumeroFlotante(input)){
+                    resultado = true;
+
+                }else{
+                    resultado = false;
+                    return resultado;
+                }   
+                
+            }
+            
+        return resultado;
+
+       
+    }
+    
+    public static void InputEsNumeroValido(ArrayList<Component> listadoInputsNumericos, ArrayList<Component> listadoLabelError){
+        
+        JTextField textField;
+        String nombreJTextField;
+        JLabel labelError;
+        String nombreLabelError;
+        
+        for (int i = 0; i < listadoInputsNumericos.size(); i++) {            
+            textField = (JTextField)listadoInputsNumericos.get(i);
+            nombreJTextField = listadoInputsNumericos.get(i).getName().substring(0,5);
+            
+            for (int j = 0; j < listadoLabelError.size(); j++) {
+                nombreLabelError = listadoLabelError.get(i).getName();
+                labelError = (JLabel)listadoLabelError.get(i);
+                if(nombreLabelError.contains(nombreJTextField) && (inputNumeroEntero(textField) || inputNumeroFlotante(textField))){                    
+                    labelMensajeValidacion(labelError, "Ok","ok" );
+                
+                }else{
+                    labelMensajeValidacion(labelError, "Numero no valido","error" );
+                }
+            }            
+        }
+        
+    }
+    
+}
+        
+        
+
+
+
+
+
+
     
 //ORIGENES
 //    public static int comboBoxBuscarSeleccion(ArrayList<?> listadoBuscarDao);

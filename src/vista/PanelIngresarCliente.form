@@ -49,108 +49,106 @@
                           </Group>
                           <Component id="labelRentaCli" alignment="1" min="-2" pref="98" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="inputDvrut_cli" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="inputAppaterno_cli" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="inputApmaterno_cli" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="inputDireccion_cli" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="inputFonofijo_cli" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="comboboxEstadoCivil" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="inputCelular_cli" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="inputNumrut_cli" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="inputRenta_cli" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="labelErrorNumeroRut" min="-2" pref="149" max="-2" attributes="0"/>
-                                  <Component id="labelErrorDigitoVerificador" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelErrorApellidoPaterno" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelErrorApellidoMaterno" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelErrorDireccion" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelErrorEstadoCivil" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelErrorTelefono" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelErrorCelular" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelErrorRenta" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="inputNombre_cli" min="-2" pref="149" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="labelErrorNombre" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="inputdvrut_cli" alignment="0" max="32767" attributes="0"/>
+                          <Component id="inputappaterno_cli" alignment="0" max="32767" attributes="0"/>
+                          <Component id="inputapmaterno_cli" alignment="0" max="32767" attributes="0"/>
+                          <Component id="inputdireccion_cli" alignment="0" max="32767" attributes="0"/>
+                          <Component id="inputfonofijo_cli" alignment="0" max="32767" attributes="0"/>
+                          <Component id="comboboxid_estcivil" alignment="0" max="32767" attributes="0"/>
+                          <Component id="inputcelular_cli" alignment="0" max="32767" attributes="0"/>
+                          <Component id="inputnumrut_cli" alignment="0" max="32767" attributes="0"/>
+                          <Component id="inputrenta_cli" alignment="0" max="32767" attributes="0"/>
+                          <Component id="inputnombre_cli" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="labelErrordvrut_cli" max="32767" attributes="0"/>
+                          <Component id="labelErrorappaterno_cli" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelErrorapmaterno_cli" max="32767" attributes="0"/>
+                          <Component id="labelErrordireccion_cli" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelErrorid_estcivil" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelErrorfonofijo_cli" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelErrorcelular_cli" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelErrorrenta_cli" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelErrornombre_cli" alignment="0" max="32767" attributes="0"/>
+                          <Component id="labelErrornumrut_cli" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                      <Component id="labelTituloCliente" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="27" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="labelTituloCliente" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelNumeroRutCli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputNumrut_cli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorNumeroRut" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputnumrut_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrornumrut_cli" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelDigitoVerificadorCli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputDvrut_cli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorDigitoVerificador" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputdvrut_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrordvrut_cli" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelApellidoPaternoCli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputAppaterno_cli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorApellidoPaterno" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputappaterno_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorappaterno_cli" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelApellidoMaternoCli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputApmaterno_cli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorApellidoMaterno" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputapmaterno_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorapmaterno_cli" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="inputnombre_cli" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelNombreCli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputNombre_cli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrornombre_cli" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelDireccionCli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputDireccion_cli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputdireccion_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrordireccion_cli" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelEstadoCivilCli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="comboboxEstadoCivil" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorEstadoCivil" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboboxid_estcivil" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorid_estcivil" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelTelefonoFijoCli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputFonofijo_cli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputfonofijo_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorfonofijo_cli" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelCelularCli" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
-                  <Component id="inputCelular_cli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorCelular" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputcelular_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorcelular_cli" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelRentaCli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputRenta_cli" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorRenta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputrenta_cli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorrenta_cli" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -168,15 +166,16 @@
         <Property name="text" type="java.lang.String" value="N&#xfa;mero de rut"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputNumrut_cli">
+    <Component class="javax.swing.JTextField" name="inputnumrut_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese numero de rut"/>
+        <Property name="name" type="java.lang.String" value="inputnumrut_cli" noResource="true"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputNumrut_cliActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputnumrut_cliActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="labelDigitoVerificadorCli">
@@ -184,15 +183,16 @@
         <Property name="text" type="java.lang.String" value="D&#xed;gito Verificador"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputDvrut_cli">
+    <Component class="javax.swing.JTextField" name="inputdvrut_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese digito verificador"/>
+        <Property name="name" type="java.lang.String" value="inputdvrut_cli" noResource="true"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputDvrut_cliActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputdvrut_cliActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="labelApellidoPaternoCli">
@@ -200,12 +200,13 @@
         <Property name="text" type="java.lang.String" value="Apellido Paterno"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputAppaterno_cli">
+    <Component class="javax.swing.JTextField" name="inputappaterno_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese apellido paterno"/>
+        <Property name="name" type="java.lang.String" value="inputappaterno_cli" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelApellidoMaternoCli">
@@ -213,12 +214,13 @@
         <Property name="text" type="java.lang.String" value="Apellido Materno"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputApmaterno_cli">
+    <Component class="javax.swing.JTextField" name="inputapmaterno_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese apellido materno"/>
+        <Property name="name" type="java.lang.String" value="inputapmaterno_cli" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelNombreCli">
@@ -226,12 +228,13 @@
         <Property name="text" type="java.lang.String" value="Nombre"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputNombre_cli">
+    <Component class="javax.swing.JTextField" name="inputnombre_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese nombre"/>
+        <Property name="name" type="java.lang.String" value="inputnombre_cli" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelDireccionCli">
@@ -239,12 +242,13 @@
         <Property name="text" type="java.lang.String" value="Direci&#xf3;n"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputDireccion_cli">
+    <Component class="javax.swing.JTextField" name="inputdireccion_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese direccion"/>
+        <Property name="name" type="java.lang.String" value="inputdireccion_cli" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelEstadoCivilCli">
@@ -252,9 +256,12 @@
         <Property name="text" type="java.lang.String" value="Estado Civil"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="comboboxEstadoCivil">
+    <Component class="javax.swing.JComboBox" name="comboboxid_estcivil">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="comboboxid_estcivil" noResource="true"/>
+      </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboboxEstadoCivilActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboboxid_estcivilActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -265,12 +272,13 @@
         <Property name="text" type="java.lang.String" value="Telefono Fijo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputFonofijo_cli">
+    <Component class="javax.swing.JTextField" name="inputfonofijo_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese telefono fijo"/>
+        <Property name="name" type="java.lang.String" value="inputfonofijo_cli" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelCelularCli">
@@ -278,12 +286,13 @@
         <Property name="text" type="java.lang.String" value="Celular"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputCelular_cli">
+    <Component class="javax.swing.JTextField" name="inputcelular_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese  telefono celular"/>
+        <Property name="name" type="java.lang.String" value="inputcelular_cli" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelRentaCli">
@@ -291,12 +300,13 @@
         <Property name="text" type="java.lang.String" value="Renta"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputRenta_cli">
+    <Component class="javax.swing.JTextField" name="inputrenta_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Renta del cliente"/>
+        <Property name="name" type="java.lang.String" value="inputrenta_cli" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnGuardarCliente">
@@ -315,95 +325,103 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpiarClienteActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorNumeroRut">
+    <Component class="javax.swing.JLabel" name="labelErrornumrut_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="N&#xfa;mero de rut obligatorio"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
         <Property name="verticalAlignment" type="int" value="1"/>
-        <Property name="name" type="java.lang.String" value="labelErrorNumeroRut" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="labelErrornumrut_cli" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorDigitoVerificador">
+    <Component class="javax.swing.JLabel" name="labelErrordvrut_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Digito Verificador obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorDigitoVerificador" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrordvrut_cli" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorApellidoPaterno">
+    <Component class="javax.swing.JLabel" name="labelErrorappaterno_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Apellido Paterno Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorApellidoPaterno" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorappaterno_cli" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorApellidoMaterno">
+    <Component class="javax.swing.JLabel" name="labelErrorapmaterno_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Apellido Materno Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorApellidoMaterno" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorapmaterno_cli" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorNombre">
+    <Component class="javax.swing.JLabel" name="labelErrornombre_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nombre Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorNombre" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrornombre_cli" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorDireccion">
+    <Component class="javax.swing.JLabel" name="labelErrordireccion_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Direccion Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorDireccion" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrordireccion_cli" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorEstadoCivil">
+    <Component class="javax.swing.JLabel" name="labelErrorid_estcivil">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Estado Civil Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorEstadoCivil" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorid_estcivil" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorTelefono">
+    <Component class="javax.swing.JLabel" name="labelErrorfonofijo_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Telefono Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorTelefono" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorfonofijo_cli" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorCelular">
+    <Component class="javax.swing.JLabel" name="labelErrorcelular_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Celular Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorCelular" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorcelular_cli" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorRenta">
+    <Component class="javax.swing.JLabel" name="labelErrorrenta_cli">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Renta Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorRenta" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorrenta_cli" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTituloCliente">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ingreso Nuevo Cliente"/>
       </Properties>
     </Component>
   </SubComponents>

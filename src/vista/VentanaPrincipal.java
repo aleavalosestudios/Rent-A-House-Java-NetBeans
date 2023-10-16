@@ -5,12 +5,9 @@
 package vista;
 
 import controlador.MisMetodos;
-import vista.PanelIngresarCategoriaEmpleado;
-import vista.PanelIngresarCliente;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 /**
  *
  * @author aleja
@@ -18,7 +15,7 @@ import java.awt.event.ActionListener;
 public class VentanaPrincipal extends javax.swing.JFrame {
     CardLayout cardLayout = new CardLayout();
     PanelIngresarCategoriaEmpleado panelCategoriaEmpleado;
-    MisMetodos misMetodos = new MisMetodos();
+    PanelInicial panelInicial = new PanelInicial();
     //JPanel panelVentanas = new JPanel();
     /**
      * Creates new form VentanaPrincipal
@@ -27,11 +24,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         initComponents();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setPreferredSize(new Dimension(800,800));
-        //setExtendedState(JFrame.MAXIMIZED_BOTH);
+        
                
         //Inicializar el CardLayout
         panelVentanas.setMaximumSize(new Dimension(1200,800));
+        MisMetodos.panelCentrar(panelVentanas,panelInicial);
         panelVentanas.setLayout(cardLayout);
+        
     }
     
     
@@ -75,8 +74,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         ScrollPanelVentanas = new javax.swing.JScrollPane();
         panelVentanas = new javax.swing.JPanel();
+        panelTitulo = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        btnInicio = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -347,7 +350,53 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         ScrollPanelVentanas.setViewportView(panelVentanas);
 
+        panelTitulo.setBackground(new java.awt.Color(0, 0, 255));
+        panelTitulo.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("PanelTitulo"), "PanelTitulo"));
+        panelTitulo.setName("panelTitulo"); // NOI18N
+
+        jLabel10.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("RENT A HOUSE");
+
+        btnInicio.setText("Inicio");
+        btnInicio.setName("btnInicio"); // NOI18N
+        btnInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInicioActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelTituloLayout = new javax.swing.GroupLayout(panelTitulo);
+        panelTitulo.setLayout(panelTituloLayout);
+        panelTituloLayout.setHorizontalGroup(
+            panelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTituloLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnInicio)
+                .addGap(69, 69, 69))
+        );
+        panelTituloLayout.setVerticalGroup(
+            panelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTituloLayout.createSequentialGroup()
+                .addGroup(panelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addComponent(btnInicio))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
         jMenu1.setText("File");
+
+        jMenuItem1.setText("inicio");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Edit");
@@ -362,14 +411,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(ScrollPanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ScrollPanelVentanas, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ScrollPanelVentanas, javax.swing.GroupLayout.DEFAULT_SIZE, 834, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(panelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(panelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ScrollPanelVentanas, javax.swing.GroupLayout.PREFERRED_SIZE, 699, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ScrollPanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 699, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -390,7 +441,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     
     private void btnIngresarCategoriaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarCategoriaEmpleadoActionPerformed
         panelCategoriaEmpleado = new PanelIngresarCategoriaEmpleado();
-        misMetodos.panelCentrar(panelVentanas, panelCategoriaEmpleado);
+        MisMetodos.panelCentrar(panelVentanas, panelCategoriaEmpleado);
 //        panelVentanas.add(panelCategoriaEmpleado, "PanelIngresarCategoria");
 //        cardLayout.show(panelVentanas, "PanelIngresarCategoria");     
 //        VentanaIngresarCategoriaEmpleado ventanaIngresarCategoriaEmpleado = new VentanaIngresarCategoriaEmpleado();
@@ -400,7 +451,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnIngresarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarClienteActionPerformed
         PanelIngresarCliente panelIngresarCliente= new PanelIngresarCliente();
-        misMetodos.panelCentrar(panelVentanas, panelIngresarCliente);
+        MisMetodos.panelCentrar(panelVentanas, panelIngresarCliente);
         
 //        panelVentanas.add(panelIngresarCliente, "PanelIngresarCliente");
 //        cardLayout.show(panelVentanas, "PanelIngresarCliente");
@@ -412,7 +463,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnVerEditarCategortiaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerEditarCategortiaEmpleadoActionPerformed
         PanelMostrarCategoriaEmpleado panelMostrarcategoriaEmpleado = new PanelMostrarCategoriaEmpleado();
-        misMetodos.panelCentrar(panelVentanas, panelMostrarcategoriaEmpleado);
+        MisMetodos.panelCentrar(panelVentanas, panelMostrarcategoriaEmpleado);
 //        panelVentanas.add(panelMostrarcategoriaEmpleado, "PanelMostrarCategoriaEmpleado");
 //        cardLayout.show(panelVentanas, "PanelMostrarCategoriaEmpleado");
 //        VentanaMostrarCategoriaEmpleado ventanaMostrarCategoriaEmpleado = new VentanaMostrarCategoriaEmpleado();
@@ -421,7 +472,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnVerEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerEditarClienteActionPerformed
         PanelMostrarCliente panelMostrarCliente = new PanelMostrarCliente();
-        misMetodos.panelCentrar(panelVentanas,panelMostrarCliente);
+        MisMetodos.panelCentrar(panelVentanas,panelMostrarCliente);
 //        panelVentanas.add(panelMostrarCliente, "PanelMostrarCliente");
 //        cardLayout.show(panelVentanas, "PanelMostrarCliente");
 //        VentanaMostrarCiente ventanaMostrarCliente = new VentanaMostrarCiente();
@@ -430,7 +481,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnIngresarComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarComunaActionPerformed
         PanelIngresarComuna panelIngresarComuna= new PanelIngresarComuna();
-        misMetodos.panelCentrar(panelVentanas,panelIngresarComuna);
+        MisMetodos.panelCentrar(panelVentanas,panelIngresarComuna);
 //        panelVentanas.add(panelIngresarComuna, "PanelIngresarComuna");
 //        cardLayout.show(panelVentanas, "PanelIngresarComuna");
 
@@ -440,7 +491,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnIngresarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarEmpleadoActionPerformed
         PanelIngresarEmpleado panelIngresarEmpleado = new PanelIngresarEmpleado();
-        misMetodos.panelCentrar(panelVentanas, panelIngresarEmpleado);
+        MisMetodos.panelCentrar(panelVentanas, panelIngresarEmpleado);
 //        panelVentanas.add(panelIngresarEmpleado, "PanelIngresarEmpleado");
 //        cardLayout.show(panelVentanas, "PanelIngresarEmpleado");
 //        VentanaIngresarEmpleado ventanaIngresarEmpleado = new VentanaIngresarEmpleado();
@@ -449,7 +500,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnIngresarEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarEstadoCivilActionPerformed
         PanelIngresarEstadoCivil panelIngresarEstadoCivil = new PanelIngresarEstadoCivil();
-        misMetodos.panelCentrar(panelVentanas, panelIngresarEstadoCivil);
+        MisMetodos.panelCentrar(panelVentanas, panelIngresarEstadoCivil);
 //        panelVentanas.add(panelIngresarEstadoCivil, "PanelIngresarEstadoCivil");
 //        cardLayout.show(panelVentanas, "PanelIngresarEstadoCivil");
 //        VentanaIngresarEstadoCivil ventanaIngresarEstadoCivil = new VentanaIngresarEstadoCivil();
@@ -458,7 +509,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnIngresarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarPropiedadActionPerformed
         PanelIngresarPropiedad panelIngresarPropiedad= new PanelIngresarPropiedad();
-        misMetodos.panelCentrar(panelVentanas, panelIngresarPropiedad);
+        MisMetodos.panelCentrar(panelVentanas, panelIngresarPropiedad);
 //        panelVentanas.add(panelIngresarPropiedad, "PanelIngresarPropiedad");
 //        cardLayout.show(panelVentanas, "PanelIngresarPropiedad");
 //        VentanaIngresarPropiedad ventanaIngresarPropiedad = new VentanaIngresarPropiedad();
@@ -467,7 +518,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnIngresarPropiedadArrendadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarPropiedadArrendadaActionPerformed
         PanelIngresarPropiedadArrendada panelIngresarPropiedadArrendada= new PanelIngresarPropiedadArrendada();
-        misMetodos.panelCentrar(panelVentanas, panelIngresarPropiedadArrendada);
+        MisMetodos.panelCentrar(panelVentanas, panelIngresarPropiedadArrendada);
 //        panelVentanas.add(panelIngresarPropiedadArrendada, "PanelIngresarPropiedadArrendada");
 //        cardLayout.show(panelVentanas, "PanelIngresarPropiedadArrendada");
 
@@ -477,7 +528,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnIngresarPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarPropietarioActionPerformed
         PanelIngresarPropietario panelIngresarPropietario= new PanelIngresarPropietario();
-        misMetodos.panelCentrar(panelVentanas,panelIngresarPropietario);
+        MisMetodos.panelCentrar(panelVentanas,panelIngresarPropietario);
 //        panelVentanas.add(panelIngresarPropietario, "PanelIngresarPropietario");
 //        cardLayout.show(panelVentanas, "PanelIngresarPropietario");
 
@@ -487,7 +538,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnIngresarTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarTipoPropiedadActionPerformed
         PanelIngresarTipoPropiedad panelIngresarTipoPropiedad= new PanelIngresarTipoPropiedad();
-        misMetodos.panelCentrar(panelVentanas, panelIngresarTipoPropiedad);
+        MisMetodos.panelCentrar(panelVentanas, panelIngresarTipoPropiedad);
 //        panelVentanas.add(panelIngresarTipoPropiedad, "PanelIngresarTipoPropiedad");
 //        cardLayout.show(panelVentanas, "PanelIngresarTipoPropiedad");
 
@@ -497,7 +548,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnEditarComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarComunaActionPerformed
         PanelMostrarComuna panelMostrarComuna= new PanelMostrarComuna();
-        misMetodos.panelCentrar(panelVentanas,panelMostrarComuna);
+        MisMetodos.panelCentrar(panelVentanas,panelMostrarComuna);
 //        panelVentanas.add(panelMostrarComuna, "PanelMostrarComuna");
 //        cardLayout.show(panelVentanas, "PanelMostrarComuna");
 
@@ -507,7 +558,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnEditarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEmpleadoActionPerformed
         PanelMostrarEmpleado panelMostrarEmpleado = new PanelMostrarEmpleado();
-        misMetodos.panelCentrar(panelVentanas,panelMostrarEmpleado);
+        MisMetodos.panelCentrar(panelVentanas,panelMostrarEmpleado);
 //        panelVentanas.add(panelMostrarEmpleado, "PanelMostrarEmpleado");
 //        cardLayout.show(panelVentanas, "PanelMostrarEmpleado");
 
@@ -517,7 +568,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnEditarEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEstadoCivilActionPerformed
         PanelMostarEstadoCivil panelMostarEstadoCivil = new PanelMostarEstadoCivil();
-        misMetodos.panelCentrar(panelVentanas,panelMostarEstadoCivil);
+        MisMetodos.panelCentrar(panelVentanas,panelMostarEstadoCivil);
 
 //        panelVentanas.add(panelMostarEstadoCivil, "PanelMostararEstadoCivil");
 //        cardLayout.show(panelVentanas, "PanelMostararEstadoCivil");
@@ -528,7 +579,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnEditarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPropiedadActionPerformed
         PanelMostrarPropiedad panelMostrarPropiedad = new PanelMostrarPropiedad();
-        misMetodos.panelCentrar(panelVentanas, panelMostrarPropiedad);
+        MisMetodos.panelCentrar(panelVentanas, panelMostrarPropiedad);
 //        panelVentanas.add(panelMostrarPropiedad, "PanelMostrarPropiedad");
 //        cardLayout.show(panelVentanas, "PanelMostrarPropiedad");
 
@@ -538,7 +589,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnEditarPropiedadArrendadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPropiedadArrendadaActionPerformed
         PanelMostrarPropiedadArrendada panelMostrarPropiedadArrendada = new PanelMostrarPropiedadArrendada();
-        misMetodos.panelCentrar(panelVentanas, panelMostrarPropiedadArrendada);
+        MisMetodos.panelCentrar(panelVentanas, panelMostrarPropiedadArrendada);
 //        panelVentanas.add(panelMostrarPropiedadArrendada, "PanelMostrarPropiedadArrendada");
 //        cardLayout.show(panelVentanas, "PanelMostrarPropiedadArrendada");
 //        VentanaMostrarPropiedadArrendada ventanaMostrarPropiedadArrendada = new VentanaMostrarPropiedadArrendada();
@@ -547,7 +598,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnEditarPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPropietarioActionPerformed
         PanelMostrarPropietario panelMostrarPropietario= new PanelMostrarPropietario();
-        misMetodos.panelCentrar(panelVentanas, panelMostrarPropietario);
+        MisMetodos.panelCentrar(panelVentanas, panelMostrarPropietario);
 //
 //        VentanaMostrarPropietario ventanaMostrarPropietario = new VentanaMostrarPropietario();
 //        abrirVentana(ventanaMostrarPropietario,"Mostrar Propietarios");
@@ -555,12 +606,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnEditarTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarTipoPropiedadActionPerformed
         PanelMostrarTipoPropiedad panelMostrarTipoPropiedad = new PanelMostrarTipoPropiedad();
-        misMetodos.panelCentrar(panelVentanas, panelMostrarTipoPropiedad);
+        MisMetodos.panelCentrar(panelVentanas, panelMostrarTipoPropiedad);
 //        panelVentanas.add(panelMostrarTipoPropiedad, "PanelMostrarTipoPropiedad");
 //        cardLayout.show(panelVentanas, "PanelMostrarTipoPropiedad");
 //        VentanaMostrarTipoPropiedad ventanaMostrarTipoPropiedad = new VentanaMostrarTipoPropiedad();
 //        abrirVentana(ventanaMostrarTipoPropiedad,"Mostrar Tipo Propiedad");
     }//GEN-LAST:event_btnEditarTipoPropiedadActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        MisMetodos.panelCentrar(panelVentanas,panelInicial);
+        panelVentanas.setLayout(cardLayout);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
+        PanelInicial  panelVienbenida= new PanelInicial();
+        MisMetodos.panelCentrar(panelVentanas, panelVienbenida);
+        panelVentanas.setLayout(cardLayout);
+    }//GEN-LAST:event_btnInicioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -617,9 +679,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnIngresarPropiedadArrendada;
     private javax.swing.JButton btnIngresarPropietario;
     private javax.swing.JButton btnIngresarTipoPropiedad;
+    private javax.swing.JButton btnInicio;
     private javax.swing.JButton btnVerEditarCategortiaEmpleado;
     private javax.swing.JButton btnVerEditarCliente;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -631,7 +695,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JPanel panelTitulo;
     private javax.swing.JPanel panelVentanas;
     // End of variables declaration//GEN-END:variables
     

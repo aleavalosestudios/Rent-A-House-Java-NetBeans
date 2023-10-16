@@ -21,13 +21,13 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
     Propietario propietario;
     PropietarioDao propietarioDao = new PropietarioDao();
     EstadoCivilDao estadoCivilDao = new EstadoCivilDao();
-    MisMetodos misMetodos = new MisMetodos();
+    
     /**
-     * Creates new form PanelIngresarPropietario
-     */
+     * Creates new form PanelIngresarPropietarioMisMetord     */
     public PanelIngresarPropietario() {
         initComponents();
-        misMetodos.comboboxLLenado(comboBoxEstadoCivil, estadoCivilDao.todosLosEstadoCivil());
+        MisMetodos.comboboxLLenado(comboBoxEstadoCivil, estadoCivilDao.todosLosEstadoCivil());
+        MisMetodos.panelCamposErrorInicializador(this);
     }
 
     /**
@@ -61,6 +61,17 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
         labelAppaterno_prop = new javax.swing.JLabel();
         inputApmaterno_prop = new javax.swing.JTextField();
         labelApmaterno_prop = new javax.swing.JLabel();
+        labelErrorNrutPropietarioObligatorio = new javax.swing.JLabel();
+        labelErrorRutPropietarioObligatorio = new javax.swing.JLabel();
+        labelErrorApellidoPaternoPropietarioObligatorio = new javax.swing.JLabel();
+        labelErrorApellidoMaternoPropietarioObligatorio = new javax.swing.JLabel();
+        labelErrorNombrePropietarioObligatorio = new javax.swing.JLabel();
+        labelErrorDireccionPropietarioObligatorio = new javax.swing.JLabel();
+        labelErrorEstadoCivilObligatorio = new javax.swing.JLabel();
+        labelErrorFonoFijoPropietarioObligatorio = new javax.swing.JLabel();
+        labelErrorCelularPropietario = new javax.swing.JLabel();
+        labelErrorComunaObligatorio = new javax.swing.JLabel();
+        labelTituloIngresarPropietario = new javax.swing.JLabel();
 
         inputNombre_prop.setForeground(new java.awt.Color(153, 153, 153));
         inputNombre_prop.setText("Ingrese Nombre Propietario");
@@ -123,87 +134,179 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
 
         labelApmaterno_prop.setText("Apellido Materno Propietario");
 
+        labelErrorNrutPropietarioObligatorio.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorNrutPropietarioObligatorio.setText("Nro Rut Propietario Obligatorio");
+        labelErrorNrutPropietarioObligatorio.setName("labelErrorNrutPropietarioObligatorio"); // NOI18N
+
+        labelErrorRutPropietarioObligatorio.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorRutPropietarioObligatorio.setText("DV Rut Propietario Obligatorio");
+        labelErrorRutPropietarioObligatorio.setName("labelErrorRutPropietarioObligatorio"); // NOI18N
+
+        labelErrorApellidoPaternoPropietarioObligatorio.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorApellidoPaternoPropietarioObligatorio.setText("Apellido Paterno Propietario Obligatorio");
+        labelErrorApellidoPaternoPropietarioObligatorio.setName("labelErrorApellidoPaternoPropietarioObligatorio"); // NOI18N
+
+        labelErrorApellidoMaternoPropietarioObligatorio.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorApellidoMaternoPropietarioObligatorio.setText("Apellido Materno Propietario Obligatorio");
+        labelErrorApellidoMaternoPropietarioObligatorio.setName("labelErrorApellidoMaternoPropietarioObligatorio"); // NOI18N
+
+        labelErrorNombrePropietarioObligatorio.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorNombrePropietarioObligatorio.setText("Nombre Propietario Obligatorio");
+        labelErrorNombrePropietarioObligatorio.setName("labelErrorNombrePropietarioObligatorio"); // NOI18N
+
+        labelErrorDireccionPropietarioObligatorio.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorDireccionPropietarioObligatorio.setText("Dirección Propietario Obligatorio");
+        labelErrorDireccionPropietarioObligatorio.setName("labelErrorDireccionPropietarioObligatorio"); // NOI18N
+
+        labelErrorEstadoCivilObligatorio.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorEstadoCivilObligatorio.setText("Estado Civil Obligatorio");
+        labelErrorEstadoCivilObligatorio.setName("labelErrorEstadoCivilObligatorio"); // NOI18N
+
+        labelErrorFonoFijoPropietarioObligatorio.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorFonoFijoPropietarioObligatorio.setText("Fono Fijo Propietario Obligatorio");
+        labelErrorFonoFijoPropietarioObligatorio.setName("labelErrorFonoFijoPropietarioObligatorio"); // NOI18N
+
+        labelErrorCelularPropietario.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorCelularPropietario.setText("Celular Propietario Obligatorio");
+        labelErrorCelularPropietario.setName("labelErrorCelularPropietario"); // NOI18N
+
+        labelErrorComunaObligatorio.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorComunaObligatorio.setText("Comuna Obligatorio");
+        labelErrorComunaObligatorio.setName("labelErrorComunaObligatorio"); // NOI18N
+
+        labelTituloIngresarPropietario.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        labelTituloIngresarPropietario.setText("Ingreso Nuevo Propietario");
+        labelTituloIngresarPropietario.setName("labelTituloIngresarPropietario"); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelNumrut_prop)
-                            .addComponent(labelDvrut_prop)
-                            .addComponent(labelAppaterno_prop)
-                            .addComponent(labelApmaterno_prop)
-                            .addComponent(labelNombre_prop)
-                            .addComponent(labelDireccion_prop)
-                            .addComponent(labelId_estcivil)
-                            .addComponent(labelFonofijo_prop)
-                            .addComponent(labelCelular_prop)
-                            .addComponent(labelId_Comuna))
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inputNumrut_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputDvrut_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputCelular_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputId_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputAppaterno_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputApmaterno_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputNombre_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputDireccion_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputFonofijo_prop, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(comboBoxEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(btnIngresarNuevoPropietario)
                         .addGap(18, 18, 18)
-                        .addComponent(btnLimpiarIngresoNuevoPropietario)))
-                .addGap(39, 39, 39))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelNumrut_prop)
+                                    .addComponent(labelDvrut_prop)
+                                    .addComponent(labelApmaterno_prop)
+                                    .addComponent(labelNombre_prop)
+                                    .addComponent(labelDireccion_prop)
+                                    .addComponent(labelId_estcivil)
+                                    .addComponent(labelFonofijo_prop)
+                                    .addComponent(labelCelular_prop)
+                                    .addComponent(labelId_Comuna)
+                                    .addComponent(labelAppaterno_prop))
+                                .addGap(22, 22, 22)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(inputDvrut_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(labelErrorRutPropietarioObligatorio))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(inputCelular_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(labelErrorCelularPropietario))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(inputId_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(labelErrorComunaObligatorio))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(inputAppaterno_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(labelErrorApellidoPaternoPropietarioObligatorio))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(inputApmaterno_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(labelErrorApellidoMaternoPropietarioObligatorio))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(inputNombre_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(labelErrorNombrePropietarioObligatorio))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(inputDireccion_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(labelErrorDireccionPropietarioObligatorio))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(inputFonofijo_prop, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(labelErrorFonoFijoPropietarioObligatorio))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(comboBoxEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(labelErrorEstadoCivilObligatorio))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(inputNumrut_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(labelErrorNrutPropietarioObligatorio))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(btnIngresarNuevoPropietario)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnLimpiarIngresoNuevoPropietario))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(labelTituloIngresarPropietario)))
+                .addGap(18, 18, 18))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addGap(28, 28, 28)
+                .addComponent(labelTituloIngresarPropietario)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNumrut_prop)
-                    .addComponent(inputNumrut_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputNumrut_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorNrutPropietarioObligatorio))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDvrut_prop)
-                    .addComponent(inputDvrut_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputDvrut_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorRutPropietarioObligatorio))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelAppaterno_prop)
-                    .addComponent(inputAppaterno_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputAppaterno_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorApellidoPaternoPropietarioObligatorio))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelApmaterno_prop)
-                    .addComponent(inputApmaterno_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputApmaterno_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorApellidoMaternoPropietarioObligatorio))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNombre_prop)
-                    .addComponent(inputNombre_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputNombre_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorNombrePropietarioObligatorio))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDireccion_prop)
-                    .addComponent(inputDireccion_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputDireccion_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorDireccionPropietarioObligatorio))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelId_estcivil)
-                    .addComponent(comboBoxEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(labelId_estcivil)
+                        .addComponent(comboBoxEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelErrorEstadoCivilObligatorio, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelFonofijo_prop)
-                    .addComponent(inputFonofijo_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputFonofijo_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorFonoFijoPropietarioObligatorio))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCelular_prop)
-                    .addComponent(inputCelular_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputCelular_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorCelularPropietario))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelId_Comuna)
-                    .addComponent(inputId_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputId_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorComunaObligatorio))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresarNuevoPropietario)
@@ -228,7 +331,7 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
             String nombre_prop = String.valueOf(inputNombre_prop.getText());
             String direccion_prop = String.valueOf(inputDireccion_prop.getText());
             
-            int id_estcivil = misMetodos.comboBoxBuscarSeleccion(listadoEstadoCivil);
+            int id_estcivil = MisMetodos.comboBoxBuscarSeleccion(listadoEstadoCivil);
             //int id_estcivil = buscarSeleccionComboboxEstadoCivil(String.valueOf(comboBoxEstadoCivil.getSelectedItem()));
             
             String fonofijo_prop = String.valueOf(inputFonofijo_prop.getText());
@@ -247,7 +350,7 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
     }//GEN-LAST:event_btnIngresarNuevoPropietarioActionPerformed
 
     private void btnLimpiarIngresoNuevoPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarIngresoNuevoPropietarioActionPerformed
-        misMetodos.panelLimpiarComponentes(this);
+        MisMetodos.panelLimpiarComponentes(this);
     }//GEN-LAST:event_btnLimpiarIngresoNuevoPropietarioActionPerformed
     
     
@@ -270,10 +373,21 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
     private javax.swing.JLabel labelCelular_prop;
     private javax.swing.JLabel labelDireccion_prop;
     private javax.swing.JLabel labelDvrut_prop;
+    private javax.swing.JLabel labelErrorApellidoMaternoPropietarioObligatorio;
+    private javax.swing.JLabel labelErrorApellidoPaternoPropietarioObligatorio;
+    private javax.swing.JLabel labelErrorCelularPropietario;
+    private javax.swing.JLabel labelErrorComunaObligatorio;
+    private javax.swing.JLabel labelErrorDireccionPropietarioObligatorio;
+    private javax.swing.JLabel labelErrorEstadoCivilObligatorio;
+    private javax.swing.JLabel labelErrorFonoFijoPropietarioObligatorio;
+    private javax.swing.JLabel labelErrorNombrePropietarioObligatorio;
+    private javax.swing.JLabel labelErrorNrutPropietarioObligatorio;
+    private javax.swing.JLabel labelErrorRutPropietarioObligatorio;
     private javax.swing.JLabel labelFonofijo_prop;
     private javax.swing.JLabel labelId_Comuna;
     private javax.swing.JLabel labelId_estcivil;
     private javax.swing.JLabel labelNombre_prop;
     private javax.swing.JLabel labelNumrut_prop;
+    private javax.swing.JLabel labelTituloIngresarPropietario;
     // End of variables declaration//GEN-END:variables
 }

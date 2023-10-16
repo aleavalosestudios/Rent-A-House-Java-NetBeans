@@ -19,19 +19,57 @@ import modelo.EstadoCivil;
  * @author aleja
  */
 public class PanelIngresarCliente extends javax.swing.JPanel {
-    MisMetodos mismetodos = new MisMetodos();
+    
     ClienteDao clienteDao = new ClienteDao();
     EstadoCivilDao estadoCivilDao = new EstadoCivilDao();
+    ArrayList<Component> listaLabelErrorVacios = new ArrayList<>();
+    ArrayList<Component> listaInputsNoVacios = new ArrayList<>();
+    ArrayList<Component> listaInputsNumeros = new ArrayList<>();
+    ArrayList<Component> listaLabelErrorNumeros = new ArrayList<>();
+    
     /**
      * Creates new form PanelIngresarCliente
      */
     public PanelIngresarCliente() {
         initComponents();
         //llenadoComboBoxEstadoCivil();
-        mismetodos.comboboxLLenado(comboboxEstadoCivil, estadoCivilDao.todosLosEstadoCivil());
-        mismetodos.panelCamposErrorInicializador(this);
+        MisMetodos.comboboxLLenado(comboboxid_estcivil, estadoCivilDao.todosLosEstadoCivil());
+        MisMetodos.panelCamposErrorInicializador(this);
+        
+        
+        listaLabelErrorVacios.add(labelErrornumrut_cli);
+        listaLabelErrorVacios.add(labelErrordvrut_cli);
+        listaLabelErrorVacios.add(labelErrorappaterno_cli);
+        listaLabelErrorVacios.add(labelErrorapmaterno_cli);
+        listaLabelErrorVacios.add(labelErrornombre_cli);
+        listaLabelErrorVacios.add(labelErrordireccion_cli);
+        listaLabelErrorVacios.add(labelErrorcelular_cli);
+          
+        
+        listaInputsNoVacios.add(inputnumrut_cli);
+        listaInputsNoVacios.add(inputdvrut_cli);
+        listaInputsNoVacios.add(inputappaterno_cli);
+        listaInputsNoVacios.add(inputapmaterno_cli);
+        listaInputsNoVacios.add(inputnombre_cli);
+        listaInputsNoVacios.add(inputdireccion_cli);
+        //listaInputs.add(comboboxid_estcivil);
+        listaInputsNoVacios.add(inputcelular_cli);
+   
+        
+        listaInputsNumeros.add(inputnumrut_cli);
+        listaInputsNumeros.add(inputfonofijo_cli);
+        listaInputsNumeros.add(inputcelular_cli);
+        listaInputsNumeros.add(inputrenta_cli);
+        
+        
+        listaLabelErrorNumeros.add(labelErrornumrut_cli);
+        listaLabelErrorNumeros.add(labelErrorfonofijo_cli);
+        listaLabelErrorNumeros.add(labelErrorcelular_cli);
+        listaLabelErrorNumeros.add(labelErrorrenta_cli);
     }
-
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,102 +80,113 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
     private void initComponents() {
 
         labelNumeroRutCli = new javax.swing.JLabel();
-        inputNumrut_cli = new javax.swing.JTextField();
+        inputnumrut_cli = new javax.swing.JTextField();
         labelDigitoVerificadorCli = new javax.swing.JLabel();
-        inputDvrut_cli = new javax.swing.JTextField();
+        inputdvrut_cli = new javax.swing.JTextField();
         labelApellidoPaternoCli = new javax.swing.JLabel();
-        inputAppaterno_cli = new javax.swing.JTextField();
+        inputappaterno_cli = new javax.swing.JTextField();
         labelApellidoMaternoCli = new javax.swing.JLabel();
-        inputApmaterno_cli = new javax.swing.JTextField();
+        inputapmaterno_cli = new javax.swing.JTextField();
         labelNombreCli = new javax.swing.JLabel();
-        inputNombre_cli = new javax.swing.JTextField();
+        inputnombre_cli = new javax.swing.JTextField();
         labelDireccionCli = new javax.swing.JLabel();
-        inputDireccion_cli = new javax.swing.JTextField();
+        inputdireccion_cli = new javax.swing.JTextField();
         labelEstadoCivilCli = new javax.swing.JLabel();
-        comboboxEstadoCivil = new javax.swing.JComboBox<>();
+        comboboxid_estcivil = new javax.swing.JComboBox<>();
         labelTelefonoFijoCli = new javax.swing.JLabel();
-        inputFonofijo_cli = new javax.swing.JTextField();
+        inputfonofijo_cli = new javax.swing.JTextField();
         labelCelularCli = new javax.swing.JLabel();
-        inputCelular_cli = new javax.swing.JTextField();
+        inputcelular_cli = new javax.swing.JTextField();
         labelRentaCli = new javax.swing.JLabel();
-        inputRenta_cli = new javax.swing.JTextField();
+        inputrenta_cli = new javax.swing.JTextField();
         btnGuardarCliente = new javax.swing.JButton();
         btnLimpiarCliente = new javax.swing.JButton();
-        labelErrorNumeroRut = new javax.swing.JLabel();
-        labelErrorDigitoVerificador = new javax.swing.JLabel();
-        labelErrorApellidoPaterno = new javax.swing.JLabel();
-        labelErrorApellidoMaterno = new javax.swing.JLabel();
-        labelErrorNombre = new javax.swing.JLabel();
-        labelErrorDireccion = new javax.swing.JLabel();
-        labelErrorEstadoCivil = new javax.swing.JLabel();
-        labelErrorTelefono = new javax.swing.JLabel();
-        labelErrorCelular = new javax.swing.JLabel();
-        labelErrorRenta = new javax.swing.JLabel();
+        labelErrornumrut_cli = new javax.swing.JLabel();
+        labelErrordvrut_cli = new javax.swing.JLabel();
+        labelErrorappaterno_cli = new javax.swing.JLabel();
+        labelErrorapmaterno_cli = new javax.swing.JLabel();
+        labelErrornombre_cli = new javax.swing.JLabel();
+        labelErrordireccion_cli = new javax.swing.JLabel();
+        labelErrorid_estcivil = new javax.swing.JLabel();
+        labelErrorfonofijo_cli = new javax.swing.JLabel();
+        labelErrorcelular_cli = new javax.swing.JLabel();
+        labelErrorrenta_cli = new javax.swing.JLabel();
+        labelTituloCliente = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createTitledBorder("Ingreso Clientes"));
 
         labelNumeroRutCli.setText("Número de rut");
 
-        inputNumrut_cli.setForeground(new java.awt.Color(153, 153, 153));
-        inputNumrut_cli.setText("Ingrese numero de rut");
-        inputNumrut_cli.addActionListener(new java.awt.event.ActionListener() {
+        inputnumrut_cli.setForeground(new java.awt.Color(153, 153, 153));
+        inputnumrut_cli.setText("Ingrese numero de rut");
+        inputnumrut_cli.setName("inputnumrut_cli"); // NOI18N
+        inputnumrut_cli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNumrut_cliActionPerformed(evt);
+                inputnumrut_cliActionPerformed(evt);
             }
         });
 
         labelDigitoVerificadorCli.setText("Dígito Verificador");
 
-        inputDvrut_cli.setForeground(new java.awt.Color(153, 153, 153));
-        inputDvrut_cli.setText("Ingrese digito verificador");
-        inputDvrut_cli.addActionListener(new java.awt.event.ActionListener() {
+        inputdvrut_cli.setForeground(new java.awt.Color(153, 153, 153));
+        inputdvrut_cli.setText("Ingrese digito verificador");
+        inputdvrut_cli.setName("inputdvrut_cli"); // NOI18N
+        inputdvrut_cli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputDvrut_cliActionPerformed(evt);
+                inputdvrut_cliActionPerformed(evt);
             }
         });
 
         labelApellidoPaternoCli.setText("Apellido Paterno");
 
-        inputAppaterno_cli.setForeground(new java.awt.Color(153, 153, 153));
-        inputAppaterno_cli.setText("Ingrese apellido paterno");
+        inputappaterno_cli.setForeground(new java.awt.Color(153, 153, 153));
+        inputappaterno_cli.setText("Ingrese apellido paterno");
+        inputappaterno_cli.setName("inputappaterno_cli"); // NOI18N
 
         labelApellidoMaternoCli.setText("Apellido Materno");
 
-        inputApmaterno_cli.setForeground(new java.awt.Color(153, 153, 153));
-        inputApmaterno_cli.setText("Ingrese apellido materno");
+        inputapmaterno_cli.setForeground(new java.awt.Color(153, 153, 153));
+        inputapmaterno_cli.setText("Ingrese apellido materno");
+        inputapmaterno_cli.setName("inputapmaterno_cli"); // NOI18N
 
         labelNombreCli.setText("Nombre");
 
-        inputNombre_cli.setForeground(new java.awt.Color(153, 153, 153));
-        inputNombre_cli.setText("Ingrese nombre");
+        inputnombre_cli.setForeground(new java.awt.Color(153, 153, 153));
+        inputnombre_cli.setText("Ingrese nombre");
+        inputnombre_cli.setName("inputnombre_cli"); // NOI18N
 
         labelDireccionCli.setText("Direción");
 
-        inputDireccion_cli.setForeground(new java.awt.Color(153, 153, 153));
-        inputDireccion_cli.setText("Ingrese direccion");
+        inputdireccion_cli.setForeground(new java.awt.Color(153, 153, 153));
+        inputdireccion_cli.setText("Ingrese direccion");
+        inputdireccion_cli.setName("inputdireccion_cli"); // NOI18N
 
         labelEstadoCivilCli.setText("Estado Civil");
 
-        comboboxEstadoCivil.addActionListener(new java.awt.event.ActionListener() {
+        comboboxid_estcivil.setName("comboboxid_estcivil"); // NOI18N
+        comboboxid_estcivil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboboxEstadoCivilActionPerformed(evt);
+                comboboxid_estcivilActionPerformed(evt);
             }
         });
 
         labelTelefonoFijoCli.setText("Telefono Fijo");
 
-        inputFonofijo_cli.setForeground(new java.awt.Color(153, 153, 153));
-        inputFonofijo_cli.setText("Ingrese telefono fijo");
+        inputfonofijo_cli.setForeground(new java.awt.Color(153, 153, 153));
+        inputfonofijo_cli.setText("Ingrese telefono fijo");
+        inputfonofijo_cli.setName("inputfonofijo_cli"); // NOI18N
 
         labelCelularCli.setText("Celular");
 
-        inputCelular_cli.setForeground(new java.awt.Color(153, 153, 153));
-        inputCelular_cli.setText("Ingrese  telefono celular");
+        inputcelular_cli.setForeground(new java.awt.Color(153, 153, 153));
+        inputcelular_cli.setText("Ingrese  telefono celular");
+        inputcelular_cli.setName("inputcelular_cli"); // NOI18N
 
         labelRentaCli.setText("Renta");
 
-        inputRenta_cli.setForeground(new java.awt.Color(153, 153, 153));
-        inputRenta_cli.setText("Ingrese Renta del cliente");
+        inputrenta_cli.setForeground(new java.awt.Color(153, 153, 153));
+        inputrenta_cli.setText("Ingrese Renta del cliente");
+        inputrenta_cli.setName("inputrenta_cli"); // NOI18N
 
         btnGuardarCliente.setText("Guardar Cliente");
         btnGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -153,46 +202,49 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
             }
         });
 
-        labelErrorNumeroRut.setForeground(new java.awt.Color(255, 0, 51));
-        labelErrorNumeroRut.setText("Número de rut obligatorio");
-        labelErrorNumeroRut.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        labelErrorNumeroRut.setName("labelErrorNumeroRut"); // NOI18N
+        labelErrornumrut_cli.setForeground(new java.awt.Color(255, 0, 51));
+        labelErrornumrut_cli.setText("Algun Texto");
+        labelErrornumrut_cli.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        labelErrornumrut_cli.setName("labelErrornumrut_cli"); // NOI18N
 
-        labelErrorDigitoVerificador.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorDigitoVerificador.setText("Digito Verificador obligatorio");
-        labelErrorDigitoVerificador.setName("labelErrorDigitoVerificador"); // NOI18N
+        labelErrordvrut_cli.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrordvrut_cli.setText("Algun Texto");
+        labelErrordvrut_cli.setName("labelErrordvrut_cli"); // NOI18N
 
-        labelErrorApellidoPaterno.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorApellidoPaterno.setText("Apellido Paterno Obligatorio");
-        labelErrorApellidoPaterno.setName("labelErrorApellidoPaterno"); // NOI18N
+        labelErrorappaterno_cli.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorappaterno_cli.setText("Algun Texto");
+        labelErrorappaterno_cli.setName("labelErrorappaterno_cli"); // NOI18N
 
-        labelErrorApellidoMaterno.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorApellidoMaterno.setText("Apellido Materno Obligatorio");
-        labelErrorApellidoMaterno.setName("labelErrorApellidoMaterno"); // NOI18N
+        labelErrorapmaterno_cli.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorapmaterno_cli.setText("Algun Texto");
+        labelErrorapmaterno_cli.setName("labelErrorapmaterno_cli"); // NOI18N
 
-        labelErrorNombre.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorNombre.setText("Nombre Obligatorio");
-        labelErrorNombre.setName("labelErrorNombre"); // NOI18N
+        labelErrornombre_cli.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrornombre_cli.setText("Algun Texto");
+        labelErrornombre_cli.setName("labelErrornombre_cli"); // NOI18N
 
-        labelErrorDireccion.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorDireccion.setText("Direccion Obligatorio");
-        labelErrorDireccion.setName("labelErrorDireccion"); // NOI18N
+        labelErrordireccion_cli.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrordireccion_cli.setText("Algun Texto");
+        labelErrordireccion_cli.setName("labelErrordireccion_cli"); // NOI18N
 
-        labelErrorEstadoCivil.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorEstadoCivil.setText("Estado Civil Obligatorio");
-        labelErrorEstadoCivil.setName("labelErrorEstadoCivil"); // NOI18N
+        labelErrorid_estcivil.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorid_estcivil.setText("Algun Texto");
+        labelErrorid_estcivil.setName("labelErrorid_estcivil"); // NOI18N
 
-        labelErrorTelefono.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorTelefono.setText("Telefono Obligatorio");
-        labelErrorTelefono.setName("labelErrorTelefono"); // NOI18N
+        labelErrorfonofijo_cli.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorfonofijo_cli.setText("Algun Texto");
+        labelErrorfonofijo_cli.setName("labelErrorfonofijo_cli"); // NOI18N
 
-        labelErrorCelular.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorCelular.setText("Celular Obligatorio");
-        labelErrorCelular.setName("labelErrorCelular"); // NOI18N
+        labelErrorcelular_cli.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorcelular_cli.setText("Algun Texto");
+        labelErrorcelular_cli.setName("labelErrorcelular_cli"); // NOI18N
 
-        labelErrorRenta.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorRenta.setText("Renta Obligatorio");
-        labelErrorRenta.setName("labelErrorRenta"); // NOI18N
+        labelErrorrenta_cli.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorrenta_cli.setText("Algun Texto");
+        labelErrorrenta_cli.setName("labelErrorrenta_cli"); // NOI18N
+
+        labelTituloCliente.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        labelTituloCliente.setText("Ingreso Nuevo Cliente");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -220,90 +272,90 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
                                     .addComponent(labelDireccionCli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addComponent(labelTelefonoFijoCli, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(labelRentaCli, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(inputDvrut_cli)
-                                    .addComponent(inputAppaterno_cli)
-                                    .addComponent(inputApmaterno_cli)
-                                    .addComponent(inputDireccion_cli)
-                                    .addComponent(inputFonofijo_cli)
-                                    .addComponent(comboboxEstadoCivil, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(inputCelular_cli)
-                                    .addComponent(inputNumrut_cli)
-                                    .addComponent(inputRenta_cli))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelErrorNumeroRut, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labelErrorDigitoVerificador)
-                                    .addComponent(labelErrorApellidoPaterno)
-                                    .addComponent(labelErrorApellidoMaterno)
-                                    .addComponent(labelErrorDireccion)
-                                    .addComponent(labelErrorEstadoCivil)
-                                    .addComponent(labelErrorTelefono)
-                                    .addComponent(labelErrorCelular)
-                                    .addComponent(labelErrorRenta)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(inputNombre_cli, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(labelErrorNombre)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(inputdvrut_cli)
+                            .addComponent(inputappaterno_cli)
+                            .addComponent(inputapmaterno_cli)
+                            .addComponent(inputdireccion_cli)
+                            .addComponent(inputfonofijo_cli)
+                            .addComponent(comboboxid_estcivil, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inputcelular_cli)
+                            .addComponent(inputnumrut_cli)
+                            .addComponent(inputrenta_cli)
+                            .addComponent(inputnombre_cli))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(labelErrordvrut_cli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelErrorappaterno_cli)
+                            .addComponent(labelErrorapmaterno_cli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelErrordireccion_cli)
+                            .addComponent(labelErrorid_estcivil)
+                            .addComponent(labelErrorfonofijo_cli)
+                            .addComponent(labelErrorcelular_cli)
+                            .addComponent(labelErrorrenta_cli)
+                            .addComponent(labelErrornombre_cli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelErrornumrut_cli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(labelTituloCliente)))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addContainerGap()
+                .addComponent(labelTituloCliente)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNumeroRutCli)
-                    .addComponent(inputNumrut_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorNumeroRut))
+                    .addComponent(inputnumrut_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrornumrut_cli))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDigitoVerificadorCli)
-                    .addComponent(inputDvrut_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorDigitoVerificador))
+                    .addComponent(inputdvrut_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrordvrut_cli))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelApellidoPaternoCli)
-                    .addComponent(inputAppaterno_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorApellidoPaterno))
+                    .addComponent(inputappaterno_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorappaterno_cli))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelApellidoMaternoCli)
-                    .addComponent(inputApmaterno_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorApellidoMaterno))
+                    .addComponent(inputapmaterno_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorapmaterno_cli))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputnombre_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelNombreCli)
-                    .addComponent(inputNombre_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorNombre))
+                    .addComponent(labelErrornombre_cli))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDireccionCli)
-                    .addComponent(inputDireccion_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorDireccion))
+                    .addComponent(inputdireccion_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrordireccion_cli))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelEstadoCivilCli)
-                    .addComponent(comboboxEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorEstadoCivil))
+                    .addComponent(comboboxid_estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorid_estcivil))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTelefonoFijoCli)
-                    .addComponent(inputFonofijo_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorTelefono))
+                    .addComponent(inputfonofijo_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorfonofijo_cli))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCelularCli, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputCelular_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorCelular))
+                    .addComponent(inputcelular_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorcelular_cli))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelRentaCli)
-                    .addComponent(inputRenta_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorRenta))
+                    .addComponent(inputrenta_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorrenta_cli))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardarCliente)
@@ -311,96 +363,105 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void inputNumrut_cliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNumrut_cliActionPerformed
+    
+    private void inputnumrut_cliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputnumrut_cliActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputNumrut_cliActionPerformed
+    }//GEN-LAST:event_inputnumrut_cliActionPerformed
 
-    private void inputDvrut_cliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDvrut_cliActionPerformed
+    private void inputdvrut_cliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputdvrut_cliActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputDvrut_cliActionPerformed
+    }//GEN-LAST:event_inputdvrut_cliActionPerformed
 
-    private void comboboxEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboboxEstadoCivilActionPerformed
+    private void comboboxid_estcivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboboxid_estcivilActionPerformed
 
-    }//GEN-LAST:event_comboboxEstadoCivilActionPerformed
+    }//GEN-LAST:event_comboboxid_estcivilActionPerformed
 
     private void btnGuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarClienteActionPerformed
-        int numrut_cli;
-        char dvrut_cli;
-        String appaterno_cli;
-        String apmaterno_cli;
-        String nombre_cli;
-        String direccion_cli;
-        int id_estcivil;
-        int fonofijo_cli;
-        int celular_cli;
-        int renta_cli;
-        ArrayList resultadoBusqueda = estadoCivilDao.buscarEstadoCivil((String)comboboxEstadoCivil.getSelectedItem());
-
-        numrut_cli = Integer.parseInt(inputNumrut_cli.getText());
-        dvrut_cli = inputDvrut_cli.getText().charAt(0);
-        appaterno_cli = inputAppaterno_cli.getText();
-        apmaterno_cli = inputApmaterno_cli.getText();
-        nombre_cli = inputNombre_cli.getText();
-        direccion_cli = inputDireccion_cli.getText();
         
         
-        id_estcivil = mismetodos.comboBoxBuscarSeleccion(resultadoBusqueda);////buscarSeleccionComboboxEstadoCivil((String)comboboxEstadoCivil.getSelectedItem());
-
-        fonofijo_cli = Integer.parseInt(inputFonofijo_cli.getText());
-        celular_cli = Integer.parseInt(inputCelular_cli.getText());
-        renta_cli = Integer.parseInt(inputRenta_cli.getText());
-
-        Cliente cliente = new Cliente( numrut_cli,dvrut_cli,appaterno_cli,apmaterno_cli,nombre_cli,direccion_cli,id_estcivil,fonofijo_cli,celular_cli,renta_cli);
-
-        if(clienteDao.buscarCliente(numrut_cli).isEmpty()){
-            clienteDao.ingresarCliente(cliente);
-            JOptionPane.showMessageDialog(this,"Cliente "+
-                cliente.getNombre_cli()+" "+
-                cliente.getAppaterno_cli()+
-                "\nIngresado");
+        if(MisMetodos.InputExisteVacio(listaInputsNoVacios) == false){
+            MisMetodos.inputsNoPuedenEstarVacios(listaLabelErrorVacios, listaInputsNoVacios);
+            
         }else{
-            JOptionPane.showMessageDialog(this,"Cliente ya existe");//para enviar mensaje a usuario
-        }    
+            
+            int numrut_cli;
+            char dvrut_cli;
+            String appaterno_cli;
+            String apmaterno_cli;
+            String nombre_cli;
+            String direccion_cli;
+            int id_estcivil;
+            int fonofijo_cli;
+            int celular_cli;
+            int renta_cli;
+            ArrayList resultadoBusqueda = estadoCivilDao.buscarEstadoCivil((String)comboboxid_estcivil.getSelectedItem());
+
+            numrut_cli = Integer.parseInt(inputnumrut_cli.getText());
+            dvrut_cli = inputdvrut_cli.getText().charAt(0);
+            appaterno_cli = inputappaterno_cli.getText();
+            apmaterno_cli = inputapmaterno_cli.getText();
+            nombre_cli = inputnombre_cli.getText();
+            direccion_cli = inputdireccion_cli.getText();
+
+            id_estcivil = MisMetodos.comboBoxBuscarSeleccion(resultadoBusqueda);////buscarSeleccionComboboxEstadoCivil((String)comboboxEstadoCivil.getSelectedItem());
+
+            fonofijo_cli = Integer.parseInt(inputfonofijo_cli.getText());
+            celular_cli = Integer.parseInt(inputcelular_cli.getText());
+            renta_cli = Integer.parseInt(inputrenta_cli.getText());
+
+            Cliente cliente = new Cliente( numrut_cli,dvrut_cli,appaterno_cli,apmaterno_cli,nombre_cli,direccion_cli,id_estcivil,fonofijo_cli,celular_cli,renta_cli);
+
+            if(clienteDao.buscarCliente(numrut_cli).isEmpty()){
+                clienteDao.ingresarCliente(cliente);
+                JOptionPane.showMessageDialog(this,"Cliente "+
+                    cliente.getNombre_cli()+" "+
+                    cliente.getAppaterno_cli()+
+                    "\nIngresado");
+            }else{
+                JOptionPane.showMessageDialog(this,"Cliente ya existe");//para enviar mensaje a usuario
+            }    
+        }
     }//GEN-LAST:event_btnGuardarClienteActionPerformed
 
     private void btnLimpiarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarClienteActionPerformed
-       mismetodos.panelLimpiarComponentes(this);
+       MisMetodos.panelLimpiarComponentes(this);
+       MisMetodos.panelCamposErrorInicializador(this);
     }//GEN-LAST:event_btnLimpiarClienteActionPerformed
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardarCliente;
     private javax.swing.JButton btnLimpiarCliente;
-    private javax.swing.JComboBox<String> comboboxEstadoCivil;
-    private javax.swing.JTextField inputApmaterno_cli;
-    private javax.swing.JTextField inputAppaterno_cli;
-    private javax.swing.JTextField inputCelular_cli;
-    private javax.swing.JTextField inputDireccion_cli;
-    private javax.swing.JTextField inputDvrut_cli;
-    private javax.swing.JTextField inputFonofijo_cli;
-    private javax.swing.JTextField inputNombre_cli;
-    private javax.swing.JTextField inputNumrut_cli;
-    private javax.swing.JTextField inputRenta_cli;
+    private javax.swing.JComboBox<String> comboboxid_estcivil;
+    private javax.swing.JTextField inputapmaterno_cli;
+    private javax.swing.JTextField inputappaterno_cli;
+    private javax.swing.JTextField inputcelular_cli;
+    private javax.swing.JTextField inputdireccion_cli;
+    private javax.swing.JTextField inputdvrut_cli;
+    private javax.swing.JTextField inputfonofijo_cli;
+    private javax.swing.JTextField inputnombre_cli;
+    private javax.swing.JTextField inputnumrut_cli;
+    private javax.swing.JTextField inputrenta_cli;
     private javax.swing.JLabel labelApellidoMaternoCli;
     private javax.swing.JLabel labelApellidoPaternoCli;
     private javax.swing.JLabel labelCelularCli;
     private javax.swing.JLabel labelDigitoVerificadorCli;
     private javax.swing.JLabel labelDireccionCli;
-    private javax.swing.JLabel labelErrorApellidoMaterno;
-    private javax.swing.JLabel labelErrorApellidoPaterno;
-    private javax.swing.JLabel labelErrorCelular;
-    private javax.swing.JLabel labelErrorDigitoVerificador;
-    private javax.swing.JLabel labelErrorDireccion;
-    private javax.swing.JLabel labelErrorEstadoCivil;
-    private javax.swing.JLabel labelErrorNombre;
-    private javax.swing.JLabel labelErrorNumeroRut;
-    private javax.swing.JLabel labelErrorRenta;
-    private javax.swing.JLabel labelErrorTelefono;
+    private javax.swing.JLabel labelErrorapmaterno_cli;
+    private javax.swing.JLabel labelErrorappaterno_cli;
+    private javax.swing.JLabel labelErrorcelular_cli;
+    private javax.swing.JLabel labelErrordireccion_cli;
+    private javax.swing.JLabel labelErrordvrut_cli;
+    private javax.swing.JLabel labelErrorfonofijo_cli;
+    private javax.swing.JLabel labelErrorid_estcivil;
+    private javax.swing.JLabel labelErrornombre_cli;
+    private javax.swing.JLabel labelErrornumrut_cli;
+    private javax.swing.JLabel labelErrorrenta_cli;
     private javax.swing.JLabel labelEstadoCivilCli;
     private javax.swing.JLabel labelNombreCli;
     private javax.swing.JLabel labelNumeroRutCli;
     private javax.swing.JLabel labelRentaCli;
     private javax.swing.JLabel labelTelefonoFijoCli;
+    private javax.swing.JLabel labelTituloCliente;
     // End of variables declaration//GEN-END:variables
 }
