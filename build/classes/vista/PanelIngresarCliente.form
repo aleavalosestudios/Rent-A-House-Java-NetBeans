@@ -422,6 +422,7 @@
           <Font name="Segoe UI" size="18" style="3"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingreso Nuevo Cliente"/>
+        <Property name="name" type="java.lang.String" value="labelTituloCliente" noResource="true"/>
       </Properties>
     </Component>
   </SubComponents>

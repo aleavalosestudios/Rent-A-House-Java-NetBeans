@@ -45,37 +45,37 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         ScrollPanelPrincipal = new javax.swing.JScrollPane();
         panelPrincipal = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        labelPanelPrincipalCategoriaEmpleado = new javax.swing.JLabel();
         btnIngresarPropiedad = new javax.swing.JButton();
         btnIngresarPropietario = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        labelPanelPrincipaComuna = new javax.swing.JLabel();
         btnIngresarPropiedadArrendada = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        labelPanelPrincipapropiedad = new javax.swing.JLabel();
         btnIngresarEmpleado = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        labelPanelPrincipaEstadoCivil = new javax.swing.JLabel();
         btnEditarPropiedad = new javax.swing.JButton();
         btnEditarEmpleado = new javax.swing.JButton();
         btnIngresarEstadoCivil = new javax.swing.JButton();
         btnIngresarTipoPropiedad = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
+        labelPanelPrincipaPropietario = new javax.swing.JLabel();
         btnEditarTipoPropiedad = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
+        labelPanelPrincipaTipoPropiedad = new javax.swing.JLabel();
         btnVerEditarCategortiaEmpleado = new javax.swing.JButton();
         btnEditarComuna = new javax.swing.JButton();
         btnIngresarCategoriaEmpleado = new javax.swing.JButton();
         btnIngresarComuna = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        labelPanelPrincipaCliente = new javax.swing.JLabel();
         btnVerEditarCliente = new javax.swing.JButton();
         btnIngresarCliente = new javax.swing.JButton();
         btnEditarPropiedadArrendada = new javax.swing.JButton();
         btnEditarEstadoCivil = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
+        labelPanelPrincipaPropiedadArrendada = new javax.swing.JLabel();
         btnEditarPropietario = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        labelPanelPrincipaEmpleado = new javax.swing.JLabel();
         ScrollPanelVentanas = new javax.swing.JScrollPane();
         panelVentanas = new javax.swing.JPanel();
         panelTitulo = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
+        labelTituloAplicacion = new javax.swing.JLabel();
         btnInicio = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -90,7 +90,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         panelPrincipal.setBorder(javax.swing.BorderFactory.createTitledBorder("Panel Principal"));
 
-        jLabel1.setText("Categoria Empleado");
+        labelPanelPrincipalCategoriaEmpleado.setText("Categoria Empleado");
 
         btnIngresarPropiedad.setText("Ingresar Propiedad");
         btnIngresarPropiedad.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +106,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Comuna");
+        labelPanelPrincipaComuna.setText("Comuna");
 
         btnIngresarPropiedadArrendada.setText("Ingresar Propiedad Arrendada");
         btnIngresarPropiedadArrendada.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +115,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setText("Propiedad");
+        labelPanelPrincipapropiedad.setText("Propiedad");
 
         btnIngresarEmpleado.setText("Ingresar Empleado");
         btnIngresarEmpleado.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +124,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Estado Civil");
+        labelPanelPrincipaEstadoCivil.setText("Estado Civil");
 
         btnEditarPropiedad.setText("Ver / Modificar Propiedad");
         btnEditarPropiedad.addActionListener(new java.awt.event.ActionListener() {
@@ -154,7 +154,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setText("Propietario");
+        labelPanelPrincipaPropietario.setText("Propietario");
 
         btnEditarTipoPropiedad.setText("Ver / Modificar Tipo Propiedad");
         btnEditarTipoPropiedad.addActionListener(new java.awt.event.ActionListener() {
@@ -163,7 +163,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setText("Tipo Propiedad");
+        labelPanelPrincipaTipoPropiedad.setText("Tipo Propiedad");
 
         btnVerEditarCategortiaEmpleado.setText("Ver / Modificar Categoria Empleado");
         btnVerEditarCategortiaEmpleado.addActionListener(new java.awt.event.ActionListener() {
@@ -193,7 +193,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Cliente");
+        labelPanelPrincipaCliente.setText("Cliente");
 
         btnVerEditarCliente.setText("Ver / Modificar Cliente");
         btnVerEditarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -223,7 +223,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setText("Propiedad Arrendada");
+        labelPanelPrincipaPropiedadArrendada.setText("Propiedad Arrendada");
 
         btnEditarPropietario.setText("Ver / Modificar Propietario");
         btnEditarPropietario.addActionListener(new java.awt.event.ActionListener() {
@@ -232,7 +232,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Empleado");
+        labelPanelPrincipaEmpleado.setText("Empleado");
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(panelPrincipalLayout);
@@ -241,29 +241,29 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(panelPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addComponent(labelPanelPrincipalCategoriaEmpleado)
                     .addComponent(btnIngresarComuna)
                     .addComponent(btnIngresarEmpleado)
                     .addComponent(btnIngresarEstadoCivil)
                     .addComponent(btnIngresarPropiedad)
                     .addComponent(btnVerEditarCliente)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
+                    .addComponent(labelPanelPrincipaEmpleado)
+                    .addComponent(labelPanelPrincipaEstadoCivil)
+                    .addComponent(labelPanelPrincipapropiedad)
                     .addComponent(btnEditarComuna)
                     .addComponent(btnEditarEstadoCivil)
                     .addComponent(btnEditarEmpleado)
                     .addComponent(btnIngresarCliente)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelPanelPrincipaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnIngresarCategoriaEmpleado)
                     .addComponent(btnVerEditarCategortiaEmpleado)
-                    .addComponent(jLabel3)
+                    .addComponent(labelPanelPrincipaComuna)
                     .addComponent(btnIngresarPropiedadArrendada)
                     .addComponent(btnIngresarPropietario)
                     .addComponent(btnIngresarTipoPropiedad)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9)
+                    .addComponent(labelPanelPrincipaPropiedadArrendada)
+                    .addComponent(labelPanelPrincipaPropietario)
+                    .addComponent(labelPanelPrincipaTipoPropiedad)
                     .addComponent(btnEditarPropiedad)
                     .addComponent(btnEditarPropiedadArrendada)
                     .addComponent(btnEditarPropietario)
@@ -273,55 +273,55 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPrincipalLayout.createSequentialGroup()
-                .addComponent(jLabel1)
+                .addComponent(labelPanelPrincipalCategoriaEmpleado)
                 .addGap(12, 12, 12)
                 .addComponent(btnIngresarCategoriaEmpleado)
                 .addGap(18, 18, 18)
                 .addComponent(btnVerEditarCategortiaEmpleado)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(labelPanelPrincipaCliente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnIngresarCliente)
                 .addGap(18, 18, 18)
                 .addComponent(btnVerEditarCliente)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addComponent(labelPanelPrincipaComuna)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnIngresarComuna)
                 .addGap(18, 18, 18)
                 .addComponent(btnEditarComuna)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
+                .addComponent(labelPanelPrincipaEmpleado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnIngresarEmpleado)
                 .addGap(18, 18, 18)
                 .addComponent(btnEditarEmpleado)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel5)
+                .addComponent(labelPanelPrincipaEstadoCivil)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnIngresarEstadoCivil)
                 .addGap(18, 18, 18)
                 .addComponent(btnEditarEstadoCivil)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel6)
+                .addComponent(labelPanelPrincipapropiedad)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnIngresarPropiedad)
                 .addGap(18, 18, 18)
                 .addComponent(btnEditarPropiedad)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel7)
+                .addComponent(labelPanelPrincipaPropiedadArrendada)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnIngresarPropiedadArrendada, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnEditarPropiedadArrendada)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel8)
+                .addComponent(labelPanelPrincipaPropietario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnIngresarPropietario)
                 .addGap(18, 18, 18)
                 .addComponent(btnEditarPropietario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel9)
+                .addComponent(labelPanelPrincipaTipoPropiedad)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnIngresarTipoPropiedad)
                 .addGap(18, 18, 18)
@@ -354,10 +354,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         panelTitulo.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("PanelTitulo"), "PanelTitulo"));
         panelTitulo.setName("panelTitulo"); // NOI18N
 
-        jLabel10.setBackground(new java.awt.Color(0, 0, 255));
-        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("RENT A HOUSE");
+        labelTituloAplicacion.setBackground(new java.awt.Color(0, 0, 255));
+        labelTituloAplicacion.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        labelTituloAplicacion.setForeground(new java.awt.Color(255, 255, 255));
+        labelTituloAplicacion.setText("RENT A HOUSE");
 
         btnInicio.setText("Inicio");
         btnInicio.setName("btnInicio"); // NOI18N
@@ -373,7 +373,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             panelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTituloLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel10)
+                .addComponent(labelTituloAplicacion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnInicio)
                 .addGap(69, 69, 69))
@@ -382,7 +382,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             panelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTituloLayout.createSequentialGroup()
                 .addGroup(panelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10)
+                    .addComponent(labelTituloAplicacion)
                     .addComponent(btnInicio))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -442,175 +442,109 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void btnIngresarCategoriaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarCategoriaEmpleadoActionPerformed
         panelCategoriaEmpleado = new PanelIngresarCategoriaEmpleado();
         MisMetodos.panelCentrar(panelVentanas, panelCategoriaEmpleado);
-//        panelVentanas.add(panelCategoriaEmpleado, "PanelIngresarCategoria");
-//        cardLayout.show(panelVentanas, "PanelIngresarCategoria");     
-//        VentanaIngresarCategoriaEmpleado ventanaIngresarCategoriaEmpleado = new VentanaIngresarCategoriaEmpleado();
-//        abrirVentana(ventanaIngresarCategoriaEmpleado,"Registro CategoriaEmpleado");
-        
+
     }//GEN-LAST:event_btnIngresarCategoriaEmpleadoActionPerformed
 
     private void btnIngresarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarClienteActionPerformed
         PanelIngresarCliente panelIngresarCliente= new PanelIngresarCliente();
         MisMetodos.panelCentrar(panelVentanas, panelIngresarCliente);
-        
-//        panelVentanas.add(panelIngresarCliente, "PanelIngresarCliente");
-//        cardLayout.show(panelVentanas, "PanelIngresarCliente");
-//        
-//        VentanaIngresarCliente  ventanaIngresarCliente = new VentanaIngresarCliente();
-//        abrirVentana(ventanaIngresarCliente, "Registro Cliente");
-    
+           
     }//GEN-LAST:event_btnIngresarClienteActionPerformed
 
     private void btnVerEditarCategortiaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerEditarCategortiaEmpleadoActionPerformed
         PanelMostrarCategoriaEmpleado panelMostrarcategoriaEmpleado = new PanelMostrarCategoriaEmpleado();
         MisMetodos.panelCentrar(panelVentanas, panelMostrarcategoriaEmpleado);
-//        panelVentanas.add(panelMostrarcategoriaEmpleado, "PanelMostrarCategoriaEmpleado");
-//        cardLayout.show(panelVentanas, "PanelMostrarCategoriaEmpleado");
-//        VentanaMostrarCategoriaEmpleado ventanaMostrarCategoriaEmpleado = new VentanaMostrarCategoriaEmpleado();
-//        abrirVentana(ventanaMostrarCategoriaEmpleado,"Ver Categorias Empleado");
+
     }//GEN-LAST:event_btnVerEditarCategortiaEmpleadoActionPerformed
 
     private void btnVerEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerEditarClienteActionPerformed
         PanelMostrarCliente panelMostrarCliente = new PanelMostrarCliente();
         MisMetodos.panelCentrar(panelVentanas,panelMostrarCliente);
-//        panelVentanas.add(panelMostrarCliente, "PanelMostrarCliente");
-//        cardLayout.show(panelVentanas, "PanelMostrarCliente");
-//        VentanaMostrarCiente ventanaMostrarCliente = new VentanaMostrarCiente();
-//        abrirVentana(ventanaMostrarCliente,"Mostrar Clientes");
+
     }//GEN-LAST:event_btnVerEditarClienteActionPerformed
 
     private void btnIngresarComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarComunaActionPerformed
         PanelIngresarComuna panelIngresarComuna= new PanelIngresarComuna();
         MisMetodos.panelCentrar(panelVentanas,panelIngresarComuna);
-//        panelVentanas.add(panelIngresarComuna, "PanelIngresarComuna");
-//        cardLayout.show(panelVentanas, "PanelIngresarComuna");
 
-//        VentanaIngresarComuna ventanaIngresarComuna = new VentanaIngresarComuna();
-//        abrirVentana(ventanaIngresarComuna,"Ingreso Nueva Comuna");        // TODO add your handling code here:
     }//GEN-LAST:event_btnIngresarComunaActionPerformed
 
     private void btnIngresarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarEmpleadoActionPerformed
         PanelIngresarEmpleado panelIngresarEmpleado = new PanelIngresarEmpleado();
         MisMetodos.panelCentrar(panelVentanas, panelIngresarEmpleado);
-//        panelVentanas.add(panelIngresarEmpleado, "PanelIngresarEmpleado");
-//        cardLayout.show(panelVentanas, "PanelIngresarEmpleado");
-//        VentanaIngresarEmpleado ventanaIngresarEmpleado = new VentanaIngresarEmpleado();
-//        abrirVentana(ventanaIngresarEmpleado,"Ingreso Nuevo Empleado");
+
     }//GEN-LAST:event_btnIngresarEmpleadoActionPerformed
 
     private void btnIngresarEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarEstadoCivilActionPerformed
         PanelIngresarEstadoCivil panelIngresarEstadoCivil = new PanelIngresarEstadoCivil();
         MisMetodos.panelCentrar(panelVentanas, panelIngresarEstadoCivil);
-//        panelVentanas.add(panelIngresarEstadoCivil, "PanelIngresarEstadoCivil");
-//        cardLayout.show(panelVentanas, "PanelIngresarEstadoCivil");
-//        VentanaIngresarEstadoCivil ventanaIngresarEstadoCivil = new VentanaIngresarEstadoCivil();
-//        abrirVentana(ventanaIngresarEstadoCivil,"Ingreso Nuevo Estado Civil");
+
     }//GEN-LAST:event_btnIngresarEstadoCivilActionPerformed
 
     private void btnIngresarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarPropiedadActionPerformed
         PanelIngresarPropiedad panelIngresarPropiedad= new PanelIngresarPropiedad();
         MisMetodos.panelCentrar(panelVentanas, panelIngresarPropiedad);
-//        panelVentanas.add(panelIngresarPropiedad, "PanelIngresarPropiedad");
-//        cardLayout.show(panelVentanas, "PanelIngresarPropiedad");
-//        VentanaIngresarPropiedad ventanaIngresarPropiedad = new VentanaIngresarPropiedad();
-//        abrirVentana(ventanaIngresarPropiedad,"Ingreso Nueva Propiedad");
+
     }//GEN-LAST:event_btnIngresarPropiedadActionPerformed
 
     private void btnIngresarPropiedadArrendadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarPropiedadArrendadaActionPerformed
         PanelIngresarPropiedadArrendada panelIngresarPropiedadArrendada= new PanelIngresarPropiedadArrendada();
         MisMetodos.panelCentrar(panelVentanas, panelIngresarPropiedadArrendada);
-//        panelVentanas.add(panelIngresarPropiedadArrendada, "PanelIngresarPropiedadArrendada");
-//        cardLayout.show(panelVentanas, "PanelIngresarPropiedadArrendada");
 
-//        VentanaIngresoPropiedadArrendada ventanaIngresoPropiedadArrendada = new VentanaIngresoPropiedadArrendada();
-//        abrirVentana(ventanaIngresoPropiedadArrendada,"Ingreso Nuevo Arriendo De Propiedad");
     }//GEN-LAST:event_btnIngresarPropiedadArrendadaActionPerformed
 
     private void btnIngresarPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarPropietarioActionPerformed
         PanelIngresarPropietario panelIngresarPropietario= new PanelIngresarPropietario();
         MisMetodos.panelCentrar(panelVentanas,panelIngresarPropietario);
-//        panelVentanas.add(panelIngresarPropietario, "PanelIngresarPropietario");
-//        cardLayout.show(panelVentanas, "PanelIngresarPropietario");
 
-//        VentanaIngresarPropietario ventanaIngresarPropietario = new VentanaIngresarPropietario();
-//        abrirVentana(ventanaIngresarPropietario,"Ingreso Nuevo Propietario");
     }//GEN-LAST:event_btnIngresarPropietarioActionPerformed
 
     private void btnIngresarTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarTipoPropiedadActionPerformed
         PanelIngresarTipoPropiedad panelIngresarTipoPropiedad= new PanelIngresarTipoPropiedad();
         MisMetodos.panelCentrar(panelVentanas, panelIngresarTipoPropiedad);
-//        panelVentanas.add(panelIngresarTipoPropiedad, "PanelIngresarTipoPropiedad");
-//        cardLayout.show(panelVentanas, "PanelIngresarTipoPropiedad");
 
-//        VentanaIngresoTipoPropiedad ventanaIngresoTipoPropiedad = new VentanaIngresoTipoPropiedad();
-//        abrirVentana(ventanaIngresoTipoPropiedad,"Ingreso Nuevo Tipo De Propidad");
     }//GEN-LAST:event_btnIngresarTipoPropiedadActionPerformed
 
     private void btnEditarComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarComunaActionPerformed
         PanelMostrarComuna panelMostrarComuna= new PanelMostrarComuna();
         MisMetodos.panelCentrar(panelVentanas,panelMostrarComuna);
-//        panelVentanas.add(panelMostrarComuna, "PanelMostrarComuna");
-//        cardLayout.show(panelVentanas, "PanelMostrarComuna");
 
-//        VentanaMostrarComuna ventanaMostrarComuna = new VentanaMostrarComuna();
-//        abrirVentana(ventanaMostrarComuna,"Mostrar Comunas");
     }//GEN-LAST:event_btnEditarComunaActionPerformed
 
     private void btnEditarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEmpleadoActionPerformed
         PanelMostrarEmpleado panelMostrarEmpleado = new PanelMostrarEmpleado();
         MisMetodos.panelCentrar(panelVentanas,panelMostrarEmpleado);
-//        panelVentanas.add(panelMostrarEmpleado, "PanelMostrarEmpleado");
-//        cardLayout.show(panelVentanas, "PanelMostrarEmpleado");
 
-//        VentanaMostrarEmpleado ventanaMostrarEmpleado = new VentanaMostrarEmpleado();
-//        abrirVentana(ventanaMostrarEmpleado,"Mostrar Empleados");
     }//GEN-LAST:event_btnEditarEmpleadoActionPerformed
 
     private void btnEditarEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEstadoCivilActionPerformed
         PanelMostarEstadoCivil panelMostarEstadoCivil = new PanelMostarEstadoCivil();
         MisMetodos.panelCentrar(panelVentanas,panelMostarEstadoCivil);
 
-//        panelVentanas.add(panelMostarEstadoCivil, "PanelMostararEstadoCivil");
-//        cardLayout.show(panelVentanas, "PanelMostararEstadoCivil");
-
-//        VentanaMostrarEstadoCivil ventanaMostrarEstadoCivil = new VentanaMostrarEstadoCivil();
-//        abrirVentana(ventanaMostrarEstadoCivil,"Mostrar Registro Civil");
     }//GEN-LAST:event_btnEditarEstadoCivilActionPerformed
 
     private void btnEditarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPropiedadActionPerformed
         PanelMostrarPropiedad panelMostrarPropiedad = new PanelMostrarPropiedad();
         MisMetodos.panelCentrar(panelVentanas, panelMostrarPropiedad);
-//        panelVentanas.add(panelMostrarPropiedad, "PanelMostrarPropiedad");
-//        cardLayout.show(panelVentanas, "PanelMostrarPropiedad");
 
-//        VentanaMostrarPropiedad ventanaMostrarPropiedad = new VentanaMostrarPropiedad();
-//        abrirVentana(ventanaMostrarPropiedad,"Mostrar Propiedad");
     }//GEN-LAST:event_btnEditarPropiedadActionPerformed
 
     private void btnEditarPropiedadArrendadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPropiedadArrendadaActionPerformed
         PanelMostrarPropiedadArrendada panelMostrarPropiedadArrendada = new PanelMostrarPropiedadArrendada();
         MisMetodos.panelCentrar(panelVentanas, panelMostrarPropiedadArrendada);
-//        panelVentanas.add(panelMostrarPropiedadArrendada, "PanelMostrarPropiedadArrendada");
-//        cardLayout.show(panelVentanas, "PanelMostrarPropiedadArrendada");
-//        VentanaMostrarPropiedadArrendada ventanaMostrarPropiedadArrendada = new VentanaMostrarPropiedadArrendada();
-//        abrirVentana(ventanaMostrarPropiedadArrendada,"Mostrar Propiedad");
+
     }//GEN-LAST:event_btnEditarPropiedadArrendadaActionPerformed
 
     private void btnEditarPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPropietarioActionPerformed
         PanelMostrarPropietario panelMostrarPropietario= new PanelMostrarPropietario();
         MisMetodos.panelCentrar(panelVentanas, panelMostrarPropietario);
-//
-//        VentanaMostrarPropietario ventanaMostrarPropietario = new VentanaMostrarPropietario();
-//        abrirVentana(ventanaMostrarPropietario,"Mostrar Propietarios");
+
     }//GEN-LAST:event_btnEditarPropietarioActionPerformed
 
     private void btnEditarTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarTipoPropiedadActionPerformed
         PanelMostrarTipoPropiedad panelMostrarTipoPropiedad = new PanelMostrarTipoPropiedad();
         MisMetodos.panelCentrar(panelVentanas, panelMostrarTipoPropiedad);
-//        panelVentanas.add(panelMostrarTipoPropiedad, "PanelMostrarTipoPropiedad");
-//        cardLayout.show(panelVentanas, "PanelMostrarTipoPropiedad");
-//        VentanaMostrarTipoPropiedad ventanaMostrarTipoPropiedad = new VentanaMostrarTipoPropiedad();
-//        abrirVentana(ventanaMostrarTipoPropiedad,"Mostrar Tipo Propiedad");
+
     }//GEN-LAST:event_btnEditarTipoPropiedadActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -682,20 +616,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnInicio;
     private javax.swing.JButton btnVerEditarCategortiaEmpleado;
     private javax.swing.JButton btnVerEditarCliente;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JLabel labelPanelPrincipaCliente;
+    private javax.swing.JLabel labelPanelPrincipaComuna;
+    private javax.swing.JLabel labelPanelPrincipaEmpleado;
+    private javax.swing.JLabel labelPanelPrincipaEstadoCivil;
+    private javax.swing.JLabel labelPanelPrincipaPropiedadArrendada;
+    private javax.swing.JLabel labelPanelPrincipaPropietario;
+    private javax.swing.JLabel labelPanelPrincipaTipoPropiedad;
+    private javax.swing.JLabel labelPanelPrincipalCategoriaEmpleado;
+    private javax.swing.JLabel labelPanelPrincipapropiedad;
+    private javax.swing.JLabel labelTituloAplicacion;
     private javax.swing.JPanel panelPrincipal;
     private javax.swing.JPanel panelTitulo;
     private javax.swing.JPanel panelVentanas;

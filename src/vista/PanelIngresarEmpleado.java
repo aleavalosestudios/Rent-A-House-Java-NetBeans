@@ -9,6 +9,7 @@ import controlador.ComunaDao;
 import controlador.EmpleadoDao;
 import controlador.EstadoCivilDao;
 import controlador.MisMetodos;
+import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import modelo.CategoriaEmpleado;
@@ -22,11 +23,23 @@ import modelo.EstadoCivil;
  */
 public class PanelIngresarEmpleado extends javax.swing.JPanel {
     Empleado empleado;
-    
     EmpleadoDao empleadoDao = new EmpleadoDao();
     EstadoCivilDao estadocivilDao = new EstadoCivilDao();
     CategoriaEmpleadoDao categoriaEmpleadoDao = new CategoriaEmpleadoDao();
     ComunaDao comunaDao = new ComunaDao();
+    
+    ArrayList<Component> listadoInputsNoVacios = new ArrayList<>();
+    ArrayList<Component> listadoLabelErrorsNoVacios = new ArrayList<>();
+    
+    ArrayList<Component> listadoInputsNumeros = new ArrayList<>();
+    ArrayList<Component> listadoLabelErrorNumeros = new ArrayList<>();
+    
+    ArrayList<Component> listadoFechaValida = new ArrayList<>();
+    ArrayList<Component> listadoLabelErrorFecha= new ArrayList<>();
+    
+    
+    char[] arrayCharPermitido = {'0','1','2','3','4','5','6','7','8','9','K'};     
+
     /**
      * Creates new form PanelIngresarEmpleado
      */
@@ -36,6 +49,48 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
         MisMetodos.comboboxLLenado(comboBoxid_comuna, comunaDao.mostrarComunas());
         MisMetodos.comboboxLLenado(comboBoxid_estcivil, estadocivilDao.todosLosEstadoCivil());
         MisMetodos.panelCamposErrorInicializador(this);
+        
+        listadoInputsNoVacios.add(inputnumrut_emp);
+        listadoInputsNoVacios.add(inputdvrut_emp);
+        listadoInputsNoVacios.add(inputappaterno_emp);
+        listadoInputsNoVacios.add(inputapmaterno_emp);
+        listadoInputsNoVacios.add(inputnombre_emp);
+        listadoInputsNoVacios.add(inputdireccion_emp);
+        listadoInputsNoVacios.add(inputfonofijo_emp);
+        listadoInputsNoVacios.add(inputfecing_emp);
+        listadoInputsNoVacios.add(inputsueldo_emp);
+        
+        listadoLabelErrorsNoVacios.add(labelErrornumrut_emp);
+        listadoLabelErrorsNoVacios.add(labelErrordvrut_emp);
+        listadoLabelErrorsNoVacios.add(labelErrorappaterno_emp);
+        listadoLabelErrorsNoVacios.add(labelErrorapmaterno_emp);
+        listadoLabelErrorsNoVacios.add(labelErrornombre_emp);
+        listadoLabelErrorsNoVacios.add(labelErrordireccion_emp);
+        listadoLabelErrorsNoVacios.add(labelErrorfonofijo_emp);
+        listadoLabelErrorsNoVacios.add(labelErrorfecing_emp);
+        listadoLabelErrorsNoVacios.add(labelErrorsueldo_emp);
+        
+        listadoInputsNumeros.add(inputnumrut_emp);
+        listadoInputsNumeros.add(inputfonofijo_emp);
+        listadoInputsNumeros.add(inputcelular_emp);
+        listadoInputsNumeros.add(inputsueldo_emp);
+        listadoInputsNumeros.add(inputnumrut_supervisor);
+        
+        listadoLabelErrorNumeros.add(labelErrornumrut_emp);
+        listadoLabelErrorNumeros.add(labelErrorfonofijo_emp);
+        listadoLabelErrorNumeros.add(labelErrorcelular_emp);
+        listadoLabelErrorNumeros.add(labelErrorsueldo_emp);
+        listadoLabelErrorNumeros.add(labelErrornumrut_supervisor);
+        
+        listadoFechaValida.add(inputfecing_emp);
+        listadoFechaValida.add(inputfecnac_emp);
+        
+        listadoLabelErrorFecha.add(labelErrorfecing_emp);
+        listadoLabelErrorFecha.add(labelErrorfecnac_emp);
+        
+        char[] arrayCharPermitido = {'0','1','2','3','4','5','6','7','8','9','K'};     
+
+        
     }
 
     /**
@@ -310,61 +365,61 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(inputnumrut_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(inputnumrut_emp, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(labelErrornumrut_emp))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(inputdvrut_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(inputdvrut_emp, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(labelErrordvrut_emp))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(inputappaterno_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(labelErrorappaterno_emp))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(inputapmaterno_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(labelErrorapmaterno_emp))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(inputnombre_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(labelErrornombre_emp))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(inputdireccion_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(labelErrordireccion_emp))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(inputfonofijo_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(inputfonofijo_emp, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(labelErrorfonofijo_emp))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(inputcelular_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(inputcelular_emp, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(labelErrorcelular_emp))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(inputfecing_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(inputfecing_emp, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(labelErrorfecing_emp))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(inputfecnac_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(inputfecnac_emp, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(labelErrorfecnac_emp))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(inputsueldo_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(inputsueldo_emp, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(labelErrorsueldo_emp))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(inputnumrut_supervisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(inputnumrut_supervisor, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(labelErrornumrut_supervisor))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(comboBoxid_estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(comboBoxid_estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(labelErrorid_estcivil))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(comboBoxid_categoria_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(labelErrorid_categoria_emp)))
+                                .addComponent(labelErrorid_categoria_emp))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(inputapmaterno_emp, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(labelErrorapmaterno_emp))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(inputdireccion_emp, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(labelErrordireccion_emp))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(inputappaterno_emp, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(labelErrorappaterno_emp))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(inputnombre_emp, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(labelErrornombre_emp)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -376,7 +431,7 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(96, 96, 96)
                         .addComponent(labelTituloPanelIngresarEmpleado)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 345, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -394,10 +449,11 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
                     .addComponent(inputdvrut_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelErrordvrut_emp))
                 .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelApellidoPaternoEmpleado)
-                    .addComponent(inputappaterno_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorappaterno_emp))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelErrorappaterno_emp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(labelApellidoPaternoEmpleado)
+                        .addComponent(inputappaterno_emp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelApellidoMaternoEmpleado)
@@ -479,50 +535,58 @@ public class PanelIngresarEmpleado extends javax.swing.JPanel {
     }//GEN-LAST:event_inputappaterno_empActionPerformed
 
     private void btnIngresarNuevoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevoEmpleadoActionPerformed
-        
-        ArrayList<Comuna> resultadoComuna = comunaDao.buscarComuna((String)comboBoxid_comuna.getSelectedItem());
-        ArrayList<EstadoCivil> resultadoEstadoCivil = estadocivilDao.buscarEstadoCivil((String)comboBoxid_estcivil.getSelectedItem());
-        ArrayList<CategoriaEmpleado> resultadoCategoriaEmpleado = categoriaEmpleadoDao.buscarCategoriaEmpleado((String)comboBoxid_categoria_emp.getSelectedItem());
-        
-        String dvrut = inputdvrut_emp.getText();
-
-        int numrut_emp = Integer.parseInt(inputnumrut_emp.getText());
-        char dvrut_emp = dvrut.charAt(0);
-        String appaterno_emp = inputappaterno_emp.getText();
-        String apmaterno_emp = inputapmaterno_emp.getText();
-        String nombre_emp = inputnombre_emp.getText();
-        String direccion_emp = inputdireccion_emp.getText();
-        
-        int id_estcivil = MisMetodos.comboBoxBuscarSeleccion(resultadoEstadoCivil);
-        //int id_estcivil = seleccionComboBoxEstadoCivil((String)comboBoxEstadoCivil.getSelectedItem());
-        
-        String fonofijo_emp = inputfonofijo_emp.getText();
-        String celular_emp = inputcelular_emp.getText();
-        String fecnac_emp = inputfecnac_emp.getText(); //debe ser formato yyyy-mm-d = ind
-        String fecing_emp = inputfecing_emp.getText();
-        int sueldo_emp = Integer.parseInt(inputsueldo_emp.getText());
-        
-        int id_comuna = MisMetodos.comboBoxBuscarSeleccion(resultadoComuna);
-        
-        int id_categoria_emp = MisMetodos.comboBoxBuscarSeleccion(resultadoCategoriaEmpleado);
-        
-        int numrut_supervisor = Integer.parseInt(inputnumrut_supervisor.getText());
-
-        ArrayList<Empleado> listaEmpleado = empleadoDao.buscarEmpleado(numrut_emp);
-
-        if(listaEmpleado.isEmpty()){
-            empleado = new Empleado(numrut_emp, dvrut_emp, appaterno_emp, apmaterno_emp, nombre_emp, direccion_emp, id_estcivil, fonofijo_emp, celular_emp, fecnac_emp, fecing_emp, sueldo_emp, id_comuna, id_categoria_emp, numrut_supervisor);
-
-            empleadoDao.ingresarEmpleado(empleado);
-
-            JOptionPane.showMessageDialog(this,"Empleado Ingresado");
+        if(MisMetodos.InputExisteVacio(listadoInputsNoVacios)|| MisMetodos.inputListadoNumeroNoValido(listadoInputsNumeros)||MisMetodos.inputEsChar(inputdvrut_emp)||MisMetodos.fechaExisteNoValido(listadoFechaValida)){
+            MisMetodos.inputsNoPuedenEstarVacios(listadoLabelErrorsNoVacios, listadoInputsNoVacios);
+            MisMetodos.InputsExisteNumeroNoValido(listadoInputsNumeros, listadoLabelErrorNumeros);
+            MisMetodos.ValidadorCharPermitido(arrayCharPermitido, inputdvrut_emp, labelErrordvrut_emp);
+            MisMetodos.fechasListadoModificador(listadoFechaValida, listadoLabelErrorFecha);
+            
         }else{
-            JOptionPane.showMessageDialog(this, "Empleado Ya Existe");
+            ArrayList<Comuna> resultadoComuna = comunaDao.buscarComuna((String)comboBoxid_comuna.getSelectedItem());
+            ArrayList<EstadoCivil> resultadoEstadoCivil = estadocivilDao.buscarEstadoCivil((String)comboBoxid_estcivil.getSelectedItem());
+            ArrayList<CategoriaEmpleado> resultadoCategoriaEmpleado = categoriaEmpleadoDao.buscarCategoriaEmpleado((String)comboBoxid_categoria_emp.getSelectedItem());
+
+            String dvrut = inputdvrut_emp.getText();
+
+            int numrut_emp = Integer.parseInt(inputnumrut_emp.getText());
+            char dvrut_emp = dvrut.charAt(0);
+            String appaterno_emp = inputappaterno_emp.getText();
+            String apmaterno_emp = inputapmaterno_emp.getText();
+            String nombre_emp = inputnombre_emp.getText();
+            String direccion_emp = inputdireccion_emp.getText();
+
+            int id_estcivil = MisMetodos.comboBoxBuscarSeleccion(resultadoEstadoCivil);
+
+
+            String fonofijo_emp = inputfonofijo_emp.getText();
+            String celular_emp = inputcelular_emp.getText();
+            String fecnac_emp = inputfecnac_emp.getText(); //debe ser formato yyyy-mm-d = ind
+            String fecing_emp = inputfecing_emp.getText();
+            int sueldo_emp = Integer.parseInt(inputsueldo_emp.getText());
+
+            int id_comuna = MisMetodos.comboBoxBuscarSeleccion(resultadoComuna);
+
+            int id_categoria_emp = MisMetodos.comboBoxBuscarSeleccion(resultadoCategoriaEmpleado);
+
+            int numrut_supervisor = Integer.parseInt(inputnumrut_supervisor.getText());
+
+            ArrayList<Empleado> listaEmpleado = empleadoDao.buscarEmpleado(numrut_emp);
+
+            if(listaEmpleado.isEmpty()){
+                empleado = new Empleado(numrut_emp, dvrut_emp, appaterno_emp, apmaterno_emp, nombre_emp, direccion_emp, id_estcivil, fonofijo_emp, celular_emp, fecnac_emp, fecing_emp, sueldo_emp, id_comuna, id_categoria_emp, numrut_supervisor);
+
+                empleadoDao.ingresarEmpleado(empleado);
+
+                JOptionPane.showMessageDialog(this,"Empleado Ingresado");
+            }else{
+                JOptionPane.showMessageDialog(this, "Empleado Ya Existe");
+            }
         }
     }//GEN-LAST:event_btnIngresarNuevoEmpleadoActionPerformed
 
     private void btnLimpiarNuevoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarNuevoEmpleadoActionPerformed
         MisMetodos.panelLimpiarComponentes(this);
+        MisMetodos.panelCamposErrorInicializador(this);
     }//GEN-LAST:event_btnLimpiarNuevoEmpleadoActionPerformed
 
     private void comboBoxid_estcivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxid_estcivilActionPerformed

@@ -103,29 +103,29 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelPanelPrincipalCategoriaEmpleado" min="-2" max="-2" attributes="0"/>
                           <Component id="btnIngresarComuna" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnIngresarEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnIngresarEstadoCivil" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnIngresarPropiedad" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnVerEditarCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelPanelPrincipaEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelPanelPrincipaEstadoCivil" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelPanelPrincipapropiedad" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnEditarComuna" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnEditarEstadoCivil" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnEditarEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnIngresarCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="labelPanelPrincipaCliente" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
                           <Component id="btnIngresarCategoriaEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnVerEditarCategortiaEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelPanelPrincipaComuna" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnIngresarPropiedadArrendada" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnIngresarPropietario" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnIngresarTipoPropiedad" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelPanelPrincipaPropiedadArrendada" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelPanelPrincipaPropietario" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelPanelPrincipaTipoPropiedad" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnEditarPropiedad" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnEditarPropiedadArrendada" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnEditarPropietario" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -138,55 +138,55 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelPanelPrincipalCategoriaEmpleado" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Component id="btnIngresarCategoriaEmpleado" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnVerEditarCategortiaEmpleado" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelPanelPrincipaCliente" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnIngresarCliente" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnVerEditarCliente" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelPanelPrincipaComuna" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnIngresarComuna" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnEditarComuna" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelPanelPrincipaEmpleado" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnIngresarEmpleado" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnEditarEmpleado" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelPanelPrincipaEstadoCivil" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnIngresarEstadoCivil" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnEditarEstadoCivil" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelPanelPrincipapropiedad" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnIngresarPropiedad" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnEditarPropiedad" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelPanelPrincipaPropiedadArrendada" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnIngresarPropiedadArrendada" min="-2" pref="23" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnEditarPropiedadArrendada" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelPanelPrincipaPropietario" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnIngresarPropietario" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnEditarPropietario" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelPanelPrincipaTipoPropiedad" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnIngresarTipoPropiedad" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -197,7 +197,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JLabel" name="labelPanelPrincipalCategoriaEmpleado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Categoria Empleado"/>
               </Properties>
@@ -218,7 +218,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarPropietarioActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel3">
+            <Component class="javax.swing.JLabel" name="labelPanelPrincipaComuna">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comuna"/>
               </Properties>
@@ -231,7 +231,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarPropiedadArrendadaActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel6">
+            <Component class="javax.swing.JLabel" name="labelPanelPrincipapropiedad">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Propiedad"/>
               </Properties>
@@ -244,7 +244,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarEmpleadoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
+            <Component class="javax.swing.JLabel" name="labelPanelPrincipaEstadoCivil">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Estado Civil"/>
               </Properties>
@@ -281,7 +281,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarTipoPropiedadActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel8">
+            <Component class="javax.swing.JLabel" name="labelPanelPrincipaPropietario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Propietario"/>
               </Properties>
@@ -294,7 +294,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarTipoPropiedadActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel9">
+            <Component class="javax.swing.JLabel" name="labelPanelPrincipaTipoPropiedad">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tipo Propiedad"/>
               </Properties>
@@ -331,7 +331,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarComunaActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JLabel" name="labelPanelPrincipaCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cliente"/>
               </Properties>
@@ -368,7 +368,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarEstadoCivilActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel7">
+            <Component class="javax.swing.JLabel" name="labelPanelPrincipaPropiedadArrendada">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Propiedad Arrendada"/>
               </Properties>
@@ -381,7 +381,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarPropietarioActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel4">
+            <Component class="javax.swing.JLabel" name="labelPanelPrincipaEmpleado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Empleado"/>
               </Properties>
@@ -449,7 +449,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelTituloAplicacion" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="btnInicio" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
@@ -460,7 +460,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelTituloAplicacion" min="-2" max="-2" attributes="0"/>
                       <Component id="btnInicio" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -469,7 +469,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel10">
+        <Component class="javax.swing.JLabel" name="labelTituloAplicacion">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="0" red="0" type="rgb"/>

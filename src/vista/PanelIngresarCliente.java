@@ -10,9 +10,7 @@ import controlador.MisMetodos;
 import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import modelo.Cliente;
-import modelo.EstadoCivil;
 
 /**
  *
@@ -26,6 +24,7 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
     ArrayList<Component> listaInputsNoVacios = new ArrayList<>();
     ArrayList<Component> listaInputsNumeros = new ArrayList<>();
     ArrayList<Component> listaLabelErrorNumeros = new ArrayList<>();
+    char[] arrayCharPermitido = {'0','1','2','3','4','5','6','7','8','9','K'};     
     
     /**
      * Creates new form PanelIngresarCliente
@@ -36,6 +35,7 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
         MisMetodos.comboboxLLenado(comboboxid_estcivil, estadoCivilDao.todosLosEstadoCivil());
         MisMetodos.panelCamposErrorInicializador(this);
         
+        //Listado labelErrorNoVacios
         
         listaLabelErrorVacios.add(labelErrornumrut_cli);
         listaLabelErrorVacios.add(labelErrordvrut_cli);
@@ -45,27 +45,28 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
         listaLabelErrorVacios.add(labelErrordireccion_cli);
         listaLabelErrorVacios.add(labelErrorcelular_cli);
           
-        
+        //ListadoInputs Not Null
         listaInputsNoVacios.add(inputnumrut_cli);
         listaInputsNoVacios.add(inputdvrut_cli);
         listaInputsNoVacios.add(inputappaterno_cli);
         listaInputsNoVacios.add(inputapmaterno_cli);
         listaInputsNoVacios.add(inputnombre_cli);
         listaInputsNoVacios.add(inputdireccion_cli);
-        //listaInputs.add(comboboxid_estcivil);
         listaInputsNoVacios.add(inputcelular_cli);
    
-        
+        //Lista Inputs Numéricos
         listaInputsNumeros.add(inputnumrut_cli);
         listaInputsNumeros.add(inputfonofijo_cli);
         listaInputsNumeros.add(inputcelular_cli);
         listaInputsNumeros.add(inputrenta_cli);
         
-        
+        //Lista LabelError Números
         listaLabelErrorNumeros.add(labelErrornumrut_cli);
         listaLabelErrorNumeros.add(labelErrorfonofijo_cli);
         listaLabelErrorNumeros.add(labelErrorcelular_cli);
         listaLabelErrorNumeros.add(labelErrorrenta_cli);
+        
+        
     }
     
     
@@ -245,6 +246,7 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
 
         labelTituloCliente.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         labelTituloCliente.setText("Ingreso Nuevo Cliente");
+        labelTituloCliente.setName("labelTituloCliente"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -378,12 +380,11 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
 
     private void btnGuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarClienteActionPerformed
         
-        
-        if(MisMetodos.InputExisteVacio(listaInputsNoVacios) == false){
+        if(MisMetodos.InputExisteVacio(listaInputsNoVacios) || MisMetodos.inputListadoNumeroNoValido(listaInputsNumeros) || MisMetodos.inputEsChar(inputdvrut_cli)){
             MisMetodos.inputsNoPuedenEstarVacios(listaLabelErrorVacios, listaInputsNoVacios);
-            
+            MisMetodos.InputsExisteNumeroNoValido(listaInputsNumeros, listaLabelErrorNumeros);
+            MisMetodos.ValidadorCharPermitido(arrayCharPermitido, inputdvrut_cli, labelErrordvrut_cli);
         }else{
-            
             int numrut_cli;
             char dvrut_cli;
             String appaterno_cli;
@@ -419,7 +420,7 @@ public class PanelIngresarCliente extends javax.swing.JPanel {
                     "\nIngresado");
             }else{
                 JOptionPane.showMessageDialog(this,"Cliente ya existe");//para enviar mensaje a usuario
-            }    
+            }
         }
     }//GEN-LAST:event_btnGuardarClienteActionPerformed
 

@@ -22,6 +22,7 @@ public class PanelIngresarTipoPropiedad extends javax.swing.JPanel {
     public PanelIngresarTipoPropiedad() {
         initComponents();
         MisMetodos.panelCamposErrorInicializador(this);
+        MisMetodos.panelCamposErrorInicializador(this);
     }
 
     /**
@@ -95,10 +96,10 @@ public class PanelIngresarTipoPropiedad extends javax.swing.JPanel {
                                 .addComponent(labelDesc_tipo_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(inputdesc_tipo_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(inputid_tipo_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(labelErrordesc_tipo_propiedad)
                                 .addComponent(labelErrorid_tipo_propiedad)
-                                .addComponent(labelErrordesc_tipo_propiedad)))
+                                .addComponent(inputdesc_tipo_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(inputid_tipo_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelTituloPanelIngresoTipoPropiedad)
@@ -107,7 +108,7 @@ public class PanelIngresarTipoPropiedad extends javax.swing.JPanel {
                         .addComponent(btnIngresoTipoPropiedad)
                         .addGap(18, 18, 18)
                         .addComponent(btnLimpiarIngresoTipoPropiedad)))
-                .addGap(0, 54, Short.MAX_VALUE))
+                .addGap(0, 45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,31 +136,52 @@ public class PanelIngresarTipoPropiedad extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresoTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresoTipoPropiedadActionPerformed
+        boolean idEsChar = MisMetodos.inputEsChar(inputid_tipo_propiedad);
+        boolean idEsVacio = inputid_tipo_propiedad.getText().isEmpty();
+        
+        boolean descEsVacio = inputdesc_tipo_propiedad.getText().isEmpty();
+        
+        if(!idEsChar || idEsVacio || descEsVacio){
+            
+            if(!idEsChar){
+                MisMetodos.labelMensajeValidacion(labelErrorid_tipo_propiedad, "Debe Ingresar un solo valor","error");
+            }
+            if(idEsVacio){
+                MisMetodos.labelMensajeValidacion(labelErrorid_tipo_propiedad, "Campo Obligatorio","error");
+            }
+            if(descEsVacio){
+                MisMetodos.labelMensajeValidacion(labelErrordesc_tipo_propiedad, "Campo Obligatorio","error");
+            }
+            
+            
+        }else{
+        
+            TipoPropiedadDao tipoPropiedadDao = new TipoPropiedadDao();
 
-        TipoPropiedadDao tipoPropiedadDao = new TipoPropiedadDao();
+            char id_tipoPropiedad  = inputid_tipo_propiedad.getText().charAt(0);
+            String desc_tipoPropiedad = inputdesc_tipo_propiedad.getText();
 
-        char id_tipoPropiedad  = inputid_tipo_propiedad.getText().charAt(0);
-        String desc_tipoPropiedad = inputdesc_tipo_propiedad.getText();
+            ArrayList <TipoPropiedad> listadoTipoPropiedadID = tipoPropiedadDao.buscarTipoPropiedadPorId(id_tipoPropiedad);
+            ArrayList <TipoPropiedad> listadoTipoPropiedadDescripcion = tipoPropiedadDao.buscarTipoPropiedadPorDescripcion(desc_tipoPropiedad);
 
-        ArrayList <TipoPropiedad> listadoTipoPropiedadID = tipoPropiedadDao.buscarTipoPropiedadPorId(id_tipoPropiedad);
-        ArrayList <TipoPropiedad> listadoTipoPropiedadDescripcion = tipoPropiedadDao.buscarTipoPropiedadPorDescripcion(desc_tipoPropiedad);
+            if(listadoTipoPropiedadID.isEmpty()){
 
-        if(listadoTipoPropiedadID.isEmpty()){
+                tipoPropiedad = new TipoPropiedad(id_tipoPropiedad, desc_tipoPropiedad);
 
-            tipoPropiedad = new TipoPropiedad(id_tipoPropiedad, desc_tipoPropiedad);
+                tipoPropiedadDao.ingresarTipoPropiedad(tipoPropiedad);
 
-            tipoPropiedadDao.ingresarTipoPropiedad(tipoPropiedad);
-
-            JOptionPane.showMessageDialog(this,"Tipo Propiedad Ingresada");
+                JOptionPane.showMessageDialog(this,"Tipo Propiedad Ingresada");
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Tipo propiedad Ya existe o La Descripcion Ya existe");
+            }
         }
-        else{
-            JOptionPane.showMessageDialog(this,"Tipo propiedad Ya existe o La Descripcion Ya existe");
-        }
-
     }//GEN-LAST:event_btnIngresoTipoPropiedadActionPerformed
 
     private void btnLimpiarIngresoTipoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarIngresoTipoPropiedadActionPerformed
         MisMetodos.panelLimpiarComponentes(this);
+        MisMetodos.panelCamposErrorInicializador(this);
+
     }//GEN-LAST:event_btnLimpiarIngresoTipoPropiedadActionPerformed
 
 

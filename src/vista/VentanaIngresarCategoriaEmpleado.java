@@ -156,7 +156,6 @@ public class VentanaIngresarCategoriaEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_inputDescCategoriaEmpActionPerformed
 
     private void btnLimpiarIngresocategoriaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarIngresocategoriaEmpleadoActionPerformed
-        //Deberia probar con initComponent(); 
         
         JTextField input;
         

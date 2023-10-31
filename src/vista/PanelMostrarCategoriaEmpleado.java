@@ -46,7 +46,7 @@ public class PanelMostrarCategoriaEmpleado extends javax.swing.JPanel {
         btnNuevaCategoriaEmpleado = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTodasCategoriaEmpleado = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        labelTitulopanelMostrarCategoriaEmpleado = new javax.swing.JLabel();
 
         btnBuscarCategoriaEmpleado.setText("Buscar Categoria Empleado");
         btnBuscarCategoriaEmpleado.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +93,7 @@ public class PanelMostrarCategoriaEmpleado extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblTodasCategoriaEmpleado);
 
-        jLabel1.setText("Categorias Empleados");
+        labelTitulopanelMostrarCategoriaEmpleado.setText("Categorias Empleados");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -117,14 +117,14 @@ public class PanelMostrarCategoriaEmpleado extends javax.swing.JPanel {
                         .addComponent(btnEliminarCategoriaEmpleado))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(297, 297, 297)
-                        .addComponent(jLabel1)))
+                        .addComponent(labelTitulopanelMostrarCategoriaEmpleado)))
                 .addContainerGap(96, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(jLabel1)
+                .addComponent(labelTitulopanelMostrarCategoriaEmpleado)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -148,7 +148,7 @@ public class PanelMostrarCategoriaEmpleado extends javax.swing.JPanel {
         tabla = (DefaultTableModel)tblTodasCategoriaEmpleado.getModel();
         ArrayList<CategoriaEmpleado> listadobuscarCategoriaEmpleados = categoriaEmpleadoDao.buscarCategoriaEmpleado(desc_categoria_emp);
 
-        misMetodos.tablaLimpiar(tblTodasCategoriaEmpleado);
+        MisMetodos.tablaLimpiar(tblTodasCategoriaEmpleado);
 
         if(listadobuscarCategoriaEmpleados.isEmpty()){
             JOptionPane.showInputDialog(this, "Categoria No Existe");
@@ -162,7 +162,7 @@ public class PanelMostrarCategoriaEmpleado extends javax.swing.JPanel {
                 tabla.addRow(datosListadoBuscarCategoriaEmpleados[i]);
             }
             tblTodasCategoriaEmpleado.setModel(tabla);
-            misMetodos.tablaCentrarDatos(tblTodasCategoriaEmpleado);
+            MisMetodos.tablaCentrarDatos(tblTodasCategoriaEmpleado);
         }
     }//GEN-LAST:event_btnBuscarCategoriaEmpleadoActionPerformed
 
@@ -242,8 +242,8 @@ public class PanelMostrarCategoriaEmpleado extends javax.swing.JPanel {
     private javax.swing.JButton btnModificarCategoriaEmpleado;
     private javax.swing.JButton btnMostrarCategoriasEmpleados;
     private javax.swing.JButton btnNuevaCategoriaEmpleado;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelTitulopanelMostrarCategoriaEmpleado;
     private javax.swing.JTable tblTodasCategoriaEmpleado;
     // End of variables declaration//GEN-END:variables
 }

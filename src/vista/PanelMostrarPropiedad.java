@@ -44,7 +44,7 @@ public class PanelMostrarPropiedad extends javax.swing.JPanel {
         btnMostrarTodasLasPropiedades = new javax.swing.JButton();
         btnModificarPropiedad = new javax.swing.JButton();
         btnEliminarPropiedad = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        labelTitulopanelMostrarPropiedad = new javax.swing.JLabel();
 
         tablaTodasLasPropiedades.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -96,7 +96,7 @@ public class PanelMostrarPropiedad extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setText("Propiedades");
+        labelTitulopanelMostrarPropiedad.setText("Propiedades");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -118,14 +118,14 @@ public class PanelMostrarPropiedad extends javax.swing.JPanel {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1067, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(494, 494, 494)
-                        .addComponent(jLabel1)))
+                        .addComponent(labelTitulopanelMostrarPropiedad)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(labelTitulopanelMostrarPropiedad)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -271,8 +271,8 @@ public class PanelMostrarPropiedad extends javax.swing.JPanel {
     private javax.swing.JButton btnIngresarNuevaPropiedad;
     private javax.swing.JButton btnModificarPropiedad;
     private javax.swing.JButton btnMostrarTodasLasPropiedades;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelTitulopanelMostrarPropiedad;
     private javax.swing.JTable tablaTodasLasPropiedades;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,7 +4,6 @@
  */
 package controlador;
 
-import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
@@ -23,8 +22,6 @@ import javax.swing.JTextField;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableCellRenderer;
 import modelo.Empleado;
-import modelo.EstadoCivil;
-import modelo.Propiedad;
 
 /**
  *
@@ -58,8 +55,12 @@ public class MisMetodos {
     //Este Metodo inicializa todos los labels de los campos vacios, dejandolos no visibles, JTextField.setVisible(false)
     public static void panelCamposErrorInicializador(javax.swing.JPanel nombrePanel){        
         for (int i = 0; i < nombrePanel.getComponentCount(); i++) {
-                        
-            if (nombrePanel.getComponent(i).getClass().getName().equals("javax.swing.JLabel")&& nombrePanel.getComponent(i).getName() != null && nombrePanel.getComponent(i).getName().contains("Error")) {
+            boolean clasePanelEsJlabel = nombrePanel.getComponent(i).getClass().getName().equals("javax.swing.JLabel");
+            boolean nombreComponenteNoVacio = nombrePanel.getComponent(i).getName() != null;  
+            boolean nombreComponenteContieneError = nombrePanel.getComponent(i).getName().contains("Error");  
+            
+            
+            if (clasePanelEsJlabel && nombreComponenteNoVacio && nombreComponenteContieneError) {
                 nombrePanel.getComponent(i).setVisible(false);
             }            
         }        
@@ -123,7 +124,8 @@ public class MisMetodos {
     
     //Este metodo cambia la seleccion de la descripcion de un comboCombobo y retorna el id
     //de la seleccion del combobox. Siempre y cuando el array que ingresa a la funcion contenga
-    //un objeto y el primer atributo de este objeto sea de tipo INT
+    //un objeto y el primer atributo de este objeto sea de tipo INT, 
+    //Se usa un array ya que el retorno de buscarDao es un ArrayList
     public static int comboBoxBuscarSeleccion(ArrayList<?> listadoBuscarDao) {
         // Inicializa la variable 'id' con el valor 0.
         int id = 0;
@@ -148,6 +150,7 @@ public class MisMetodos {
         return id;
     }    
     
+    //###################FECHAS###################
 
     public static String transformarDeDateAString(java.sql.Date fecha){
         java.text.SimpleDateFormat formatoFecha = new java.text.SimpleDateFormat("yyyy-MM-dd");
@@ -157,7 +160,8 @@ public class MisMetodos {
         return fechaString;
     }
     
-    public java.sql.Date transformarDeStringADate(String fecha){
+    
+    public static java.sql.Date transformarDeStringADate(String fecha){
         java.text.SimpleDateFormat formatoDate = new java.text.SimpleDateFormat("yyyy-MM-dd");
         java.util.Date utilDate = null;
                 
@@ -166,18 +170,79 @@ public class MisMetodos {
                        
         } catch (ParseException ex) {
             Logger.getLogger(Empleado.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        }   
         //retorna la nueva fecha en formato String;
         return new java.sql.Date(utilDate.getTime());
     }
     
-    //Analizar la forma de llenar los combobox y la seleccion de este
+    public static boolean esFechaValida(String fecha){
+        java.text.SimpleDateFormat formatoDate = new java.text.SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date utilDate;                
+        try {
+            utilDate = formatoDate.parse(fecha);
+            return true;
+        } catch (ParseException ex) {
+            //Logger.getLogger(Empleado.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }  
+    }
     
-    //Controladores de valores Null
+    public static boolean fechaExisteNoValido(ArrayList<Component> listadoinputsFechas){
+        javax.swing.JTextField inputFecha;
+        Component fecha;
+        for (int i = 0; i < listadoinputsFechas.size(); i++) {
+            fecha = listadoinputsFechas.get(i);
+            inputFecha = (javax.swing.JTextField)fecha;
+            
+            if(!esFechaValida(inputFecha.getText())){
+                return false;
+            }
+            
+        }
+        return true;
+    }
     
-    //validador de Valores en inputs
-    
+    public static void fechasListadoModificador(ArrayList<Component> listadoinputsFechas, ArrayList<Component> listadolabelErrorFechas){
+        Component fechaInput;
+        javax.swing.JTextField fechaTextField;
+        String nombreFechaInput;
+        
+        Component labelError;
+        String nombreLabelError;
+        javax.swing.JLabel label;
+        
+        for (int i = 0; i < listadoinputsFechas.size(); i++) {
+            fechaInput = listadoinputsFechas.get(i);
+            fechaTextField = (javax.swing.JTextField)fechaInput;
+
+            fechaInput = listadoinputsFechas.get(i);
+            nombreFechaInput = fechaInput.getName().substring(5);
+            
+            if(esFechaValida(fechaTextField.getText())){
+        
+                for (int j = 0; j < listadolabelErrorFechas.size(); j++) {
+                    labelError = listadolabelErrorFechas.get(i);
+                    label = (javax.swing.JLabel)labelError;
+                    nombreLabelError = label.getName();
+                        
+                    if(nombreLabelError.contains(nombreFechaInput)){
+                        labelMensajeValidacion(label, "Ok", "Ok");
+                    }
+                }
+            }else{
+                for (int j = 0; j < listadolabelErrorFechas.size(); j++) {
+                    labelError = listadolabelErrorFechas.get(i);
+                    label = (javax.swing.JLabel)labelError;
+                    nombreLabelError = label.getName();
+                    
+                    if(nombreLabelError.contains(nombreFechaInput)){
+                        labelMensajeValidacion(label, "Fecha debe ser yyyy/MM/dd", "error");                 
+                    }
+                }
+            }       
+        }
+    }
+        
     //Validador de Rut travez de modulo 11
     public static boolean validadorRut(int numrut, char dv){
         char dv2;
@@ -245,11 +310,11 @@ public class MisMetodos {
         return tipoAtributos[campos.length];
     }
     
-    public static boolean listaVacia(ArrayList<?> listadoObjetos){
+    public static boolean existeBusqueda(ArrayList<?> listadoObjetos){
         boolean resultado = true;
                 
         if(listadoObjetos.isEmpty()){
-            resultado = false;
+            return false;
         }
         return resultado;
     }
@@ -313,15 +378,15 @@ public class MisMetodos {
 //METODOS PARA TABLAS
 
     
-    public static void labelMensajeValidacion(javax.swing.JLabel nombreLabel, String MensajeLabel, String tipo){
-        if (tipo.equals("error")){
-            nombreLabel.setVisible(true);
-            nombreLabel.setText("Campo Obligatorio");
-            nombreLabel.setForeground(Color.red);
+    public static void labelMensajeValidacion(javax.swing.JLabel Label, String MensajeLabel, String tipo){
+        if (tipo == "error"){
+            Label.setVisible(true);
+            Label.setText(MensajeLabel);
+            Label.setForeground(Color.red);
         }else{
-            nombreLabel.setVisible(true);
-            nombreLabel.setText("OK");
-            nombreLabel.setForeground(Color.green);
+            Label.setVisible(true);
+            Label.setText(MensajeLabel);
+            Label.setForeground(Color.green);
         }
     } 
     
@@ -352,60 +417,65 @@ public class MisMetodos {
     }
     
     
-    //####################Validadores de datos;
+    //####################Validadores de datos not null;
     
     public static boolean InputExisteVacio(ArrayList<Component> listaInputs){
-        boolean resultado = true;
+        Component componente;
         JTextField field;
-        for (int i = 0; i < listaInputs.size(); i++) {            
-            field = (JTextField)listaInputs.get(i);
+        
+        for (int i = 0; i < listaInputs.size(); i++) {
+            componente = listaInputs.get(i);
+            field = (javax.swing.JTextField)componente;
             
             if(field.getText().isEmpty()){
-                resultado = false;
-            }
+                return true;
+            }   
         }
-        return resultado;
+        return false;
     }
     
     public static void inputsNoPuedenEstarVacios(ArrayList<Component> listaLabelError,ArrayList<Component> listaInputs){        
-        Component label;
-        Component input;
-        String nombreLabel;
+        Component componenteInput;
+        Component componentelabel;
+        Component componenteInput2;
+        Component componentelabel2;
+        JTextField input;
         String nombreInput;
-        JTextField field;
+        JLabel label;
+        String nombreLabel;
+        JLabel label2;
+        String nombreLabel2;
+        for (int i = 0; i < listaInputs.size(); i++) {
+            componenteInput = listaInputs.get(i);
+            input = (javax.swing.JTextField)componenteInput;
+            //Quitar las primeras 5 letras del nombre de input
+            nombreInput = (input.getName()).substring(5);
 
-        for (int i = 0; i < listaInputs.size(); i++) {            
-            field = (JTextField)listaInputs.get(i);
-
-            if(field.getText().isEmpty()){
-                input = listaInputs.get(i);
-                nombreInput = input.getName().substring(input.getName().length()-5);
-                
+            if((input.getText()).isEmpty()|| (input.getText())==""){
                 for(int j = 0; j < listaLabelError.size(); j++){
-                    label = listaLabelError.get(j);
+                    componentelabel = listaLabelError.get(j);
+                    label = (javax.swing.JLabel)componentelabel;
                     nombreLabel = label.getName();
                     if(nombreLabel.contains(nombreInput)){
-                        labelMensajeValidacion((javax.swing.JLabel)label, "Campo no puede ser vacio", "error");
-                        listaLabelError.remove(j);
+                        labelMensajeValidacion(label, "Campo no puede ser vacio", "error");
                     }
                 }             
             }else{
-                input = listaInputs.get(i);
-                nombreInput = input.getName().substring(input.getName().length()-5);
-                        
-                for(int g = 0; g < listaLabelError.size(); g++){
-                    label = listaLabelError.get(g);
-                    nombreLabel = label.getName();
+                for(int h = 0; h < listaLabelError.size(); h++){
+                    componentelabel2 = listaLabelError.get(h);
+                    label2 = (javax.swing.JLabel)componentelabel2;
+                    nombreLabel2 = label2.getName();
 
-                    if(nombreLabel.contains(nombreInput)){
-                        labelMensajeValidacion((javax.swing.JLabel)label, "Ok", "ok");
+                    if(nombreLabel2.contains(nombreInput)){
+                        labelMensajeValidacion(label2, "Ok", "ok");
                     }
                 }//Fin for
             }//fin Else
         }//Fin for
     }
     
-    public static boolean inputNumeroEntero(JTextField input){
+    //##################################Validador numerico
+    public static boolean inputNumeroEntero(javax.swing.JTextField input){
 
         try{
             int numero = Integer.parseInt(input.getText());
@@ -427,89 +497,100 @@ public class MisMetodos {
         }
     }
     
-    public static boolean inputListadoEsNumero(ArrayList<Component> listadoInputsNumeros){
-        boolean resultado = true;
-        
+    
+    public static boolean inputListadoNumeroNoValido(ArrayList<Component> listadoInputsNumeros){
+        boolean resultado = false;
+        Component componente;
+        javax.swing.JTextField input;
             for (int i = 0; i < listadoInputsNumeros.size(); i++) {
-                JTextField input = (JTextField)listadoInputsNumeros.get(i);
-                if(inputNumeroEntero(input) || inputNumeroFlotante(input)){
-                    resultado = true;
-
-                }else{
+                componente = listadoInputsNumeros.get(i);
+                input = (javax.swing.JTextField)componente;
+                if(inputNumeroEntero(input)){
                     resultado = false;
-                    return resultado;
-                }   
+                }else{                   
+                    return true;
+                }    
+            }
+        return resultado;       
+    }
+    
+    public static void InputsExisteNumeroNoValido(ArrayList<Component> listadoInputsNumericos, ArrayList<Component> listadoLabelError){
+        
+        Component componenteinput;
+        Component componenteLabel;
+        Component componenteLabel2;
+        
+        JTextField input;
+        String nombreInput;
+        
+        JLabel label;
+        String nombreLabel;
+        JLabel label2;
+        String nombreLabel2;
+        //Recorrer inputs
+        for (int i = 0; i < listadoInputsNumericos.size(); i++) {
+            
+            componenteinput = listadoInputsNumericos.get(i);
+            input = (javax.swing.JTextField)componenteinput;
+            //Obtener nombreInput y quitar la palabrainput
+            nombreInput = input.getName().substring(5);
+            //Validar si el input es numero Entero
+            if(inputNumeroEntero(input)){
+                //Recorrer LabelError
+                for (int j = 0; j < listadoLabelError.size(); j++) {
+                    componenteLabel = listadoLabelError.get(i);
+                    //Obtener Label
+                    
+                    label = (javax.swing.JLabel)componenteLabel;
+                    //Obtener nombre Label
+                    nombreLabel = label.getName();
+                    //Comparar nombreLabel con nombreInput
+                    if(nombreLabel.contains(nombreInput)){
+                        labelMensajeValidacion(label, "Ok", "Ok");
+                    }
+                }
+            }else{
                 
+                for (int h = 0; h < listadoLabelError.size(); h++) {
+                    componenteLabel2 = listadoLabelError.get(h);
+                    //Obtener Label
+                    label2= (javax.swing.JLabel)componenteLabel2;
+                    //Obtener nombre Label
+                    nombreLabel2 = label2.getName();
+                    //Comparar nombreLabel con nombreInput
+                    if(nombreLabel2.contains(nombreInput)){
+                        labelMensajeValidacion(label2, "No Es Un Valor Numérico Entero", "error");
+                    }
+                }
             }
             
-        return resultado;
-
-       
+        }
     }
     
-    public static void InputEsNumeroValido(ArrayList<Component> listadoInputsNumericos, ArrayList<Component> listadoLabelError){
-        
-        JTextField textField;
-        String nombreJTextField;
-        JLabel labelError;
-        String nombreLabelError;
-        
-        for (int i = 0; i < listadoInputsNumericos.size(); i++) {            
-            textField = (JTextField)listadoInputsNumericos.get(i);
-            nombreJTextField = listadoInputsNumericos.get(i).getName().substring(0,5);
-            
-            for (int j = 0; j < listadoLabelError.size(); j++) {
-                nombreLabelError = listadoLabelError.get(i).getName();
-                labelError = (JLabel)listadoLabelError.get(i);
-                if(nombreLabelError.contains(nombreJTextField) && (inputNumeroEntero(textField) || inputNumeroFlotante(textField))){                    
-                    labelMensajeValidacion(labelError, "Ok","ok" );
-                
-                }else{
-                    labelMensajeValidacion(labelError, "Numero no valido","error" );
-                }
-            }            
-        }
-        
+    //################################validador input char
+    public static boolean inputEsChar(javax.swing.JTextField input){
+        String contenidoInput = input.getText();
+        return contenidoInput.length() == 1;
     }
+    
+    public static void ValidadorCharPermitido(char[] ArrayCharPermitido, javax.swing.JTextField input, javax.swing.JLabel labelError){
+        
+        if(!inputEsChar(input)){
+            labelMensajeValidacion(labelError, "debe ingresar un solo valor", "error");
+        }else{
+            ArrayList<Character> listadoCharPermitido = new ArrayList<>();
+            for(char c : ArrayCharPermitido){
+                listadoCharPermitido.add(c);
+            }
+            char contenidoInput = input.getText().charAt(0);
+            
+            if(listadoCharPermitido.contains(contenidoInput)){
+                labelMensajeValidacion(labelError, "OK", "ok");                
+            }else{
+                labelMensajeValidacion(labelError, "Valor no permitido", "error");
+            }
+        }
+    }
+    
     
 }
-        
-        
-
-
-
-
-
-
-    
-//ORIGENES
-//    public static int comboBoxBuscarSeleccion(ArrayList<?> listadoBuscarDao);
-
-//    private int buscarSeleccionComboboxEstadoCivil(String seleccionEstadoCivil){
-//        
-//        EstadoCivilDao estadoCivilDao = new EstadoCivilDao();
-//        ArrayList<EstadoCivil> listadoEstadoCivil = new ArrayList<>();
-//        int id_estcivil = 0;
-//        listadoEstadoCivil = estadoCivilDao.buscarEstadoCivil(seleccionEstadoCivil);
-//        
-//        for (EstadoCivil estadoCivil : listadoEstadoCivil){
-//            
-//            id_estcivil = estadoCivil.getId_EstCivil();
-//        }
-//        
-//        return id_estcivil;
-//    }
-
-//ORIGENES public static boolean listaVacia(ArrayList<?> listadoObjetos);
-//public boolean buscadorPropiedadExiste(int nroPropiedad){
-//        boolean resultado = true;
-//        PropiedadDao propiedadDao = new PropiedadDao();
-//        
-//        ArrayList<Propiedad> listadoPropiedades = propiedadDao.buscarPropiedad(nroPropiedad);
-//        
-//        if(listadoPropiedades.isEmpty()){
-//            resultado = false;
-//        }
-//        
-//        return resultado;
-//    }

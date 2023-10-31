@@ -18,92 +18,91 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="15" pref="15" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="15" pref="15" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelnro_dormitorios" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelValor_arriendo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelValor_gasto_comun" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
+                          <Component id="labelid_tipo_propiedad" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelNumrut_emp" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelNumrut_prop" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="labelnro_dormitorios" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelValor_arriendo" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelValor_gasto_comun" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
-                              <Component id="labelid_tipo_propiedad" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelNumrut_emp" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelNumrut_prop" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelDireccion_propiedad" alignment="1" min="-2" pref="156" max="-2" attributes="0"/>
+                              <Component id="labelSuperficie" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="labelNro_banos" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelId_comuna" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="inputnumrut_emp" min="-2" pref="147" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrornumrut_emp" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="labelDireccion_propiedad" alignment="1" min="-2" pref="156" max="-2" attributes="0"/>
-                                  <Component id="labelSuperficie" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="labelNro_banos" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelId_comuna" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="inputnumrut_emp" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="labelErrornumrut_emp" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="comboBoxid_tipo_propiedad" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="comboBoxid_comuna" pref="90" max="32767" attributes="0"/>
+                                          <Component id="comboBoxid_tipo_propiedad" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="labelErrorid_tipo_propiedad" min="-2" max="-2" attributes="0"/>
+                                          <Component id="labelErrorid_comuna" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="comboBoxid_comuna" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="labelErrorid_comuna" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="inputnumrut_prop" alignment="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="labelErrornumrut_prop" min="-2" max="-2" attributes="0"/>
+                                  <Component id="inputnumrut_prop" min="-2" pref="180" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="inputdireccion_propiedad" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="labelErrordireccion_propiedad" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="inputsuperficie" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="labelErrorsuperficie" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="inputnro_banos" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="laberlErrornro_banos" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="inputvalor_arriendo" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="labelErrorvalor_arriendo" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="inputvalor_gasto_comun" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="labelErrorvalor_gasto_comun" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="inputnro_dormitorios" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="labelErrornro_dormitorios" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrornumrut_prop" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputdireccion_propiedad" min="-2" pref="171" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrordireccion_propiedad" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputsuperficie" min="-2" pref="174" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrorsuperficie" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputnro_banos" min="-2" pref="171" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrornro_banos" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputvalor_arriendo" min="-2" pref="147" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrorvalor_arriendo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputvalor_gasto_comun" min="-2" pref="190" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelErrorvalor_gasto_comun" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="inputnro_dormitorios" min="-2" pref="189" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="labelErrornro_dormitorios" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                          <Component id="btnIngresoNuevaPropiedad" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="btnLimpiarIngresoNuevaPropiedad" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                      <Component id="btnIngresoNuevaPropiedad" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="btnLimpiarIngresoNuevaPropiedad" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
                       <Component id="labelTituloPanelIngresarPropiedad" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="21" max="32767" attributes="0"/>
+              <EmptySpace pref="39" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -138,7 +137,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="inputnro_banos" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelNro_banos" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="laberlErrornro_banos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrornro_banos" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -158,7 +157,7 @@
                   <Component id="labelid_tipo_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelErrorid_tipo_propiedad" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="comboBoxid_comuna" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelId_comuna" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -181,7 +180,7 @@
                   <Component id="btnIngresoNuevaPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnLimpiarIngresoNuevaPropiedad" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <EmptySpace pref="20" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -374,13 +373,13 @@
         <Property name="name" type="java.lang.String" value="labelErrornro_dormitorios" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="laberlErrornro_banos">
+    <Component class="javax.swing.JLabel" name="labelErrornro_banos">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Algun Texto"/>
-        <Property name="name" type="java.lang.String" value="laberlErrornro_banos" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="labelErrornro_banos" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelErrorvalor_arriendo">

@@ -6,6 +6,8 @@ package vista;
 
 import controlador.EstadoCivilDao;
 import controlador.MisMetodos;
+import java.awt.Component;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import modelo.EstadoCivil;
@@ -16,12 +18,18 @@ import modelo.EstadoCivil;
  */
 public class PanelIngresarEstadoCivil extends javax.swing.JPanel {
     
+    ArrayList<Component> listadoInputsNoVacios = new ArrayList<>();
+    ArrayList<Component> listadoLabelErrorNoVacios = new ArrayList<>();
     /**
      * Creates new form PanelIngresarEstadoCivil
      */
+    
     public PanelIngresarEstadoCivil() {
         initComponents();
         MisMetodos.panelCamposErrorInicializador(this);
+        
+        listadoInputsNoVacios.add(Inputdesc_Estcivil);
+        listadoLabelErrorNoVacios.add(labelErrordesc_Estcivil);
     }
 
     /**
@@ -121,28 +129,32 @@ public class PanelIngresarEstadoCivil extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarEstadoCivilActionPerformed
-
-        String desc_EstCivil;
-
-        desc_EstCivil = Inputdesc_Estcivil.getText();
-
-        EstadoCivil estadoCivil = new EstadoCivil(0, desc_EstCivil);
-
-        EstadoCivilDao estadoCivilDao = new EstadoCivilDao();
-
-        if(estadoCivilDao.buscarEstadoCivil(desc_EstCivil).isEmpty()){
-            estadoCivilDao.agregarEstadoCivil(estadoCivil);
-
-            JOptionPane.showMessageDialog(this, "Estado Civil Ingresado");
-
+        if(MisMetodos.InputExisteVacio(listadoInputsNoVacios)){
+            MisMetodos.inputsNoPuedenEstarVacios(listadoLabelErrorNoVacios, listadoInputsNoVacios);
+            
         }else{
-            JOptionPane.showMessageDialog(this,"Estado Civil Ya Existe");
+            String desc_EstCivil;
+
+            desc_EstCivil = Inputdesc_Estcivil.getText();
+
+            EstadoCivil estadoCivil = new EstadoCivil(0, desc_EstCivil);
+
+            EstadoCivilDao estadoCivilDao = new EstadoCivilDao();
+
+            if(estadoCivilDao.buscarEstadoCivil(desc_EstCivil).isEmpty()){
+                estadoCivilDao.agregarEstadoCivil(estadoCivil);
+
+                JOptionPane.showMessageDialog(this, "Estado Civil Ingresado");
+
+            }else{
+                JOptionPane.showMessageDialog(this,"Estado Civil Ya Existe");
+            }
         }
     }//GEN-LAST:event_btnGuardarEstadoCivilActionPerformed
 
     private void btnLimpiarEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarEstadoCivilActionPerformed
         MisMetodos.panelLimpiarComponentes(this);
-        
+        MisMetodos.panelCamposErrorInicializador(this);
     }//GEN-LAST:event_btnLimpiarEstadoCivilActionPerformed
 
     private void btnVolverEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverEstadoCivilActionPerformed

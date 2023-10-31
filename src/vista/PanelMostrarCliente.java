@@ -44,7 +44,7 @@ public class PanelMostrarCliente extends javax.swing.JPanel {
         btnModificarCliente = new javax.swing.JButton();
         btnEliminarCliente = new javax.swing.JButton();
         btnIngresarNuevoCliente = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        labelTitulopanelMostrarCliente = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaTodosLosClientes = new javax.swing.JTable();
         btnBuscarCliente = new javax.swing.JButton();
@@ -77,7 +77,7 @@ public class PanelMostrarCliente extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setText("Clientes");
+        labelTitulopanelMostrarCliente.setText("Clientes");
 
         tablaTodosLosClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -115,7 +115,7 @@ public class PanelMostrarCliente extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(484, 484, 484)
-                        .addComponent(jLabel1))
+                        .addComponent(labelTitulopanelMostrarCliente))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -136,7 +136,7 @@ public class PanelMostrarCliente extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(jLabel1)
+                .addComponent(labelTitulopanelMostrarCliente)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
@@ -277,8 +277,8 @@ public class PanelMostrarCliente extends javax.swing.JPanel {
     private javax.swing.JButton btnIngresarNuevoCliente;
     private javax.swing.JButton btnModificarCliente;
     private javax.swing.JButton btnMostrarTodosLosCliente;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelTitulopanelMostrarCliente;
     private javax.swing.JTable tablaTodosLosClientes;
     // End of variables declaration//GEN-END:variables
 }

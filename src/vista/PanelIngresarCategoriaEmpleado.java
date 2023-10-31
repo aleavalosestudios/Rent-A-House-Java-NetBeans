@@ -9,7 +9,6 @@ import controlador.MisMetodos;
 import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import modelo.CategoriaEmpleado;
 
 /**
@@ -19,7 +18,7 @@ import modelo.CategoriaEmpleado;
 public class PanelIngresarCategoriaEmpleado extends javax.swing.JPanel {
     
     CategoriaEmpleadoDao categoriaEmpleadoDao= new CategoriaEmpleadoDao();
-    ArrayList<Component> listadoInpusNoVacios = new ArrayList<>();
+    ArrayList<Component> listadoInputsNoVacios = new ArrayList<>();
     ArrayList<Component> listadoLabelErrorNoVacios = new ArrayList<>();
     
     /**
@@ -29,10 +28,9 @@ public class PanelIngresarCategoriaEmpleado extends javax.swing.JPanel {
         initComponents();
         MisMetodos.panelCamposErrorInicializador(this);
         //LLenar Listado Inputs no vacios
-        listadoInpusNoVacios.add(inputdesc_categoria_emp);
+        listadoInputsNoVacios.add(inputdesc_categoria_emp);
         //LLenar Listado LabelError
-        listadoLabelErrorNoVacios.add(labelErrordesc_categoria_emp);
-        
+        listadoLabelErrorNoVacios.add(labelErrordesc_categoria_emp);        
     }
     
     
@@ -136,16 +134,14 @@ public class PanelIngresarCategoriaEmpleado extends javax.swing.JPanel {
     }//GEN-LAST:event_inputdesc_categoria_empActionPerformed
 
     private void btnIngresarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarCategoriaActionPerformed
-        if(MisMetodos.InputExisteVacio(listadoInpusNoVacios)){
-            MisMetodos.inputsNoPuedenEstarVacios(listadoLabelErrorNoVacios, listadoInpusNoVacios);
-        }else{        
-            String desc_categoria_emp;
-            desc_categoria_emp = inputdesc_categoria_emp.getText();
-            CategoriaEmpleado categoriaEmpleado = new CategoriaEmpleado(0, desc_categoria_emp);
-            
-            if(inputdesc_categoria_emp.getText().isEmpty()){
-                MisMetodos.labelMensajeValidacion(labelErrordesc_categoria_emp, "Campo Obligatorio","error");
-            }else{
+        if(MisMetodos.InputExisteVacio(listadoInputsNoVacios)){
+            MisMetodos.inputsNoPuedenEstarVacios(listadoLabelErrorNoVacios, listadoInputsNoVacios);
+        }else{
+            if(!MisMetodos.inputNumeroEntero(inputdesc_categoria_emp)){
+                String desc_categoria_emp;
+                desc_categoria_emp = inputdesc_categoria_emp.getText();
+                CategoriaEmpleado categoriaEmpleado = new CategoriaEmpleado(0, desc_categoria_emp);
+
                 if(categoriaEmpleadoDao.buscarCategoriaEmpleado(desc_categoria_emp).isEmpty()){
 
                     categoriaEmpleadoDao.IngresarCategoriaEmpleado(categoriaEmpleado);
@@ -157,13 +153,15 @@ public class PanelIngresarCategoriaEmpleado extends javax.swing.JPanel {
                         categoriaEmpleado.getDesc_categoria_emp() +
                         " Ya Existe");
                 }
-            }
+            }else{
+                MisMetodos.labelMensajeValidacion(labelErrordesc_categoria_emp,"El campo no puede ser un número","error");
+            }           
         }
     }//GEN-LAST:event_btnIngresarCategoriaActionPerformed
 
     private void btnLimpiarIngresocategoriaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarIngresocategoriaEmpleadoActionPerformed
-        MisMetodos.panelLimpiarComponentes(this);
-        MisMetodos.panelLimpiarComponentes(this);
+       MisMetodos.panelLimpiarComponentes(this);
+       MisMetodos.panelCamposErrorInicializador(this);
     }//GEN-LAST:event_btnLimpiarIngresocategoriaEmpleadoActionPerformed
 
 

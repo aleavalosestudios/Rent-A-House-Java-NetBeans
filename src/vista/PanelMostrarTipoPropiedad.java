@@ -42,7 +42,7 @@ public class PanelMostrarTipoPropiedad extends javax.swing.JPanel {
         btnEditarTipoPropiedad = new javax.swing.JButton();
         btnEliminarTipoPropiedad = new javax.swing.JButton();
         btnNuevoIngresoTipoPropiedad = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        labelTitulopanelMostrarTipoPropiedad = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaTipoPropiedad = new javax.swing.JTable();
 
@@ -81,7 +81,7 @@ public class PanelMostrarTipoPropiedad extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setText("Tipos de Propiedades");
+        labelTitulopanelMostrarTipoPropiedad.setText("Tipos de Propiedades");
 
         tablaTipoPropiedad.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -101,7 +101,7 @@ public class PanelMostrarTipoPropiedad extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(122, 122, 122)
-                        .addComponent(jLabel1))
+                        .addComponent(labelTitulopanelMostrarTipoPropiedad))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -122,7 +122,7 @@ public class PanelMostrarTipoPropiedad extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(labelTitulopanelMostrarTipoPropiedad)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -240,8 +240,8 @@ public class PanelMostrarTipoPropiedad extends javax.swing.JPanel {
     private javax.swing.JButton btnEliminarTipoPropiedad;
     private javax.swing.JButton btnMostrarTodosLosTiposDePropiedad;
     private javax.swing.JButton btnNuevoIngresoTipoPropiedad;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelTitulopanelMostrarTipoPropiedad;
     private javax.swing.JTable tablaTipoPropiedad;
     // End of variables declaration//GEN-END:variables
 }

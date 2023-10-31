@@ -37,7 +37,7 @@ public class PanelMostarEstadoCivil extends javax.swing.JPanel {
     private void initComponents() {
 
         btnIngresarNuevoEstadoCivil = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        labelTituloPanelMostrarEstadoCivil = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaTodosLosEstadosCiviles = new javax.swing.JTable();
         btnBuscarEstadoCivil = new javax.swing.JButton();
@@ -52,7 +52,7 @@ public class PanelMostarEstadoCivil extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setText("Estado Civil");
+        labelTituloPanelMostrarEstadoCivil.setText("Estado Civil");
 
         tablaTodosLosEstadosCiviles.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -107,7 +107,7 @@ public class PanelMostarEstadoCivil extends javax.swing.JPanel {
                             .addComponent(btnIngresarNuevoEstadoCivil)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(241, 241, 241)
-                        .addComponent(jLabel1))
+                        .addComponent(labelTituloPanelMostrarEstadoCivil))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnMostrarTodosLosEstadosCiviles)
@@ -121,7 +121,7 @@ public class PanelMostarEstadoCivil extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(labelTituloPanelMostrarEstadoCivil)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -232,8 +232,8 @@ public class PanelMostarEstadoCivil extends javax.swing.JPanel {
     private javax.swing.JButton btnEliminarEstadoCivil;
     private javax.swing.JButton btnIngresarNuevoEstadoCivil;
     private javax.swing.JButton btnMostrarTodosLosEstadosCiviles;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelTituloPanelMostrarEstadoCivil;
     private javax.swing.JTable tablaTodosLosEstadosCiviles;
     // End of variables declaration//GEN-END:variables
 }

@@ -23,7 +23,7 @@ public class PropietarioDao {
         
         try{
             Connection conexionBaseDatos = Conexion.getConexion();
-            String query = "insert into propietario (numrut_prop,dvrut_prop,appaterno_prop,apmaterno_prop,nombre_prop,direccion_prop,id_estcivil,fonofijo_prop,celular_prop,id_Comuna) values (?,?,?,?,?,?,?,?,?,?,)";
+            String query = "insert into propietario (numrut_prop,dvrut_prop,appaterno_prop,apmaterno_prop,nombre_prop,direccion_prop,id_estcivil,fonofijo_prop,celular_prop,id_Comuna) values (?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement prepararConsulta = conexionBaseDatos.prepareStatement(query);
             
             prepararConsulta.setInt(1, propietario.getNumrut_prop());
@@ -55,7 +55,7 @@ public class PropietarioDao {
         
         try{
             Connection conexionBaseDatos = Conexion.getConexion();
-            String query = "update propietario (dvrut_prop=?,appaterno_prop=?,apmaterno_prop=?,nombre_prop=?,direccion_prop=?,id_estcivil=?,fonofijo_prop=?,celular_prop=?,id_Comuna=? where numrut_prop = ?";
+            String query = "update propietario set dvrut_prop=?,appaterno_prop=?,apmaterno_prop=?,nombre_prop=?,direccion_prop=?,id_estcivil=?,fonofijo_prop=?,celular_prop=?,id_Comuna=? where numrut_prop = ?";
             PreparedStatement prepararConsulta = conexionBaseDatos.prepareStatement(query);
             
             prepararConsulta.setString(1,String.valueOf(propietario.getDvrut_prop()));

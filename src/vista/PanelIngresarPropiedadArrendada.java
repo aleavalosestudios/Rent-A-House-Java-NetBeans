@@ -10,10 +10,9 @@ import controlador.PropiedadArrendadaDao;
 import controlador.ClienteDao;
 import controlador.MisMetodos;
 import controlador.PropiedadDao;
+import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 /**
  *
  * @author aleja
@@ -25,12 +24,41 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
     PropiedadArrendada propiedadArrendada;
     
     PropiedadArrendadaDao propiedadArrendadaDao = new PropiedadArrendadaDao();
+    
+    ArrayList<Component> listadoInputsNoVacios = new ArrayList<>();
+    ArrayList<Component> listadoLabelErrorNoVacios = new ArrayList<>();
+    ArrayList<Component> listadoInputsNumeros = new ArrayList<>();
+    ArrayList<Component> listadoLabelErrorNumeros = new ArrayList<>();
+    ArrayList<Component> listadoInputfechas = new ArrayList<>();
+    ArrayList<Component> listadoLabelErrorfechas = new ArrayList<>();
+    
+    
     /**
      * Creates new form PanelIngresarPropiedadArrendada
      */
     public PanelIngresarPropiedadArrendada() {
         initComponents();
         MisMetodos.panelCamposErrorInicializador(this);
+        
+        listadoInputsNoVacios.add(inputnro_propiedad);
+        listadoInputsNoVacios.add(inputfecini_arriendo);
+        listadoInputsNoVacios.add(inputnumrut_cli);
+        
+        listadoLabelErrorNoVacios.add(labelErrornro_propiedad);
+        listadoLabelErrorNoVacios.add(labelErrorfecini_arriendo);
+        listadoLabelErrorNoVacios.add(labelErrornumrut_cli);
+        
+        listadoInputsNumeros.add(inputnro_propiedad);
+        listadoInputsNumeros.add(inputnumrut_cli);
+        
+        listadoLabelErrorNumeros.add(labelErrornro_propiedad);
+        listadoLabelErrorNumeros.add(labelErrornumrut_cli);
+        
+        listadoInputfechas.add(inputfecini_arriendo);
+        listadoInputfechas.add(inputfecter_arriendo);
+        
+        listadoLabelErrorfechas.add(labelErrorfecini_arriendo);
+        listadoLabelErrorfechas.add(labelErrorfecter_arriendo);
     }
 
     /**
@@ -118,19 +146,19 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
         inputnumrut_cli.setName("inputnumrut_cli"); // NOI18N
 
         labelErrornro_propiedad.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrornro_propiedad.setText("Nro Propiedad Obligatorio");
+        labelErrornro_propiedad.setText("Algun Texto");
         labelErrornro_propiedad.setName("labelErrornro_propiedad"); // NOI18N
 
         labelErrorfecini_arriendo.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorfecini_arriendo.setText("Fecha Inicio Arriendo Obligatorio");
+        labelErrorfecini_arriendo.setText("Algun texto");
         labelErrorfecini_arriendo.setName("labelErrorfecini_arriendo"); // NOI18N
 
         labelErrorfecter_arriendo.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorfecter_arriendo.setText("FechaTermino Arriendo Obligatorio");
+        labelErrorfecter_arriendo.setText("Algun Texto");
         labelErrorfecter_arriendo.setName("labelErrorfecter_arriendo"); // NOI18N
 
         labelErrornumrut_cli.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrornumrut_cli.setText("Nro Rut Cliente Obligatorio");
+        labelErrornumrut_cli.setText("Algun Texto");
         labelErrornumrut_cli.setName("labelErrornumrut_cli"); // NOI18N
 
         labelTituloPanelIngresarPropiedadArrendada.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -159,19 +187,23 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
                                         .addGap(49, 49, 49)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(inputnro_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(inputfecini_arriendo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(inputfecter_arriendo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(labelErrornro_propiedad)
-                                            .addComponent(labelErrorfecini_arriendo))
-                                        .addGap(59, 59, 59)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(labelErrornro_propiedad)
+                                                    .addComponent(labelErrorfecini_arriendo)
+                                                    .addComponent(inputnro_propiedad, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(74, 74, 74))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(inputfecini_arriendo)
+                                                .addGap(49, 49, 49)))
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(btnIngresarPropiedad)
                                             .addComponent(btnIngresarCliente)))
                                     .addComponent(labelErrorfecter_arriendo)
-                                    .addComponent(inputnumrut_cli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labelErrornumrut_cli)))
+                                    .addComponent(labelErrornumrut_cli)
+                                    .addComponent(inputfecter_arriendo, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(inputnumrut_cli, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnIngresoArriendoPropiedad)
                                 .addGap(18, 18, 18)
@@ -221,25 +253,82 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresoArriendoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresoArriendoPropiedadActionPerformed
+        //Controlar si cliente rut y  numero propiedad son numeros valido                
+        MisMetodos.panelCamposErrorInicializador(this);
 
-        int nroPropiedad = Integer.parseInt(String.valueOf(inputnro_propiedad.getText()));
-        int numrut_cli = Integer.parseInt(String.valueOf(inputnumrut_cli.getText()));
-
-        boolean clienteExiste = MisMetodos.listaVacia(clienteDao.buscarCliente(numrut_cli));
-                //buscadorClienteExiste(numrut_cli);
-        boolean propiedadexiste = MisMetodos.listaVacia(propiedadDao.buscarPropiedad(nroPropiedad));
-
-        if(clienteExiste == false || propiedadexiste == false){
-            JOptionPane.showMessageDialog(this,"Error en el ingreso de datos");
+        boolean existeInputVacio = MisMetodos.InputExisteVacio(listadoInputsNoVacios);
+        boolean existeNumeroNoValido = MisMetodos.inputListadoNumeroNoValido(listadoInputsNumeros);
+        boolean existeFechaNoValida = MisMetodos.fechaExisteNoValido(listadoInputfechas);
+        
+        
+        boolean nroPropiedadEsNumero =  MisMetodos.inputNumeroEntero(inputnro_propiedad);
+        boolean rutClienteEsNumero =  MisMetodos.inputNumeroEntero(inputnumrut_cli);
+        boolean fecinicioEsValida = MisMetodos.esFechaValida(inputfecini_arriendo.getText());
+        boolean fecterminoEsValida = MisMetodos.esFechaValida(inputfecter_arriendo.getText());
+        
+        
+        
+        if(existeInputVacio || existeNumeroNoValido || existeFechaNoValida){
+            
+            MisMetodos.inputsNoPuedenEstarVacios(listadoLabelErrorNoVacios, listadoInputsNoVacios);
+            
+            if(!nroPropiedadEsNumero){
+                MisMetodos.labelMensajeValidacion(labelErrornro_propiedad, "Ingrese un numero","error");
+            }else{
+                MisMetodos.labelMensajeValidacion(labelErrornro_propiedad,"Ok", "Ok");                                
+            }
+            
+            if(!rutClienteEsNumero){
+                MisMetodos.labelMensajeValidacion(labelErrornumrut_cli, "Ingrese un numero","error");
+            }else{
+                MisMetodos.labelMensajeValidacion(labelErrornumrut_cli,"Ok", "Ok");
+            }
+            
+            if(!fecinicioEsValida){
+                MisMetodos.labelMensajeValidacion(labelErrorfecini_arriendo,"No es una fecha valida","error");
+            }else{
+                MisMetodos.labelMensajeValidacion(labelErrorfecini_arriendo,"Ok","Ok");
+            }
+            
+            if(!fecterminoEsValida){
+                MisMetodos.labelMensajeValidacion(labelErrorfecter_arriendo,"No es una fecha valida","error");
+            }else{
+                MisMetodos.labelMensajeValidacion(labelErrorfecter_arriendo,"Ok","Ok");
+            }
+                      
         }else{
+            
+            MisMetodos.panelCamposErrorInicializador(this);
 
-            String fec_inicio = String.valueOf(inputfecini_arriendo.getText());
-            String fec_termino = String.valueOf(inputfecter_arriendo.getText());
+            boolean clienteExiste = true;
+            boolean propiedadExiste = true;
+            
+            if(clienteDao.buscarCliente(Integer.parseInt(inputnumrut_cli.getText())).isEmpty()){
+                MisMetodos.labelMensajeValidacion(labelErrornumrut_cli,"Cliente No Existe", "error");
+                clienteExiste = false;
+            }
+            
+            
+            if(propiedadDao.buscarPropiedad(Integer.parseInt(inputnro_propiedad.getText())).isEmpty()){
+                MisMetodos.labelMensajeValidacion(labelErrornro_propiedad,"Propiedad No Existe", "error");
+                propiedadExiste = false;
+            }
+            
+            //INGRESO DE PROPIEDAD
+            if(clienteExiste && propiedadExiste){
+            
+                int nroPropiedad = Integer.parseInt(String.valueOf(inputnro_propiedad.getText()));
+                int numrut_cli = Integer.parseInt(String.valueOf(inputnumrut_cli.getText()));
 
-            propiedadArrendada= new PropiedadArrendada(nroPropiedad, fec_inicio, fec_termino, numrut_cli);
-            propiedadArrendadaDao.agregarPropiedadArrendada(propiedadArrendada);
+                String fec_inicio = String.valueOf(inputfecini_arriendo.getText());
+                String fec_termino = String.valueOf(inputfecter_arriendo.getText());
 
-            JOptionPane.showMessageDialog(this,"Arriendo De Propiedad Ingresado Correctamente");
+                propiedadArrendada= new PropiedadArrendada(nroPropiedad, fec_inicio, fec_termino, numrut_cli);
+                propiedadArrendadaDao.agregarPropiedadArrendada(propiedadArrendada);
+
+                JOptionPane.showMessageDialog(this,"Arriendo De Propiedad Ingresado Correctamente");
+            
+            }
         }
 
     }//GEN-LAST:event_btnIngresoArriendoPropiedadActionPerformed
@@ -260,6 +349,8 @@ public class PanelIngresarPropiedadArrendada extends javax.swing.JPanel {
 
     private void btnLimpiarIngresoArriendoPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarIngresoArriendoPropiedadActionPerformed
         MisMetodos.panelLimpiarComponentes(this);
+        MisMetodos.panelCamposErrorInicializador(this);
+
     }//GEN-LAST:event_btnLimpiarIngresoArriendoPropiedadActionPerformed
     
     

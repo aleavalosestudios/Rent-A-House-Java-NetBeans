@@ -6,9 +6,9 @@ package vista;
 
 import controlador.ComunaDao;
 import controlador.MisMetodos;
+import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import modelo.Comuna;
 
 /**
@@ -16,6 +16,8 @@ import modelo.Comuna;
  * @author aleja
  */
 public class PanelIngresarComuna extends javax.swing.JPanel {
+    ArrayList<Component> listadoInputsNoVacios = new ArrayList<>();
+    ArrayList<Component> listadoLabelErrorNoVacios = new ArrayList<>();
     
     /**
      * Creates new form PanelIngresarComuna
@@ -23,6 +25,8 @@ public class PanelIngresarComuna extends javax.swing.JPanel {
     public PanelIngresarComuna() {
         initComponents();
         MisMetodos.panelCamposErrorInicializador(this);
+        listadoInputsNoVacios.add(Inputnombre_comuna);
+        listadoLabelErrorNoVacios.add(labelErrornombre_comuna);
     }
 
     /**
@@ -86,16 +90,16 @@ public class PanelIngresarComuna extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(btnLimpiarIngresoComuna))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(labelTituloPanelIngresarComuna))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(labelNombreComuna)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(labelErrornombre_comuna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Inputnombre_comuna)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(labelTituloPanelIngresarComuna)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Inputnombre_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelErrornombre_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,27 +122,32 @@ public class PanelIngresarComuna extends javax.swing.JPanel {
 
     private void btnAgregarComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComunaActionPerformed
         String nombre_comuna = Inputnombre_comuna.getText();
-        if(nombre_comuna.isEmpty()){
+        if(MisMetodos.InputExisteVacio(listadoInputsNoVacios)){
             MisMetodos.labelMensajeValidacion(labelErrornombre_comuna, "Campo Obligatorio", "error");
-        }    
-        else{    
-            ComunaDao comunaDao = new ComunaDao();
-            Comuna comuna = new Comuna(0, nombre_comuna);
+        }   
+        else{
+            if(!MisMetodos.inputNumeroEntero(Inputnombre_comuna)){
+                ComunaDao comunaDao = new ComunaDao();
+                Comuna comuna = new Comuna(0, nombre_comuna);
 
-            ArrayList<Comuna> listadoBuscarComuna = comunaDao.buscarComuna(nombre_comuna);
+                ArrayList<Comuna> listadoBuscarComuna = comunaDao.buscarComuna(nombre_comuna);
 
-            if(listadoBuscarComuna.isEmpty()){
-                comunaDao.ingresarComuna(comuna);
-                JOptionPane.showMessageDialog(this,"Comuna Ingresada Correctamente");
+                if(listadoBuscarComuna.isEmpty()){
+                    comunaDao.ingresarComuna(comuna);
+                    JOptionPane.showMessageDialog(this,"Comuna Ingresada Correctamente");
+                }else{
+                    JOptionPane.showMessageDialog(this,"Comuna ya existe");
+                }
             }else{
-                JOptionPane.showMessageDialog(this,"Comuna ya existe");
+                MisMetodos.labelMensajeValidacion(labelErrornombre_comuna, "Campo No puede ser un numero","error");
             }
         }
 
     }//GEN-LAST:event_btnAgregarComunaActionPerformed
 
     private void btnLimpiarIngresoComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarIngresoComunaActionPerformed
-        MisMetodos.panelLimpiarComponentes(this);
+       MisMetodos.panelLimpiarComponentes(this);
+       MisMetodos.panelCamposErrorInicializador(this);
     }//GEN-LAST:event_btnLimpiarIngresoComunaActionPerformed
 
     private void Inputnombre_comunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inputnombre_comunaActionPerformed

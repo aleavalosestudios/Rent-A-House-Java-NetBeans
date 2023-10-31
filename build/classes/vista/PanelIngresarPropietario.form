@@ -37,54 +37,56 @@
                               <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="inputDvrut_prop" min="-2" max="-2" attributes="0"/>
+                                      <Component id="inputdvrut_prop" min="-2" pref="170" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="labelErrorRutPropietarioObligatorio" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelErrordvrut_prop" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="inputCelular_prop" min="-2" max="-2" attributes="0"/>
+                                      <Component id="inputcelular_prop" min="-2" pref="170" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="labelErrorCelularPropietario" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelErrorcelular_prop" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="inputId_comuna" min="-2" max="-2" attributes="0"/>
+                                      <Component id="comboBoxid_comuna" min="-2" pref="130" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="labelErrorComunaObligatorio" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelErrorid_comuna" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="inputAppaterno_prop" min="-2" max="-2" attributes="0"/>
+                                      <Component id="inputfonofijo_prop" min="-2" pref="182" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="labelErrorApellidoPaternoPropietarioObligatorio" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelErrorfonofijo_prop" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="inputApmaterno_prop" min="-2" max="-2" attributes="0"/>
+                                      <Component id="comboBoxid_estcivil" min="-2" pref="148" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="labelErrorApellidoMaternoPropietarioObligatorio" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelErrorid_estcivil" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="inputNombre_prop" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="inputapmaterno_prop" pref="161" max="32767" attributes="0"/>
+                                          <Component id="inputappaterno_prop" max="32767" attributes="0"/>
+                                      </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="labelErrorNombrePropietarioObligatorio" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="labelErrorappaterno_prop" min="-2" max="-2" attributes="0"/>
+                                          <Component id="labelErrorapmaterno_prop" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="inputDireccion_prop" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="inputdireccion_prop" pref="179" max="32767" attributes="0"/>
+                                          <Component id="inputnombre_prop" max="32767" attributes="0"/>
+                                      </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="labelErrorDireccionPropietarioObligatorio" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="labelErrornombre_prop" min="-2" max="-2" attributes="0"/>
+                                          <Component id="labelErrordireccion_prop" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="inputFonofijo_prop" min="-2" pref="168" max="-2" attributes="0"/>
+                                      <Component id="inputnumrut_prop" min="-2" pref="189" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="labelErrorFonoFijoPropietarioObligatorio" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="comboBoxEstadoCivil" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="labelErrorEstadoCivilObligatorio" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="inputNumrut_prop" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="labelErrorNrutPropietarioObligatorio" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelErrornumrut_prop" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -101,7 +103,7 @@
                       <Component id="labelTituloIngresarPropietario" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <EmptySpace pref="25" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -113,64 +115,62 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelNumrut_prop" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputNumrut_prop" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorNrutPropietarioObligatorio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputnumrut_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrornumrut_prop" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelDvrut_prop" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputDvrut_prop" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorRutPropietarioObligatorio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputdvrut_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrordvrut_prop" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelAppaterno_prop" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputAppaterno_prop" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorApellidoPaternoPropietarioObligatorio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputappaterno_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorappaterno_prop" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelApmaterno_prop" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputApmaterno_prop" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorApellidoMaternoPropietarioObligatorio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputapmaterno_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorapmaterno_prop" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelNombre_prop" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputNombre_prop" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorNombrePropietarioObligatorio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputnombre_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrornombre_prop" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelDireccion_prop" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputDireccion_prop" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorDireccionPropietarioObligatorio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputdireccion_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrordireccion_prop" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="labelId_estcivil" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="comboBoxEstadoCivil" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="labelErrorEstadoCivilObligatorio" alignment="1" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelId_estcivil" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboBoxid_estcivil" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorid_estcivil" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelFonofijo_prop" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputFonofijo_prop" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorFonoFijoPropietarioObligatorio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputfonofijo_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorfonofijo_prop" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelCelular_prop" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputCelular_prop" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorCelularPropietario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputcelular_prop" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorcelular_prop" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelId_Comuna" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="inputId_comuna" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelErrorComunaObligatorio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelErrorid_comuna" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboBoxid_comuna" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -183,12 +183,13 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="inputNombre_prop">
+    <Component class="javax.swing.JTextField" name="inputnombre_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Nombre Propietario"/>
+        <Property name="name" type="java.lang.String" value="inputnombre_prop" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelNombre_prop">
@@ -196,12 +197,13 @@
         <Property name="text" type="java.lang.String" value="Nombre Propietario"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputDireccion_prop">
+    <Component class="javax.swing.JTextField" name="inputdireccion_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Direccion Propietario"/>
+        <Property name="name" type="java.lang.String" value="inputdireccion_prop" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelDireccion_prop">
@@ -209,12 +211,13 @@
         <Property name="text" type="java.lang.String" value="Direcci&#xf3;n Propietario"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputFonofijo_prop">
+    <Component class="javax.swing.JTextField" name="inputfonofijo_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Fono Fijo Propietario"/>
+        <Property name="name" type="java.lang.String" value="inputfonofijo_prop" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelId_estcivil">
@@ -222,25 +225,18 @@
         <Property name="text" type="java.lang.String" value="Id Estado Civil"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputCelular_prop">
+    <Component class="javax.swing.JTextField" name="inputcelular_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Celular Propietario"/>
+        <Property name="name" type="java.lang.String" value="inputcelular_prop" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelFonofijo_prop">
       <Properties>
         <Property name="text" type="java.lang.String" value="Fono fijo Propietario"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="inputId_comuna">
-      <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="99" red="99" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Ingrese Id Comuna"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelCelular_prop">
@@ -269,12 +265,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpiarIngresoNuevoPropietarioActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputNumrut_prop">
+    <Component class="javax.swing.JTextField" name="inputnumrut_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Numero Rut Propietario"/>
+        <Property name="name" type="java.lang.String" value="inputnumrut_prop" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelNumrut_prop">
@@ -282,19 +279,21 @@
         <Property name="text" type="java.lang.String" value="Nro Rut Propietario"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputDvrut_prop">
+    <Component class="javax.swing.JTextField" name="inputdvrut_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese DV Rut Propietario"/>
+        <Property name="name" type="java.lang.String" value="inputdvrut_prop" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="comboBoxEstadoCivil">
+    <Component class="javax.swing.JComboBox" name="comboBoxid_estcivil">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
         </Property>
+        <Property name="name" type="java.lang.String" value="comboBoxid_estcivil" noResource="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -305,12 +304,13 @@
         <Property name="text" type="java.lang.String" value="DV Rut Propietario"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputAppaterno_prop">
+    <Component class="javax.swing.JTextField" name="inputappaterno_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Apellido Paterno"/>
+        <Property name="name" type="java.lang.String" value="inputappaterno_prop" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelAppaterno_prop">
@@ -318,12 +318,13 @@
         <Property name="text" type="java.lang.String" value="Apellido Paterno Propietario"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputApmaterno_prop">
+    <Component class="javax.swing.JTextField" name="inputapmaterno_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ingrese Apellido Materno"/>
+        <Property name="name" type="java.lang.String" value="inputapmaterno_prop" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelApmaterno_prop">
@@ -331,94 +332,94 @@
         <Property name="text" type="java.lang.String" value="Apellido Materno Propietario"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorNrutPropietarioObligatorio">
+    <Component class="javax.swing.JLabel" name="labelErrornumrut_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nro Rut Propietario Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorNrutPropietarioObligatorio" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrornumrut_prop" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorRutPropietarioObligatorio">
+    <Component class="javax.swing.JLabel" name="labelErrordvrut_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="DV Rut Propietario Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorRutPropietarioObligatorio" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrordvrut_prop" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorApellidoPaternoPropietarioObligatorio">
+    <Component class="javax.swing.JLabel" name="labelErrorappaterno_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Apellido Paterno Propietario Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorApellidoPaternoPropietarioObligatorio" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorappaterno_prop" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorApellidoMaternoPropietarioObligatorio">
+    <Component class="javax.swing.JLabel" name="labelErrorapmaterno_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Apellido Materno Propietario Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorApellidoMaternoPropietarioObligatorio" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorapmaterno_prop" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorNombrePropietarioObligatorio">
+    <Component class="javax.swing.JLabel" name="labelErrornombre_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nombre Propietario Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorNombrePropietarioObligatorio" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrornombre_prop" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorDireccionPropietarioObligatorio">
+    <Component class="javax.swing.JLabel" name="labelErrordireccion_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Direcci&#xf3;n Propietario Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorDireccionPropietarioObligatorio" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrordireccion_prop" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorEstadoCivilObligatorio">
+    <Component class="javax.swing.JLabel" name="labelErrorid_estcivil">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Estado Civil Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorEstadoCivilObligatorio" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorid_estcivil" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorFonoFijoPropietarioObligatorio">
+    <Component class="javax.swing.JLabel" name="labelErrorfonofijo_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Fono Fijo Propietario Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorFonoFijoPropietarioObligatorio" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorfonofijo_prop" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorCelularPropietario">
+    <Component class="javax.swing.JLabel" name="labelErrorcelular_prop">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Celular Propietario Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorCelularPropietario" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorcelular_prop" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelErrorComunaObligatorio">
+    <Component class="javax.swing.JLabel" name="labelErrorid_comuna">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Comuna Obligatorio"/>
-        <Property name="name" type="java.lang.String" value="labelErrorComunaObligatorio" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
+        <Property name="name" type="java.lang.String" value="labelErrorid_comuna" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelTituloIngresarPropietario">
@@ -429,6 +430,17 @@
         <Property name="text" type="java.lang.String" value="Ingreso Nuevo Propietario"/>
         <Property name="name" type="java.lang.String" value="labelTituloIngresarPropietario" noResource="true"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="comboBoxid_comuna">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+        <Property name="name" type="java.lang.String" value="comboBoxid_comuna" noResource="true"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

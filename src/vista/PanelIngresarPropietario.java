@@ -5,11 +5,14 @@
 package vista;
 
 import controlador.EstadoCivilDao;
+import controlador.ComunaDao;
 import controlador.MisMetodos;
 import controlador.PropietarioDao;
+import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import modelo.Comuna;
 import modelo.EstadoCivil;
 import modelo.Propietario;
 
@@ -21,13 +24,48 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
     Propietario propietario;
     PropietarioDao propietarioDao = new PropietarioDao();
     EstadoCivilDao estadoCivilDao = new EstadoCivilDao();
+    ComunaDao comunaDao = new ComunaDao();
+    
+    ArrayList<Component> listadoInputsNovacios = new ArrayList<>();
+    ArrayList<Component> listadoLabelErrorNoVacios = new ArrayList<>();
+    ArrayList<Component> listadoInputsNumeros = new ArrayList<>();
+    ArrayList<Component> listadoLabelErrorNumeros = new ArrayList<>();
+    
+    char[] arrayCharPermitido = {'0','1','2','3','4','5','6','7','8','9','K'};     
+
     
     /**
      * Creates new form PanelIngresarPropietarioMisMetord     */
     public PanelIngresarPropietario() {
         initComponents();
-        MisMetodos.comboboxLLenado(comboBoxEstadoCivil, estadoCivilDao.todosLosEstadoCivil());
+        MisMetodos.comboboxLLenado(comboBoxid_estcivil, estadoCivilDao.todosLosEstadoCivil());
+        MisMetodos.comboboxLLenado(comboBoxid_comuna, comunaDao.mostrarComunas());
         MisMetodos.panelCamposErrorInicializador(this);
+        
+        listadoInputsNovacios.add(inputnumrut_prop);
+        listadoInputsNovacios.add(inputdvrut_prop);
+        listadoInputsNovacios.add(inputappaterno_prop);
+        listadoInputsNovacios.add(inputapmaterno_prop);
+        listadoInputsNovacios.add(inputnombre_prop);
+        listadoInputsNovacios.add(inputdireccion_prop);
+        listadoInputsNovacios.add(inputcelular_prop);
+        
+        listadoLabelErrorNoVacios.add(labelErrornumrut_prop);
+        listadoLabelErrorNoVacios.add(labelErrordvrut_prop);
+        listadoLabelErrorNoVacios.add(labelErrorappaterno_prop);
+        listadoLabelErrorNoVacios.add(labelErrorapmaterno_prop);
+        listadoLabelErrorNoVacios.add(labelErrornombre_prop);
+        listadoLabelErrorNoVacios.add(labelErrordireccion_prop);
+        listadoLabelErrorNoVacios.add(labelErrorcelular_prop);
+        
+        listadoInputsNumeros.add(inputnumrut_prop);
+        listadoInputsNumeros.add(inputfonofijo_prop);
+        listadoInputsNumeros.add(inputcelular_prop);
+        
+        
+        listadoLabelErrorNumeros.add(labelErrornumrut_prop);
+        listadoLabelErrorNumeros.add(labelErrorfonofijo_prop);
+        listadoLabelErrorNumeros.add(labelErrorcelular_prop);
     }
 
     /**
@@ -39,62 +77,63 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        inputNombre_prop = new javax.swing.JTextField();
+        inputnombre_prop = new javax.swing.JTextField();
         labelNombre_prop = new javax.swing.JLabel();
-        inputDireccion_prop = new javax.swing.JTextField();
+        inputdireccion_prop = new javax.swing.JTextField();
         labelDireccion_prop = new javax.swing.JLabel();
-        inputFonofijo_prop = new javax.swing.JTextField();
+        inputfonofijo_prop = new javax.swing.JTextField();
         labelId_estcivil = new javax.swing.JLabel();
-        inputCelular_prop = new javax.swing.JTextField();
+        inputcelular_prop = new javax.swing.JTextField();
         labelFonofijo_prop = new javax.swing.JLabel();
-        inputId_comuna = new javax.swing.JTextField();
         labelCelular_prop = new javax.swing.JLabel();
         btnIngresarNuevoPropietario = new javax.swing.JButton();
         labelId_Comuna = new javax.swing.JLabel();
         btnLimpiarIngresoNuevoPropietario = new javax.swing.JButton();
-        inputNumrut_prop = new javax.swing.JTextField();
+        inputnumrut_prop = new javax.swing.JTextField();
         labelNumrut_prop = new javax.swing.JLabel();
-        inputDvrut_prop = new javax.swing.JTextField();
-        comboBoxEstadoCivil = new javax.swing.JComboBox<>();
+        inputdvrut_prop = new javax.swing.JTextField();
+        comboBoxid_estcivil = new javax.swing.JComboBox<>();
         labelDvrut_prop = new javax.swing.JLabel();
-        inputAppaterno_prop = new javax.swing.JTextField();
+        inputappaterno_prop = new javax.swing.JTextField();
         labelAppaterno_prop = new javax.swing.JLabel();
-        inputApmaterno_prop = new javax.swing.JTextField();
+        inputapmaterno_prop = new javax.swing.JTextField();
         labelApmaterno_prop = new javax.swing.JLabel();
-        labelErrorNrutPropietarioObligatorio = new javax.swing.JLabel();
-        labelErrorRutPropietarioObligatorio = new javax.swing.JLabel();
-        labelErrorApellidoPaternoPropietarioObligatorio = new javax.swing.JLabel();
-        labelErrorApellidoMaternoPropietarioObligatorio = new javax.swing.JLabel();
-        labelErrorNombrePropietarioObligatorio = new javax.swing.JLabel();
-        labelErrorDireccionPropietarioObligatorio = new javax.swing.JLabel();
-        labelErrorEstadoCivilObligatorio = new javax.swing.JLabel();
-        labelErrorFonoFijoPropietarioObligatorio = new javax.swing.JLabel();
-        labelErrorCelularPropietario = new javax.swing.JLabel();
-        labelErrorComunaObligatorio = new javax.swing.JLabel();
+        labelErrornumrut_prop = new javax.swing.JLabel();
+        labelErrordvrut_prop = new javax.swing.JLabel();
+        labelErrorappaterno_prop = new javax.swing.JLabel();
+        labelErrorapmaterno_prop = new javax.swing.JLabel();
+        labelErrornombre_prop = new javax.swing.JLabel();
+        labelErrordireccion_prop = new javax.swing.JLabel();
+        labelErrorid_estcivil = new javax.swing.JLabel();
+        labelErrorfonofijo_prop = new javax.swing.JLabel();
+        labelErrorcelular_prop = new javax.swing.JLabel();
+        labelErrorid_comuna = new javax.swing.JLabel();
         labelTituloIngresarPropietario = new javax.swing.JLabel();
+        comboBoxid_comuna = new javax.swing.JComboBox<>();
 
-        inputNombre_prop.setForeground(new java.awt.Color(153, 153, 153));
-        inputNombre_prop.setText("Ingrese Nombre Propietario");
+        inputnombre_prop.setForeground(new java.awt.Color(153, 153, 153));
+        inputnombre_prop.setText("Ingrese Nombre Propietario");
+        inputnombre_prop.setName("inputnombre_prop"); // NOI18N
 
         labelNombre_prop.setText("Nombre Propietario");
 
-        inputDireccion_prop.setForeground(new java.awt.Color(153, 153, 153));
-        inputDireccion_prop.setText("Ingrese Direccion Propietario");
+        inputdireccion_prop.setForeground(new java.awt.Color(153, 153, 153));
+        inputdireccion_prop.setText("Ingrese Direccion Propietario");
+        inputdireccion_prop.setName("inputdireccion_prop"); // NOI18N
 
         labelDireccion_prop.setText("Dirección Propietario");
 
-        inputFonofijo_prop.setForeground(new java.awt.Color(153, 153, 153));
-        inputFonofijo_prop.setText("Ingrese Fono Fijo Propietario");
+        inputfonofijo_prop.setForeground(new java.awt.Color(153, 153, 153));
+        inputfonofijo_prop.setText("Ingrese Fono Fijo Propietario");
+        inputfonofijo_prop.setName("inputfonofijo_prop"); // NOI18N
 
         labelId_estcivil.setText("Id Estado Civil");
 
-        inputCelular_prop.setForeground(new java.awt.Color(153, 153, 153));
-        inputCelular_prop.setText("Ingrese Celular Propietario");
+        inputcelular_prop.setForeground(new java.awt.Color(153, 153, 153));
+        inputcelular_prop.setText("Ingrese Celular Propietario");
+        inputcelular_prop.setName("inputcelular_prop"); // NOI18N
 
         labelFonofijo_prop.setText("Fono fijo Propietario");
-
-        inputId_comuna.setForeground(new java.awt.Color(153, 153, 153));
-        inputId_comuna.setText("Ingrese Id Comuna");
 
         labelCelular_prop.setText("Celular Propietario");
 
@@ -114,69 +153,77 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
             }
         });
 
-        inputNumrut_prop.setForeground(new java.awt.Color(153, 153, 153));
-        inputNumrut_prop.setText("Ingrese Numero Rut Propietario");
+        inputnumrut_prop.setForeground(new java.awt.Color(153, 153, 153));
+        inputnumrut_prop.setText("Ingrese Numero Rut Propietario");
+        inputnumrut_prop.setName("inputnumrut_prop"); // NOI18N
 
         labelNumrut_prop.setText("Nro Rut Propietario");
 
-        inputDvrut_prop.setForeground(new java.awt.Color(153, 153, 153));
-        inputDvrut_prop.setText("Ingrese DV Rut Propietario");
+        inputdvrut_prop.setForeground(new java.awt.Color(153, 153, 153));
+        inputdvrut_prop.setText("Ingrese DV Rut Propietario");
+        inputdvrut_prop.setName("inputdvrut_prop"); // NOI18N
+
+        comboBoxid_estcivil.setName("comboBoxid_estcivil"); // NOI18N
 
         labelDvrut_prop.setText("DV Rut Propietario");
 
-        inputAppaterno_prop.setForeground(new java.awt.Color(153, 153, 153));
-        inputAppaterno_prop.setText("Ingrese Apellido Paterno");
+        inputappaterno_prop.setForeground(new java.awt.Color(153, 153, 153));
+        inputappaterno_prop.setText("Ingrese Apellido Paterno");
+        inputappaterno_prop.setName("inputappaterno_prop"); // NOI18N
 
         labelAppaterno_prop.setText("Apellido Paterno Propietario");
 
-        inputApmaterno_prop.setForeground(new java.awt.Color(153, 153, 153));
-        inputApmaterno_prop.setText("Ingrese Apellido Materno");
+        inputapmaterno_prop.setForeground(new java.awt.Color(153, 153, 153));
+        inputapmaterno_prop.setText("Ingrese Apellido Materno");
+        inputapmaterno_prop.setName("inputapmaterno_prop"); // NOI18N
 
         labelApmaterno_prop.setText("Apellido Materno Propietario");
 
-        labelErrorNrutPropietarioObligatorio.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorNrutPropietarioObligatorio.setText("Nro Rut Propietario Obligatorio");
-        labelErrorNrutPropietarioObligatorio.setName("labelErrorNrutPropietarioObligatorio"); // NOI18N
+        labelErrornumrut_prop.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrornumrut_prop.setText("Algun Texto");
+        labelErrornumrut_prop.setName("labelErrornumrut_prop"); // NOI18N
 
-        labelErrorRutPropietarioObligatorio.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorRutPropietarioObligatorio.setText("DV Rut Propietario Obligatorio");
-        labelErrorRutPropietarioObligatorio.setName("labelErrorRutPropietarioObligatorio"); // NOI18N
+        labelErrordvrut_prop.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrordvrut_prop.setText("Algun Texto");
+        labelErrordvrut_prop.setName("labelErrordvrut_prop"); // NOI18N
 
-        labelErrorApellidoPaternoPropietarioObligatorio.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorApellidoPaternoPropietarioObligatorio.setText("Apellido Paterno Propietario Obligatorio");
-        labelErrorApellidoPaternoPropietarioObligatorio.setName("labelErrorApellidoPaternoPropietarioObligatorio"); // NOI18N
+        labelErrorappaterno_prop.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorappaterno_prop.setText("Algun Texto");
+        labelErrorappaterno_prop.setName("labelErrorappaterno_prop"); // NOI18N
 
-        labelErrorApellidoMaternoPropietarioObligatorio.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorApellidoMaternoPropietarioObligatorio.setText("Apellido Materno Propietario Obligatorio");
-        labelErrorApellidoMaternoPropietarioObligatorio.setName("labelErrorApellidoMaternoPropietarioObligatorio"); // NOI18N
+        labelErrorapmaterno_prop.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorapmaterno_prop.setText("Algun Texto");
+        labelErrorapmaterno_prop.setName("labelErrorapmaterno_prop"); // NOI18N
 
-        labelErrorNombrePropietarioObligatorio.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorNombrePropietarioObligatorio.setText("Nombre Propietario Obligatorio");
-        labelErrorNombrePropietarioObligatorio.setName("labelErrorNombrePropietarioObligatorio"); // NOI18N
+        labelErrornombre_prop.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrornombre_prop.setText("Algun Texto");
+        labelErrornombre_prop.setName("labelErrornombre_prop"); // NOI18N
 
-        labelErrorDireccionPropietarioObligatorio.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorDireccionPropietarioObligatorio.setText("Dirección Propietario Obligatorio");
-        labelErrorDireccionPropietarioObligatorio.setName("labelErrorDireccionPropietarioObligatorio"); // NOI18N
+        labelErrordireccion_prop.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrordireccion_prop.setText("Algun Texto");
+        labelErrordireccion_prop.setName("labelErrordireccion_prop"); // NOI18N
 
-        labelErrorEstadoCivilObligatorio.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorEstadoCivilObligatorio.setText("Estado Civil Obligatorio");
-        labelErrorEstadoCivilObligatorio.setName("labelErrorEstadoCivilObligatorio"); // NOI18N
+        labelErrorid_estcivil.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorid_estcivil.setText("Algun Texto");
+        labelErrorid_estcivil.setName("labelErrorid_estcivil"); // NOI18N
 
-        labelErrorFonoFijoPropietarioObligatorio.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorFonoFijoPropietarioObligatorio.setText("Fono Fijo Propietario Obligatorio");
-        labelErrorFonoFijoPropietarioObligatorio.setName("labelErrorFonoFijoPropietarioObligatorio"); // NOI18N
+        labelErrorfonofijo_prop.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorfonofijo_prop.setText("Algun Texto");
+        labelErrorfonofijo_prop.setName("labelErrorfonofijo_prop"); // NOI18N
 
-        labelErrorCelularPropietario.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorCelularPropietario.setText("Celular Propietario Obligatorio");
-        labelErrorCelularPropietario.setName("labelErrorCelularPropietario"); // NOI18N
+        labelErrorcelular_prop.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorcelular_prop.setText("Algun Texto");
+        labelErrorcelular_prop.setName("labelErrorcelular_prop"); // NOI18N
 
-        labelErrorComunaObligatorio.setForeground(new java.awt.Color(255, 0, 0));
-        labelErrorComunaObligatorio.setText("Comuna Obligatorio");
-        labelErrorComunaObligatorio.setName("labelErrorComunaObligatorio"); // NOI18N
+        labelErrorid_comuna.setForeground(new java.awt.Color(255, 0, 0));
+        labelErrorid_comuna.setText("Algun Texto");
+        labelErrorid_comuna.setName("labelErrorid_comuna"); // NOI18N
 
         labelTituloIngresarPropietario.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         labelTituloIngresarPropietario.setText("Ingreso Nuevo Propietario");
         labelTituloIngresarPropietario.setName("labelTituloIngresarPropietario"); // NOI18N
+
+        comboBoxid_comuna.setName("comboBoxid_comuna"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -202,45 +249,45 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
                                 .addGap(22, 22, 22)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(inputDvrut_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(inputdvrut_prop, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(labelErrorRutPropietarioObligatorio))
+                                        .addComponent(labelErrordvrut_prop))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(inputCelular_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(inputcelular_prop, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(labelErrorCelularPropietario))
+                                        .addComponent(labelErrorcelular_prop))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(inputId_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(comboBoxid_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(labelErrorComunaObligatorio))
+                                        .addComponent(labelErrorid_comuna))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(inputAppaterno_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(inputfonofijo_prop, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(labelErrorApellidoPaternoPropietarioObligatorio))
+                                        .addComponent(labelErrorfonofijo_prop))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(inputApmaterno_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(comboBoxid_estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(labelErrorApellidoMaternoPropietarioObligatorio))
+                                        .addComponent(labelErrorid_estcivil))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(inputNombre_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(inputapmaterno_prop, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                                            .addComponent(inputappaterno_prop))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(labelErrorNombrePropietarioObligatorio))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(labelErrorappaterno_prop)
+                                            .addComponent(labelErrorapmaterno_prop)))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(inputDireccion_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(inputdireccion_prop, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+                                            .addComponent(inputnombre_prop))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(labelErrorDireccionPropietarioObligatorio))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(labelErrornombre_prop)
+                                            .addComponent(labelErrordireccion_prop)))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(inputFonofijo_prop, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(inputnumrut_prop, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(labelErrorFonoFijoPropietarioObligatorio))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(comboBoxEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(labelErrorEstadoCivilObligatorio))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(inputNumrut_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(labelErrorNrutPropietarioObligatorio))))
+                                        .addComponent(labelErrornumrut_prop))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(14, 14, 14)
                                 .addComponent(btnIngresarNuevoPropietario)
@@ -249,7 +296,7 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(67, 67, 67)
                         .addComponent(labelTituloIngresarPropietario)))
-                .addGap(18, 18, 18))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,54 +306,53 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNumrut_prop)
-                    .addComponent(inputNumrut_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorNrutPropietarioObligatorio))
+                    .addComponent(inputnumrut_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrornumrut_prop))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDvrut_prop)
-                    .addComponent(inputDvrut_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorRutPropietarioObligatorio))
+                    .addComponent(inputdvrut_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrordvrut_prop))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelAppaterno_prop)
-                    .addComponent(inputAppaterno_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorApellidoPaternoPropietarioObligatorio))
+                    .addComponent(inputappaterno_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorappaterno_prop))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelApmaterno_prop)
-                    .addComponent(inputApmaterno_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorApellidoMaternoPropietarioObligatorio))
+                    .addComponent(inputapmaterno_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorapmaterno_prop))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNombre_prop)
-                    .addComponent(inputNombre_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorNombrePropietarioObligatorio))
+                    .addComponent(inputnombre_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrornombre_prop))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDireccion_prop)
-                    .addComponent(inputDireccion_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorDireccionPropietarioObligatorio))
+                    .addComponent(inputdireccion_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrordireccion_prop))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(labelId_estcivil)
-                        .addComponent(comboBoxEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(labelErrorEstadoCivilObligatorio, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelId_estcivil)
+                    .addComponent(comboBoxid_estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorid_estcivil))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelFonofijo_prop)
-                    .addComponent(inputFonofijo_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorFonoFijoPropietarioObligatorio))
+                    .addComponent(inputfonofijo_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorfonofijo_prop))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCelular_prop)
-                    .addComponent(inputCelular_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorCelularPropietario))
+                    .addComponent(inputcelular_prop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelErrorcelular_prop))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelId_Comuna)
-                    .addComponent(inputId_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErrorComunaObligatorio))
+                    .addComponent(labelErrorid_comuna)
+                    .addComponent(comboBoxid_comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresarNuevoPropietario)
@@ -317,40 +363,53 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
 
     private void btnIngresarNuevoPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarNuevoPropietarioActionPerformed
         
-        int numrut_Prop = Integer.parseInt(String.valueOf(inputNumrut_prop.getText()));
-
-        ArrayList<Propietario> listadopropietario = propietarioDao.buscarPropietario(numrut_Prop);
-        ArrayList<EstadoCivil> listadoEstadoCivil = estadoCivilDao.buscarEstadoCivil(String.valueOf(comboBoxEstadoCivil.getSelectedItem()));
+        boolean existeInputVacio = MisMetodos.InputExisteVacio(listadoInputsNovacios);
+        boolean existeNumeroInvalido = MisMetodos.inputListadoNumeroNoValido(listadoInputsNumeros);
+        boolean dvNoPermitido = MisMetodos.inputEsChar(inputdvrut_prop);
         
-
-        if(listadopropietario.isEmpty()){
-
-            char dvrut_prop = String.valueOf(inputDvrut_prop.getText()).charAt(0);
-            String appaterno_prop = String.valueOf(inputAppaterno_prop.getText());
-            String apmaterno_prop = String.valueOf(inputApmaterno_prop.getText());
-            String nombre_prop = String.valueOf(inputNombre_prop.getText());
-            String direccion_prop = String.valueOf(inputDireccion_prop.getText());
-            
-            int id_estcivil = MisMetodos.comboBoxBuscarSeleccion(listadoEstadoCivil);
-            //int id_estcivil = buscarSeleccionComboboxEstadoCivil(String.valueOf(comboBoxEstadoCivil.getSelectedItem()));
-            
-            String fonofijo_prop = String.valueOf(inputFonofijo_prop.getText());
-            String celular_prop = String.valueOf(inputCelular_prop.getText());
-            int id_comuna = Integer.parseInt(String.valueOf(inputId_comuna.getText()));
-
-            propietario = new Propietario(numrut_Prop, dvrut_prop, appaterno_prop, apmaterno_prop, nombre_prop, direccion_prop, id_estcivil, fonofijo_prop, celular_prop, id_comuna);
-
-            propietarioDao.ingresarPropietario(propietario);
-
-            JOptionPane.showMessageDialog(this,"Propietario Ingresado Correctamente");
+        if(existeInputVacio || existeNumeroInvalido || !dvNoPermitido){
+            MisMetodos.inputsNoPuedenEstarVacios(listadoLabelErrorNoVacios, listadoInputsNovacios);
+            MisMetodos.InputsExisteNumeroNoValido(listadoInputsNumeros, listadoLabelErrorNumeros);
+            MisMetodos.ValidadorCharPermitido(arrayCharPermitido, inputdvrut_prop, labelErrordvrut_prop);
         }else{
-            JOptionPane.showMessageDialog(this, "Propietario Ya Existe");
-        }
+ 
+            int numrut_Prop = Integer.parseInt(String.valueOf(inputnumrut_prop.getText()));
+       
+            ArrayList<Propietario> listadopropietario = propietarioDao.buscarPropietario(numrut_Prop);
+            ArrayList<EstadoCivil> listadoEstadoCivil = estadoCivilDao.buscarEstadoCivil(String.valueOf(comboBoxid_estcivil.getSelectedItem()));
+            ArrayList<Comuna> resultadoComuna = comunaDao.buscarComuna((String)comboBoxid_comuna.getSelectedItem());
 
+
+            if(listadopropietario.isEmpty()){
+
+                char dvrut_prop = String.valueOf(inputdvrut_prop.getText()).charAt(0);
+                String appaterno_prop = String.valueOf(inputappaterno_prop.getText());
+                String apmaterno_prop = String.valueOf(inputapmaterno_prop.getText());
+                String nombre_prop = String.valueOf(inputnombre_prop.getText());
+                String direccion_prop = String.valueOf(inputdireccion_prop.getText());
+
+                int id_estcivil = MisMetodos.comboBoxBuscarSeleccion(listadoEstadoCivil);
+                //int id_estcivil = buscarSeleccionComboboxEstadoCivil(String.valueOf(comboBoxEstadoCivil.getSelectedItem()));
+
+                String fonofijo_prop = String.valueOf(inputfonofijo_prop.getText());
+                String celular_prop = String.valueOf(inputcelular_prop.getText());
+                int id_comuna = MisMetodos.comboBoxBuscarSeleccion(resultadoComuna);
+
+
+                propietario = new Propietario(numrut_Prop, dvrut_prop, appaterno_prop, apmaterno_prop, nombre_prop, direccion_prop, id_estcivil, fonofijo_prop, celular_prop, id_comuna);
+
+                propietarioDao.ingresarPropietario(propietario);
+
+                JOptionPane.showMessageDialog(this,"Propietario Ingresado Correctamente");
+            }else{
+                JOptionPane.showMessageDialog(this, "Propietario Ya Existe");
+            }
+        }
     }//GEN-LAST:event_btnIngresarNuevoPropietarioActionPerformed
 
     private void btnLimpiarIngresoNuevoPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarIngresoNuevoPropietarioActionPerformed
         MisMetodos.panelLimpiarComponentes(this);
+        MisMetodos.panelCamposErrorInicializador(this);
     }//GEN-LAST:event_btnLimpiarIngresoNuevoPropietarioActionPerformed
     
     
@@ -358,31 +417,31 @@ public class PanelIngresarPropietario extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresarNuevoPropietario;
     private javax.swing.JButton btnLimpiarIngresoNuevoPropietario;
-    private javax.swing.JComboBox<String> comboBoxEstadoCivil;
-    private javax.swing.JTextField inputApmaterno_prop;
-    private javax.swing.JTextField inputAppaterno_prop;
-    private javax.swing.JTextField inputCelular_prop;
-    private javax.swing.JTextField inputDireccion_prop;
-    private javax.swing.JTextField inputDvrut_prop;
-    private javax.swing.JTextField inputFonofijo_prop;
-    private javax.swing.JTextField inputId_comuna;
-    private javax.swing.JTextField inputNombre_prop;
-    private javax.swing.JTextField inputNumrut_prop;
+    private javax.swing.JComboBox<String> comboBoxid_comuna;
+    private javax.swing.JComboBox<String> comboBoxid_estcivil;
+    private javax.swing.JTextField inputapmaterno_prop;
+    private javax.swing.JTextField inputappaterno_prop;
+    private javax.swing.JTextField inputcelular_prop;
+    private javax.swing.JTextField inputdireccion_prop;
+    private javax.swing.JTextField inputdvrut_prop;
+    private javax.swing.JTextField inputfonofijo_prop;
+    private javax.swing.JTextField inputnombre_prop;
+    private javax.swing.JTextField inputnumrut_prop;
     private javax.swing.JLabel labelApmaterno_prop;
     private javax.swing.JLabel labelAppaterno_prop;
     private javax.swing.JLabel labelCelular_prop;
     private javax.swing.JLabel labelDireccion_prop;
     private javax.swing.JLabel labelDvrut_prop;
-    private javax.swing.JLabel labelErrorApellidoMaternoPropietarioObligatorio;
-    private javax.swing.JLabel labelErrorApellidoPaternoPropietarioObligatorio;
-    private javax.swing.JLabel labelErrorCelularPropietario;
-    private javax.swing.JLabel labelErrorComunaObligatorio;
-    private javax.swing.JLabel labelErrorDireccionPropietarioObligatorio;
-    private javax.swing.JLabel labelErrorEstadoCivilObligatorio;
-    private javax.swing.JLabel labelErrorFonoFijoPropietarioObligatorio;
-    private javax.swing.JLabel labelErrorNombrePropietarioObligatorio;
-    private javax.swing.JLabel labelErrorNrutPropietarioObligatorio;
-    private javax.swing.JLabel labelErrorRutPropietarioObligatorio;
+    private javax.swing.JLabel labelErrorapmaterno_prop;
+    private javax.swing.JLabel labelErrorappaterno_prop;
+    private javax.swing.JLabel labelErrorcelular_prop;
+    private javax.swing.JLabel labelErrordireccion_prop;
+    private javax.swing.JLabel labelErrordvrut_prop;
+    private javax.swing.JLabel labelErrorfonofijo_prop;
+    private javax.swing.JLabel labelErrorid_comuna;
+    private javax.swing.JLabel labelErrorid_estcivil;
+    private javax.swing.JLabel labelErrornombre_prop;
+    private javax.swing.JLabel labelErrornumrut_prop;
     private javax.swing.JLabel labelFonofijo_prop;
     private javax.swing.JLabel labelId_Comuna;
     private javax.swing.JLabel labelId_estcivil;

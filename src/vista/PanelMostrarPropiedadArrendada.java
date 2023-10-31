@@ -42,7 +42,7 @@ public class PanelMostrarPropiedadArrendada extends javax.swing.JPanel {
         btnIngresarNuevaVentana = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaTodasLasPropiedadesArrendadas = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        labelTitulopanelMostrarPropiedadArrendada = new javax.swing.JLabel();
 
         btnBuscarPropiedadesArrendadas.setText("Buscar Propiedades Arrendadas");
         btnBuscarPropiedadesArrendadas.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +89,7 @@ public class PanelMostrarPropiedadArrendada extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tablaTodasLasPropiedadesArrendadas);
 
-        jLabel1.setText("Propiedades Arrendadas");
+        labelTitulopanelMostrarPropiedadArrendada.setText("Propiedades Arrendadas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -99,7 +99,7 @@ public class PanelMostrarPropiedadArrendada extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(151, 151, 151)
-                        .addComponent(jLabel1))
+                        .addComponent(labelTitulopanelMostrarPropiedadArrendada))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -120,7 +120,7 @@ public class PanelMostrarPropiedadArrendada extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(labelTitulopanelMostrarPropiedadArrendada)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -243,8 +243,8 @@ public class PanelMostrarPropiedadArrendada extends javax.swing.JPanel {
     private javax.swing.JButton btnEliminarPropiedadArrendada;
     private javax.swing.JButton btnIngresarNuevaVentana;
     private javax.swing.JButton btnMostrarPropiedadesArrendadas;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelTitulopanelMostrarPropiedadArrendada;
     private javax.swing.JTable tablaTodasLasPropiedadesArrendadas;
     // End of variables declaration//GEN-END:variables
 

@@ -40,7 +40,7 @@ public class PanelMostrarEmpleado extends javax.swing.JPanel {
 
         btnEliminarEmpleado = new javax.swing.JButton();
         btnIngresarNuevoEmpleado = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        labelTitulopanelMostrarEmpleado = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaTodosLosEmpleados = new javax.swing.JTable();
         btnBuscarEmpleado = new javax.swing.JButton();
@@ -61,7 +61,7 @@ public class PanelMostrarEmpleado extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setText("Empleados");
+        labelTitulopanelMostrarEmpleado.setText("Empleados");
 
         tablaTodosLosEmpleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -118,7 +118,7 @@ public class PanelMostrarEmpleado extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(757, 757, 757)
-                        .addComponent(jLabel1))
+                        .addComponent(labelTitulopanelMostrarEmpleado))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1785, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -139,7 +139,7 @@ public class PanelMostrarEmpleado extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(labelTitulopanelMostrarEmpleado)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -301,8 +301,8 @@ public class PanelMostrarEmpleado extends javax.swing.JPanel {
     private javax.swing.JButton btnEliminarEmpleado;
     private javax.swing.JButton btnIngresarNuevoEmpleado;
     private javax.swing.JButton btnMostrarTodosLosEmpleados;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelTitulopanelMostrarEmpleado;
     private javax.swing.JTable tablaTodosLosEmpleados;
     // End of variables declaration//GEN-END:variables
 }

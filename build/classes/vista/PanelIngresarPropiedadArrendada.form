@@ -38,22 +38,29 @@
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="inputnro_propiedad" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="inputfecini_arriendo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="inputfecter_arriendo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="labelErrornro_propiedad" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="labelErrorfecini_arriendo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="labelErrornro_propiedad" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="labelErrorfecini_arriendo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="inputnro_propiedad" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="inputfecini_arriendo" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="btnIngresarPropiedad" min="-2" max="-2" attributes="0"/>
                                           <Component id="btnIngresarCliente" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Component id="labelErrorfecter_arriendo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="inputnumrut_cli" min="-2" max="-2" attributes="0"/>
                                   <Component id="labelErrornumrut_cli" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="inputfecter_arriendo" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
+                                  <Component id="inputnumrut_cli" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -214,7 +221,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nro Propiedad Obligatorio"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
         <Property name="name" type="java.lang.String" value="labelErrornro_propiedad" noResource="true"/>
       </Properties>
     </Component>
@@ -223,7 +230,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Fecha Inicio Arriendo Obligatorio"/>
+        <Property name="text" type="java.lang.String" value="Algun texto"/>
         <Property name="name" type="java.lang.String" value="labelErrorfecini_arriendo" noResource="true"/>
       </Properties>
     </Component>
@@ -232,7 +239,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="FechaTermino Arriendo Obligatorio"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
         <Property name="name" type="java.lang.String" value="labelErrorfecter_arriendo" noResource="true"/>
       </Properties>
     </Component>
@@ -241,7 +248,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nro Rut Cliente Obligatorio"/>
+        <Property name="text" type="java.lang.String" value="Algun Texto"/>
         <Property name="name" type="java.lang.String" value="labelErrornumrut_cli" noResource="true"/>
       </Properties>
     </Component>
